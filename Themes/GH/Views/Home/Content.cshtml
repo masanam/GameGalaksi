@@ -1,0 +1,84 @@
+﻿
+@*@Html.PortalImage("homeBanner", true, "portalimage", "", "width:100%")*@
+
+@{
+    bool isSubscriber = (bool) ViewData["IsSubscribed"];
+    bool isGuest = (bool)ViewData["isMsisdnNotDetected"];
+    bool termsAccepted = (bool)ViewData["TermsAccepted"];
+}
+
+<div class="language-flags">        
+    <a href="#" id="language-switch" class="language-switch"></a>        
+</div>
+
+<div class="section">
+    @if (!isSubscriber)
+    {
+        @Html.PortalText("SubscribeJoinTextLong", true)
+    }
+</div>
+
+<div id="language-dropdown" style="display: none;">
+    <ul>
+        <li><a href="@Url.Content("~/Home/ChangeCulture?lang=ml&url=" + Request.Url)" title="Burmese" onclick="ga('send', 'event', 'language', 'change', 'zawgyi')">Zawgyi</a></li>
+        <li><a href="@Url.Content("~/Home/ChangeCulture?lang=mk&url=" + Request.Url)" title="Unicode" onclick="ga('send', 'event', 'language', 'change', 'unicode')">Unicode</a></li>
+        <li><a href="@Url.Content("~/Home/ChangeCulture?lang=en&url=" + Request.Url)" title="English" onclick="ga('send', 'event', 'language', 'change', 'english')">English</a></li>
+    </ul>
+</div>
+
+@if (isGuest || !isSubscriber)
+{
+    <div class="button-container">
+        @if (!isSubscriber)
+        {
+            <div class="button twin-button">
+                <a class="button__link" href="@Url.Action("SubscribeButton", "Subscribe")" onclick="ga('send', 'event', 'home', 'click', 'home_join_1')">@Resources.Strings.Home_JoinNow</a>
+            </div>
+        }
+        @if (isGuest)
+        {
+            <div class="button twin-button">
+                <a class="button__link" href="/User/AccountKitLogin?returnUrl=/home">@Resources.Strings.Login</a>
+            </div>
+        }
+    </div>
+}
+
+    
+@if (!isGuest && !termsAccepted)
+{
+    <div id="terms">
+        <div class="terms-text">
+            @Html.PortalText("ShortTerms")
+        </div>
+        <div class="button button--terms">
+            <button id="accept-terms" class="button__link">CONTINUE</button>
+        </div>    
+    </div>
+}
+    
+
+@Html.Partial("CustomFWF")
+
+
+<div id="today" class="section"></div>
+@if (!isSubscriber)
+{
+    <div id="midbanner1" class="home__banner">@Html.PortalImage("midbanner1", true, "portalimage", "", "width:100%")</div>    
+}
+
+<div id="new" class="section"></div>
+
+@if (!isSubscriber)
+{
+    <div id="midbanner2" class="home__banner">@Html.PortalImage("midbanner2", true, "portalimage", "", "width:100%")</div>    
+}
+
+<div id="top" class="section"></div>
+
+@if (!isSubscriber)
+{
+    <div class="button">
+        <a class="button__link" href="@Url.Action("SubscribeButton", "Subscribe")" onclick="ga('send', 'event', 'home', 'click', 'home_join_2')">@Resources.Strings.Home_JoinNow</a>
+    </div>
+}

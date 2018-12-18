@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="@ConfigHelper.GetLanguageCode()">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link rel="stylesheet" href="~/Content/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="~/Content/themes/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="~/Content/themes/owl-carousel/owl.theme.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/owl.carousel.js"></script>
+    
+    
+    @Html.Partial("_Localization")
+    @Styles.Render("~/bundles/cssFP")
+    @RenderSection("style", required: false)
+    @{Html.RenderPartial("GoogleAnalyticsTrackingCode", new EightElements.Data.Rest.Models.Tracking(ViewBag.GoogleAnalyticsAccount));}
+    
+</head>
+<body class="video-project">
+@RenderSection("menu", required: false)
+<header>
+    <input type="hidden" id='uid' value='@ViewData["uid"]'/>
+    <input type="hidden" id='handsetid' value='@ViewData["handsetid"]'/>
+    @Html.Hidden("isSubscribed", ViewData["isSubscribed"])
+    @Html.Hidden("credits", ViewData["credits"])
+    @Html.Hidden("isMsisdnNotDetected", ViewData["isMsisdnNotDetected"])
+    @Html.Hidden("NonSub", ViewData["NonSub"])
+    @Html.Hidden("PortalId", ViewData["PortalId"])
+    @Html.Hidden("deactivateOneClickSubscribe", ViewData["deactivateOneClickSubscribe"])
+    @{
+        if ((bool) ViewData["displayTopMessage"])
+        {
+            <div class="warning-msg">
+                @Html.PortalText("TopupMessage")
+            </div>
+        }
+    }
+    <div>
+        @Html.PortalImage((string) ViewData["banner"], true, "portalimage", "", "width:100%")
+    </div>
+</header>
+@RenderBody()
+@*@{
+        if (this.Request.RequestContext.RouteData.GetRequiredString("controller") != "MyAccount"
+            && this.Request.RequestContext.RouteData.GetRequiredString("controller") != "Subscribe"
+            && this.Request.RequestContext.RouteData.GetRequiredString("controller") != "Detail"
+            )
+        {
+        <div id="join"></div>
+        }}*@
+
+<div class="footer-menu">
+    <a href=@Url.Action("MyAccount", "VideoHome")>
+        >> @Resources.Strings.Layout_MyAccount
+    </a>
+    <a href=@Url.Action("Index", "VideoHome")>
+        >> @Resources.Strings.Layout_Home
+    </a>
+</div>
+
+<footer>
+
+    <div class="page-footer">
+        <a class="page-footer__link" href=@Url.Content("~/Terms")> @Resources.Strings.Layout_Terms</a>
+        &nbsp;|&nbsp;
+        <a class="page-footer__link" href="/Help">@Resources.Strings.Layout_Help</a>
+        <br/>
+        &copy;&nbsp;@DateTime.Now.Year
+    </div>
+</footer>
+
+    @RenderSection("scripts", required: false)
+
+</body>
+
+</html>

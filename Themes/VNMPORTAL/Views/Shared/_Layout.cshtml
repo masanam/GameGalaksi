@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="@ConfigHelper.GetLanguageCode()">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    
+    @Scripts.Render("~/bundles/jquery")
+    @Html.Partial("_Localization")
+    @Scripts.Render("~/bundles/jquery.blockUI")
+    @Scripts.Render("~/bundles/bootbox")
+    @Scripts.Render("~/bundles/home")
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript" src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" />
+    @Styles.Render("~/bundles/css")
+    @{ Html.RenderPartial("GoogleAnalyticsTrackingCode", new EightElements.Data.Rest.Models.Tracking(ViewBag.GoogleAnalyticsAccount)); }
+    @RenderSection("style", required: false)    
+</head>
+<body>
+    <header>
+        <input type="hidden" id='uid' value='@ViewData["uid"]' />
+        <input type="hidden" id='handsetid' value='@ViewData["handsetid"]' />
+        @Html.Hidden("isSubscribed", ViewData["isSubscribed"])
+        @Html.Hidden("credits", ViewData["credits"])
+        @Html.Hidden("isMsisdnNotDetected", ViewData["isMsisdnNotDetected"])
+        @Html.Hidden("NonSub", ViewData["NonSub"])
+        @Html.Hidden("deactivateOneClickSubscribe", ViewData["deactivateOneClickSubscribe"])
+        @Html.Hidden("PortalId", ViewData["PortalId"])
+		@{
+            if ((bool)ViewData["displayTopMessage"])
+            {
+                <div class="warning-msg" >
+                    @Html.PortalText("TopupMessage")
+                </div>
+            } 
+	    }
+        <div>
+            @Html.PortalImage((string)ViewData["banner"], true, "portalimage", "", "width:100%")
+	    </div>
+	</header>
+    <div class="language-flags">
+        <a href="@Url.Content("~/Home/ChangeCulture?lang=en&url=" + Request.Url.ToString())" class="en" title="English"></a>
+        <a href="@Url.Content("~/Home/ChangeCulture?lang=vi&url=" + Request.Url.ToString())" class="vn" title="Vietnamese"></a>
+    </div>
+    @RenderBody()
+    @{
+        if (this.Request.RequestContext.RouteData.GetRequiredString("controller") != "MyAccount"
+            && this.Request.RequestContext.RouteData.GetRequiredString("controller") != "Subscribe"
+            && this.Request.RequestContext.RouteData.GetRequiredString("controller") != "Detail"
+            && this.Request.RequestContext.RouteData.GetRequiredString("controller") != "Msisdn"
+            )
+        {
+        <div id="join">
+        </div>
+        }}
+    <div id="other-pages-links">
+        @Html.PortalMenuButton("GameCategories", Resources.Strings.Layout_GameCategories, Url.Action("Index", "GameCategories"))
+        @Html.PortalMenuButton("Home", Resources.Strings.Layout_Home, Url.Action("Index", "Home"))
+        @Html.PortalMenuButton("MyAccount", Resources.Strings.Layout_MyAccount, Url.Action("Index", "MyAccount"))
+        @*<div class="category-menu row-fluid gradient-home-categories">
+            <a href="http://upro.vn"><h4> &raquo; @Resources.ViettelPort.Home_ViettelHomePage</h4></a></div>*@
+
+        @Html.PortalMenuButton("Help", Resources.Strings.Layout_Help, Url.Action("Index", "Help"))
+        @Html.PortalMenuButton("Terms", Resources.Strings.Layout_Terms, Url.Action("Index", "Terms"))
+    </div>
+    <footer>
+        
+        <div class="gradient-pale">
+        <div id="logo" >
+		</div>
+		<div class="bar"></div>		
+		<span>
+            @Html.Raw(Resources.VNM.Layout_Footer)            		    
+        </span>
+        <br />
+        <a class="terms" href="/Terms"> @Resources.Strings.Layout_Terms</a>&nbsp;|&nbsp; <a class="terms" href="/Help">
+            @Resources.Strings.Layout_Help</a><br />
+        &copy;&nbsp;2014
+        </div>
+	</footer>
+</body>
+</html>

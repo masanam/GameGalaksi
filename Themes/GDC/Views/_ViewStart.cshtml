@@ -1,0 +1,12 @@
+﻿@{
+    var c = ViewContext.Controller as EightElements.Web.Rest.Controllers.ControllerBase;
+        
+    if (c.IsSmartPhone)
+    {
+        Layout = "~/Themes/GDC/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Themes/GDC/Views/Shared/_Layout_FP.cshtml";
+    }
+}

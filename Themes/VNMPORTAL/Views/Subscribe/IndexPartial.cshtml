@@ -1,0 +1,42 @@
+﻿<div id="top">
+    @Html.Raw(Resources.Strings.Subscribe_JoinText)
+</div>
+<div id="container" class="gradient-pale">
+    @*Fix: white bar appear above the button*@
+    <br/>
+    @{if ((bool)ViewData["CanStillUseFirstWeekFree"])
+    {
+        @*<div class="first-week-free" style="padding: 3% 10px; color: #FFFF45; font-weight: bold">
+            @Html.Raw(Resources.Strings.Subscribe_FirstWeekFree)
+        </div>*@
+    }}
+    <div id="btn-join" class="btn-curved gradient-green-dark subscribe-button">
+        <a href="#" onclick="subscribeAction(@ViewData["DetailContentId"]);">
+            @Resources.Strings.Subscribe_Save
+        </a>
+    </div>
+    <div>
+        @{Html.RenderAction("GetTopFeatures", "Common");}
+    </div>
+    <div id="benefits" class="element">
+        @{if ((bool)ViewData["CanStillUseFirstWeekFree"])
+        { 
+            @*<div class="first-week-free" style="padding: 3% 10px; font-weight: bold">
+                @Resources.Strings.Subscribe_LimitedTime
+            </div>*@
+        }}
+        @Html.PortalText("Text")
+        <div class="items">
+        </div>
+    </div>
+    <div class="element">
+        <div id="btn-join" class="btn-curved gradient-green-dark subscribe-button">
+            <a href="#" onclick="subscribeAction(@ViewData["DetailContentId"]);">
+                @Html.Raw(string.Format(Resources.Strings.Subscribe_Save, "<br/>"))
+            </a>
+        </div>
+    </div>
+    <div id="get-a-free-game">
+        @Html.Raw(string.Format(Resources.Strings.Subscribe_FreeWeekly, "<br/>"))
+    </div>
+</div>

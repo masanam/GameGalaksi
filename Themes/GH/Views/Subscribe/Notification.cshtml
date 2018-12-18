@@ -1,0 +1,69 @@
+﻿@section Scripts {
+    <script type="text/javascript">
+        var counter = 0;
+        var intervalId;
+
+        $(document).ready(function () {
+            intervalId = setInterval(getSubscriptionStatus, 3000);
+        });
+
+        function getSubscriptionStatus() {
+            counter += 3000;
+            if (counter > 60000) {
+                window.location.replace("/myaccount");
+            }
+
+            $.get("/subscribe/getStatus", function (status) {
+                if (status === "0") {
+                    clearInterval(intervalId);
+                    $("#notification-text")
+                        .text("Cool! Your subscription is now active. Redirecting to Account page ...");
+//                    $("#notification-text").text(localizationText.subscribeOnSubscribeSuccess);
+                    setInterval(function() {
+                        window.location.replace("/myaccount");    
+                    }, 3000);
+                }
+                if (status === "2") {
+                    clearInterval(intervalId);
+                    window.location.replace("/error/2");
+                    // redirect to subscription failed page
+                }
+
+            });
+        }
+
+    </script>
+}
+
+
+
+<div class="section">
+    
+    <h2 class="section__header">
+        @Html.PortalText("SucessSubscribedWelcomeText")
+    </h2>
+
+    <div class="section__content">
+        <p id="notification-text">
+            @Resources.Strings.Notification_Subscribe
+        </p>
+        
+        <div id="loading-animation">
+            <img src="/Images/General/loading_icon.gif" alt="loading..."/>
+        </div>
+        <p>
+            <a href="@Url.Action("Index", "Home")">
+                @Resources.Strings.Layout_Home
+            </a>  
+            <br/>
+            <a href="@Url.Action("Index", "MyAccount")">
+                @Resources.Strings.MyAccount_MyAccount
+            </a>  
+        </p>
+        
+        <div class="content" style="font-size: small">
+            @Html.PortalText("LayoutMiniHelp")
+        </div>
+    </div>
+</div>
+

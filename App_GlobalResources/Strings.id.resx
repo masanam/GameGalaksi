@@ -1,0 +1,697 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CommonBuy_Buy" xml:space="preserve">
+    <value>Beli {0} {1}</value>
+  </data>
+  <data name="CommonBuy_BuyText" xml:space="preserve">
+    <value>Beli</value>
+  </data>
+  <data name="CommonBuy_ChargingFailed" xml:space="preserve">
+    <value>. Tidak cukup pulsa dalam sim cardmu. Silahkan top up pulsa dan coba lagi.</value>
+  </data>
+  <data name="CommonBuy_Download" xml:space="preserve">
+    <value>Re-download</value>
+  </data>
+  <data name="CommonBuy_FileNotFoundForThisHandset" xml:space="preserve">
+    <value>. Kami tidak dapat menemukan game ini untuk HP-mu.</value>
+  </data>
+  <data name="CommonBuy_Free" xml:space="preserve">
+    <value>Gratis</value>
+  </data>
+  <data name="CommonBuy_GeneralMessage" xml:space="preserve">
+    <value>Mohon maaf pembeliaan mu gagal</value>
+  </data>
+  <data name="CommonBuy_HandsetNotDetected" xml:space="preserve">
+    <value>. Tipe HP-mu tidak dikenal.</value>
+  </data>
+  <data name="CommonBuy_OnBuySuccess" xml:space="preserve">
+    <value>Silahkan install game dan selamat menikmati, Terima kasih atas pembeliannya</value>
+  </data>
+  <data name="CommonBuy_PleaseWait" xml:space="preserve">
+    <value>Silahkan tunggu...</value>
+  </data>
+  <data name="CommonBuy_PurchaseTemporarilyBlocked" xml:space="preserve">
+    <value>. Server kami sedang dalam maintenance. Silahkan coba lagi nanti.</value>
+  </data>
+  <data name="CommonBuy_TryAgain" xml:space="preserve">
+    <value>. Silahkan coba lagi nanti.</value>
+  </data>
+  <data name="CommonBuy_UseCredit" xml:space="preserve">
+    <value>Gratis</value>
+  </data>
+  <data name="Detail_Description" xml:space="preserve">
+    <value>Deskripsi</value>
+  </data>
+  <data name="Detail_OtherTitles" xml:space="preserve">
+    <value>Game lain dari developer ini</value>
+  </data>
+  <data name="Detail_PeopleDownloaded" xml:space="preserve">
+    <value>Orang juga men-download</value>
+  </data>
+  <data name="Error_Description" xml:space="preserve">
+    <value>Maaf, ada error terjadi saat memproses permintaan mu.</value>
+  </data>
+  <data name="Error_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="GameCategories_AllGames" xml:space="preserve">
+    <value>Kategori Game</value>
+  </data>
+  <data name="GameCategories_CategoriesNotFound" xml:space="preserve">
+    <value>Kategori tidak ditemukan</value>
+  </data>
+  <data name="GameCategory_GetItFree" xml:space="preserve">
+    <value>Dapatkan Gratis</value>
+  </data>
+  <data name="GameCategory_ShowMore" xml:space="preserve">
+    <value>Selanjutnya...</value>
+  </data>
+  <data name="GameList_GetFree" xml:space="preserve">
+    <value>Dapatkan Gratis</value>
+  </data>
+  <data name="GameList_HandsetNotDetected" xml:space="preserve">
+    <value>Perangkat tidak terdeteksi</value>
+  </data>
+  <data name="GameList_NoGamesFound" xml:space="preserve">
+    <value>Tidak ada game ditemukan</value>
+  </data>
+  <data name="GameList_NoMoreGames" xml:space="preserve">
+    <value>Tidak ada game lain</value>
+  </data>
+  <data name="GameList_ShowMore" xml:space="preserve">
+    <value>Selanjutnya...</value>
+  </data>
+  <data name="Help_Help" xml:space="preserve">
+    <value>Bantuan</value>
+  </data>
+  <data name="Home_BestSellers" xml:space="preserve">
+    <value>Terlaris</value>
+  </data>
+  <data name="Home_CreditsText" xml:space="preserve">
+    <value>Kamu punya {0} credit untuk menukar game.</value>
+  </data>
+  <data name="Home_ForKids" xml:space="preserve">
+    <value>Untuk Anak - anak</value>
+  </data>
+  <data name="Home_GameCategories" xml:space="preserve">
+    <value>Kategori Game</value>
+  </data>
+  <data name="Home_GameForHandset" xml:space="preserve">
+    <value>Kamu bisa memilih dari &lt;b&gt;{0}&lt;/b&gt; permainan untuk &lt;b&gt; {1} &lt;/b&gt;</value>
+  </data>
+  <data name="Home_Highlight" xml:space="preserve">
+    <value>Game Terbaik</value>
+  </data>
+  <data name="Home_JoinNow" xml:space="preserve">
+    <value>Gabung klub sekarang!</value>
+  </data>
+  <data name="Home_JoinText" xml:space="preserve">
+    <value>{0} Club: &lt;a href="/Subscribe" style="color: Blue;"&gt;Cari tahu lebih banyak&lt;/a&gt; cara menjadi member dan dapatkan Game GRATIS.</value>
+  </data>
+  <data name="Home_MoreBestSellers" xml:space="preserve">
+    <value>Game Terbaik Lainnya</value>
+  </data>
+  <data name="Home_MoreNewGames" xml:space="preserve">
+    <value>Game Baru Lainnya</value>
+  </data>
+  <data name="Home_MoreTopGames" xml:space="preserve">
+    <value>Game Teratas Lainnya</value>
+  </data>
+  <data name="Home_NewGames" xml:space="preserve">
+    <value>Game Terbaru</value>
+  </data>
+  <data name="Home_PuzzleGames" xml:space="preserve">
+    <value>Puzzle Games</value>
+  </data>
+  <data name="Home_Search" xml:space="preserve">
+    <value>Cari</value>
+  </data>
+  <data name="Home_Subscribe" xml:space="preserve">
+    <value>Berlangganan</value>
+  </data>
+  <data name="Home_TopGames" xml:space="preserve">
+    <value>Game Terbaik</value>
+  </data>
+  <data name="Home_WelcomeText" xml:space="preserve">
+    <value>Gabung di Klub Game hari ini!</value>
+  </data>
+  <data name="Layout_Back" xml:space="preserve">
+    <value>Kembali</value>
+  </data>
+  <data name="Layout_Bigpond" xml:space="preserve">
+    <value>Masuk ke Game Bigpond</value>
+  </data>
+  <data name="Layout_Footer" xml:space="preserve">
+    <value>Mainkan game terbaik di dunia sekarang</value>
+  </data>
+  <data name="Layout_GameCategories" xml:space="preserve">
+    <value>Kategori Game</value>
+  </data>
+  <data name="Layout_Help" xml:space="preserve">
+    <value>Bantuan</value>
+  </data>
+  <data name="Layout_Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Layout_JoinNow" xml:space="preserve">
+    <value>Join Now</value>
+  </data>
+  <data name="Layout_JoinText" xml:space="preserve">
+    <value>Join the Games Club</value>
+  </data>
+  <data name="Layout_MyAccount" xml:space="preserve">
+    <value>Unduhan / Akun</value>
+  </data>
+  <data name="Layout_PlayTheWorldBestGame" xml:space="preserve">
+    <value>Mainkan Game Terbaik Sekarang</value>
+  </data>
+  <data name="Layout_Term" xml:space="preserve">
+    <value>Terms</value>
+  </data>
+  <data name="Layout_Terms" xml:space="preserve">
+    <value>Syarat &amp; Ketentuan</value>
+  </data>
+  <data name="List_GetFree" xml:space="preserve">
+    <value>Get it Free</value>
+  </data>
+  <data name="List_NewGame" xml:space="preserve">
+    <value>Game Baru</value>
+  </data>
+  <data name="List_NewGames" xml:space="preserve">
+    <value>New Games</value>
+  </data>
+  <data name="List_ShowMore" xml:space="preserve">
+    <value>Selanjutnya....</value>
+  </data>
+  <data name="List_TopGame" xml:space="preserve">
+    <value>Game Teratas</value>
+  </data>
+  <data name="List_TopGames" xml:space="preserve">
+    <value>Game Teratas</value>
+  </data>
+  <data name="MessageTitleError" xml:space="preserve">
+    <value>error</value>
+  </data>
+  <data name="MessageTitleSuccess" xml:space="preserve">
+    <value>sukses</value>
+  </data>
+  <data name="MyAccount_AreYouSure" xml:space="preserve">
+    <value>Apa kamu yakin?</value>
+  </data>
+  <data name="MyAccount_Benefit" xml:space="preserve">
+    <value>Keuntungan Klub Game</value>
+  </data>
+  <data name="MyAccount_Confirm" xml:space="preserve">
+    <value>Confirm to unsubscribe</value>
+  </data>
+  <data name="MyAccount_Device" xml:space="preserve">
+    <value>Perangkat</value>
+  </data>
+  <data name="MyAccount_GeneralError" xml:space="preserve">
+    <value>. Silahkan coba lagi nanti.</value>
+  </data>
+  <data name="MyAccount_GeneralMessage" xml:space="preserve">
+    <value>Mohon maaf, kami tidak bisa membatalkan langgananmu</value>
+  </data>
+  <data name="MyAccount_Handset" xml:space="preserve">
+    <value>Perangkat: &lt;span&gt;{0} &lt;/span&gt;</value>
+  </data>
+  <data name="MyAccount_Loading" xml:space="preserve">
+    <value>Loading ...</value>
+  </data>
+  <data name="MyAccount_MyAcount" xml:space="preserve">
+    <value>Akun-ku</value>
+  </data>
+  <data name="MyAccount_MyDownloads" xml:space="preserve">
+    <value>Download-ku</value>
+  </data>
+  <data name="MyAccount_MyPhone" xml:space="preserve">
+    <value>Tipe Handphone</value>
+  </data>
+  <data name="MyAccount_No" xml:space="preserve">
+    <value>Tidak</value>
+  </data>
+  <data name="MyAccount_NotSubscribed" xml:space="preserve">
+    <value>Kamu belum berlangganan.</value>
+  </data>
+  <data name="MyAccount_OnUnsubscribe" xml:space="preserve">
+    <value>Silahkan tunggu...</value>
+  </data>
+  <data name="MyAccount_OnUnsubscribeSuccess" xml:space="preserve">
+    <value>Kamu sukses berhenti berlangganan.</value>
+  </data>
+  <data name="MyAccount_QuestionConfirm" xml:space="preserve">
+    <value>Apa kamu yakin ingin berhenti berlangganan?</value>
+  </data>
+  <data name="MyAccount_SetUserInfo" xml:space="preserve">
+    <value>Tidak dapat dikenali</value>
+  </data>
+  <data name="MyAccount_Subscription" xml:space="preserve">
+    <value>Langganan-ku</value>
+  </data>
+  <data name="MyAccount_SubscriptionNotFound" xml:space="preserve">
+    <value>. Kamu sudah tidak berlangganan.</value>
+  </data>
+  <data name="MyAccount_Unsubscribe" xml:space="preserve">
+    <value>Stop Langganan Ketik:&lt;br/&gt;&lt;b&gt;UNREG GALAKSICLUB&lt;/b&gt; ke &lt;b&gt;93477&lt;/b&gt;</value>
+  </data>
+  <data name="MyAccount_Yes" xml:space="preserve">
+    <value>Ya</value>
+  </data>
+  <data name="PortalPage_Close" xml:space="preserve">
+    <value>Tutup</value>
+  </data>
+  <data name="Purchase_Download" xml:space="preserve">
+    <value>Re-download</value>
+  </data>
+  <data name="Purchase_Loading" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="Purchase_MyDownload" xml:space="preserve">
+    <value>Download-ku</value>
+  </data>
+  <data name="Purchase_NoPurchase" xml:space="preserve">
+    <value>Tidak ada pembelian.</value>
+  </data>
+  <data name="Purchase_NoPurchases" xml:space="preserve">
+    <value>Tidak ada pembelian.</value>
+  </data>
+  <data name="Purchase_Thankyou" xml:space="preserve">
+    <value>Terima kasih telah membeli game ini</value>
+  </data>
+  <data name="Search_Free" xml:space="preserve">
+    <value>Gratis</value>
+  </data>
+  <data name="Search_NoGames" xml:space="preserve">
+    <value>Tidak ada Game ditemukan</value>
+  </data>
+  <data name="Search_Result" xml:space="preserve">
+    <value>Cari Hasil</value>
+  </data>
+  <data name="Search_ShowMore" xml:space="preserve">
+    <value>Selanjutnya...</value>
+  </data>
+  <data name="Subscribe_Benefit1" xml:space="preserve">
+    <value>Berlangganan sekarang dan dapatkan 1 game gratis.</value>
+  </data>
+  <data name="Subscribe_Benefit2" xml:space="preserve">
+    <value>Kamu bisa memilih game yang kamu mau</value>
+  </data>
+  <data name="Subscribe_Benefit3" xml:space="preserve">
+    <value>Pilih dari lebih 300 game terbaik</value>
+  </data>
+  <data name="Subscribe_Benefit4" xml:space="preserve">
+    <value>Kami rutin menambah game - game baru</value>
+  </data>
+  <data name="Subscribe_Benefit5" xml:space="preserve">
+    <value>Harga Klub spesial adalah Rp 5000 tiap game</value>
+  </data>
+  <data name="Subscribe_Benefit6" xml:space="preserve">
+    <value>Dapatkan 1 kredit perpanjangan dan tukar dengan 1 game</value>
+  </data>
+  <data name="Subscribe_Benefit7" xml:space="preserve">
+    <value>Tidak ada biaya data tambahan!</value>
+  </data>
+  <data name="Subscribe_Benefits" xml:space="preserve">
+    <value>Sebagai anggota dari Klub Games{0}kamu akan menikmati semua keuntungan ini:</value>
+  </data>
+  <data name="Subscribe_ChargingError" xml:space="preserve">
+    <value>We are sorry, we havn\'t been able to subscribe you to our games club. There was a problem during the payment. Your status is now Pending or stay as before.</value>
+  </data>
+  <data name="Subscribe_FreeWeekly" xml:space="preserve">
+    <value>DAPATKAN GAME GRATIS {0}SETIAP MINGGU</value>
+  </data>
+  <data name="Subscribe_GeneralMessage" xml:space="preserve">
+    <value>Kami mohon maaf, kamu belum bisa mendaftarkanmu sebagai anggota klub games kami.</value>
+  </data>
+  <data name="Subscribe_JoinText" xml:space="preserve">
+    <value>Gabung dengan Game Galaksi sekarang!</value>
+  </data>
+  <data name="Subscribe_OnSubscribeSuccess" xml:space="preserve">
+    <value>Selamat Datang! Kamu sukses berlangganan klub game terbaik! Gunakan kreditmu untuk mendapatkan game gratis!</value>
+  </data>
+  <data name="Subscribe_PriceText" xml:space="preserve">
+    <value>Pilih dari lebih 300 top game{0}dengan harga hanya Rp 2000!</value>
+  </data>
+  <data name="Subscribe_Save" xml:space="preserve">
+    <value>Bergabung dan pilih game kamu sekarang!</value>
+  </data>
+  <data name="Subscribe_SubscribedForLessThanAWeek" xml:space="preserve">
+    <value>, karena kamu baru berlangganan di bawah satu minggu.</value>
+  </data>
+  <data name="Subscribe_SubscribeTemporarilyBlocked" xml:space="preserve">
+    <value>. Server kami sedang dalam maintenance.</value>
+  </data>
+  <data name="Subscribe_SubscriptionAlreadyExists" xml:space="preserve">
+    <value>Kamu telah berlangganan.</value>
+  </data>
+  <data name="Subscribe_TryAgain" xml:space="preserve">
+    <value>. Silahkan coba lagi nanti.</value>
+  </data>
+  <data name="Subscribe_YesJoin" xml:space="preserve">
+    <value>Ya, aku mau bergabung dalam {0}Klub!</value>
+  </data>
+  <data name="Term_OfUse" xml:space="preserve">
+    <value>Syarat Penggunaan</value>
+  </data>
+  <data name="Home_WelcomeTitle" xml:space="preserve">
+    <value>Tawaran terbatas, minggu pertama gratis. &lt;a href="/subscribe/subscribe" style="color: Blue;text-decoration:underline"&gt;Gabung sekarang!&lt;/a&gt;&lt;br/&gt;</value>
+  </data>
+  <data name="MyAccount_Credit" xml:space="preserve">
+    <value>Credit:</value>
+  </data>
+  <data name="MyAccount_Status" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="Subscribe_FirstWeekFree" xml:space="preserve">
+    <value>GRATIS untuk minggu pertama. Tanpa biaya. &lt;a href="Subscribe/Subscribe" class="subscribe-button" style="color: Blue;text-decoration:underline"&gt;Gabung Sekarang!&lt;/a&gt;&lt;br/&gt;</value>
+  </data>
+  <data name="Subscribe_LimitedTime" xml:space="preserve">
+    <value>Penawaran terbatas, gratis untuk minggu pertama.</value>
+  </data>
+  <data name="Subscribe_PleaseWait" xml:space="preserve">
+    <value>Silahkan tunggu...</value>
+  </data>
+  <data name="Layout_SetSubscribButtons" xml:space="preserve">
+    <value>Join the Games Club</value>
+  </data>
+  <data name="Detail_GetItFree" xml:space="preserve">
+    <value>Dapatkan Gratis</value>
+  </data>
+  <data name="Error1" xml:space="preserve">
+    <value>Kami minta maaf, pembeliaan mu gagal. Sim card-mu tampaknya tidak mempunyai cukup pulsa. Silahkan top up dan coba lagi.</value>
+  </data>
+  <data name="Error4010" xml:space="preserve">
+    <value>Kami memiliki masalah dalam mengidenfikasi mu sebagai kostumer kami. Silahkan matikan setingan WiFi untuk dapat mendownload game.</value>
+  </data>
+  <data name="GameListBanner_GetItFree" xml:space="preserve">
+    <value>Dapatkan Gratis</value>
+  </data>
+  <data name="MyAccount_Credits" xml:space="preserve">
+    <value>Credit:{0}</value>
+  </data>
+  <data name="CommonBuy_SuccessMessage" xml:space="preserve">
+    <value>Terima kasih atas pembelian {0}. Silahkan install game dan selamat bermain!</value>
+  </data>
+  <data name="Subscribe_AlreadyNotSubscribed" xml:space="preserve">
+    <value>Maaf. Kamu sudah tidak berlangganan saat ini.</value>
+  </data>
+  <data name="Subscribe_GeneralError" xml:space="preserve">
+    <value>Terjadi kesalahan pada sistem.</value>
+  </data>
+  <data name="Subscribe_ResubscribeWithAWeek" xml:space="preserve">
+    <value>Maaf. kamu belum bisa berlangganan lagi selama 1 minggu. Silahkan coba lagi nanti.</value>
+  </data>
+  <data name="GameList_Back" xml:space="preserve">
+    <value>Kembali</value>
+  </data>
+  <data name="Error_2223" xml:space="preserve">
+    <value>Kami tidak bisa mendeteksi nomor teleponmu:&lt;br/&gt;
+-Jika kamu sedang menggunakan WIFI, silahkan matikan dan aktifkan jaringan mobile operator 3G/4G lalu coba lagi&lt;br/&gt;
+-Jika kamu sudah dalam jaringan 3G/4G, silahkan hubungi kami di support@8elements.net dan kami akan membantumu.</value>
+  </data>
+  <data name="SubscribeSuccess_RedirectHome" xml:space="preserve">
+    <value>Dapatkan game gratis mu sekarang.</value>
+  </data>
+  <data name="SubscribeSuccess_Title" xml:space="preserve">
+    <value>Berhasil Berlangganan</value>
+  </data>
+  <data name="Purchase_ClickHereToDownload" xml:space="preserve">
+    <value>Klik Disini untuk Download</value>
+  </data>
+  <data name="Error_4461" xml:space="preserve">
+    <value>Tidak mensupport perangkat ini!</value>
+  </data>
+  <data name="Error_5577" xml:space="preserve">
+    <value>Pembeliaan ini telah mencapai batas download.</value>
+  </data>
+  <data name="Error_Code" xml:space="preserve">
+    <value>Kode Error:</value>
+  </data>
+  <data name="MyAccount_RedirectHomePage" xml:space="preserve">
+    <value>Klik Disini untuk redirect ke halaman home.</value>
+  </data>
+  <data name="MyAccount_SubscriptionCancel" xml:space="preserve">
+    <value>Status langganan anda telah di batalkan</value>
+  </data>
+  <data name="MyAccount_ThankYou" xml:space="preserve">
+    <value>Terima Kasih</value>
+  </data>
+  <data name="MyAccount_PurchaseDate" xml:space="preserve">
+    <value>Tanggal Pembeliaan:</value>
+  </data>
+  <data name="MyAccount_RenewalDate" xml:space="preserve">
+    <value>Tanggal Perpanjangan:</value>
+  </data>
+  <data name="Error_5002" xml:space="preserve">
+    <value>Konten tidak valid, tidak aktif atau ilegal.</value>
+  </data>
+  <data name="Error_6001" xml:space="preserve">
+    <value>Browser handphonemu tidak mempunyai fitur cookies.</value>
+  </data>
+  <data name="Error_6002" xml:space="preserve">
+    <value>Fitur cookies tidak aktif.</value>
+  </data>
+  <data name="UserStillHaveeCoins" xml:space="preserve">
+    <value>Kamu masih punya {0} kredit untuk mendownload game GRATIS. Apa kamu yakin ingin berhenti berlangganan?</value>
+  </data>
+  <data name="GGC_HeaderText" xml:space="preserve">
+    <value>Dapatkan 1 game baru &lt;span style="color:red"&gt;tiap minggu&lt;/span&gt; hanya dengan $2.5.&lt;br /&gt;
+Kesempatan untuk MEMENANGKAN &lt;span style="color:red"&gt;hadiah besar&lt;/span&gt; selama kamu menjadi member.&lt;br /&gt;
+&lt;a href='Subscribe'&gt;&lt;br /&gt; &lt;u&gt;Informasi keuntungan user lainnya&lt;/u&gt;&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;
+Selamat datang &lt;b&gt;{0}&lt;/b&gt;. Kamu mempunyai &lt;span style="color:red"&gt;{1}&lt;/span&gt; yang tersedia untukmu {2}.&lt;br /&gt; &lt;br /&gt;
+&lt;a href='Subscribe/Subscribe'&gt;&lt;u&gt;Gabung SEKARANG untuk mendapat game GRATIS!&lt;/u&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="Error_1001" xml:space="preserve">
+    <value>Operator telepon yang kamu gunakan tidak bisa digunakan dalam transaksi ini.</value>
+  </data>
+  <data name="Error_1002" xml:space="preserve">
+    <value>Transaksi gagal! Silahkan coba lagi.</value>
+  </data>
+  <data name="Error_1003" xml:space="preserve">
+    <value>Operasi ilegal terdeteksi! Silahkan kontak kami untuk informasi lebih lanjut.</value>
+  </data>
+  <data name="Vinaphone_HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Vinaphone_HeaderTextSubscribed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Error_1000" xml:space="preserve">
+    <value>Transaksi gagal!</value>
+  </data>
+  <data name="Subscribe_ResubscribeWith15Days" xml:space="preserve">
+    <value>Maaf. kamu belum bisa berlangganan lagi selama 15 hari. Silahkan coba lagi nanti.</value>
+  </data>
+  <data name="CommonBuy_MsisdnNotDetected" xml:space="preserve">
+    <value>. Kami tidak bisa mendeteksi nomor telepon. Pastikan kamu tidak sedang menggunakan koneksi Wi-fi.</value>
+  </data>
+  <data name="Error_1004" xml:space="preserve">
+    <value>Credit tidak cukup</value>
+  </data>
+  <data name="MyAccount_Resubscribe" xml:space="preserve">
+    <value>Kembali berlangganan</value>
+  </data>
+  <data name="Resubscribe_NoSubscriptionOrActiveSubscription" xml:space="preserve">
+    <value>Tidak dapat berlangganan kembali karena tidak ada langganan atau anda sudah berlangganan</value>
+  </data>
+  <data name="Subscribe_BalanceNotEnough" xml:space="preserve">
+    <value>Pulsa anda tidak cukup! Tolong isi terlebih dahulu untuk melanjutkan.</value>
+  </data>
+  <data name="Subscribe_FreeDaily" xml:space="preserve">
+    <value>DAPATKAN GAME GRATIS {0}SETIAP HARI</value>
+  </data>
+  <data name="Subscribe_BalanceNotEnoughSubNotCreated" xml:space="preserve">
+    <value>Pulsa anda tidak cukup! Tolong isi terlebih dahulu untuk melanjutkan.</value>
+  </data>
+  <data name="Subscribe_CanNotSubscribeWithWifiConnection" xml:space="preserve">
+    <value>Tidak dapat berlangganan dengan koneksi wifi.</value>
+  </data>
+  <data name="Guest" xml:space="preserve">
+    <value>Guest</value>
+  </data>
+  <data name="CommonBuy_DownloadFree" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="Subscribe_SubNotCreatedBalanceNotEnough" xml:space="preserve">
+    <value>Pulsa anda tidak cukup! Tolong isi terlebih dahulu untuk melanjutkan.</value>
+  </data>
+  <data name="Subscribe_WifiClickToMO" xml:space="preserve">
+    <value>Anda bisa klik &lt;a href="{0}" style="color: Blue;"&gt;di sini&lt;/a&gt;, kami telah siapkan SMS untuk anda kirim.</value>
+  </data>
+  <data name="Subscribe_WifiConnectTo3G" xml:space="preserve">
+    <value>Atau gunakan koneksi 3G/GPRS untuk berlangganan langsung dari situs WAP.</value>
+  </data>
+  <data name="UserNoCoin" xml:space="preserve">
+    <value>Kamu punya keuntungan membeli game dengan harga diskon. Jika kamu berhenti berlangganan keuntungan ini akan hilang!</value>
+  </data>
+  <data name="Subscribe_WifiInstruction" xml:space="preserve">
+    <value>Bergabung sekarang dengan ketik &lt;strong&gt;{0}&lt;/strong&gt; ke &lt;strong&gt;{1}&lt;/strong&gt;</value>
+  </data>
+  <data name="Subscribe_WifiConnectTo3G_Telstra" xml:space="preserve">
+    <value>Atau gunakan koneksi 3G/GPRS untuk berlangganan langsung dari situs WAP.</value>
+  </data>
+  <data name="Notification" xml:space="preserve">
+    <value>Notifikasi</value>
+  </data>
+  <data name="Purchase_Notification" xml:space="preserve">
+    <value>Pembelian sedang diproses. Silahkan tunggu sms konten dari kami.
+Terima kasih.</value>
+  </data>
+  <data name="Subscribe_SendSMS" xml:space="preserve">
+    <value>Kirim SMS</value>
+  </data>
+  <data name="Home_GameForHandsetNonSub" xml:space="preserve">
+    <value>&lt;b&gt;{0}&lt;/b&gt; game tersedia untuk &lt;b&gt;{1}&lt;/b&gt; kamu</value>
+  </data>
+  <data name="Home_SuspendedWarning" xml:space="preserve">
+    <value>Isi pulsa anda untuk menikmati fasilitas Galaksi klub.</value>
+  </data>
+  <data name="Home_JoinNowBottom" xml:space="preserve">
+    <value>Gabung sekarang dengan {0}!</value>
+  </data>
+  <data name="Home_JoinNowTop" xml:space="preserve">
+    <value>Gabung sekarang dengan {0}!</value>
+  </data>
+  <data name="Layout_SetSubscribButtons2" xml:space="preserve">
+    <value>Gabung Sekarang</value>
+  </data>
+  <data name="Home_More" xml:space="preserve">
+    <value>Selengkapnya</value>
+  </data>
+  <data name="Notification_Subscribe" xml:space="preserve">
+    <value>Permintaan berlangganan sedang diproses, silahkan tunggu beberapa saat.</value>
+  </data>
+  <data name="PurchaseConfirmation" xml:space="preserve">
+    <value>Beli game ini?</value>
+  </data>
+  <data name="Error_7000" xml:space="preserve">
+    <value>Url tidak valid</value>
+  </data>
+  <data name="Error_8000" xml:space="preserve">
+    <value>Download gagal dikarenakan pembelian belum sukses</value>
+  </data>
+  <data name="Home_CreditText" xml:space="preserve">
+    <value>Sekarang kamu punya {0} credit untuk mendapat permainan.</value>
+  </data>
+  <data name="MyAccount_Msisdn" xml:space="preserve">
+    <value>Nomor Handphone</value>
+  </data>
+</root>

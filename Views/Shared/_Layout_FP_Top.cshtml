@@ -1,0 +1,26 @@
+﻿@{
+    if ((bool)ViewData["displayTopMessage"])
+    {
+        <div class="warning-msg" >
+            @Html.PortalText("TopupMessage")
+        </div>
+    } 
+}
+<div class="header">
+    @Html.PortalImage((string)ViewData["banner"], true, "portalimage", "", "width:100%")
+</div>
+@{
+    if (ViewBag.HandsetSelectionEnabled && 
+        (int)ViewData["handsetid"] <= 0 && 
+        (int)ViewData["handsetIdChosen"] <= 0 && 
+        this.Request.RequestContext.RouteData.GetRequiredString("controller") != "Handset")
+    {
+        <div class="warning-msg" >
+            @Html.Raw(Resources.Strings.Layout_HandsetNotDetected)
+        </div>
+    }
+}
+<div>
+    <input type="hidden" id='uid' value='@ViewData["uid"]' />
+    <input type="hidden" id='handsetid' value='@ViewData["handsetid"]' />
+</div>

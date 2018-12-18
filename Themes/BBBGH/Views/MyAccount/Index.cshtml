@@ -1,0 +1,232 @@
+﻿@using EightElements.Data
+@using EightElements.Data.Rest.Models
+
+@{
+    int portalId = ViewBag.PortalID ?? -1;
+    var userDetail = (UserDetail)ViewData["UserDetail"];
+    bool pointSystemVisible = ViewBag.PointSystemVisible ?? false;
+    bool showReferral = ViewBag.ShowReferral ?? false;
+}
+
+
+@section Scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $('.unsubscribe').click(function() {
+                $("html, body").scrollTop(0);
+
+                MyAccount_AreYouSure = $('#MyAccount_AreYouSure').val();
+                MyAccount_Question = $('#MyAccount_Question').val();
+                MyAccount_Yes = $('#MyAccount_Yes').val();
+                MyAccount_No = $('#MyAccount_No').val();
+
+                bootbox.dialog({
+                    message: MyAccount_Question,
+                    title: MyAccount_AreYouSure,
+                    buttons: {
+                        success: {
+                            label: MyAccount_No,
+                            className: "btn btn-default",
+                            callback: function() {
+
+                            }
+                        },
+                        danger: {
+                            label: MyAccount_Yes,
+                            className: "btn btn-default",
+                            callback: function () {
+                                var portalId = '@portalId';
+                                //XhttVinaphone need redirect to confirm page
+                                if (portalId == '395') {
+
+                                    document.location = "/subscribe/unsubscribe";
+                                    return false;
+                                }
+    
+                                onUnsubscribe();
+                            }
+                        }
+                    }
+                });
+
+                return false;
+
+            });
+            setUserInfo($('#SubscriptionStatusText').val());
+        });
+    </script>
+}
+
+<div>
+    <div class="page-title">
+        <h3>@Resources.Strings.MyAccount_MyAcount</h3>
+    </div>
+</div>
+<div class="my-subscription">
+    @if (Request.Cookies["UserTemp"] == null)
+    {
+        <div id="accountLogin" class="info">
+            Silahkan masukkan email kamu yang sudah dipakai untuk mendaftar, lalu tekan LOGIN.<br />
+            @using (Html.BeginForm("Login", "User", FormMethod.Post))
+            {
+                @Html.ValidationSummary()
+                <input type="text" id="txtLogin" name="txtLogin" placeholder="Email" /><br />
+                    <button type="submit" class="subscribe-join-btn">Login</button>
+            }
+        </div>
+    }
+    else
+    {
+        <div id="accountLogin" class="info">
+            Akun Pengguna: @Request.Cookies["UserTemp"].Value <input type="button" value="Logout" onclick="location.href='@Url.Action("Logout", "User")'" /> <br /><br />
+        </div>
+    }
+
+    <div class="my-phone info" style=" margin-bottom: 10px">
+        @Html.Raw(String.Format("{0}: <span>{1}</span>", Resources.Strings.MyAccount_MyPhone, userDetail.Msisdn))
+    </div>
+    @*<div class="btn-curved gradient-blue-bright btn-text-1line" style="margin: 10px auto">
+        @if (userDetail.Msisdn == Resources.Strings.Guest)
+        {   
+            <a href="@Url.Action("Index", "Msisdn")">@Resources.Strings.Msisdn_Authenticate</a>
+        }
+    </div>*@
+    <div id="device" class="info">
+        @Resources.Strings.MyAccount_Device: <span>@Resources.Strings.MyAccount_Loading</span>
+        @if (ViewBag.HandsetSelectionEnabled)
+        {
+            <a href="@Url.Action("Index", "Handset")" class="change-handset"> 
+                @Resources.Strings.MyAccount_ChangeHandset
+            </a>
+        }
+    </div>
+    
+    <h4 class="sub-title">@Resources.Strings.MyAccount_Subscription</h4>
+
+    <div id="credits" class="info">
+        <span class='loading'>@Resources.Strings.MyAccount_Loading</span>
+        <div style="display: none;" class="subscribed-section">
+            
+            <div>
+                @Resources.Strings.MyAccount_Credit <span id='credit-text'></span>
+                <img src="/Images/General/MyDownloads/ico-coin.png">
+            </div>
+            @if (pointSystemVisible)
+            {
+                <div style="margin-top: 5px;">
+                    @Html.Raw(String.Format(Resources.Strings.Point_BalanceText, "<span id='point-text' style=\"color: green;\"></span>"))
+                    <a href="@Url.Action("Index", "Point")" class="redeem">Redeem Now</a>
+                </div>
+            }
+            <div style="margin-top: 10px;">
+                @Resources.Strings.MyAccount_Status <span id='status-text'></span>
+            </div>
+            <br/>
+
+            @if (showReferral)
+            {
+                using (Html.BeginForm("AddReferrer", "MyAccount", FormMethod.Post, new { name = "referral" }))
+                {
+                    <div style="padding: 2%;">
+                        <span>@Resources.Strings.MyAccount_IntroducedByText</span>
+                        <br/>
+                        <input type="text" name="msisdn" style="width: 95%; margin-bottom: 5px; text-align: center"/>
+                    
+                        <div class="btn-curved gradient-blue-bright btn-text-1line" style="margin: 0 auto 0 auto;">
+                            <a onclick=" referral.submit(); ">submit</a>
+                        </div>
+                    </div>
+                }
+            }
+            
+            @Html.Partial("Notification_FP")
+            
+            @if (portalId == EightElements.Data.DAPortal.GameGalaksiPortalId)
+            {
+                <div>@Html.Raw(Resources.Strings.MyAccount_Unsubscribe)</div>
+            } else if (portalId == DAPortal.NextNationPortalId)
+            {
+                <div class="unsubscribe">
+                    @Html.PortalText("UnsubscribeText")
+                </div>
+            }
+            else if (portalId != EightElements.Data.DAPortal.ViettelPortalId
+                     && portalId != EightElements.Data.DAPortal.VinaphonePortalId
+                     && portalId != EightElements.Data.DAPortal.MobifonePortalId
+                     && portalId != EightElements.Data.DAPortal.PolynetPortalId
+                     && portalId != EightElements.Data.DAPortal.XhttVinaphoneId)
+            {
+                <div class='unsubscribe'>@Html.Raw(Resources.Strings.MyAccount_Unsubscribe)</div>
+            }
+            
+        </div>
+        
+        <div style="display: none;" class="unsubscribed-section">
+            <span>@Resources.Strings.MyAccount_NotSubscribed</span>
+        </div>
+        <div id='join-big-btn' style="display: none;">
+            <div id='btn-subscription' class='btn-curved gradient-green-bright'>
+                @if (portalId == EightElements.Data.DAPortal.PolynetPortalId ||
+                    portalId == EightElements.Data.DAPortal.ViettelPortalId ||
+                    portalId == EightElements.Data.DAPortal.XhttVinaphoneId ||
+                    portalId == EightElements.Data.DAPortal.MobifonePortalId ||
+                    portalId == EightElements.Data.DAPortal.VinaphonePortalId ||
+                    portalId == EightElements.Data.DAPortal.VNMPortalId)
+                {
+                    <a href="@Url.Action("SubscribeButton", "Subscribe")">
+                                @Html.PortalText("MyAccountSubscribe")</a>
+                }
+                else
+                {   
+                    <a href="@Url.Content("~/Subscribe")">@Resources.Strings.MyAccount_Benefit</a>  
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="btn-my-downloads btn-curved gradient-blue-bright btn-text-1line" style="margin: 10px auto">
+        <a href="@Url.Content("~/Purchase/History?handsetId=" + @userDetail.HandsetId)">@Resources.Strings.MyAccount_MyDownloads</a>
+    </div>
+    @if (pointSystemVisible)
+    {
+        <div class="btn-my-downloads btn-curved gradient-blue-bright btn-text-1line" style="margin: 10px auto">
+            <a href="@Url.Action("Purchased", "GameBundle")">
+                @Resources.Strings.GameBundle_PurchasedPageTitle
+            </a>
+        </div>
+    }
+</div>
+<br/>
+
+<div id="resource">
+    
+    @if (userDetail != null && userDetail.Credits > 0)
+    {
+        @Html.Hidden("MyAccount_Question", String.Format(Resources.Strings.UserStillHaveeCoins, userDetail.Credits))
+    }
+    else
+    {
+        @Html.Hidden("MyAccount_Question", Resources.Strings.MyAccount_QuestionConfirm)
+    }
+
+    @Html.Hidden("MyAccount_Yes", @Resources.Strings.MyAccount_Yes)
+    @Html.Hidden("MyAccount_No", @Resources.Strings.MyAccount_No)
+    @Html.Hidden("MyAccount_AreYouSure", @Resources.Strings.MyAccount_AreYouSure)
+    @Html.Hidden("SubscriptionStatusText", @ViewData["SubscriptionStatusText"])
+</div>
+
+
+@if (portalId == EightElements.Data.DAPortal.ViettelPortalId)
+{
+    @section Unsubscribe {
+        <div class="category-menu row-fluid gradient-home-categories">
+            <div class='unsubscribe'>
+                <h4>&raquo; @Resources.Strings.MyAccount_Unsubscribe</h4>
+            </div>
+        </div>
+    }
+}

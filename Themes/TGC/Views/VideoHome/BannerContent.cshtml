@@ -1,0 +1,27 @@
+﻿@using EightElements.Data.Models
+@{
+    var contents = ViewBag.Highlights as List<VideoInfo>;
+}
+
+@foreach (var content in contents)
+{
+    <div class="video gradient">
+        <div class="video__image-container--banner">
+            <a href="@Url.Action("Watch", new {contentId = content.Id})">
+                <img class="video__image--banner" src="/videohome/getimage?cid=@content.Id&type=3" alt="TGC"/>
+            </a>
+            <img class="video__play-button" src="~/Images/General/VideoPortal/play-button2.png" alt="watch now"/>
+        </div>
+        <div class="video__button--banner">
+            <a class="video__button-link" href="@Url.Action("Watch", new {contentId = content.Id})">Watch Now</a>
+        </div>
+        <div class="video__info--banner">
+            <div class="video__title">
+                <a class="video__title-link" href="@Url.Action("Watch", new {contentId = content.Id})">@content.Title</a>    
+            </div>
+            <div class="video__description">@content.ShortDescription</div>
+        </div>
+        
+    </div>
+}
+

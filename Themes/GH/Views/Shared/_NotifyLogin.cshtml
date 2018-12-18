@@ -1,0 +1,17 @@
+﻿@{
+    bool isAccountKit = Convert.ToBoolean(ViewBag.FakEnabled);
+    if (isAccountKit)
+    {
+        <form method="get" action="@ViewBag.FakSmsLoginEndpoint">
+            <input type="hidden" name="app_id" value="@ViewBag.FakAppID"/>
+            <input type="hidden" name="redirect" value="@ViewBag.FakCallback"/>
+            <input type="hidden" name="state" value="@ViewBag.FakRandom"/>
+            <input type="hidden" name="fbAppEventsEnabled" value="true"/>
+            <input type="hidden" name="debug" value="true"/>
+            <input name="locale" value="@ViewData["AccountKitLocale"]" type="hidden" />
+            <div class="button">
+                <button class="button__link" type="submit">@Resources.Strings.Login</button>
+            </div>
+        </form>
+    }
+}

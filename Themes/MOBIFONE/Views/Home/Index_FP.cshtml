@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.JoinTop = @Resources.Strings.Home_JoinNow;
+    ViewBag.JoinBottom = @Resources.Strings.Home_JoinNow;
+    ViewBag.GameList = "GameListBanner";
+    //ViewBag.SubscribeUrl = "Subscribe/Subscribe";
+    ViewBag.SubscribeUrl = "Confirmation";
+}
+
+<div class="labelTitle">
+@if (!(bool)ViewData["IsSubscribed"])
+{
+    @Resources.Strings.Home_WelcomeText
+}
+</div>
+
+@Html.Partial("Content_FP")

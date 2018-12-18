@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Watch";
+    string mimeType = ViewBag.MimeType;
+    int contentId = ViewBag.ContentId;
+}
+
+<div class="list-item">
+    <div class="section-title">Watch</div>
+
+    <div>
+        <video width="100%" controls poster="@ViewBag.ImageUrl">
+            <source src="@ViewBag.VideoUrl" type="@mimeType"/>
+            <em>Sorry, your browser doesn't support HTML5 video.</em>
+        </video>
+    </div>
+</div>
+
+
+<div class="horizontal-menu">
+    <ul>
+@*        <li><a href="/videohome/watch?contentId=@contentId&size=1">144p</a></li>*@
+@*        <li><a href="/videohome/watch?contentId=@contentId&size=2">240p</a></li>*@
+        <li><a href="/videohome/watch?contentId=@contentId&size=3">360p</a></li>
+        <li><a href="/videohome/watch?contentId=@contentId&size=4">SD</a></li>
+        <li><a href="/videohome/watch?contentId=@contentId&size=5">HD</a></li>
+        <li><a href="/videohome/watch?contentId=@contentId&size=6">FullHD</a></li>
+    </ul>
+</div>

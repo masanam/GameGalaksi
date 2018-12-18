@@ -1,0 +1,61 @@
+﻿@using EightElements.Data
+@{List<EightElements.Data.Rest.Models.GameCategory> categories = (List<EightElements.Data.Rest.Models.GameCategory>)ViewData["GameCategories"];}
+
+@Html.PortalImage("homeBanner", true, "portalimage", "", "width:100%")
+
+@Html.Partial("HeaderText_FP")
+
+
+@{
+    ViewData["SectionType"] = "F";
+    ViewData["GameListTitle"] = Resources.D1GC.GameList_TopGames;
+    ViewData["MoreTitle"] = Resources.D1GC.GameList_ViewMore;
+    ViewData["ImageSize"] = "Square0";
+}
+@Html.Partial("GameList")
+
+<div>
+    @Html.PortalImage("midbanner", true, "portalimage", "", "width:100%")
+</div>
+
+
+@{
+    ViewData["SectionType"] = "N";
+    ViewData["GameListTitle"] = Resources.D1GC.GameList_NewGames;
+    ViewData["MoreTitle"] = Resources.D1GC.GameList_ViewMore;
+    ViewData["ImageSize"] = "Square0";
+}
+@Html.Partial("GameList")
+
+@if (ViewBag.PointSystemVisible)
+{
+    <div class="section-header">
+        @Resources.Strings.GameBundle_PageTitle
+    </div>
+    @Html.Partial("GameBundleListPartial_FP")
+    <div class="section-footer">
+        <a href="@Url.Action("Index", "GameBundle")">
+            @Resources.Strings.Home_MoreGameBundles
+        </a>
+    </div>
+}
+
+<div class="show-all-games">
+    <a class="show-all-games__link" href="/list/m">
+        @Resources.Strings.Home_ShowAll
+    </a>
+</div>
+
+@{if (!(bool)ViewData["IsSubscribed"])
+  {
+      <div class="subscribe-button">
+          <a class="subscribe-button__link" href="@Url.Action("Index", "Subscribe")">
+              <img class="subscribe-button__link-image" src="/Images/General/D1GC/get-button.png" alt="Join Now"/>
+          </a>
+          <div class="subscribe-button__info-text">
+              @Html.PortalText("SubscribeJoinText", true)   
+          </div>
+      </div>
+  }}
+
+  

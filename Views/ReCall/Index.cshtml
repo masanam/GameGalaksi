@@ -1,0 +1,43 @@
+﻿@section style
+{
+    <style> 
+        .left-column,.right-column {
+            width: 49%;
+            display: block;
+            float: left;
+        }
+        a.join,a.back
+        {     
+            width: 20%;
+            color: white;      
+            margin-bottom: 10px;
+            white-space: nowrap;
+        }
+        a.join{float:left;}
+        a.back{float:right; margin-right: 20px;}
+        .buttons
+        {
+            line-height: 30px;
+            padding: 0 10px;
+            font-size: 12px;
+            font-weight: bold;
+            background-color: #00A5F0;
+            color: white;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-transition: background-color .2s linear;
+            -moz-transition: background-color .2s linear;
+            border: 1px solid rgba(0, 0, 0, .2);
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, .4) inset, 0 1px white;
+            -moz-box-shadow: 0 0 0 1px rgba(255, 255, 255, .4) inset, 0 1px #fff;
+            -webkit-box-shadow: 0 0 0 1px rgba(255, 255, 255, .4) inset, 0 1px white;
+            text-shadow: 0 -1px rgba(0, 0, 0, .2);
+            text-align: center;
+            min-width: 45px;
+            cursor: pointer;
+        }
+        #join{display: none;}
+    </style>
+}
+@Html.Partial("Index_FP")

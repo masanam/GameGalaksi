@@ -1,0 +1,62 @@
+﻿@{
+    bool ppdDisabled = ViewBag.PpdDisabled ?? false;
+}
+
+<div class="game-list">
+    <div>
+        @ViewData["GameListTitle"]</div>
+    @{
+        foreach (KeyValuePair<int, EightElements.Data.Rest.Models.Game> entry in
+            (Dictionary<int, EightElements.Data.Rest.Models.Game>) ViewData["DictGame" + ViewData["SectionType"]])
+        {
+            string gamePriceT = ((Dictionary<int, string>) ViewData["DictGamePrice" + ViewData["SectionType"]])[entry.Key];
+            bool hasSubscription = (bool) ViewData["IsSubscribed"];
+            string AmountPriceT = ((Dictionary<int, string>) ViewData["DictAmountPrice" + ViewData["SectionType"]])[entry.Key];
+
+            string imgLink = Url.Content("~/rest/gameimage/" + @entry.Key + "?key=" + @ViewData["ImageSize"]);
+            <a href=@Url.Content("~/Detail/" + @entry.Key)>
+                <img src="@imgLink" alt="@entry.Value.Name" class="gameBannnerImageTop"/>
+            </a>
+            <div class="right-column" style="overflow: visible; padding: 2px; text-align: center">
+                <div class="right-column-header" style="text-align: center">
+                    <a href=@Url.Content("~/Detail/" + @entry.Key) class="right-column-link">@entry.Value.Name</a>
+                </div>
+                <div class="right-column-button" style="text-align: center">
+                    @if ((bool)ViewData["isMsisdnNotDetected"] &&
+                         (ViewBag.PortalID == EightElements.Data.DAPortal.GamerHeavenOxygen8PortalId))
+                    {
+                        <a href="@Url.Action("Index", "Subscribe")" class="button-free">@Html.PortalText("CommonBuyDirectSubscribe")</a>
+                        if (!ppdDisabled)
+                        {
+                            <br/>
+                            <a href=@Url.Content("~/purchase/buy?contentid=" + @entry.Key + "&ppd=true") class="button-buy">@gamePriceT</a>
+                        }
+                    }
+                    else
+                    {
+                        if ((bool)ViewData["NonSub"])
+                        {
+                            <a href="@Url.Action("SubscribeButton", "Subscribe")" class="button-free">@Html.PortalText("CommonBuyDirectSubscribe")</a>
+                            <br/>
+                        }
+                        if ((int)ViewData["credits"] > 0 && !(AmountPriceT == "0" || AmountPriceT == "0.0000"))
+                        {
+                            <a href=@Url.Content("~/purchase/buy?contentid=" + @entry.Key + "&ppd=false") class="button-buy">@Resources.GamerHeaven.CommonBuy_UseCredit</a>
+                            <br/>
+                        }
+                        if (!ppdDisabled)
+                        {
+                            <a href=@Url.Content("~/purchase/buy?contentid=" + @entry.Key + "&ppd=true") class="button-buy">@gamePriceT</a>
+                        }
+                    }
+                </div>
+            </div>
+        }
+    }
+    @{
+        string moreLink = "/List/" + ViewData["SectionType"];
+        <div class="btn-more-ftphone">
+            <a href="@moreLink">@ViewData["MoreTitle"]</a>
+        </div>
+    }
+</div>

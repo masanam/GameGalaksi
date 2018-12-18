@@ -1,0 +1,21 @@
+﻿@model EightElements.Web.Rest.Helpers.Rss.Channel
+@{if (Model != null && Model.Items.Count > 0)
+  {
+    <div id="rssChannel" class="category">
+        <div class="title row-fluid gradient-home-categories">
+            <h4>
+                » @Model.Title
+            </h4>
+        </div>
+        <div class="content-games">
+            <ul>
+                @{foreach (EightElements.Web.Rest.Helpers.Rss.Item item in Model.Items)
+                  {
+                    <li class="leaf"><a href="@item.Link" style="text-decoration: none;"><u>@item.Title</u></a></li><br />
+                  }
+                }
+            </ul>
+        </div>
+    </div>
+  }
+}

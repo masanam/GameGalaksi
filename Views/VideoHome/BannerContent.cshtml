@@ -1,0 +1,119 @@
+﻿@using EightElements.Data.Models
+@{
+    var contents = ViewBag.Highlights as List<VideoInfo>;
+}
+
+
+<div id="owl-demo" class="owl-carousel owl-theme">
+    @foreach (var content in contents)
+    {
+        <div class="item">
+            <div class="list-item banner-list-item">
+                <div class="section-title">
+                    Today's Highlights
+                </div>
+                <a href="@Url.Action("Watch", new { contentId = content.Id })">
+                    <img src="/videohome/getimage?cid=@content.Id&type=3" style="width: 100%"/>
+                </a>
+                
+                @if (content.IsPurchased)
+                {
+                    <div class="watch-button">
+                        <a href="@Url.Action("Watch", new { contentId = content.Id })">Watch Again</a>
+                    </div>
+                }
+                else
+                {
+                    <div class="watch-button">
+                        <a href="@Url.Action("Watch", new { contentId = content.Id })">Watch Now</a>
+                    </div>    
+                    <div class="watch-button">
+                        <a href="@Url.Action("Purchase", new { contentId = content.Id, ppd = true })">Beli</a>
+                    </div>    
+                }
+
+                @*                <div class="watch-button-container">*@
+@*                    <div class="watch-button">*@
+@*                        <a href="@Url.Action("Watch", new { contentId = content.Id })">Watch Now</a>*@
+@*                    </div>*@
+@*                    <div class="watch-button">*@
+@*                        <a href="@Url.Action("ConfirmPurchase", new { contentId = content.Id, ppd = true })">Purchase</a>*@
+@*                    </div>*@
+@*                </div>*@
+                
+@*                <div class="text-container">*@
+@*                    <a class="video-title" href="/videohome/detail/@content.Id">@content.Title</a>*@
+@*                    <br/>*@
+@*                    <div class="video-description">@content.ShortDescription</div>*@
+@*                </div>*@
+            </div>
+        </div>
+    }
+</div>
+
+<script>
+    $(document).ready(function() {
+
+        $("#owl-demo").owlCarousel({
+            navigation: false, // Show next and prev buttons
+//            slideSpeed: 300,
+//            paginationSpeed: 400,
+            singleItem: true,
+            autoPlay: 5000
+
+
+        // "singleItem:true" is a shortcut for:
+        // items : 1,
+        // itemsDesktop : false,
+        // itemsDesktopSmall : false,
+        // itemsTablet: false,
+        // itemsMobile : false
+    });
+
+    });
+</script>
+
+@*@foreach (var content in contents)*@
+@*{*@
+@*    <div class="banner-row">*@
+@*        <a href="/videohome/detail/@content.Id">*@
+@*            <img src="http://svcvideo.dob.vn/upload_files/@content.Id/@content.BannerImage" style="width: 100%"/>*@
+@*        </a>*@
+@*        <div style="float: right; height: 48px; width: 100px; margin: 16px 16px 0 16px">*@
+@*            <a href="/subscribe/subscribe" style="border-radius: 3px; background-color: #32CDFD; color: #ffffff; display: inline-block; width: 100%; padding: 8px; text-align: center">Watch Now</a>*@
+@*        </div>*@
+@*        <div style="margin-right: 120px;">*@
+@*            <a href="/videohome/detail/@content.Id">@content.Title</a>*@
+@*            <br/>*@
+@*            @content.ShortDescription*@
+@*        </div>*@
+@**@
+@*    </div>*@
+@*    <hr/>*@
+@*}*@
+
+
+@*@foreach (var content in contents)*@
+@*{*@
+@*    <div class="banner-row">*@
+@*        <a href="/videohome/detail/@content.Id">*@
+@*            <img src="http://svcvideo.dob.vn/upload_files/@content.Id/@content.BannerImage" style="width: 100%"/>*@
+@*        </a>*@
+@*        <div style="position: relative; margin-top: 8px">*@
+@*            <div style="position: absolute; right: 0;">*@
+@*                <a href="/subscribe/subscribe" class="watch-button">Watch Now</a>*@
+@*            </div>*@
+@*            <div style="margin-right: 120px;">*@
+@*                <a href="/videohome/detail/@content.Id" class="video-title">@content.Title</a>*@
+@*                <br/>*@
+@*                <div class="video-description">@content.ShortDescription</div>*@
+@*            </div>*@
+@**@
+@*            *@
+@*        </div>*@
+@*    </div>*@
+@*    <hr/>*@
+@*}*@
+
+
+

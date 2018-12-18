@@ -1,0 +1,70 @@
+﻿
+@section Scripts {
+    <script type="text/javascript">
+        var transactionId = $("#transaction-id").val();
+        var counter = 0;
+        var intervalId;
+
+        $(document).ready(function () {
+            intervalId = setInterval(getSubscriptionStatus, 3000);
+        });
+
+        function getSubscriptionStatus() {
+            counter += 3000;
+            if (counter > 60000) {
+                window.location.replace("/purchase/history");
+            }
+
+            $.get("/purchase/getStatus/" + transactionId, function (status) {
+                if (status === 0) {
+                    clearInterval(intervalId);
+                    $("#notification-text")
+                        .text("Awesome! Your purchase transaction is complete. Redirecting to Download page ...");
+                    //                    $("#notification-text").text(localizationText.subscribeOnSubscribeSuccess);
+                    setInterval(function () {
+                        window.location.replace("/purchase/history");
+                    }, 3000);
+                }
+                if (status === "2") {
+                    clearInterval(intervalId);
+                    window.location.replace("/error/2");
+                    // redirect to subscription failed page
+                }
+
+            });
+        }
+
+    </script>
+}
+
+<input type="hidden" id="transaction-id" value="@ViewBag.TransactionId"/>
+
+<div class="section">
+    
+    <h2 class="section__header">
+        @Resources.Strings.CommonBuy_PleaseWait
+    </h2>
+
+    <div class="section__content">
+        <p id="notification-text">
+            @Resources.Strings.Purchase_Notification
+        </p>
+        <div id="loading-animation">
+            <img src="/Images/General/loading_icon.gif" alt="loading..."/>
+        </div>
+        <p> 
+            <a href="@Url.Action("History", "Purchase")">
+                @Resources.Strings.MyAccount_MyDownloads
+            </a>  
+            <br/>
+            <a href="@Url.Action("Index", "Home")">
+                @Resources.Strings.Layout_Home
+            </a>  
+        </p>
+        
+        <div class="content" style="font-size: small">
+            @Html.PortalText("LayoutMiniHelp")
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,156 @@
+﻿@using EightElements.Data
+@using EightElements.Data.Rest.Models
+
+@{
+    int portalId = ViewBag.PortalID ?? -1;
+    var userDetail = (UserDetail)ViewData["UserDetail"];
+    bool pointSystemVisible = ViewBag.PointSystemVisible ?? false;
+    bool showReferral = ViewBag.ShowReferral ?? false;
+}
+
+
+@section Scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $('.unsubscribe').click(function() {
+                $("html, body").scrollTop(0);
+
+                MyAccount_AreYouSure = $('#MyAccount_AreYouSure').val();
+                MyAccount_Question = $('#MyAccount_Question').val();
+                MyAccount_Yes = $('#MyAccount_Yes').val();
+                MyAccount_No = $('#MyAccount_No').val();
+
+                bootbox.dialog({
+                    message: MyAccount_Question,
+                    title: MyAccount_AreYouSure,
+                    buttons: {
+                        success: {
+                            label: MyAccount_No,
+                            className: "btn btn-default",
+                            callback: function() {
+
+                            }
+                        },
+                        danger: {
+                            label: MyAccount_Yes,
+                            className: "btn btn-default",
+                            callback: function () {
+                                var portalId = '@portalId';
+                                //XhttVinaphone need redirect to confirm page
+                                if (portalId == '395') {
+
+                                    document.location = "/subscribe/unsubscribe";
+                                    return false;
+                                }
+    
+                                onUnsubscribe();
+                            }
+                        }
+                    }
+                });
+
+                return false;
+
+            });
+            setUserInfo($('#SubscriptionStatusText').val());
+        });
+    </script>
+}
+
+<div class="section-header">
+    <div class="section-header__title">
+        @Resources.Strings.MyAccount_MyAcount
+    </div>
+    <div class="section-header__action">
+        <a class="section-header__action-link" href="@Url.Action("Index", "Home")">@Resources.D1GC.Layout_Back</a>
+    </div>
+</div>
+
+<div class="account">
+    
+    <div class="account__info">
+        <div class="account__info-label">@Resources.Strings.MyAccount_MyPhone</div>
+        <div class="account__info-text">@userDetail.Msisdn</div>
+    </div>
+    
+    <div id="device" class="account__info">
+        <div class="account__info-label">@Resources.Strings.MyAccount_Device</div>
+        <div class="account__info-text">
+            @userDetail.HandsetModel
+            @if (ViewBag.HandsetSelectionEnabled)
+            {
+                <a href="@Url.Action("Index", "Handset")" class="account__change-handset">
+                    @Resources.Strings.MyAccount_ChangeHandset
+                </a>
+            }
+        </div>
+    </div>
+    
+    <div class="account__info">
+        <div class="account__info-label">@Resources.D1GC.MyAccount_Subscription</div>
+        <div class="account__info-text">
+            @if (userDetail.HasActiveSubscription)
+            {
+                <span>@Resources.D1GC.MyAccount_Active</span>
+            }
+            else
+            {
+                <span>
+                    @Resources.D1GC.MyAccount_Inactive 
+                    <a href="@Url.Action("Subscribe", "Subscribe")">
+                        @Resources.Strings.Layout_JoinNow
+                    </a>
+                </span>
+            }
+        </div>
+    </div>
+    
+    @if (!userDetail.HasSubscription)
+    {
+        <div class="subscribe-button">
+            <a class="subscribe-button__link" href="@Url.Action("Index", "Subscribe")">
+                <img class="subscribe-button__link-image" src="/Images/General/D1GC/get-button.png" alt="Join Now"/>
+            </a>
+            <div class="subscribe-button__info-text">
+                @Resources.D1GC.MyAccount_MoreInfo
+            </div>
+        </div>
+    }
+    
+</div>
+    
+
+
+
+<div id="resource">
+    
+    @if (userDetail != null && userDetail.Credits > 0)
+    {
+        @Html.Hidden("MyAccount_Question", String.Format(Resources.Strings.UserStillHaveeCoins, userDetail.Credits))
+    }
+    else
+    {
+        @Html.Hidden("MyAccount_Question", Resources.Strings.MyAccount_QuestionConfirm)
+    }
+
+    @Html.Hidden("MyAccount_Yes", @Resources.Strings.MyAccount_Yes)
+    @Html.Hidden("MyAccount_No", @Resources.Strings.MyAccount_No)
+    @Html.Hidden("MyAccount_AreYouSure", @Resources.Strings.MyAccount_AreYouSure)
+    @Html.Hidden("SubscriptionStatusText", @ViewData["SubscriptionStatusText"])
+</div>
+
+
+@section footerMenu
+{
+    @if (userDetail.HasSubscription && userDetail.IsHandsetSupported)
+    {
+        <div class="footer__main-menu">
+            <a class="footer__menu-item" href="@Url.Action("History", "Purchase", new {handsetId = userDetail.HandsetId})">My Games</a>
+        </div>
+    }
+    <div class="footer__side-menu">
+        <a class="footer__side-menu-link" href="/">@Resources.Strings.Layout_Home</a>
+    </div>
+}

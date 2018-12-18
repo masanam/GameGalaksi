@@ -1,0 +1,762 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CommonBuy_Buy" xml:space="preserve">
+    <value>Mua  {1} {0}</value>
+  </data>
+  <data name="CommonBuy_BuyText" xml:space="preserve">
+    <value>Mua</value>
+  </data>
+  <data name="CommonBuy_ChargingFailed" xml:space="preserve">
+    <value>. Sim của bạn hết tiền. Hãy nạp thêm và thử lại.</value>
+  </data>
+  <data name="CommonBuy_Download" xml:space="preserve">
+    <value>Tải về</value>
+  </data>
+  <data name="CommonBuy_FileNotFoundForThisHandset" xml:space="preserve">
+    <value>. Chúng tôi không tìm thấy game nào cho điện thoại của bạn.</value>
+  </data>
+  <data name="CommonBuy_Free" xml:space="preserve">
+    <value>Miễn phí</value>
+  </data>
+  <data name="CommonBuy_GeneralMessage" xml:space="preserve">
+    <value>Giao dịch thanh toán của bạn không thành công</value>
+  </data>
+  <data name="CommonBuy_HandsetNotDetected" xml:space="preserve">
+    <value>. Không thể nhận diện điện thoại của bạn</value>
+  </data>
+  <data name="CommonBuy_OnBuySuccess" xml:space="preserve">
+    <value>Hãy cài đặt và chơi. Cám ơn bạn đã mua</value>
+  </data>
+  <data name="CommonBuy_PleaseWait" xml:space="preserve">
+    <value>Vui lòng chờ ...</value>
+  </data>
+  <data name="CommonBuy_PurchaseTemporarilyBlocked" xml:space="preserve">
+    <value>. Máy chủ của chúng tôi đang bảo trì. Xin vui long quay lại sau.</value>
+  </data>
+  <data name="CommonBuy_TryAgain" xml:space="preserve">
+    <value>. Vui lòng thử lại sau.</value>
+  </data>
+  <data name="CommonBuy_UseCredit" xml:space="preserve">
+    <value>Miễn phí</value>
+  </data>
+  <data name="Detail_Description" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="Detail_OtherTitles" xml:space="preserve">
+    <value>Các game khác của nhà phát triển này</value>
+  </data>
+  <data name="Detail_PeopleDownloaded" xml:space="preserve">
+    <value>Nhiều người tải</value>
+  </data>
+  <data name="Error_Description" xml:space="preserve">
+    <value>Có lỗi xảy ra trong khi thực hiện yêu cầu của bạn.</value>
+  </data>
+  <data name="Error_Error" xml:space="preserve">
+    <value>Thông báo</value>
+  </data>
+  <data name="GameCategories_AllGames" xml:space="preserve">
+    <value>Game theo danh mục</value>
+  </data>
+  <data name="GameCategories_CategoriesNotFound" xml:space="preserve">
+    <value>Không tìm thấy danh mục</value>
+  </data>
+  <data name="GameList_GetFree" xml:space="preserve">
+    <value>Tải miễn phí</value>
+  </data>
+  <data name="GameList_HandsetNotDetected" xml:space="preserve">
+    <value>Không nhận dạng được thiết bị của bạn.</value>
+  </data>
+  <data name="GameList_NoGamesFound" xml:space="preserve">
+    <value>Không tìm thấy game</value>
+  </data>
+  <data name="GameList_NoMoreGames" xml:space="preserve">
+    <value>Không còn game</value>
+  </data>
+  <data name="GameList_ShowMore" xml:space="preserve">
+    <value>Xem thêm ...</value>
+  </data>
+  <data name="Help_Help" xml:space="preserve">
+    <value>Trợ giúp</value>
+  </data>
+  <data name="Home_BestSellers" xml:space="preserve">
+    <value>Bán chạy nhất</value>
+  </data>
+  <data name="Home_ForKids" xml:space="preserve">
+    <value>Cho trẻ em</value>
+  </data>
+  <data name="Home_GameCategories" xml:space="preserve">
+    <value>Game theo danh mục</value>
+  </data>
+  <data name="Home_GameForHandset" xml:space="preserve">
+    <value>Bạn có thể chọn {0} games cho {1} của bạn.</value>
+  </data>
+  <data name="Home_Highlight" xml:space="preserve">
+    <value>Game hot trong tuần</value>
+  </data>
+  <data name="Home_JoinNow" xml:space="preserve">
+    <value>Tham gia ngay !</value>
+  </data>
+  <data name="Home_JoinText" xml:space="preserve">
+    <value>Câu lạc bộ {0}: &lt;a href="/Subscribe?cf=true" style="color: Blue;"&gt;Xem thêm&lt;/a&gt; để trở thành thành viên và tải game MIỄN PHÍ.</value>
+  </data>
+  <data name="Home_MoreBestSellers" xml:space="preserve">
+    <value>Xem thêm</value>
+  </data>
+  <data name="Home_MoreNewGames" xml:space="preserve">
+    <value>Xem thêm</value>
+  </data>
+  <data name="Home_MoreTopGames" xml:space="preserve">
+    <value>Xem thêm</value>
+  </data>
+  <data name="Home_NewGames" xml:space="preserve">
+    <value>Game mới</value>
+  </data>
+  <data name="Home_PuzzleGames" xml:space="preserve">
+    <value>Xếp hình</value>
+  </data>
+  <data name="Home_Search" xml:space="preserve">
+    <value>Tìm kiếm</value>
+  </data>
+  <data name="Home_TopGames" xml:space="preserve">
+    <value>Tải nhiều nhất</value>
+  </data>
+  <data name="Home_WelcomeText" xml:space="preserve">
+    <value>Tham gia câu lạc bộ Game ngay hôm nay !</value>
+  </data>
+  <data name="Layout_Back" xml:space="preserve">
+    <value>Trở về</value>
+  </data>
+  <data name="Layout_Bigpond" xml:space="preserve">
+    <value>Tới Bigpond Games</value>
+  </data>
+  <data name="Layout_Footer" xml:space="preserve">
+    <value>Thế giới game đỉnh cao hội tụ!  &lt;br /&gt; &lt;br /&gt;
+&amp;copy;&amp;nbsp;2015</value>
+  </data>
+  <data name="Layout_GameCategories" xml:space="preserve">
+    <value>Game theo danh mục</value>
+  </data>
+  <data name="Layout_Help" xml:space="preserve">
+    <value>Trợ giúp</value>
+  </data>
+  <data name="Layout_Home" xml:space="preserve">
+    <value>Trang chủ</value>
+  </data>
+  <data name="Layout_JoinNow" xml:space="preserve">
+    <value>Tham gia ngay</value>
+  </data>
+  <data name="Layout_JoinText" xml:space="preserve">
+    <value>Tham gia câu lạc bộ game</value>
+  </data>
+  <data name="Layout_MyAccount" xml:space="preserve">
+    <value>Tài khoản của tôi</value>
+  </data>
+  <data name="Layout_PlayTheWorldBestGame" xml:space="preserve">
+    <value>Chơi ngay game hay nhất thế giới</value>
+  </data>
+  <data name="Layout_Term" xml:space="preserve">
+    <value>Điều khoản</value>
+  </data>
+  <data name="Layout_Terms" xml:space="preserve">
+    <value>Điều khoản</value>
+  </data>
+  <data name="List_GetFree" xml:space="preserve">
+    <value>Miễn phí</value>
+  </data>
+  <data name="List_GetFree1" xml:space="preserve">
+    <value>Miễn phí</value>
+  </data>
+  <data name="List_NewGame" xml:space="preserve">
+    <value>Game mới</value>
+  </data>
+  <data name="List_NewGames" xml:space="preserve">
+    <value>Game mới</value>
+  </data>
+  <data name="List_ShowMore" xml:space="preserve">
+    <value>Xem thêm...</value>
+  </data>
+  <data name="List_TopGame" xml:space="preserve">
+    <value>Game tải nhiều nhất</value>
+  </data>
+  <data name="List_TopGames" xml:space="preserve">
+    <value>Game tải nhiều</value>
+  </data>
+  <data name="MessageTitleError" xml:space="preserve">
+    <value>lỗi</value>
+  </data>
+  <data name="MessageTitleSuccess" xml:space="preserve">
+    <value>thành công</value>
+  </data>
+  <data name="MyAccount_AreYouSure" xml:space="preserve">
+    <value>Bạn có chắc chắn không ?</value>
+  </data>
+  <data name="MyAccount_Benefit" xml:space="preserve">
+    <value>Các lợi ích của câu lạc bộ Game</value>
+  </data>
+  <data name="MyAccount_Confirm" xml:space="preserve">
+    <value>Xác nhận hủy dịch vụ</value>
+  </data>
+  <data name="MyAccount_Device" xml:space="preserve">
+    <value>Thiết bị</value>
+  </data>
+  <data name="MyAccount_GeneralError" xml:space="preserve">
+    <value>. Xin vui lòng thử lại sau.</value>
+  </data>
+  <data name="MyAccount_GeneralMessage" xml:space="preserve">
+    <value>Xin lỗi chúng tôi không thể hủy đăng ký thành viên của bạn</value>
+  </data>
+  <data name="MyAccount_Handset" xml:space="preserve">
+    <value>Thiết bị: &lt;span&gt;{0} &lt;/span&gt;</value>
+  </data>
+  <data name="MyAccount_Loading" xml:space="preserve">
+    <value>Đang tải ...</value>
+  </data>
+  <data name="MyAccount_MyAcount" xml:space="preserve">
+    <value>Tài khoản của tôi</value>
+  </data>
+  <data name="MyAccount_MyDownloads" xml:space="preserve">
+    <value>Game đã tải</value>
+  </data>
+  <data name="MyAccount_MyPhone" xml:space="preserve">
+    <value>Điện thoại của tôi</value>
+  </data>
+  <data name="MyAccount_No" xml:space="preserve">
+    <value>Không</value>
+  </data>
+  <data name="MyAccount_NotSubscribed" xml:space="preserve">
+    <value>Bạn chưa đăng ký</value>
+  </data>
+  <data name="MyAccount_OnUnsubscribe" xml:space="preserve">
+    <value>Vui lòng chờ...</value>
+  </data>
+  <data name="MyAccount_OnUnsubscribeSuccess" xml:space="preserve">
+    <value>Bạn đã hủy đăng ký thành công</value>
+  </data>
+  <data name="MyAccount_QuestionConfirm" xml:space="preserve">
+    <value>Bạn có chắc là muốn hủy dịch vụ không ?</value>
+  </data>
+  <data name="MyAccount_SetUserInfo" xml:space="preserve">
+    <value>Không thể nhận diện</value>
+  </data>
+  <data name="MyAccount_Subscription" xml:space="preserve">
+    <value>Thông tin đăng ký</value>
+  </data>
+  <data name="MyAccount_SubscriptionNotFound" xml:space="preserve">
+    <value>. Bạn đang là thành viên chưa đăng ký.</value>
+  </data>
+  <data name="MyAccount_Unsubscribe" xml:space="preserve">
+    <value>Hủy đăng ký</value>
+  </data>
+  <data name="MyAccount_Yes" xml:space="preserve">
+    <value>Có </value>
+  </data>
+  <data name="PortalPage_Close" xml:space="preserve">
+    <value>Đóng</value>
+  </data>
+  <data name="Purchase_Download" xml:space="preserve">
+    <value>Tải về</value>
+  </data>
+  <data name="Purchase_Loading" xml:space="preserve">
+    <value>Đang tải</value>
+  </data>
+  <data name="Purchase_MyDownload" xml:space="preserve">
+    <value>Game đã tải</value>
+  </data>
+  <data name="Purchase_NoPurchase" xml:space="preserve">
+    <value>Khong co game de tai lai.</value>
+  </data>
+  <data name="Purchase_NoPurchases" xml:space="preserve">
+    <value>Chưa thanh toán</value>
+  </data>
+  <data name="Purchase_Thankyou" xml:space="preserve">
+    <value>Cám ơn bạn đã mua game từ 8e Sieugame Club</value>
+  </data>
+  <data name="Search_Free" xml:space="preserve">
+    <value>Miễn phí</value>
+  </data>
+  <data name="Search_NoGames" xml:space="preserve">
+    <value>Không tìm thấy game</value>
+  </data>
+  <data name="Search_Result" xml:space="preserve">
+    <value>Kết quả</value>
+  </data>
+  <data name="Search_ShowMore" xml:space="preserve">
+    <value>Xem thêm</value>
+  </data>
+  <data name="Subscribe_Benefit1" xml:space="preserve">
+    <value>Đăng ký ngay để có một game miễn phí</value>
+  </data>
+  <data name="Subscribe_Benefit2" xml:space="preserve">
+    <value>Bạn có thể chọn game bất kỳ bạn muốn</value>
+  </data>
+  <data name="Subscribe_Benefit3" xml:space="preserve">
+    <value>Lựa chọn 300 game đỉnh cao</value>
+  </data>
+  <data name="Subscribe_Benefit4" xml:space="preserve">
+    <value>Chúng tôi liên tục bổ sung game mới</value>
+  </data>
+  <data name="Subscribe_Benefit5" xml:space="preserve">
+    <value>Giá đặc biệt cho hội viên là 2.99$ mỗi game.</value>
+  </data>
+  <data name="Subscribe_Benefit6" xml:space="preserve">
+    <value>Tặng một ecoin mỗi tuần để mua một game</value>
+  </data>
+  <data name="Subscribe_Benefit7" xml:space="preserve">
+    <value>Không thu phí dữ liệu!</value>
+  </data>
+  <data name="Subscribe_Benefits" xml:space="preserve">
+    <value>Là thành viên của câu lạc bộ Game, bạn hãy sử dụng tất cả những lợi ích này.</value>
+  </data>
+  <data name="Subscribe_ChargingError" xml:space="preserve">
+    <value>Chào mừng bạn đến với 8e Sieugame Club. Hiện tại tài khoản của bạn không đủ 9000 VND, chúng tôi sẽ kiểm tra và trừ tiền sau.</value>
+  </data>
+  <data name="Subscribe_FreeWeekly" xml:space="preserve">
+    <value>NHẬN GAME MIỄN PHÍ MỖI TUẦN</value>
+  </data>
+  <data name="Subscribe_GeneralMessage" xml:space="preserve">
+    <value>Xin lỗi, chúng tôi không thể đăng ký bạn thành hội viên câu lạc bộ game.</value>
+  </data>
+  <data name="Subscribe_JoinText" xml:space="preserve">
+    <value>Hãy tham gia câu lạc bộ Game ngay bây giờ</value>
+  </data>
+  <data name="Subscribe_OnSubscribeSuccess" xml:space="preserve">
+    <value>Chào mừng ! Bạn đã đăng ký thành công hội viên câu lạc bộ các game hay nhất. Hãy sử dụng eCoin để tải game miễn phí.</value>
+  </data>
+  <data name="Subscribe_PriceText" xml:space="preserve">
+    <value>Lựa chọn hơn 300 game hàng đầu với giá chỉ 2.50$ mỗi tuần.</value>
+  </data>
+  <data name="Subscribe_Save" xml:space="preserve">
+    <value>Tham gia và tải game MiỄN PHÍ ngay!</value>
+  </data>
+  <data name="Subscribe_SubscribedForLessThanAWeek" xml:space="preserve">
+    <value>, bởi vì bạn đăng ký chưa đủ một tuần.</value>
+  </data>
+  <data name="Subscribe_SubscribeTemporarilyBlocked" xml:space="preserve">
+    <value>. Máy chủ của chúng tôi đang bảo trì.</value>
+  </data>
+  <data name="Subscribe_SubscriptionAlreadyExists" xml:space="preserve">
+    <value>Bạn đã đăng ký</value>
+  </data>
+  <data name="Subscribe_TryAgain" xml:space="preserve">
+    <value>. Xin vui lòng thử lại sau.</value>
+  </data>
+  <data name="Subscribe_YesJoin" xml:space="preserve">
+    <value>Tôi đồng ý tham gia câu lạc bộ</value>
+  </data>
+  <data name="Term_OfUse" xml:space="preserve">
+    <value>Điều khoản sử dụng</value>
+  </data>
+  <data name="Home_WelcomeTitle" xml:space="preserve">
+    <value>Miễn phí tuần đầu tiên &lt;a href="/subscribe" style="color: Blue;text-decoration:underline"&gt;Tham gia ngay!&lt;/a&gt;</value>
+  </data>
+  <data name="MyAccount_Credit" xml:space="preserve">
+    <value>Số eCoin:</value>
+  </data>
+  <data name="MyAccount_Status" xml:space="preserve">
+    <value>Trạng thái:</value>
+  </data>
+  <data name="Subscribe_FirstWeekFree" xml:space="preserve">
+    <value>Tuần đầu tiên miễn phí thuê bao. &lt;a href="#" class="subscribe-button" style="color: Blue;text-decoration:underline"&gt;Tham gia Gamer Heaven ngay!&lt;/a&gt;</value>
+  </data>
+  <data name="Subscribe_LimitedTime" xml:space="preserve">
+    <value>Trong thời gian khuyến mại. Miễn phí thuê bao tuần đầu tiên</value>
+  </data>
+  <data name="Subscribe_PleaseWait" xml:space="preserve">
+    <value>Vui lòng chờ ...</value>
+  </data>
+  <data name="Layout_SetSubscribButtons" xml:space="preserve">
+    <value>Tham gia câu lạc bộ game</value>
+  </data>
+  <data name="Detail_GetItFree" xml:space="preserve">
+    <value>Tải miễn phí</value>
+  </data>
+  <data name="Home_Subscribe" xml:space="preserve">
+    <value>Đăng ký</value>
+  </data>
+  <data name="Error1" xml:space="preserve">
+    <value>Rất tiếc giao việc thanh toán của bạn không thành công. Sim của bạn hết tiền hoặc số eCoin đã hết. Bạn vui lòng nạp thêm và thử lại.</value>
+  </data>
+  <data name="Error4010" xml:space="preserve">
+    <value>Chúng tôi không thể nhận dạng được thiết bị của bạn.Hãy tắt Wifi và sử dụng mạng 3G để duyệt và tải game.</value>
+  </data>
+  <data name="GameListBanner_GetItFree" xml:space="preserve">
+    <value>Tải miễn phí</value>
+  </data>
+  <data name="MyAccount_Credits" xml:space="preserve">
+    <value>Số eCoin :{0}</value>
+  </data>
+  <data name="CommonBuy_SuccessMessage" xml:space="preserve">
+    <value>Ban da tai ve thanh cong game {0}.</value>
+  </data>
+  <data name="Subscribe_AlreadyNotSubscribed" xml:space="preserve">
+    <value>Xin lỗi, hiện tại chúng tôi không thể đăgn ký thành viên cho bạn</value>
+  </data>
+  <data name="Subscribe_GeneralError" xml:space="preserve">
+    <value>Có lỗi xảy ra</value>
+  </data>
+  <data name="Subscribe_ResubscribeWithAWeek" xml:space="preserve">
+    <value>Xin lỗi bạn không thể đăng ký thành viên trở lại trong vòng một tuần. Xin vui lòng thử lại sau.</value>
+  </data>
+  <data name="GameList_Back" xml:space="preserve">
+    <value>Quay lại</value>
+  </data>
+  <data name="Home_CreditsText" xml:space="preserve">
+    <value>Bạn có {0} eCoin để mua game.</value>
+  </data>
+  <data name="Error_2223" xml:space="preserve">
+    <value>Quý khách vui lòng dùng GPRS/3G để tiếp tục sử dụng dịch vụ. Xin cám ơn quý khách!</value>
+  </data>
+  <data name="GameCategory_GetItFree" xml:space="preserve">
+    <value>Tải miễn phí</value>
+  </data>
+  <data name="GameCategory_ShowMore" xml:space="preserve">
+    <value>Xem thêm</value>
+  </data>
+  <data name="SubscribeSuccess_RedirectHome" xml:space="preserve">
+    <value>Tải game miễn phí ngay</value>
+  </data>
+  <data name="SubscribeSuccess_Title" xml:space="preserve">
+    <value>Đăng ký hội viên thành công</value>
+  </data>
+  <data name="Purchase_ClickHereToDownload" xml:space="preserve">
+    <value>Bấm vào đây để tải</value>
+  </data>
+  <data name="Error_4461" xml:space="preserve">
+    <value>Thiết bị cầm tay không được hỗ trợ!</value>
+  </data>
+  <data name="Error_5577" xml:space="preserve">
+    <value>Mua này đã đạt đến giới hạn tải về.</value>
+  </data>
+  <data name="Error_Code" xml:space="preserve">
+    <value>Error Code :</value>
+  </data>
+  <data name="MyAccount_RedirectHomePage" xml:space="preserve">
+    <value>Click vào đây để chuyển hướng đến trang chủ</value>
+  </data>
+  <data name="MyAccount_SubscriptionCancel" xml:space="preserve">
+    <value>Thuê bao của bạn bây giờ bị hủy bỏ</value>
+  </data>
+  <data name="MyAccount_ThankYou" xml:space="preserve">
+    <value>cảm ơn</value>
+  </data>
+  <data name="MyAccount_PurchaseDate" xml:space="preserve">
+    <value>mua ngày:</value>
+  </data>
+  <data name="MyAccount_RenewalDate" xml:space="preserve">
+    <value>đổi mới ngày:</value>
+  </data>
+  <data name="Error_5002" xml:space="preserve">
+    <value>Nội dung không hợp lệ, không hoạt động, hoặc không đọc được</value>
+  </data>
+  <data name="Error_6001" xml:space="preserve">
+    <value>Trình duyệt của bạn không hỗ trợ cookies.</value>
+  </data>
+  <data name="Error_6002" xml:space="preserve">
+    <value>Bạn không cho phép cookies hoạt động, vui lòng vào phần cài đặt và cho phép cookies hoạt động.</value>
+  </data>
+  <data name="UserStillHaveeCoins" xml:space="preserve">
+    <value>Ban con {0} eCoin de tai game MIEN PHI tai 8e Sieugame Club. Neu huy, ban se mat het so eCoin. Ban co chac chan huy dich vu khong?</value>
+  </data>
+  <data name="Subscribe_ResubscribeWith15Days" xml:space="preserve">
+    <value>Xin lỗi bạn không thể đăng ký thành viên trở lại trong vòng một tuần. Xin vui lòng thử lại sau.</value>
+  </data>
+  <data name="Error_1004" xml:space="preserve">
+    <value>Không đủ eCoin</value>
+  </data>
+  <data name="MyAccount_Resubscribe" xml:space="preserve">
+    <value>Resubscribe</value>
+  </data>
+  <data name="Resubscribe_NoSubscriptionOrActiveSubscription" xml:space="preserve">
+    <value>Cannot resubscribe due to no subscription or active subscription</value>
+  </data>
+  <data name="Subscribe_BalanceNotEnough" xml:space="preserve">
+    <value>Tài khoản của quý khách không đủ tiền! Vui lòng nạp thêm để sử dụng dịch vụ</value>
+  </data>
+  <data name="Vinaphone_HeaderText" xml:space="preserve">
+    <value>Miễn phí một game &lt;span style="color:red"&gt;mỗi tuần&lt;/span&gt; chỉ với 10000 VND.&lt;br /&gt;
+Cơ hội chiến thắng &lt;span style="color:red"&gt; các giải thưởng lớn&lt;/span&gt; khi bạn đăng ký thành viên.&lt;br /&gt;
+Xem thêm thông tin tại &lt;a href='Subscribe?cf=true'&gt;&lt;u&gt;đây&lt;/u&gt;&lt;/a&gt;&lt;br /&gt;
+Xin chào &lt;b&gt;{0}&lt;/b&gt;. Có &lt;span style="color:red"&gt;{1}&lt;/span&gt; game cho điện thoại {2} của bạn.&lt;br /&gt;
+&lt;a href='Subscribe/Subscribe'&gt;&lt;u&gt;Tham gia ngay để nhận game miễn phí&lt;/u&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="Vinaphone_HeaderTextSubscribed" xml:space="preserve">
+    <value>Xin chào &lt;b&gt;{0}&lt;/b&gt;. Bạn có thể chọn &lt;span style="color:red"&gt;{1}&lt;/span&gt; games cho {2} của bạn. &lt;br/&gt;
+Bạn có &lt;span style="color:red"&gt;{3}&lt;/span&gt; eCoin để mua game.</value>
+  </data>
+  <data name="Subscribe_CanNotSubscribeWithWifiConnection" xml:space="preserve">
+    <value>Can not subscribe with Wifi connection.</value>
+  </data>
+  <data name="Guest" xml:space="preserve">
+    <value>Khách</value>
+  </data>
+  <data name="CommonBuy_DownloadFree" xml:space="preserve">
+    <value>Tải về</value>
+  </data>
+  <data name="Subscribe_WifiClickToMO" xml:space="preserve">
+    <value>Hoặc bạn có thể click vào &lt;a href="{0}" style="color: Blue;"&gt;đây&lt;/a&gt; để gửi tin nhắn đã soạn sẵn.</value>
+  </data>
+  <data name="Subscribe_WifiConnectTo3G" xml:space="preserve">
+    <value>Hoặc kết nối 3G/GPRS để đăng ký trực tiếp tại wapsite.</value>
+  </data>
+  <data name="UserNoCoin" xml:space="preserve">
+    <value>Bạn đang được mua game với giá ưu đãi cho thành viên. Nếu bạn hủy dịch vụ bạn sẽ mất cơ hội này!</value>
+  </data>
+  <data name="Subscribe_WifiInstruction" xml:space="preserve">
+    <value>Soạn &lt;strong&gt;{0}&lt;/strong&gt; gửi &lt;strong&gt;{1}&lt;/strong&gt; để tham gia ngay!</value>
+  </data>
+  <data name="Point_InfoText" xml:space="preserve">
+    <value>Hãy lựa chọn quà tặng miễn phí dưới đây từ 8e Sieugame Club</value>
+  </data>
+  <data name="Point_BalanceText" xml:space="preserve">
+    <value>Bạn có &lt;span style="color:green"&gt;&lt;strong&gt;{0} SP&lt;/strong&gt;&lt;/span&gt;.</value>
+  </data>
+  <data name="Point_GetPointInfo" xml:space="preserve">
+    <value>Cách tích lũy 8e Sieugame SP</value>
+  </data>
+  <data name="Point_PurchaseCredit" xml:space="preserve">
+    <value>Tải game Miễn phí với {0} SP</value>
+  </data>
+  <data name="Point_PurchaseGameBundle" xml:space="preserve">
+    <value>Tải gói 50 game miễn phí với {0} SP</value>
+  </data>
+  <data name="Point_PurchaseSubscription" xml:space="preserve">
+    <value>Nhận 1 tuần miễn phí dịch vụ  8e  Sieugame với {0} SP</value>
+  </data>
+  <data name="BundleDetail_PageTitle" xml:space="preserve">
+    <value>Gói Game</value>
+  </data>
+  <data name="GameBundle_Instruction" xml:space="preserve">
+    <value>Hãy lựa chọn quà tặng miễn phí dưới đây từ 8e Sieugame Club</value>
+  </data>
+  <data name="GameBundle_PageTitle" xml:space="preserve">
+    <value>Gói Game</value>
+  </data>
+  <data name="GameBundle_Buy" xml:space="preserve">
+    <value>Mua ({0} SP)</value>
+  </data>
+  <data name="GameBundle_Download" xml:space="preserve">
+    <value>Miễn phí</value>
+  </data>
+  <data name="GameBundle_PurchasedPageTitle" xml:space="preserve">
+    <value>Gói game của tôi</value>
+  </data>
+  <data name="Point_JoinAndGetPoint" xml:space="preserve">
+    <value>Tham gia ngay để tải game MIỄN PHÍ và nhận SP</value>
+  </data>
+  <data name="Point_SelectGift" xml:space="preserve">
+    <value>Hãy lựa chọn quà tặng miễn phí dưới đây từ 8e Sieugame Club</value>
+  </data>
+  <data name="Point_PageTitle" xml:space="preserve">
+    <value>Đổi SP</value>
+  </data>
+  <data name="Layout_SetSubscribButtons2" xml:space="preserve">
+    <value>Tham gia ngay</value>
+  </data>
+  <data name="MyAccount_IntroducedByText" xml:space="preserve">
+    <value>Người bạn đã giới thiệu tôi tới 8e Sieugame Club</value>
+  </data>
+  <data name="Point_UserGetPoint" xml:space="preserve">
+    <value>Bạn được tặng {0} SP</value>
+  </data>
+  <data name="HeaderText_Wifi" xml:space="preserve">
+    <value>Kết nối 3G/GPRS để truy cập và tham gia Câu lạc bộ</value>
+  </data>
+  <data name="GameBundle_NoPurchase" xml:space="preserve">
+    <value>Bạn chưa mua gói game nào</value>
+  </data>
+  <data name="Notification_Unsubscribe" xml:space="preserve">
+    <value>You unsubscribe being processed, please wait a minute.</value>
+  </data>
+  <data name="Point_PurchaseBundleNotEnoughPoint" xml:space="preserve">
+    <value>Bạn cần có 400SP để được nhận 1 gói game miễn phí</value>
+  </data>
+  <data name="Point_PurchaseBundleSuccess" xml:space="preserve">
+    <value>Bạn đã đổi thành công 400SP lấy 1 gói 20 game {0}</value>
+  </data>
+  <data name="Point_PurchaseCreditNotEnoughPoint" xml:space="preserve">
+    <value>Bạn cần có 50SP để được nhận 1 eCoin tải 1 game miễn phí</value>
+  </data>
+  <data name="Point_PurchaseCreditSuccess" xml:space="preserve">
+    <value>Bạn đã đổi thành công 50 SP lấy 1 eCoin để tải 1 game miễn phí</value>
+  </data>
+  <data name="Point_PurchaseSubscriptionNotEnoughPoint" xml:space="preserve">
+    <value>Bạn cần có 150SP để được nhận 1 tuần miễn phí dịch vụ 8e Sieugame</value>
+  </data>
+  <data name="Point_PurchaseSubscriptionSuccess" xml:space="preserve">
+    <value>Bạn đã đổi thành công 150 SP lấy 1 tuần miễn phí dịch vụ 8e Sieugame</value>
+  </data>
+  <data name="Home_MoreGameBundles" xml:space="preserve">
+    <value>Thêm gói game</value>
+  </data>
+  <data name="MyAccount_ChangeHandset" xml:space="preserve">
+    <value>Đổi thiết bị</value>
+  </data>
+  <data name="Layout_HandsetNotDetected" xml:space="preserve">
+    <value>&lt;a href="/Handset" style="color: white; text-decoration: none;"&gt;Cảnh báo! Thiết bị của bạn không nhận diện được. Thay đổi thiết bị ở đây để trải nghiệm game.&lt;/a&gt;</value>
+  </data>
+  <data name="Home_CreditText" xml:space="preserve">
+    <value>Bạn có {0} eCoin để tải game miễn phí.</value>
+  </data>
+  <data name="Handset_ChooseBrand" xml:space="preserve">
+    <value>Xin lựa chọn hãng của thiết bị</value>
+  </data>
+  <data name="Handset_ChooseModel" xml:space="preserve">
+    <value>Xin lựa chọn tên thiết bị</value>
+  </data>
+  <data name="PurchaseConfirmation" xml:space="preserve">
+    <value>Bạn có chắc muốn mua game này?</value>
+  </data>
+  <data name="MyAccount_Suspended" xml:space="preserve">
+    <value>Hoãn</value>
+  </data>
+  <data name="Notification_MsisdnBanned" xml:space="preserve">
+    <value>Số điện thoại của bạn đã bị khóa</value>
+  </data>
+  <data name="Error_1000" xml:space="preserve">
+    <value>Giao dịch thất bại, quý khách vui lòng kiểm tra lại tài khoản hoặc gọi đến tổng đài chăm sóc để biết thêm chi tiết.</value>
+  </data>
+  <data name="Error_1001" xml:space="preserve">
+    <value>Điện thoại của bạn không được hỗ trợ cho giao dịch này</value>
+  </data>
+  <data name="Error_1002" xml:space="preserve">
+    <value>Chúng tôi rất tiếc vì giao dịch không thành công! Vui long thử lại sau.</value>
+  </data>
+  <data name="Error_1003" xml:space="preserve">
+    <value>Xác minh không hợp lệ! Vui lòng liên hệ với chúng tôi để biết thêm thông tin</value>
+  </data>
+  <data name="Error_7000" xml:space="preserve">
+    <value>Url không hợp lệ</value>
+  </data>
+  <data name="Error_8000" xml:space="preserve">
+    <value>Tải xuống không thành công, vui lòng hoàn tất thanh toán trước</value>
+  </data>
+  <data name="ReCallBack" xml:space="preserve">
+    <value>Quay lại</value>
+  </data>
+  <data name="ReCallJoin" xml:space="preserve">
+    <value>Đồng ý</value>
+  </data>
+  <data name="ReCallText" xml:space="preserve">
+    <value>Nhận game MIỄN PHÍ bằng cách tham gia ngay! Hãy nắm bắt cơ hội vàng để trải nghiệm kho game hoành tráng với vô vàn quà tặng và khuyến mãi!</value>
+  </data>
+  <data name="Notification_LoginMessageSent" xml:space="preserve">
+    <value>Chúng tôi vừa gửi một tin nhắn đến số điện thoại của bạn. Vui lòng mở đường dẫn có trong tin nhắn để tiếp tục đăng nhập hệ thống.</value>
+  </data>
+</root>

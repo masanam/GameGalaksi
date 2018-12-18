@@ -1,0 +1,149 @@
+﻿@using EightElements.Data
+@using EightElements.Data.Enums
+@{List<EightElements.Data.Rest.Models.GameCategory> categories = (List<EightElements.Data.Rest.Models.GameCategory>)ViewData["GameCategories"];}
+
+@Html.Partial("HeaderText_FP")
+
+@{Html.RenderAction("GetChannel", "Common");}
+
+@{
+    if (!(bool)ViewData["IsSubscribed"])
+    {
+        ViewData["SectionType"] = "F";
+        ViewData["GameListTitle"] = @Resources.BBBGH.Home_HighlightGame;
+        ViewData["MoreTitle"] = @Resources.BBBGH.Home_SeeMore;
+        ViewData["ImageSize"] = "Banner0";
+        Html.RenderPartial("GameList");
+    }
+}
+
+@*@if (ViewBag.PortalID == EightElements.Data.DAPortal.GameGalaksiPortalId)
+{
+    <div class="btn-more-ftphone">
+        <a style="font-weight: bold;">@Resources.GG.Home_GetFree</a><br />
+        <a style="text-decoration: underline;">@Resources.GG.Home_ClickForDownload</a>
+    </div>
+}*@
+
+@*@if (ViewBag.PortalID == DAPortal.MaxisAGLPortalId ||
+     ViewBag.PortalID == DAPortal.VinaphonePortalId ||
+     ViewBag.PortalID == DAPortal.GameGalaksiPortalId ||
+     ViewBag.PortalID == DAPortal.CelcomPortalId)
+    {
+    <div>
+        @Html.PortalImage("midbanner", true, "portalimage", "", "width:100%")
+    </div>
+}*@
+
+@{
+    if (!(bool)ViewData["IsSubscribed"])
+    {
+        ViewData["SectionType"] = "N";
+        ViewData["GameListTitle"] = @Resources.BBBGH.Home_MoreContent;
+        ViewData["MoreTitle"] = @Resources.BBBGH.Home_SeeMore;
+        ViewData["ImageSize"] = "Square0";
+        Html.RenderPartial("ContentList");
+    }
+}
+
+@{
+    //Ewallet Subscriber User Game List
+    if ((bool)ViewData["IsSubscribed"])
+    {
+        ViewData["SectionType"] = "T";
+        ViewData["GameListTitle"] = @Resources.BBBGH.Home_FreeContent;
+        ViewData["MoreTitle"] = @Resources.BBBGH.Home_SeeMore;
+        ViewData["ImageSize"] = "Square0";
+        Html.RenderPartial("MasterList");
+    }
+}
+
+@{
+    //Premium Download Game List
+    if ((bool)ViewData["IsSubscribed"])
+    {
+        ViewData["SectionType"] = "N";
+        ViewData["GameListTitle"] = @Resources.BBBGH.Home_PPDContent;
+        ViewData["MoreTitle"] = @Resources.BBBGH.Home_SeeMore;
+        ViewData["ImageSize"] = "Square0";
+        Html.RenderPartial("PremiumList");
+    }
+}
+
+@*@if (ViewBag.PointSystemVisible)
+{
+    <div class="section-header">
+        @Resources.Strings.GameBundle_PageTitle
+    </div>
+    @Html.Partial("GameBundleListPartial_FP")
+    <div class="section-footer">
+        <a href="@Url.Action("Index", "GameBundle")">
+            @Resources.Strings.Home_MoreGameBundles
+        </a>
+    </div>
+}*@
+
+@*@{if (!(bool)ViewData["IsSubscribed"])
+  {   
+    <div class="subscribe-join-button">
+        <a href="@ViewBag.SubscribeUrl" style="text-decoration: none;">@ViewBag.JoinTop</a>
+    </div>
+  }}*@
+
+@*<div>
+    <div class="game-list">
+        <div>@Resources.Strings.Home_GameCategories</div>
+    </div>
+
+    @if (ViewBag.PointSystemVisible)
+    {
+        <div style="padding: 1%;">
+            <a href="@Url.Action("Index", "GameBundle")" style="color: Blue; font-size: small; font-weight: bold;">>> @Resources.Strings.GameBundle_PageTitle</a>
+        </div>
+    }
+    
+    @{foreach (EightElements.Data.Rest.Models.GameCategory category in categories)
+      {
+        <div style="padding: 1%;">
+            <a href="@Url.Content("~/GameCategory?CategoryId=" + category.GameCategoryId)" class="category-text">
+                >> @category.Name
+            </a>
+        </div>
+      }}
+</div>*@
+
+@*@{if (!(bool)ViewData["IsSubscribed"])
+  {
+    <div class="subscribe-join-button">
+        <a href="@ViewBag.SubscribeUrl" style="text-decoration: none;">@ViewBag.JoinBottom</a>
+    </div>
+  }}*@
+
+@*@if (!(bool)ViewData["IsSubscribed"] && ViewBag.PortalID == EightElements.Data.DAPortal.ViettelPortalId)
+{
+    <div style="margin: 0 10px">
+        @Html.PortalText("Text")
+    </div>
+}*@
+
+@*<div>
+@using (Html.BeginForm("Index", "Search", FormMethod.Get))
+{
+    <div class="searchBox">
+        <input id="search-keyword" name="keyword" type="text" style="width: 97%; border: 2px inset;" />
+        <input type="submit" value="@Resources.Strings.Home_Search" />
+    </div>
+}
+</div>*@
+
+@{
+    if ((bool)ViewData["IsSubscribed"])
+    {
+        <div class="other-content-icon" style="text-align: center;">
+            <img src="/Content/BBBGH/images/btn_appstore_inactive.png" style="display: inline-block; max-width: 30%;" />
+            <img src="/Content/BBBGH/images/btn_gplay_inactive.png" style="display: inline-block; max-width: 30%;" />
+            <img src="/Content/BBBGH/images/socmed_fb_inactive.png" style="display: inline-block; max-width: 15%;" />
+            <img src="/Images/320/logo.gif" style="display: inline-block; max-width: 15%;" />
+        </div>
+    }
+}

@@ -1,0 +1,39 @@
+﻿<html>
+<head>
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/bundles/cssFP")    
+    @{ Html.RenderPartial("GoogleAnalyticsTrackingCode", new EightElements.Data.Rest.Models.Tracking(ViewBag.GoogleAnalyticsAccount)); }
+    @RenderSection("style", required: false)
+</head>
+<body vlink="black">
+<h1 class="header">
+    <a href="/" class="header__link"><strong>GAMER</strong> HEAVEN</a>
+</h1>
+
+@Html.Partial("_Layout_FP_Top")
+
+<div class="language-flags">
+    <a href="@Url.Content("~/Home/ChangeCulture?lang=en&url=" + Request.Url.ToString())" class="en" title="English"></a>
+    <a href="@Url.Content("~/Home/ChangeCulture?lang=zh&url=" + Request.Url.ToString())" class="my" title="Burmese"></a>
+</div>
+
+@RenderBody()
+
+<div class="footer">
+    <div class="footer__left-menu">
+        <a class="footer__menu-link" href="@Url.Action("Index", "MyAccount")">@Resources.Strings.MyAccount_MyAccount</a>
+    </div>
+    <div class="footer__copyright-info">
+        ©@DateTime.Now.Year 8elements <br/> All rights reserved
+    </div>
+    <div class="footer__right-menu">
+		<a class="footer__menu-link" href="@Url.Action("Index", "Help")">@Resources.Strings.Layout_Help</a>
+		<br/>
+        <a class="footer__menu-link" href="@Url.Action("Index", "Terms")">@Resources.Strings.Layout_Terms</a>
+    </div>
+</div>
+
+</body>
+
+@RenderSection("scripts", required: false)
+</html>

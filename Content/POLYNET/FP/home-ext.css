@@ -1,0 +1,31 @@
+﻿.home-content-text
+{
+    margin: 8px;
+    width: 98%;
+    text-align: left;
+}
+ .language-flags
+{
+    width: 100%;
+    float: right;
+    text-align: right;
+    padding-top: 5px;
+    padding-right: 5px;
+    height: 24px;
+}
+.language-flags .vn
+{
+    background: url('../images/vn.png') no-repeat;
+    display: block;
+    float: right;
+    height: 24px;
+    width: 24px;
+}
+.language-flags .en
+{
+    background: url('../images/uk.png') no-repeat;
+    float: right;
+    display: block;
+    height: 24px;
+    width: 24px;
+}

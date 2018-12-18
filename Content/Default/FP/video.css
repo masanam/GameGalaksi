@@ -1,0 +1,345 @@
+﻿.video-project * {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body.video-project 
+{
+    color: #ccc;
+    background-color: #111;
+}
+
+.video-project a {
+    color: #00bfff;
+}
+
+.video-project a:hover {
+    font-weight: bold;   
+}
+
+/* Main menu */
+
+    .video-project div.menu-bar 
+    {
+        margin: 8px 8px 0;
+        overflow: auto;
+        border-radius: 5px;
+        background: #eaeaea; /* Old browsers */
+        background: -moz-linear-gradient(top,  #fafafa 0%, #dfdfdf 2%, #9a9a9a 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fafafa), color-stop(2%,#dfdfdf), color-stop(100%,#9a9a9a)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #fafafa 0%,#dfdfdf 2%, #9a9a9a 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #fafafa 0%,#dfdfdf 2%, #9a9a9a 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #fafafa 0%,#dfdfdf 2%, #9a9a9a 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #fafafa 0%,#dfdfdf 2%, #9a9a9a 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dfdfdf', endColorstr='#9a9a9a',GradientType=0 ); /* IE6-9 */
+    }
+
+    .video-project ul.menu {
+        list-style: none;
+        float: left;
+        margin: 0;
+        -webkit-padding-start: 8px;
+    }
+
+    .video-project ul.menu li {
+        float: left;
+        padding: 8px 8px;
+    }
+
+    .video-project ul.menu a {
+        color: black;
+    }
+
+/**********/
+
+
+.navbar-test {
+    background-color: #eaabfe;
+    border-radius: 4px;
+    border-color: #e7e7e7;
+}
+
+.navbar-default {
+    background-image: -webkit-linear-gradient(top, #fff 0%, #f8f8f8 100%);
+    background-image: -o-linear-gradient(top, #fff 0%, #f8f8f8 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f8f8f8));
+    background-image: linear-gradient(to bottom, #fff 0%, #f8f8f8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff8f8f8', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    background-repeat: repeat-x;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+}
+.navbar-default {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+}
+
+.video-project div.gradient
+{
+    background: #eaeaea; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f8e4fe 0%, #ffffff 20%, #ffffff 80%, #f8e4fe 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8e4fe), color-stop(20%,#ffffff), color-stop(80%,#ffffff), color-stop(100%,#f8e4fe)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #f8e4fe 0%,#ffffff 20%,#ffffff 80%,#f8e4fe 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #f8e4fe 0%,#ffffff 20%,#ffffff 80%,#f8e4fe 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #f8e4fe 0%,#ffffff 20%,#ffffff 80%,#f8e4fe 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #f8e4fe 0%,#ffffff 20%,#ffffff 80%,#f8e4fe 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8e4fe', endColorstr='#f8e4fe',GradientType=0 ); /* IE6-9 */
+}
+
+
+.video-project a {
+    text-decoration: none;
+}
+
+
+.video-project div.section-title 
+{
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 8px;
+}
+
+.video-title 
+{
+    color: #d9d9d9;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+a.video-title:hover {
+    color: #ffffff;
+}
+
+div.video-description 
+{
+    font-family: 'Century Gothic';
+    font-size: 0.75em;
+    color: #d9d9d9;
+}
+
+
+div.list-item 
+{
+    padding: 8px;
+    margin-top: 3px;
+    overflow: auto;
+}
+
+/* Default List item */
+
+div.default-items 
+{
+    padding: 8px 0;
+    background: url(../../../Images/General/VideoPortal/default_list_background.jpg);
+    background-repeat: repeat;
+    background-position: center center;
+}
+
+div.default-list-item 
+{
+    margin: 8px;
+    padding: 8px;
+    background: #1b1b1b;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #6c6c6c;
+    border-radius: 3px;
+}
+
+div.default-list-item div.image-container {
+    float: left;
+    width: 128px;
+}
+
+div.default-list-item div.text-container {
+    margin-left: 136px;
+}
+
+div.default-list-item div.watch-button 
+{
+    text-align: center;
+    margin: 8px auto;    
+}
+
+/* Banner List Item */
+div.banner-list-item {
+    background: url(../../../Images/General/VideoPortal/banner_background.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+}
+    
+div.banner-list-item div.text-container {
+    margin: 8px 120px 8px 0;
+}
+
+div.banner-list-item div.watch-button-container {
+    float: right;
+    margin: 8px 0;
+}
+
+div.banner-list-item .watch-button 
+{
+    margin: 12px 3px 8px;
+    display: inline-block
+}
+
+/**********/
+
+
+
+div.watch-button a
+{
+    font-size: 1.2em;
+    min-width: 120px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #bebebe;
+    border-radius: 15px; 
+    color: #ffffff; 
+    display: inline-block; 
+    padding: 2px 8px;
+    text-align: center;
+    text-shadow: 0 0 1px #000, 0 0 1px #000, 0 0 2px #000;
+    
+    background: #eaeaea; /* Old browsers */
+    background: -moz-linear-gradient(top,  #e4e4e4 0%, #919191 2%, #616161 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e4e4e4), color-stop(2%,#919191), color-stop(100%,#616161)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #e4e4e4 0%,#919191 2%, #616161 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #e4e4e4 0%,#919191 2%, #616161 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #e4e4e4 0%,#919191 2%, #616161 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #e4e4e4 0%,#919191 2%, #616161 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#919191', endColorstr='#616161',GradientType=0 ); /* IE6-9 */
+}
+
+div.watch-button a:hover {
+    background-color: #5c1ac9;
+}
+
+
+div.confirm-dialog div.button-container {
+    margin: 0 auto; 
+    text-align: center
+}
+
+div.confirm-dialog div.button-container a 
+{
+    text-decoration: none;
+    border-radius: 5px;
+    border-color: #bebebe;
+    border-size: 2px;
+    border-style: solid;
+    font-size: 1em;
+    color: #ffffff; 
+    display: inline-block; 
+    padding: 5px 8px;
+    text-align: center;
+    margin: 8px;
+    min-width: 100px;
+    background-color: #a80c0b;
+    
+}
+
+
+div.confirm-dialog 
+{
+    font-size: medium;
+    color: #d9d9d9;
+    text-align: center;
+    padding: 16px 8px 8px;
+}
+
+.video-project div.info-text {
+    font-size: medium;
+    color: #ccc;
+    padding: 8px 8px;
+}
+
+
+
+.video-project div.button-container {
+    text-align: center;
+    margin: 12px auto;
+}
+
+.video-project div.button-container a {
+    border-radius: 5px;
+    border-style: solid;
+    background-color: #eee;
+    padding: 4px 24px;
+    border-width: 1px;
+    border-color: #ccc;
+    color: #333;
+    font-size: small;
+    font-weight: bold;
+}
+
+
+
+
+.video-project div.horizontal-menu {
+    overflow: auto;
+}
+
+.video-project div.horizontal-menu ul 
+{
+    float: left;
+    list-style: none;
+    margin: 0;
+}
+.video-project div.horizontal-menu li {
+    float: left;
+    padding: 8px;
+    font-size: small;
+}
+.video-project div.horizontal-menu li a {
+    color: #177CE1;
+}
+
+
+/* Footer menu */
+    div.footer-menu {
+        margin-top: 3px;
+        padding: 6px 8px;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-bottom-color: #6c6c6c;
+    }
+
+    div.footer-menu a 
+    {
+        color: #c9c9c9;
+        display: block;
+    }
+
+
+    div.footer-menu a:hover {
+        color: white;
+        font-weight: bold;
+    }
+/*********/
+
+
+/* Footer */
+    .video-project div.page-footer 
+    {
+        color: #c9c9c9;
+        background-color: #181818;
+        padding: 8px;
+        text-align: center;
+        font-size: 0.8em;   
+    }
+
+    .video-project div.page-footer a {
+        color: #c9c9c9
+    }
+/*********/
+
+
+div.align-center {
+    text-align: center;
+    margin: 8px 0;
+}

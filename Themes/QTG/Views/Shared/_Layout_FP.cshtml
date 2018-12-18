@@ -1,0 +1,59 @@
+﻿<html>
+<head>
+    <title>@ViewBag.Title</title>
+
+    <link rel="stylesheet" href="~/Content/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="~/Content/themes/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="~/Content/themes/owl-carousel/owl.theme.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/owl.carousel.js"></script>
+    
+
+    @Styles.Render("~/bundles/cssFP")
+    @{ Html.RenderPartial("GoogleAnalyticsTrackingCode", new EightElements.Data.Rest.Models.Tracking(ViewBag.GoogleAnalyticsAccount)); }
+    @RenderSection("style", required: false)
+</head>
+<body vlink="black" class="video-project">
+@*<div class="navbar navbar-default">*@
+@*    <div class="container">*@
+@*        <div class="navbar-header">*@
+@*            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">*@
+@*                <span class="icon-bar"></span>*@
+@*                <span class="icon-bar"></span>*@
+@*                <span class="icon-bar"></span>*@
+@*            </button>*@
+@*            @Html.ActionLink("QtGirls4u", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+@*        </div>*@
+@*        <div class="navbar-collapse collapse">*@
+@*            <ul class="nav navbar-nav">*@
+@*                <li>@Html.ActionLink("Home", "Index", "VideoHome")</li>*@
+@*                <li>@Html.ActionLink("MyAccount", "MyAccount", "VideoHome")</li>*@
+@*            </ul>*@
+@*        </div>*@
+@*    </div>*@
+@*</div>*@
+@RenderSection("menu", required: false)
+@Html.Partial("_Layout_FP_Top")
+@RenderBody()
+
+<div class="footer-menu">
+    <a href=@Url.Action("MyAccount", "VideoHome")>
+        >> @Resources.Strings.Layout_MyAccount
+    </a>
+    <a href=@Url.Action("Index", "VideoHome")>
+        >> @Resources.Strings.Layout_Home
+    </a>
+</div>
+
+<div class="page-footer">
+    <a class="terms" href=@Url.Content("~/Terms")> @Resources.Strings.Layout_Terms</a>
+    &nbsp;|&nbsp;
+    <a class="terms" href="/Help">@Resources.Strings.Layout_Help</a>
+    <br/>
+    &copy;&nbsp;@DateTime.Now.Year
+</div>
+@RenderSection("scripts", required: false)
+</body>
+</html>

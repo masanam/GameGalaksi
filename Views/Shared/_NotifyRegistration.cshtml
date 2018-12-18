@@ -1,0 +1,13 @@
+﻿@{
+        bool isRegistrationCompleted = Convert.ToBoolean(ViewBag.RegistrationRequired);
+        if (!isRegistrationCompleted)
+        {
+            <div class="notify-registration">
+                <div class="notify-registration__message">@Resources.Strings.UserRegistration_Message</div>
+                <div class="notify-register__button-bar">
+                    <a href="@Url.Action("Register", "User")" class="notify-registration__register-button">@Resources.Strings.UserRegistration_Register</a>   
+                </div>
+                 
+            </div>
+        }
+    }

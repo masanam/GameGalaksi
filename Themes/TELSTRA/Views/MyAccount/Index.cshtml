@@ -1,0 +1,124 @@
+﻿@section Scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('.unsubscribe').click(function () {
+                $("html, body").scrollTop(0);
+                $('#unsubscribe_confirmation').modal("show");
+
+                MyAccount_AreYouSure = $('#MyAccount_AreYouSure').val();
+                MyAccount_Question = $('#MyAccount_Question').val();
+                MyAccount_Yes = $('#MyAccount_Yes').val();
+                MyAccount_No = $('#MyAccount_No').val();
+
+                bootbox.dialog({
+                    message: MyAccount_Question,
+                    title: MyAccount_AreYouSure,
+                    buttons: {
+                        success: {
+                            label: MyAccount_No,
+                            className: "btn btn-default",
+                            callback: function () {
+
+                            }
+                        },
+                        danger: {
+                            label: MyAccount_Yes,
+                            className: "btn btn-default",
+                            callback: function () {
+                                onUnsubscribe();
+                            }
+                        }
+                    }
+                });
+
+                return false;
+
+            });
+            setUserInfo($('#SubscriptionStatusText').val());
+        });
+    </script>
+}
+@{EightElements.Data.Rest.Models.UserDetail userDetail = (EightElements.Data.Rest.Models.UserDetail)ViewData["UserDetail"];}
+<div class="gradient-pale padding">
+    <div class="page-title">
+        <h3>@Resources.Strings.MyAccount_MyAcount</h3>
+    </div>
+    <div class="my-phone info">
+        @Html.Raw(String.Format("{0}: <span>{1}</span>",Resources.Strings.MyAccount_MyPhone, userDetail.Msisdn))
+    </div>
+    <div id="device" class="info">
+        @Resources.Strings.MyAccount_Device: <span>@Resources.Strings.MyAccount_Loading</span>
+        @if (ViewBag.HandsetSelectionEnabled)
+        {
+            <a href="@Url.Action("Index", "Handset")" class="change-handset"> 
+                @Resources.Strings.MyAccount_ChangeHandset
+            </a>
+        }
+    </div>
+    @if ((bool)ViewData["isMsisdnNotDetected"] &&
+        (ViewBag.PortalID == EightElements.Data.DAPortal.GamerHeavenOxygen8PortalId))
+    {
+        <div class="subscribe-login-button">
+            <a href="@ViewBag.SubscribeUrl" style="text-decoration: none;color: white;">Subscribe / Login</a>
+        </div>
+    }
+</div>
+<div class="my-subscription">
+    <h4 class="sub-title">@Resources.Strings.MyAccount_Subscription</h4>
+    <div id="credits" class="info">
+        <span class='loading'>@Resources.Strings.MyAccount_Loading</span>
+        <div style="display: none;" class="subscribed-section">
+            @Resources.Strings.MyAccount_Credit <span id='credit-text'></span>
+            <img src="/Images/General/MyDownloads/ico-coin.png"><br />
+            Name of the product/subscription:<br /><span>Gamer Heaven</span><br />
+            Details of the subscription:<br /><span>Best game club with over 300 games, get 1 game for
+                free for each renewal</span><br />
+            @Resources.Strings.MyAccount_Status <span id='status-text'></span>
+            @{
+                if (ViewBag.PortalID == EightElements.Data.DAPortal.TelstraPortalId)
+                {
+            <div id="resubscribe-big-btn" style="display: none;" class="resubscribe btn-curved gradient-green-bright subscribe-button btn-text-1line">
+                <a href="#" onclick="resubscribeAction();">@Resources.Strings.MyAccount_Resubscribe
+                </a>
+            </div>
+                }
+            }
+            <br />
+            @Resources.Strings.MyAccount_PurchaseDate <span id='purchase-date-text'></span>
+            <br />
+            @Resources.Strings.MyAccount_RenewalDate <span id='renewal-date-text'></span>
+            <br />
+            <div class='unsubscribe'>@Resources.Strings.MyAccount_Unsubscribe</div>
+        </div>
+        <div style="display: none;" class="unsubscribed-section">
+            <span>@Resources.Strings.MyAccount_NotSubscribed</span>
+        </div>
+        <div id='join-big-btn' style="display: none;">
+            <div id='btn-subscription' class='btn-curved gradient-green-bright'>
+                <a href="@Url.Content("~/Subscribe")">@Resources.Strings.MyAccount_Benefit</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="btn-my-downloads btn-curved gradient-blue-bright btn-text-1line">
+    <a href="@Url.Content("~/Purchase/History?handsetId=" + ViewData["handsetid"])">@Resources.Strings.MyAccount_MyDownloads</a>
+</div>
+
+<div id="resource">
+    
+    @if (userDetail != null && userDetail.Credits > 0)
+    {
+        @Html.Hidden("MyAccount_Question", String.Format(Resources.Strings.UserStillHaveeCoins, userDetail.Credits))
+    }
+    else
+    {
+        @Html.Hidden("MyAccount_Question", Resources.Strings.MyAccount_QuestionConfirm)
+    }
+
+    @Html.Hidden("MyAccount_Yes", @Resources.Strings.MyAccount_Yes)
+    @Html.Hidden("MyAccount_No", @Resources.Strings.MyAccount_No)
+    @Html.Hidden("MyAccount_AreYouSure", @Resources.Strings.MyAccount_AreYouSure)
+    @Html.Hidden("SubscriptionStatusText", @ViewData["SubscriptionStatusText"])
+</div>

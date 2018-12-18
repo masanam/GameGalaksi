@@ -1,0 +1,93 @@
+﻿@using EightElements.Data.Rest.Models
+
+
+<input type="hidden" id='ContentIdHidden' value='@ViewData["ContentId"]' />
+
+@{
+    int contentId = (int) ViewData["ContentId"];
+    bool msisdnNotDetected = (bool) ViewData["isMsisdnNotDetected"];
+    Game game = (Game) ViewData["Game"];
+    GameCategory gameCategory = (GameCategory) ViewData["GameCategory"];
+    GameProvider gameProvider = (GameProvider) ViewData["GameProvider"];
+
+    string appStoreUrl = Convert.ToString(ViewData["AppStoreUrl"]);
+    bool iOS = !string.IsNullOrWhiteSpace(appStoreUrl);
+}
+    
+
+<div class="section">
+    <div class="game-detail__image-container">
+        <img src="/rest/gameimage/@contentId?key=Banner2" alt="@game.Name" class="game-detail__image" />
+    </div>
+
+    <div class="game-detail__action">
+        <div class="game-detail__buy">
+            <a class="game-detail__action-link" href="@Url.Action("Buy", "Purchase", new {contentId = contentId, ppd = true})">@ViewData["GamePrice"]</a>
+        </div>
+        @if ((bool) ViewData["NonSub"])
+        {
+            <div class="game-detail__subscribe">
+                <a class="game-detail__action-link" href="@Url.Action("Index", "Subscribe")">@Html.PortalText("CommonBuyDirectSubscribe")</a>
+            </div>
+        }
+        @if ((int)ViewData["credits"] > 0 && !(ViewData["AmountPrice"].ToString() == "0" || ViewData["AmountPrice"].ToString() == "0.0000"))
+        {
+            <div class="game-detail__subscribe">
+                <a class="game-detail__action-link" href="@Url.Action("Buy", "Purchase", new { contentId = contentId, ppd = false })">@Resources.Strings.CommonBuy_UseCredit</a>
+            </div>
+        }
+    </div>
+
+    <div class="game-detail__title">
+        @game.Name
+    </div>
+    
+    <div class="game-detail__gallery">
+        <img src='/rest/gameimage/@contentId?key=Tall0' class="game-detail__gallery-item" alt="@game.Name picture1" />
+        <img src='/rest/gameimage/@contentId?key=Tall1' class="game-detail__gallery-item" alt="@game.Name picture2" />
+        <img src='/rest/gameimage/@contentId?key=Tall2' class="game-detail__gallery-item" alt="@game.Name picture3" />
+    </div>
+    
+    <div class="game-detail__description">
+        @game.LongDescription
+    </div>
+    
+    @if (iOS)
+    {
+        <div class="section__content--center">
+        	<a href="@appStoreUrl">
+            	<img src="~/Images/General/appstore.svg"/>
+        	</a>
+		</div>
+
+    }
+    else
+    {
+        <div class="button">
+            <a class="button__link" href="@Url.Action("Buy", "Purchase", new { contentId = contentId, ppd = true })">@Resources.Strings.CommonBuy_BuyText</a>
+        </div>
+    }
+
+</div>
+
+
+
+
+@*@if ((bool)ViewData["NonSub"])*@
+@*{*@
+@*    <div class="subscribe-button subscribe-button--plain">*@
+@*        <a class="subscribe-button__link" href="@Url.Action("Subscribe", "Subscribe")">*@
+@*            <img class="subscribe-button__link-image" src="/Images/General/D1GC/get-button.png" alt="Join Now"/>*@
+@*        </a>*@
+@*        <div class="subscribe-button__info-text"></div>*@
+@*    </div>*@
+@*}*@
+@*else*@
+@*{*@
+@*    <div class="subscribe-button subscribe-button--plain">*@
+@*        <a class="subscribe-button__link" href="@Url.Action("Buy", "Purchase", new { contentId = contentId, ppd = false })">*@
+@*            <img class="subscribe-button__link-image" src="/Images/General/D1GC/download-button.png" alt="Join Now"/>*@
+@*        </a>*@
+@*        <div class="subscribe-button__info-text"></div>*@
+@*    </div>*@
+@*}*@

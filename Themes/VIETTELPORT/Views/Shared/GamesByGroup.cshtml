@@ -1,0 +1,48 @@
+﻿<div class="game-list">
+<div class="bargroup">@ViewData["GameListTitle"]</div>
+<table>
+    @{   
+        foreach (KeyValuePair<int, EightElements.Data.Rest.Models.Game> entry in
+            (Dictionary<int, EightElements.Data.Rest.Models.Game>)ViewData["DictGame" + ViewData["SectionType"]])
+        {
+            string gamePriceT = ((Dictionary<int, string>)ViewData["DictGamePrice" + ViewData["SectionType"]])[entry.Key];
+            string AmountPriceT = ((Dictionary<int, string>)ViewData["DictAmountPrice" + ViewData["SectionType"]])[entry.Key];
+            bool hasSubscription = (bool)ViewData["IsSubscribed"];
+            string imgLink = Url.Content("~/rest/gameimage/" + @entry.Key + "?key=" + @ViewData["ImageSize"]);
+            <tr><td style="border-bottom:none;">
+                <div class="left-column">
+                        <a href="/Detail/@entry.Key">
+                            <img src="@imgLink" alt="@entry.Value.Name" class="gameSquareImageTop" />
+                        </a>
+                </div>
+                <div class="right-column">
+                    <div class="right-column-headerg"><a href="/Detail/@entry.Key">@entry.Value.Name</a></div>                        
+                    <div class="right-column-buttong">
+                    @if ((bool)ViewData["isMsisdnNotDetected"])
+                    {
+                        <a href="@Url.Action("Index", "Subscribe")" class="button-free">
+                                    @Resources.ViettelPort.CommonBuy_Free</a>
+                    }
+                    else
+                    {
+                        if ((bool)ViewData["NonSub"])
+                        { 
+                            <a href="@Url.Action("Subscribe", "Subscribe", new { ContentId = @entry.Key })" class="button-free" >
+                                @Resources.ViettelPort.CommonBuy_Free</a>
+                            <br />
+                        }
+                        if ((int)ViewData["credits"] > 0 && !(AmountPriceT == "0" || AmountPriceT == "0.0000"))
+                        {
+                            <a href=@Url.Content("~/purchase/buy?contentid=" + @entry.Key + "&ppd=false") class="button-buy" >@Resources.Strings.CommonBuy_UseCredit</a> <br />
+                        }
+                        <a href=@Url.Content("~/purchase/buy?contentid=" + @entry.Key + "&ppd=true") class="button-buy" >@gamePriceT</a>
+                        
+                    }
+                    </div>
+                </div>
+            </td></tr>
+        }
+        }
+</table>
+<div class="btn-more-ft"><a href="/List?type=@ViewData["SectionType"]">>> @ViewData["MoreTitle"]</a></div>
+</div>

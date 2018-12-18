@@ -1,0 +1,49 @@
+﻿@{EightElements.Data.Rest.Models.UserDetail userDetail = (EightElements.Data.Rest.Models.UserDetail)ViewData["UserDetail"];}
+<div class="gradient-pale padding">
+    <div class="title">
+        <h3>
+            @Resources.Strings.MyAccount_Confirm
+        </h3>
+    </div>
+    <div class="my-subscription">
+        <div class="info">@Html.Raw(String.Format("{0}: {1}",Resources.Strings.MyAccount_MyPhone, userDetail.Msisdn))</div>
+        <div id="device" class="info">
+            @Html.Raw(String.Format(Resources.Strings.MyAccount_Handset, userDetail.HandsetModel))
+        </div>
+    </div>
+    @{if (userDetail.HasSubscription)
+    {
+        <div class="my-subscription">
+            @if (userDetail.Credits > 0)
+            {
+                <h4>@Html.Raw(String.Format(Resources.Strings.UserStillHaveeCoins, userDetail.Credits))</h4>
+            }
+            else
+            {
+                <h4>@Resources.Strings.UserNoCoin</h4>
+            }
+            <div align="center" style="padding: 10px;">
+                <div class="confirmButton">
+                    <a href="/subscribe/unsubscribe" style="color: #fff; background-color: black;
+                        text-decoration: none; padding: 3px;">
+                        @Resources.Strings.MyAccount_Yes</a>
+
+                    <a href="/" style="color: #fff; background-color: black;
+                        text-decoration: none; padding: 3px;">@Resources.Strings.MyAccount_No</a>
+                </div>
+            </div>
+            <br/>
+            <div id="pictures" class="element" align="center">
+                @{Html.RenderAction("GetTopFeaturesWhenUnsubscribe", "Common");}
+            </div>
+        </div>
+        
+        <br/>
+    }
+    else
+    {
+        <div class="my-subscription">
+            <h4>@Resources.Strings.MyAccount_NotSubscribed</h4>
+        </div>
+    }}
+</div>

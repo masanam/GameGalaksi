@@ -1,0 +1,37 @@
+﻿@{    
+    EightElements.Data.Rest.Models.UserDetail userDetail = (EightElements.Data.Rest.Models.UserDetail)ViewData["UserDetail"];
+}
+
+<div class="section">
+    <div class="section__header">
+        @Html.PortalText("SucessSubscribedWelcomeText")
+    </div>
+    <div class="section__content">
+        
+        @Html.PortalText("SucessSubscribedText")
+        
+        <div style="text-align: center;padding:10px">
+            @Resources.Strings.MyAccount_RenewalDate @userDetail.SubscriptionExpiryDateStr
+        </div>
+
+        <div class="button no-margin">
+            @{
+                if ((int) ViewData["DetailContentId"] != -1)
+                {
+                    <a href="@Url.Action("Index", "Detail", new {contentId = ViewData["DetailContentId"]})" class = "button__link">
+                        @Resources.GamerHeaven.SubscribeSuccess_RedirectHome
+                    </a>
+                }
+                else
+                {
+                    <a href="@Url.Action("Index", "Home")" class="button__link">
+                        @Resources.GamerHeaven.SubscribeSuccess_RedirectHome
+                    </a>
+                    
+                }
+            }
+        </div>
+    </div>
+</div>
+
+

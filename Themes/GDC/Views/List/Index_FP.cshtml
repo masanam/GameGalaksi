@@ -1,0 +1,65 @@
+﻿@using EightElements.Data.Rest.Models
+
+<input type="hidden" id='ListType' value='@ViewData["ListType"]' />
+<input type="hidden" id='PageSize' value='@ViewData["PageSize"]' />
+<input type="hidden" id='PageNumber' value='0' />
+<input type="hidden" id='ListSource' value='listTypeList' />
+
+@{
+    string listType = (string) ViewData["ListType"];
+
+    switch (ViewData["ListType"].ToString())
+    {
+        case "F":
+        case "T":
+            <div class="game-list__header">@Resources.Strings.List_TopGames</div>
+            break;
+        case "N":
+            <div class="game-list__header">@Resources.Strings.List_NewGames</div>
+            break;
+    }
+}
+
+<div id="games-list" class="game-list">
+    <table class="game-list__table">
+        @{
+            string position = "left";
+            foreach (var entry in (Dictionary<int, Game>) ViewData["DictGame"])
+            {
+                string imgLink = Url.Content("~/rest/gameimage/" + entry.Key + "?key=" + ViewData["ImageSize"]);
+                if (position == "left")
+                {
+                    @Html.Raw("<tr>")
+                }
+                <td>
+                    <div class="game">
+                        <a href="@Url.Action("Buy", "Purchase", new {contentid = entry.Key, ppd = true})">
+                            <img src="@imgLink" alt="@entry.Value.Name" class="game__image"/>
+                        </a>
+                    </div>
+                </td>
+
+                if (position == "right")
+                {
+                    @Html.Raw("</tr>")
+                    position = "left";
+                }
+                else
+                {
+                    position = "right";
+                }
+            }
+        }
+    </table>
+
+    
+    @{
+        if ((bool) ViewData["HasNextPage"])
+        {
+            <div style="text-align: center; padding: 2%; background-color: #EDF0F0;">
+                <a href="/List?type=@(listType)&pageNumber=@((int) ViewData["PageNumber"] + 1)" style="text-decoration: none;">
+                    @Resources.Strings.List_ShowMore</a>
+            </div>
+        }
+    }
+</div>

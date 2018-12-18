@@ -1,0 +1,25 @@
+﻿<div style="margin: 10px; text-align: left;">
+@{
+    bool isSubscribed = (bool)ViewData["IsSubscribed"];
+    string headerText = string.Empty;
+    string msisdn = string.Empty;
+    if (Session["msisdn"] != null)
+    {
+        msisdn = Session["msisdn"].ToString();
+        msisdn = msisdn.Replace("84", "0");
+    }
+    if (!isSubscribed)
+    {
+        @Html.Raw(String.Format(Html.PortalText("GGCHeaderText").ToString(),
+            msisdn, ViewData["TotalGamesAvailable"], ViewData["UserHandset"]))
+    }
+    else
+    {
+        @Html.Raw(String.Format(Html.PortalText("GGCHeaderTextSubscribed").ToString(),
+            msisdn,
+            ViewData["TotalGamesAvailable"],
+            ViewData["UserHandset"],
+            ViewData["Credits"]))
+    }
+}
+</div>

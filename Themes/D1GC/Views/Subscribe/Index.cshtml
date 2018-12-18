@@ -1,0 +1,28 @@
+﻿@using EightElements.Data
+
+
+<div class="subscribe-content">
+    @{
+        if ((bool) ViewData["isMsisdnNotDetected"] == false ||
+            ViewBag.PortalID == DAPortal.GamerHeavenOxygen8PortalId ||
+            ViewBag.PortalID == DAPortal.DigitalTurbinPortalId)
+        {
+            @Html.Partial("IndexPartial")
+        }
+        else
+        {
+            @Html.Partial("IndexPartialWifi")
+        }
+    } 
+</div>
+
+
+@section footerMenu
+{
+    <div class="footer__main-menu">
+        <a class="footer__menu-item" href="@Url.Action("Index", "MyAccount")">@Resources.Strings.Layout_MyAccount</a>
+    </div>
+    <div class="footer__side-menu">
+        <a class="footer__side-menu-link" href="/">@Resources.D1GC.Layout_Home</a>
+    </div>
+}

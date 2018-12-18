@@ -1,0 +1,68 @@
+﻿
+.game-detail__image-container {
+    padding: 8px;
+    text-align: center;    
+}
+
+.game-detail__image  {
+    max-width: 536px;
+    width: 100%;
+}
+
+.game-detail__title {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin: 8px auto;
+    text-transform: uppercase;
+    line-height: 24px;
+    clear: both;
+}
+
+.game-detail__gallery {
+    margin: 16px 0 8px;
+    text-align: center;
+    width: 100%;
+}
+
+.game-detail__gallery-item {
+    width: 32%;
+    min-width: 30px;
+    max-width: 176px;
+}
+
+.game-detail__description {
+    font-size: small;
+    margin: 16px auto;
+    max-width: 536px;
+}
+
+.game-detail__action {
+    text-align: center;
+    margin: 0 8px;
+    max-width: 540px;
+}
+
+.game-detail__buy {    
+    float: left;
+    text-align: left;
+    width: 50%;
+}
+
+.game-detail__subscribe {
+    color: #4c5366;
+    font-size: 12px;
+    text-decoration: underline;
+    margin-left: 50%;
+    text-align: right;
+}
+
+.game-detail__action-link {
+    color: #4c5366;
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+
+

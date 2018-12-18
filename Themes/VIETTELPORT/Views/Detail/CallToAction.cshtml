@@ -1,0 +1,9 @@
+﻿@if ((bool)ViewData["NonSub"])
+{
+    <div>
+        <div class="btn-curved gradient-green-bright btn-text-1line" style="margin: 0 auto;">
+            <a href="/Subscribe/Subscribe?contentId=@ViewData["ContentId"]">@Html.PortalText("SubscribePromotext")</a>
+        </div>
+    </div> 
+    <hr />
+}

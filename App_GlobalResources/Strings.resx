@@ -1,0 +1,920 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CommonBuy_Buy" xml:space="preserve">
+    <value>Buy for {0} {1}</value>
+  </data>
+  <data name="CommonBuy_BuyText" xml:space="preserve">
+    <value>Buy</value>
+  </data>
+  <data name="CommonBuy_ChargingFailed" xml:space="preserve">
+    <value>. Your SIM card seems out of credits. Please top up and try again.</value>
+  </data>
+  <data name="CommonBuy_Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="CommonBuy_FileNotFoundForThisHandset" xml:space="preserve">
+    <value>Sorry, this game does not support your phone model.</value>
+  </data>
+  <data name="CommonBuy_Free" xml:space="preserve">
+    <value>Free</value>
+  </data>
+  <data name="CommonBuy_GeneralMessage" xml:space="preserve">
+    <value>We are sorry that your purchase could not be fulfilled.</value>
+  </data>
+  <data name="CommonBuy_HandsetNotDetected" xml:space="preserve">
+    <value>. Your phone model has not been recognized.</value>
+  </data>
+  <data name="CommonBuy_OnBuySuccess" xml:space="preserve">
+    <value>Please install the game and have fun. Thanks for your purchase!</value>
+  </data>
+  <data name="CommonBuy_PleaseWait" xml:space="preserve">
+    <value>Please wait...</value>
+  </data>
+  <data name="CommonBuy_PurchaseTemporarilyBlocked" xml:space="preserve">
+    <value>. Our server is currently under maintenance. Please try again later.</value>
+  </data>
+  <data name="CommonBuy_TryAgain" xml:space="preserve">
+    <value>. Please try again later.</value>
+  </data>
+  <data name="CommonBuy_UseCredit" xml:space="preserve">
+    <value>Credit (8e Club)</value>
+  </data>
+  <data name="Detail_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Detail_OtherTitles" xml:space="preserve">
+    <value>Other titles from this developer</value>
+  </data>
+  <data name="Detail_PeopleDownloaded" xml:space="preserve">
+    <value>People also downloaded</value>
+  </data>
+  <data name="Error_Description" xml:space="preserve">
+    <value>Sorry, an error occurred while processing your request.</value>
+  </data>
+  <data name="Error_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="GameCategories_AllGames" xml:space="preserve">
+    <value>All games by category</value>
+  </data>
+  <data name="GameCategories_CategoriesNotFound" xml:space="preserve">
+    <value>Categories not found</value>
+  </data>
+  <data name="GameCategory_GetItFree" xml:space="preserve">
+    <value>Get it Free</value>
+  </data>
+  <data name="GameCategory_ShowMore" xml:space="preserve">
+    <value>Show more...</value>
+  </data>
+  <data name="GameList_GetFree" xml:space="preserve">
+    <value>Get it Free</value>
+  </data>
+  <data name="GameList_HandsetNotDetected" xml:space="preserve">
+    <value>Handset not detected</value>
+  </data>
+  <data name="GameList_NoGamesFound" xml:space="preserve">
+    <value>No game found to support your device.</value>
+  </data>
+  <data name="GameList_NoMoreGames" xml:space="preserve">
+    <value>No more games</value>
+  </data>
+  <data name="GameList_ShowMore" xml:space="preserve">
+    <value>Show more...</value>
+  </data>
+  <data name="Help_Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="Home_BestSellers" xml:space="preserve">
+    <value>Best Sellers</value>
+  </data>
+  <data name="Home_CreditsText" xml:space="preserve">
+    <value>You now have {0} credits to redeem your game.</value>
+  </data>
+  <data name="Home_ForKids" xml:space="preserve">
+    <value>For Kids</value>
+  </data>
+  <data name="Home_GameCategories" xml:space="preserve">
+    <value>Game Categories</value>
+  </data>
+  <data name="Home_GameForHandset" xml:space="preserve">
+    <value>You can select from &lt;b&gt;{0}&lt;/b&gt; games for your &lt;b&gt; {1} &lt;/b&gt;</value>
+  </data>
+  <data name="Home_Highlight" xml:space="preserve">
+    <value>Games of the Week</value>
+  </data>
+  <data name="Home_JoinNow" xml:space="preserve">
+    <value>Join now!</value>
+  </data>
+  <data name="Home_JoinText" xml:space="preserve">
+    <value>{0} Club: &lt;a href="/Subscribe" style="color: Blue;"&gt;Find out more&lt;/a&gt; to
+ become a member and get FREE Games.</value>
+  </data>
+  <data name="Home_MoreBestSellers" xml:space="preserve">
+    <value>More Games of the Week</value>
+  </data>
+  <data name="Home_MoreNewGames" xml:space="preserve">
+    <value>More New Games</value>
+  </data>
+  <data name="Home_MoreTopGames" xml:space="preserve">
+    <value>More Top Games</value>
+  </data>
+  <data name="Home_NewGames" xml:space="preserve">
+    <value>New Games</value>
+  </data>
+  <data name="Home_PuzzleGames" xml:space="preserve">
+    <value>Puzzle Games</value>
+  </data>
+  <data name="Home_Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Home_Subscribe" xml:space="preserve">
+    <value>Subscribe</value>
+  </data>
+  <data name="Home_TopGames" xml:space="preserve">
+    <value>Top Games</value>
+  </data>
+  <data name="Home_WelcomeText" xml:space="preserve">
+    <value>Join the best Games Club today!</value>
+  </data>
+  <data name="Layout_Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Layout_Bigpond" xml:space="preserve">
+    <value>Go to Bigpond Games</value>
+  </data>
+  <data name="Layout_Footer" xml:space="preserve">
+    <value>Play the world's best games now</value>
+  </data>
+  <data name="Layout_GameCategories" xml:space="preserve">
+    <value>All Games by Category</value>
+  </data>
+  <data name="Layout_Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="Layout_Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Layout_JoinNow" xml:space="preserve">
+    <value>Join Now!</value>
+  </data>
+  <data name="Layout_JoinText" xml:space="preserve">
+    <value>Join the Games Club!</value>
+  </data>
+  <data name="Layout_MyAccount" xml:space="preserve">
+    <value>My Downloads/My Account</value>
+  </data>
+  <data name="Layout_PlayTheWorldBestGame" xml:space="preserve">
+    <value>Play the world's best games now</value>
+  </data>
+  <data name="Layout_Term" xml:space="preserve">
+    <value>Terms</value>
+  </data>
+  <data name="Layout_Terms" xml:space="preserve">
+    <value>Terms &amp; Conditions</value>
+  </data>
+  <data name="List_GetFree" xml:space="preserve">
+    <value>Get it Free</value>
+  </data>
+  <data name="List_NewGame" xml:space="preserve">
+    <value>New Game</value>
+  </data>
+  <data name="List_NewGames" xml:space="preserve">
+    <value>New Games</value>
+  </data>
+  <data name="List_ShowMore" xml:space="preserve">
+    <value>Show more...</value>
+  </data>
+  <data name="List_TopGame" xml:space="preserve">
+    <value>Top Game</value>
+  </data>
+  <data name="List_TopGames" xml:space="preserve">
+    <value>Top Games</value>
+  </data>
+  <data name="MessageTitleError" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="MessageTitleSuccess" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="MyAccount_AreYouSure" xml:space="preserve">
+    <value>Are you sure?</value>
+  </data>
+  <data name="MyAccount_Benefit" xml:space="preserve">
+    <value>Your Games Club Benefits</value>
+  </data>
+  <data name="MyAccount_Confirm" xml:space="preserve">
+    <value>Confirm to unsubscribe</value>
+  </data>
+  <data name="MyAccount_Device" xml:space="preserve">
+    <value>Device</value>
+  </data>
+  <data name="MyAccount_GeneralError" xml:space="preserve">
+    <value>Please try again later.</value>
+  </data>
+  <data name="MyAccount_GeneralMessage" xml:space="preserve">
+    <value>We are sorry that we have not been able to cancel your subscription yet. Please click on "unsubscribe" again.</value>
+  </data>
+  <data name="MyAccount_Handset" xml:space="preserve">
+    <value>Device: &lt;span&gt;{0} &lt;/span&gt;</value>
+  </data>
+  <data name="MyAccount_Loading" xml:space="preserve">
+    <value>Loading ...</value>
+  </data>
+  <data name="MyAccount_MyAccount" xml:space="preserve">
+    <value>My Account</value>
+  </data>
+  <data name="MyAccount_MyDownloads" xml:space="preserve">
+    <value>My Downloads</value>
+  </data>
+  <data name="MyAccount_MyPhone" xml:space="preserve">
+    <value>My Phone</value>
+  </data>
+  <data name="MyAccount_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="MyAccount_NotSubscribed" xml:space="preserve">
+    <value>You are not a member of this great Games Club.</value>
+  </data>
+  <data name="MyAccount_OnUnsubscribe" xml:space="preserve">
+    <value>Please wait...</value>
+  </data>
+  <data name="MyAccount_OnUnsubscribeSuccess" xml:space="preserve">
+    <value>You have successfully unsubscribed.</value>
+  </data>
+  <data name="MyAccount_QuestionConfirm" xml:space="preserve">
+    <value>Are you sure you want to unsubscribe?</value>
+  </data>
+  <data name="MyAccount_SetUserInfo" xml:space="preserve">
+    <value>Unfortunately we cannot recognize you as a subscriber.</value>
+  </data>
+  <data name="MyAccount_Subscription" xml:space="preserve">
+    <value>My Subscription</value>
+  </data>
+  <data name="MyAccount_SubscriptionNotFound" xml:space="preserve">
+    <value>. You are not subscribed to this great Games Club.</value>
+  </data>
+  <data name="MyAccount_Unsubscribe" xml:space="preserve">
+    <value>Unsubscribe</value>
+  </data>
+  <data name="MyAccount_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="PortalPage_Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Purchase_Download" xml:space="preserve">
+    <value>Re-download</value>
+  </data>
+  <data name="Purchase_Loading" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="Purchase_MyDownload" xml:space="preserve">
+    <value>My Downloads</value>
+  </data>
+  <data name="Purchase_NoPurchase" xml:space="preserve">
+    <value>No purchase made yet.</value>
+  </data>
+  <data name="Purchase_NoPurchases" xml:space="preserve">
+    <value>No purchases made yet.</value>
+  </data>
+  <data name="Purchase_Thankyou" xml:space="preserve">
+    <value>Thank you for buying this game</value>
+  </data>
+  <data name="Search_Free" xml:space="preserve">
+    <value>Free</value>
+  </data>
+  <data name="Search_NoGames" xml:space="preserve">
+    <value>No games found</value>
+  </data>
+  <data name="Search_Result" xml:space="preserve">
+    <value>Search Results</value>
+  </data>
+  <data name="Search_ShowMore" xml:space="preserve">
+    <value>Show more...</value>
+  </data>
+  <data name="Subscribe_Benefit1" xml:space="preserve">
+    <value>Subscribe now and get 1 game for free</value>
+  </data>
+  <data name="Subscribe_Benefit2" xml:space="preserve">
+    <value>You can choose any game you want</value>
+  </data>
+  <data name="Subscribe_Benefit3" xml:space="preserve">
+    <value>Select from hundreds of top games</value>
+  </data>
+  <data name="Subscribe_Benefit4" xml:space="preserve">
+    <value>We constantly add new games</value>
+  </data>
+  <data name="Subscribe_Benefit5" xml:space="preserve">
+    <value>Very low special prices per game</value>
+  </data>
+  <data name="Subscribe_Benefit6" xml:space="preserve">
+    <value>Get 1 credit every week and redeem 1 game for it</value>
+  </data>
+  <data name="Subscribe_Benefit7" xml:space="preserve">
+    <value>No data charges apply!</value>
+  </data>
+  <data name="Subscribe_Benefits" xml:space="preserve">
+    <value>As a member of this Games Club {0} you will enjoy all these benefits:</value>
+  </data>
+  <data name="Subscribe_ChargingError" xml:space="preserve">
+    <value>We are sorry, we havn\'t been able to subscribe you to our games club. There was a problem during the payment. Your status is now pending.</value>
+  </data>
+  <data name="Subscribe_FreeWeekly" xml:space="preserve">
+    <value>GET FREE GAMES {0} EVERY WEEK</value>
+  </data>
+  <data name="Subscribe_GeneralMessage" xml:space="preserve">
+    <value>We are sorry, we haven\'t been able to subscribe you to our games club</value>
+  </data>
+  <data name="Subscribe_JoinText" xml:space="preserve">
+    <value>Join the best Games Club now!</value>
+  </data>
+  <data name="Subscribe_OnSubscribeSuccess" xml:space="preserve">
+    <value>Welcome! You have successfully subscribed to the best games club! Use your credit to get your free game!</value>
+  </data>
+  <data name="Subscribe_PriceText" xml:space="preserve">
+    <value>Select from hundreds of top games {0} and pay $2.50/week only!</value>
+  </data>
+  <data name="Subscribe_Save" xml:space="preserve">
+    <value>Join and choose your free game now!</value>
+  </data>
+  <data name="Subscribe_SubscribedForLessThanAWeek" xml:space="preserve">
+    <value>You subscribed for less than a week and cannot resubscribe.</value>
+  </data>
+  <data name="Subscribe_SubscribeTemporarilyBlocked" xml:space="preserve">
+    <value>. Our server is currently under maintenance.</value>
+  </data>
+  <data name="Subscribe_SubscriptionAlreadyExists" xml:space="preserve">
+    <value>You are already subscribed. Please go to My Account to check further details.</value>
+  </data>
+  <data name="Subscribe_TryAgain" xml:space="preserve">
+    <value>Please try again later.</value>
+  </data>
+  <data name="Subscribe_YesJoin" xml:space="preserve">
+    <value>Yes, I want to join {0}the Club!</value>
+  </data>
+  <data name="Term_OfUse" xml:space="preserve">
+    <value>Terms of Use</value>
+  </data>
+  <data name="Home_WelcomeTitle" xml:space="preserve">
+    <value>Limited time offer: &lt;a href="/subscribe/subscribe" style="color: Red;text-decoration:underline"&gt;Join Now&lt;/a&gt; and First Week of Subscription will be Free!&lt;br/&gt;</value>
+  </data>
+  <data name="MyAccount_Credit" xml:space="preserve">
+    <value>You have {0} game credit.</value>
+  </data>
+  <data name="MyAccount_Status" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="Subscribe_FirstWeekFree" xml:space="preserve">
+    <value>The first week is free. No charges. &lt;a href="Subscribe/Subscribe" class="subscribe-button" style="color: Blue;text-decoration:underline"&gt;Join now!&lt;/a&gt;&lt;br/&gt;</value>
+  </data>
+  <data name="Subscribe_LimitedTime" xml:space="preserve">
+    <value>Limited Time Offer: First Week Membership Free!</value>
+  </data>
+  <data name="Subscribe_PleaseWait" xml:space="preserve">
+    <value>Please wait...</value>
+  </data>
+  <data name="Layout_SetSubscribButtons" xml:space="preserve">
+    <value>Join the Games Club</value>
+  </data>
+  <data name="Detail_GetItFree" xml:space="preserve">
+    <value>Get it Free</value>
+  </data>
+  <data name="Error1" xml:space="preserve">
+    <value>We are sorry that your purchase failed. Your SIM card seems out of credits. Please top up and try again.</value>
+  </data>
+  <data name="Error4010" xml:space="preserve">
+    <value>We are having difficulties identifying you as a Telstra customer. Please turn off your WiFi settings now to enable you to browse and get games.</value>
+  </data>
+  <data name="GameListBanner_GetItFree" xml:space="preserve">
+    <value>Get it Free</value>
+  </data>
+  <data name="MyAccount_Credits" xml:space="preserve">
+    <value>You have {0} game credits.</value>
+  </data>
+  <data name="CommonBuy_SuccessMessage" xml:space="preserve">
+    <value>Thanks for purchasing {0}. Please install it and have fun!</value>
+  </data>
+  <data name="Subscribe_AlreadyNotSubscribed" xml:space="preserve">
+    <value>Sorry. You are not subscribed to our Games Club.</value>
+  </data>
+  <data name="Subscribe_GeneralError" xml:space="preserve">
+    <value>A general error occured.</value>
+  </data>
+  <data name="Subscribe_ResubscribeWithAWeek" xml:space="preserve">
+    <value>Sorry. You cannot re-subscribe within a week. Please try again later.</value>
+  </data>
+  <data name="GameList_Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Error_2223" xml:space="preserve">
+    <value>We are unable to detect your phone number:&lt;br /&gt;
+-If you are on WiFi, please switch it off and activate your mobile operator 3G/4G network and try again&lt;br /&gt;
+-If you are already on 3G/4G network, please contact us at support@8elements.net and we will help you to solve this.</value>
+  </data>
+  <data name="SubscribeSuccess_RedirectHome" xml:space="preserve">
+    <value>Get your free game now</value>
+  </data>
+  <data name="SubscribeSuccess_Title" xml:space="preserve">
+    <value>Membership confirmed!</value>
+  </data>
+  <data name="Purchase_ClickHereToDownload" xml:space="preserve">
+    <value>Click here to download</value>
+  </data>
+  <data name="Error_4461" xml:space="preserve">
+    <value>Unfortunately your handset is not supported</value>
+  </data>
+  <data name="Error_5577" xml:space="preserve">
+    <value>This purchase has reached the download limit.</value>
+  </data>
+  <data name="Error_Code" xml:space="preserve">
+    <value>Error Code: </value>
+  </data>
+  <data name="MyAccount_RedirectHomePage" xml:space="preserve">
+    <value>Click here to redirect to homepage.</value>
+  </data>
+  <data name="MyAccount_SubscriptionCancel" xml:space="preserve">
+    <value>Your subscription is now cancelled. Come back anytime to download games for free!</value>
+  </data>
+  <data name="MyAccount_ThankYou" xml:space="preserve">
+    <value>Thank You</value>
+  </data>
+  <data name="MyAccount_PurchaseDate" xml:space="preserve">
+    <value>Purchase Date:</value>
+  </data>
+  <data name="MyAccount_RenewalDate" xml:space="preserve">
+    <value>Renewal Date:</value>
+  </data>
+  <data name="Error_5002" xml:space="preserve">
+    <value>Your have requested an invalid or inactive content. Please select another game.</value>
+  </data>
+  <data name="Error_6001" xml:space="preserve">
+    <value>Your browser does not support cookies.</value>
+  </data>
+  <data name="Error_6002" xml:space="preserve">
+    <value>You do not have cookies enabled. Please change your browser settings.</value>
+  </data>
+  <data name="UserStillHaveeCoins" xml:space="preserve">
+    <value>You still have {0} credit to download FREE games. If you leave now you will lose them all! Are you sure that you want to unsubscribe?</value>
+  </data>
+  <data name="GGC_HeaderText" xml:space="preserve">
+    <value>Get 1 new game &lt;span style="color:red"&gt;every week&lt;/span&gt; for only $2.5.&lt;br /&gt;
+Chance to WIN &lt;span style="color:red"&gt;great prizes&lt;/span&gt; as long as you are a member.&lt;br /&gt;
+&lt;a href='Subscribe'&gt;&lt;br /&gt; &lt;u&gt;More user benefit information&lt;/u&gt;&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;
+Welcome &lt;b&gt;{0}&lt;/b&gt;.You have &lt;span style="color:red"&gt;{1}&lt;/span&gt; games available for your {2}.&lt;br /&gt; &lt;br /&gt;
+&lt;a href='Subscribe/Subscribe'&gt;&lt;u&gt;Join NOW to get FREE games!&lt;/u&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="Error_1001" xml:space="preserve">
+    <value>Your network operator does not seem to support this transaction.</value>
+  </data>
+  <data name="Error_1002" xml:space="preserve">
+    <value>We are sorry that your transaction failed! Please try again.</value>
+  </data>
+  <data name="Error_1003" xml:space="preserve">
+    <value>Illegal operation detected! Please contact us for further information.</value>
+  </data>
+  <data name="Vinaphone_HeaderText" xml:space="preserve">
+    <value>Get 1 new game &lt;span style="color:red"&gt;every week&lt;/span&gt; for only 10000 VND.&lt;br /&gt;
+Chance to WIN &lt;span style="color:red"&gt;great prizes&lt;/span&gt; as long as you are a member.&lt;br /&gt;
+&lt;a href='Subscribe?cf=true'&gt;More user benefit information&lt;/a&gt;&lt;br /&gt;
+Welcome &lt;b&gt;{0}&lt;/b&gt;. You have &lt;span style="color:red"&gt;{1}&lt;/span&gt; games available for your {2}.&lt;br /&gt;
+&lt;a href='Subscribe/Subscribe'&gt;&lt;u&gt;Join NOW to get FREE games!&lt;/u&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="Vinaphone_HeaderTextSubscribed" xml:space="preserve">
+    <value>Welcome &lt;b&gt;{0}&lt;/b&gt;.You can select from &lt;span style="color:red"&gt;{1}&lt;/span&gt; games for your {2}. &lt;br/&gt; 
+You have &lt;span style="color:red"&gt;{3}&lt;/span&gt; credits to redeem your games.</value>
+  </data>
+  <data name="Error_1000" xml:space="preserve">
+    <value>We are sorry that your transaction failed, please check your phone balance first and retry.</value>
+  </data>
+  <data name="Subscribe_ResubscribeWith15Days" xml:space="preserve">
+    <value>Sorry. You cannot re-subscribe within 15 days. Please try again later.</value>
+  </data>
+  <data name="CommonBuy_MsisdnNotDetected" xml:space="preserve">
+    <value>. We are unable to detect your phone number. Please disable WiFi connections and switch to your mobile network.</value>
+  </data>
+  <data name="Error_1004" xml:space="preserve">
+    <value>Sorry, you don't have enough game credit to download the content. Please top-up and try again.</value>
+  </data>
+  <data name="MyAccount_Resubscribe" xml:space="preserve">
+    <value>Resubscribe</value>
+  </data>
+  <data name="Resubscribe_NoSubscriptionOrActiveSubscription" xml:space="preserve">
+    <value>We cannot resubscribe you because you were not a subscriber before. Join now!</value>
+  </data>
+  <data name="Subscribe_BalanceNotEnough" xml:space="preserve">
+    <value>Your account balance doesn't have enough money! Please kindly top up to continue.</value>
+  </data>
+  <data name="Subscribe_FreeDaily" xml:space="preserve">
+    <value>GET A FREE GAME {0} EVERY DAY</value>
+  </data>
+  <data name="Subscribe_BalanceNotEnoughSubNotCreated" xml:space="preserve">
+    <value>Your account balance doesn't have enough money! Please kindly top up and try again.</value>
+  </data>
+  <data name="Subscribe_CanNotSubscribeWithWifiConnection" xml:space="preserve">
+    <value>We cannot process your application over WiFi connection. Please turn on your 3G/4G connection.</value>
+  </data>
+  <data name="Guest" xml:space="preserve">
+    <value>Guest</value>
+  </data>
+  <data name="CommonBuy_DownloadFree" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="Subscribe_SubNotCreatedBalanceNotEnough" xml:space="preserve">
+    <value>Your account balance doesn't have enough money! Please kindly top up and try again.</value>
+  </data>
+  <data name="Subscribe_WifiClickToMO" xml:space="preserve">
+    <value>For your convenience, you can click &lt;a href="{0}" style="color: Blue;"&gt;here&lt;/a&gt;, we’ve already prepared the SMS for you to send.</value>
+  </data>
+  <data name="Subscribe_WifiConnectTo3G" xml:space="preserve">
+    <value>Or connect via 3G/GPRS to register directly from wapsite.</value>
+  </data>
+  <data name="UserNoCoin" xml:space="preserve">
+    <value>You have the advantage of buying games at discount price for members. If you leave now you will lose this advantage!</value>
+  </data>
+  <data name="Subscribe_WifiInstruction" xml:space="preserve">
+    <value>Join Now by texting &lt;strong&gt;{0}&lt;/strong&gt; to &lt;strong&gt;{1}&lt;/strong&gt;</value>
+  </data>
+  <data name="Subscribe_WifiConnectTo3G_Telstra" xml:space="preserve">
+    <value>Connect via 3G/GPRS to register directly from wapsite.</value>
+  </data>
+  <data name="Notification" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+  <data name="Purchase_Notification" xml:space="preserve">
+    <value>Your purchase is being processed. Please wait for the content link to be sent to your phone.
+Thank you.</value>
+  </data>
+  <data name="Subscribe_SendSMS" xml:space="preserve">
+    <value>Send SMS</value>
+  </data>
+  <data name="Point_BalanceText" xml:space="preserve">
+    <value>You have &lt;span style="color:green"&gt;&lt;strong&gt;{0} SP&lt;/strong&gt;&lt;/span&gt;.</value>
+  </data>
+  <data name="Point_PageTitle" xml:space="preserve">
+    <value>Redeem LP</value>
+  </data>
+  <data name="GameBundle_PageTitle" xml:space="preserve">
+    <value>Game Bundle</value>
+  </data>
+  <data name="Point_InfoText" xml:space="preserve">
+    <value>Select free gifts below from {0} Club's loyalty program.</value>
+  </data>
+  <data name="Point_RedeemFail" xml:space="preserve">
+    <value>Unfortunately, you don't have enough LP.</value>
+  </data>
+  <data name="Point_RedeemSuccess" xml:space="preserve">
+    <value>Congratulations! You have successfully redeemed your LP.</value>
+  </data>
+  <data name="Point_GetPointInfo" xml:space="preserve">
+    <value>How to earn LP?</value>
+  </data>
+  <data name="Point_PurchaseCredit" xml:space="preserve">
+    <value>Get 1 game FREE with {0} LP</value>
+  </data>
+  <data name="Point_PurchaseGameBundle" xml:space="preserve">
+    <value>Get a bundle of 20 games FREE with {0} LP</value>
+  </data>
+  <data name="Point_PurchaseSubscription" xml:space="preserve">
+    <value>Get 1 week of free subscription fee with {0} LP</value>
+  </data>
+  <data name="GameBundle_Instruction" xml:space="preserve">
+    <value>Select free gifts below from the GamerHeaven Club rewards.</value>
+  </data>
+  <data name="Home_GameForHandsetNonSub" xml:space="preserve">
+    <value>&lt;b&gt;{0}&lt;/b&gt; games available for your &lt;b&gt;{1}&lt;/b&gt;</value>
+  </data>
+  <data name="Home_SuspendedWarning" xml:space="preserve">
+    <value>Please top up to keep on enjoying our club benefits.</value>
+  </data>
+  <data name="Home_JoinNowBottom" xml:space="preserve">
+    <value>Join now for {0}!</value>
+  </data>
+  <data name="Home_JoinNowTop" xml:space="preserve">
+    <value>Get 2 games for {0}!</value>
+  </data>
+  <data name="BundleDetail_PageTitle" xml:space="preserve">
+    <value>Game Bundle</value>
+  </data>
+  <data name="GameBundle_Buy" xml:space="preserve">
+    <value>Buy ({0} SP)</value>
+  </data>
+  <data name="GameBundle_Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="GameBundle_PurchasedPageTitle" xml:space="preserve">
+    <value>My Game Bundles</value>
+  </data>
+  <data name="Point_JoinAndGetPoint" xml:space="preserve">
+    <value>Join now to get  FREE game and earn LP</value>
+  </data>
+  <data name="Point_SelectGift" xml:space="preserve">
+    <value>Select free gifts below from {0} Club</value>
+  </data>
+  <data name="Home_MoreGameBundles" xml:space="preserve">
+    <value>More Game Bundles</value>
+  </data>
+  <data name="Layout_SetSubscribButtons2" xml:space="preserve">
+    <value>Join Now!</value>
+  </data>
+  <data name="Home_More" xml:space="preserve">
+    <value>Show more</value>
+  </data>
+  <data name="MyAccount_IntroducedByText" xml:space="preserve">
+    <value>I was introduced to this Games Club by the owner of this phone number</value>
+  </data>
+  <data name="Point_UserGetPoint" xml:space="preserve">
+    <value>You are awarded {0} LP</value>
+  </data>
+  <data name="HeaderText_Wifi" xml:space="preserve">
+    <value>Please disable WiFi and connect via 3G/4G to access and enjoy our Games Club!</value>
+  </data>
+  <data name="GameBundle_NoPurchase" xml:space="preserve">
+    <value>You haven't purchased any game bundle yet.</value>
+  </data>
+  <data name="Notification_Subscribe" xml:space="preserve">
+    <value>Your subscription being processed, please wait a minute.</value>
+  </data>
+  <data name="Point_PurchaseBundleNotEnoughPoint" xml:space="preserve">
+    <value>You need to have 400 LPs to get 1 bundle game free</value>
+  </data>
+  <data name="Point_PurchaseBundleSuccess" xml:space="preserve">
+    <value>You have successfully exchanged 400 SP to get 1 bundle of 20 {0}</value>
+  </data>
+  <data name="Point_PurchaseCreditNotEnoughPoint" xml:space="preserve">
+    <value>You need to have 50 LPs to get 1 credit for a free game</value>
+  </data>
+  <data name="Point_PurchaseCreditSuccess" xml:space="preserve">
+    <value>You get 1 credit to download a game. Click &lt;a href="/"&gt;here&lt;/a&gt; to select your game:</value>
+  </data>
+  <data name="Point_PurchaseSubscriptionNotEnoughPoint" xml:space="preserve">
+    <value>You need to have 150 LP to get 1 week of membership for free.</value>
+  </data>
+  <data name="Point_PurchaseSubscriptionSuccess" xml:space="preserve">
+    <value>You have successfully exchanged 150 LP for 1 week of membership.</value>
+  </data>
+  <data name="Layout_HandsetNotDetected" xml:space="preserve">
+    <value>&lt;a href="/Handset" style="color: white; text-decoration: none;"&gt;Warning! Your handset is not detected, To enjoy our games please choose your handset here.&lt;/a&gt;</value>
+  </data>
+  <data name="Handset_ChooseBrand" xml:space="preserve">
+    <value>Please select your device manufacturer/phone brand</value>
+  </data>
+  <data name="Handset_ChooseModel" xml:space="preserve">
+    <value>Please choose your device model</value>
+  </data>
+  <data name="Msisdn_Authenticate" xml:space="preserve">
+    <value>Authenticate</value>
+  </data>
+  <data name="Msisdn_Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="Msisdn_EnterCode" xml:space="preserve">
+    <value>Please enter the code in the SMS we sent to you.</value>
+  </data>
+  <data name="Msisdn_EnterMsisdn" xml:space="preserve">
+    <value>Your mobile number is not detected. Please input your phone number below and we will send an SMS to you.</value>
+  </data>
+  <data name="Msisdn_Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="MyAccount_ChangeHandset" xml:space="preserve">
+    <value>Change handset</value>
+  </data>
+  <data name="Home_CreditText" xml:space="preserve">
+    <value>You now have {0} credit to redeem your game.</value>
+  </data>
+  <data name="PurchaseConfirmation" xml:space="preserve">
+    <value>Are you sure you want to buy this game?</value>
+  </data>
+  <data name="MyAccount_Suspended" xml:space="preserve">
+    <value>Suspended</value>
+  </data>
+  <data name="Notification_MsisdnBanned" xml:space="preserve">
+    <value>Unfortunately your phone number is banned. Please contact us at {0}.</value>
+  </data>
+  <data name="Error_7000" xml:space="preserve">
+    <value>Invalid URL</value>
+  </data>
+  <data name="Error_8000" xml:space="preserve">
+    <value>Download failed, please complete the payment first.</value>
+  </data>
+  <data name="Purchase_SubscribeButton" xml:space="preserve">
+    <value>Get it cheaper if you join the Club</value>
+  </data>
+  <data name="ReCallBack" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="ReCallJoin" xml:space="preserve">
+    <value>Join now</value>
+  </data>
+  <data name="ReCallText" xml:space="preserve">
+    <value>Join us now to get FREE games! Grab your big chance to enjoy awesome game portals with appealing discounts and gifts!</value>
+  </data>
+  <data name="Notification_WaitingUserConfirmation" xml:space="preserve">
+    <value>You will receive a text message asking for confirmation. To complete your subscription, please reply 'Yes' to the message. </value>
+  </data>
+  <data name="Subscribe_EnterConfirmationCode" xml:space="preserve">
+    <value>Please enter the confirmation code you received:</value>
+  </data>
+  <data name="Subscribe_EnterMsisdn" xml:space="preserve">
+    <value>Please enter your phone number:</value>
+  </data>
+  <data name="Subscribe_GetCode" xml:space="preserve">
+    <value>Send Code</value>
+  </data>
+  <data name="Notification_LoginMessageSent" xml:space="preserve">
+    <value>We have sent a text message to your phone. Please open the link in the message to continue login.</value>
+  </data>
+  <data name="Notification_ProcessingTransaction" xml:space="preserve">
+    <value>Thank you. We are now processing your transaction. You can download the game here if the transaction is </value>
+  </data>
+  <data name="Notification_RegistrationCompleted" xml:space="preserve">
+    <value>Thank you for registering. You will receive game credit as a reward. </value>
+  </data>
+  <data name="UserRegistration_InvalidConfirmPassword" xml:space="preserve">
+    <value>Password and confirm password do not match.</value>
+  </data>
+  <data name="UserRegistration_InvalidEmail" xml:space="preserve">
+    <value>Invalid email address</value>
+  </data>
+  <data name="UserRegistration_InvalidFirstname" xml:space="preserve">
+    <value>First name cannot be empty.</value>
+  </data>
+  <data name="UserRegistration_InvalidPassword" xml:space="preserve">
+    <value>Password must be at least 6 characters.</value>
+  </data>
+  <data name="UserRegistration_InvalidUsername" xml:space="preserve">
+    <value>Username must be at least 6 characters.</value>
+  </data>
+  <data name="UserRegistration_Message" xml:space="preserve">
+    <value>Register now and claim your game credit as a reward!</value>
+  </data>
+  <data name="UserRegistration_Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="UserRegistration_InvalidBirthday" xml:space="preserve">
+    <value>Please enter your birthday in day/month/year format. For example: 15/01/1990.</value>
+  </data>
+  <data name="Home_ShowAll" xml:space="preserve">
+    <value>View All Games &gt;</value>
+  </data>
+  <data name="List_AllGames" xml:space="preserve">
+    <value>All Games</value>
+  </data>
+  <data name="MyAccount_MyGames" xml:space="preserve">
+    <value>My Games</value>
+  </data>
+  <data name="MyAccount_Msisdn" xml:space="preserve">
+    <value>Your phone number</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Unsubscribe_AdditionalInfo" xml:space="preserve">
+    <value>* Your account will no longer be charged after the cancellation.</value>
+  </data>
+  <data name="Unsubscribe_PageTitle" xml:space="preserve">
+    <value>Cancel Subscription</value>
+  </data>
+  <data name="LoginConfirmation_Description" xml:space="preserve">
+    <value>To download your favourite game, you have to login first.
+Please click "OK" to continue.</value>
+  </data>
+  <data name="LoginConfirmation_Title" xml:space="preserve">
+    <value>Login Required</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="FAQ" xml:space="preserve">
+    <value>FAQ</value>
+  </data>
+  <data name="FAQ_PageTitle" xml:space="preserve">
+    <value>Frequently Asked Questions (FAQ)</value>
+  </data>
+  <data name="Error_FailedToSubscribe" xml:space="preserve">
+    <value>Unfortunately, we cannot activate your subscription. Please make sure you have enough balance for the transaction and try again. </value>
+  </data>
+  <data name="Error_FailedToPurchase" xml:space="preserve">
+    <value>We could not complete the transaction. Please make sure you have enough balance for the transaction and try again.</value>
+  </data>
+  <data name="Notification_NewSubscriptionDisabled" xml:space="preserve">
+    <value>Unfortunately, we don't accept new subscription any longer. </value>
+  </data>
+</root>

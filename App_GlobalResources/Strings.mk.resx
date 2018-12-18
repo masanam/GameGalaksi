@@ -1,0 +1,871 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BundleDetail_PageTitle" xml:space="preserve">
+    <value>ဂိမ်းအစုအပေါင်း</value>
+  </data>
+  <data name="CommonBuy_Buy" xml:space="preserve">
+    <value>ဝယ်မည် {0} {1}</value>
+  </data>
+  <data name="CommonBuy_BuyText" xml:space="preserve">
+    <value>ဝယ်မည်</value>
+  </data>
+  <data name="CommonBuy_ChargingFailed" xml:space="preserve">
+    <value>သင့် ဆင်းကဒ် ဘေလ်ကုန်ပြီထင်ရသည်။ ကျေးဇူးပြု၍ ငွေဖြည့်ပြီး ထပ်မံကြိုးစားကြည့်ပါ။</value>
+  </data>
+  <data name="CommonBuy_Download" xml:space="preserve">
+    <value>ပြန်လည် ရယူ။</value>
+  </data>
+  <data name="CommonBuy_DownloadFree" xml:space="preserve">
+    <value>ရယူမည်</value>
+  </data>
+  <data name="CommonBuy_FileNotFoundForThisHandset" xml:space="preserve">
+    <value>စိတ်မကောင်းပါဘူး၊ ယခုဂိမ်းသည် သင့်ဖုန်း model နှင့်မကိုက်ညီပါ။</value>
+  </data>
+  <data name="CommonBuy_Free" xml:space="preserve">
+    <value>အခမဲ့</value>
+  </data>
+  <data name="CommonBuy_GeneralMessage" xml:space="preserve">
+    <value>သင်၏ ဝယ်ယူမှု မအောင်မြင်ပါ။</value>
+  </data>
+  <data name="CommonBuy_HandsetNotDetected" xml:space="preserve">
+    <value>သင့်ဖုန်း၏ model ကိုမသိနိုင်ပါ။</value>
+  </data>
+  <data name="CommonBuy_MsisdnNotDetected" xml:space="preserve">
+    <value>သင့်ဖုန်းနံပါတ်ကို မသိနိုင်သောကြောင့် wifi ကို ပိတ်၍ mobile data ဖွင့်ပေးပါ။</value>
+  </data>
+  <data name="CommonBuy_OnBuySuccess" xml:space="preserve">
+    <value>ဝယ်ယူမှုအတွက် ကျေးဇူးတင်ပါသည်။ ဂိမ်းကို ထည့်သွင်း၍ ကစားနိုင်ပါပြီ။ ပျော်ရွှင်ပါစေ။</value>
+  </data>
+  <data name="CommonBuy_PleaseWait" xml:space="preserve">
+    <value>ခေတ္တစောင့်ပါ...</value>
+  </data>
+  <data name="CommonBuy_PurchaseTemporarilyBlocked" xml:space="preserve">
+    <value>ဆာဗာနှင့် ချိတ်ဆက်မှု အဆင်မပြေဖြစ်နေပါသည်.. ခေတ္တစောင့်စိုင်းပြီးမှ ထပ်မံ ကြိုးစားကြည့်ပါ။</value>
+  </data>
+  <data name="CommonBuy_SuccessMessage" xml:space="preserve">
+    <value>ဝယ်ယူူမှုအတွက် ကျေးဇူးတင်ပါသည် {0} ။ ပျော်ရွှင်ပါစေ!</value>
+  </data>
+  <data name="CommonBuy_TryAgain" xml:space="preserve">
+    <value>နောက်တစ်ကြိမ် ထပ်မံ ကြိုးစားကြည့်ပါ။</value>
+  </data>
+  <data name="CommonBuy_UseCredit" xml:space="preserve">
+    <value>Credit (8e Club)</value>
+  </data>
+  <data name="Detail_Description" xml:space="preserve">
+    <value>ဖော်ပြချက်</value>
+  </data>
+  <data name="Detail_GetItFree" xml:space="preserve">
+    <value>အခမဲ့ ရယူပါ</value>
+  </data>
+  <data name="Detail_OtherTitles" xml:space="preserve">
+    <value>ဤအရာ ဖန်တီးသူ ၏ အခြား ခေါင်းစဉ်များ</value>
+  </data>
+  <data name="Detail_PeopleDownloaded" xml:space="preserve">
+    <value>တခြားသူတွေလည်း ရယူခဲ့ကြသည်</value>
+  </data>
+  <data name="Error1" xml:space="preserve">
+    <value>စိတ်မကောင်းပါဘူး၊ ဝယ်ယူမှု မအောင်မြင်ပါ။ သင့် ဆင်းမ်ကဒ်သည် လက်ကျန်ငွေ မကျန်ရှိတော့ခြင်း ဖြစ်နိုင်ပါသည်။ ငွေဖြည့်ပြီးနောက် ထပ်မံကြိုးစားကြည့်ပါ။</value>
+  </data>
+  <data name="Error4010" xml:space="preserve">
+    <value>သင့်ကို Telstra အသုံးပြုသူအဖြစ် အသိအမှတ်မပြုနိုင်ပါ။ ကျေးဇူးပြု၍ wifi ချိတ်ဆက်မှုကို ပိတ်ထားခြင်းဖြင့် အခြားဂိမ်းများစွာကို အသုံးပြုနိုင်မည်ဖြစ်ပါသည်။</value>
+  </data>
+  <data name="Error_1000" xml:space="preserve">
+    <value>လုပ်ဆောင်ချက် မအောင်မြင်သည့်အတွက် စိတ်မကောင်းပါ၊ ဖုန်းလက်ကျန်ငွေ စစ်ဆေးပြီး ထပ်မံ ကြိုးစားကြည့်ပါ။</value>
+  </data>
+  <data name="Error_1001" xml:space="preserve">
+    <value>သင်အသုံးပြုနေသော အော်ပရေတာသည် ဤ လုပ်ဆောင်ချက်ကို လုပ်ဆောင်မပေးနိုင်ပါ။</value>
+  </data>
+  <data name="Error_1002" xml:space="preserve">
+    <value>လုပ်ဆောင်ချက် မအောင်မြင်သည့်အတွက် စိတ်မကောင်းပါ၊ နောက်တစ်ကြိမ် ထပ်မံ ကြိုးစားကြည့်ပါ။</value>
+  </data>
+  <data name="Error_1003" xml:space="preserve">
+    <value>တရားမဝင် လုပ်ဆောင်ချက် တွေ့ရှိရပါသည်! အချက်အလက်များ ပိုမိုသိရှိရန်အတွက် ကျွန်ုပ်တို့ကို ဆက်သွယ်ပါ။</value>
+  </data>
+  <data name="Error_1004" xml:space="preserve">
+    <value>သင့်လက်ကျန်ငွေ မလုံလောက်ပါသဖြင့် ကျေးဇူးပြုပြီး ငွေဖြည့်သွင်းပေးပါ။</value>
+  </data>
+  <data name="Error_2223" xml:space="preserve">
+    <value>"သင့်ဖုန်းနံပါတ် ကို ကျွန်ုပ်တို့မှ ထောက်လှမ်းခြင်း မပြုလုပ်နိုင်ဖြစ်နေပါသည် : &lt;br /&gt;
+- WIFI အသုံးပြုနေသူဖြစ်ပါက၊ ကျေးဇူးပြု၍ WIFI ခေတ္တပိတ်ပြီး သင့်ဖုန်း၏ 3G သို့မဟုတ် 4G ဖုန်းလိုင်းသို့ ပြောင်းလဲ ချိတ်ဆက်ကာ ထပ်မံကြိုးစားကြည့်ပါ။ &lt;/br&gt;
+- သင့်ဖုန်း၏ 3G/4G ဖုန်းလိုင်းကို အသုံးပြုနေသူဖြစ်ပါက၊ ကျွန်ုပ်တို့ကို ဤ အီးမေးလ်လိပ်စာ gamerheaven.myanmar@8elements.net မှတစ်ဆင့် ဆက်သွယ်လိုက်ပါ၊ ကျွန်ုပ်တို့ ဖြေရှင်းပေးပါမည်။ "</value>
+  </data>
+  <data name="Error_4461" xml:space="preserve">
+    <value>ကံမကောင်းစွာဖြင့် သင့်ဖုန်း ဟန်းဆက်တွင် ဆော့ကစားခြင်း မပြုနိုင်ပါ!</value>
+  </data>
+  <data name="Error_5002" xml:space="preserve">
+    <value>မှားယွင်းခြင်း၊ ချို့ယွင်းချက် သို့မဟုတ် မမှန်ကန်သော စာသား</value>
+  </data>
+  <data name="Error_5577" xml:space="preserve">
+    <value>ဤဝယ်ယူမှုသည် download ရယူနိုင်မှု အရေအတွက် ကန့်သတ်ချက်သို့ ရောက်ရှိစေသည်။</value>
+  </data>
+  <data name="Error_6001" xml:space="preserve">
+    <value>သင့် browser တွင် cookies လုပ်ဆောင်ချက်များ အထောက်အပံ့မပေးနိုင်ပါ။</value>
+  </data>
+  <data name="Error_6002" xml:space="preserve">
+    <value>သင့် browser တွွင် cookies လုပ်ဆောင်ချက်များကို ပိတ်ထားပါသည်။</value>
+  </data>
+  <data name="Error_7000" xml:space="preserve">
+    <value>URL မှားနေပါသည်!</value>
+  </data>
+  <data name="Error_8000" xml:space="preserve">
+    <value>ရယူခြင်းမအောင်မြင်ပါ။ ကျေးဇူးပြုပြီး ငွေပေးချေခြင်း လုပ်ဆောင်ချက် ပြီးမြောက်သည်အထိ စောင့်ဆိုင်းပါ။</value>
+  </data>
+  <data name="Error_Code" xml:space="preserve">
+    <value>ပြဿနာ နံပါတ် :</value>
+  </data>
+  <data name="Error_Description" xml:space="preserve">
+    <value>စိတ်မကောင်းပါဘူး၊ သင့်လုပ်ဆောင်ချက် ပြုလုပ်နေစဉ် ပြဿနာတစ်ခု ကြုံတွေ့ခဲ့ရပါသည်။</value>
+  </data>
+  <data name="Error_Error" xml:space="preserve">
+    <value>ပြဿနာ</value>
+  </data>
+  <data name="GameBundle_Buy" xml:space="preserve">
+    <value>ဝယ်မည် ({0} SP)</value>
+  </data>
+  <data name="GameBundle_Download" xml:space="preserve">
+    <value>ရယူမည်</value>
+  </data>
+  <data name="GameBundle_Instruction" xml:space="preserve">
+    <value>8e Sieugame Club မှ အောက်ပါ မေတ္တာလက်ဆောင်များကို ရွေးချယ်ပါ။</value>
+  </data>
+  <data name="GameBundle_NoPurchase" xml:space="preserve">
+    <value>သင်သည် မည်သည့်ဂိမ်းကိုမျှ ဝယ်ယူထားခြင်းမရှိသေးပါ။</value>
+  </data>
+  <data name="GameBundle_PageTitle" xml:space="preserve">
+    <value>ဂိမ်းများ</value>
+  </data>
+  <data name="GameBundle_PurchasedPageTitle" xml:space="preserve">
+    <value>ကျွန်ုပ်၏ ဂိမ်းများအစုအပေါင်း</value>
+  </data>
+  <data name="GameCategories_AllGames" xml:space="preserve">
+    <value>ဂိမ်းအမျိုးအစားအလိုက် ဂိမ်းအားလုံး</value>
+  </data>
+  <data name="GameCategories_CategoriesNotFound" xml:space="preserve">
+    <value>ဂိမ်းအမျိုးအစား မတွေ့ရှိပါ</value>
+  </data>
+  <data name="GameCategory_GetItFree" xml:space="preserve">
+    <value>အခမဲ့ ရယူပါ</value>
+  </data>
+  <data name="GameCategory_ShowMore" xml:space="preserve">
+    <value>နောက်ထပ်...</value>
+  </data>
+  <data name="GameListBanner_GetItFree" xml:space="preserve">
+    <value>အခမဲ့ ရယူပါ</value>
+  </data>
+  <data name="GameList_Back" xml:space="preserve">
+    <value>နောက်သို့</value>
+  </data>
+  <data name="GameList_GetFree" xml:space="preserve">
+    <value>အခမဲ့ ရယူပါ</value>
+  </data>
+  <data name="GameList_HandsetNotDetected" xml:space="preserve">
+    <value>ဟန်းဆက် မတွေ့ရှိပါ</value>
+  </data>
+  <data name="GameList_NoGamesFound" xml:space="preserve">
+    <value>သင့်ဖုန်းနှင့် ကိုက်ညီသည့် ဂိမ်းများမရှိပါ။</value>
+  </data>
+  <data name="GameList_NoMoreGames" xml:space="preserve">
+    <value>ဂိမ်းများမရှိတော့ပါ။</value>
+  </data>
+  <data name="GameList_ShowMore" xml:space="preserve">
+    <value>နောက်ထပ်...</value>
+  </data>
+  <data name="GGC_HeaderText" xml:space="preserve">
+    <value>Get 1 new game &lt;span style="color:red"&gt;every week&lt;/span&gt; for only $2.5.&lt;br /&gt;
+Chance to WIN &lt;span style="color:red"&gt;great prizes&lt;/span&gt; as long as you are a member.&lt;br /&gt;
+&lt;a href='Subscribe'&gt;&lt;br /&gt; &lt;u&gt;More user benefit information&lt;/u&gt;&lt;/a&gt;&lt;br /&gt; &lt;br /&gt;
+Welcome &lt;b&gt;{0}&lt;/b&gt;.You have &lt;span style="color:red"&gt;{1}&lt;/span&gt; games available for your {2}.&lt;br /&gt; &lt;br /&gt;
+&lt;a href='Subscribe/Subscribe'&gt;&lt;u&gt;Join NOW to get FREE games!&lt;/u&gt;&lt;/a&gt;</value>
+  </data>
+  <data name="Guest" xml:space="preserve">
+    <value>ဧည့်သည်</value>
+  </data>
+  <data name="Handset_ChooseBrand" xml:space="preserve">
+    <value>ကျေးဇူးပြု၍ သင့်ဖုန်း၏ ထုတ်လုပ်သူ/Phone Brand ကိုရွေးချယ်ပေးပါ</value>
+  </data>
+  <data name="Handset_ChooseModel" xml:space="preserve">
+    <value>ကျေးဇူးပြု၍ သင့်ဖုန်း၏ model ကို ရွေးချယ်ပါ</value>
+  </data>
+  <data name="HeaderText_Wifi" xml:space="preserve">
+    <value>ကျေးဇူးပြု၍ WIFI ချိတ်ဆက်မှုကို ပိတ်ကာ ဖုန်း၏ 3G/4G ကိုဖွင့်ပြီး ကျွန်ုပ်တို့ရဲ့ Games Club မှာ ပျော်ရွှင်စွာပါဝင်လိုက်ပါ!</value>
+  </data>
+  <data name="Help_Help" xml:space="preserve">
+    <value>အကူအညီ</value>
+  </data>
+  <data name="Home_BestSellers" xml:space="preserve">
+    <value>အရောင်းရဆုံး</value>
+  </data>
+  <data name="Home_CreditsText" xml:space="preserve">
+    <value>ဂိမ်းများ ရယူရန် သင့်တွင် လက်ကျန်ငွေ {0} ရှိပါသည်။</value>
+  </data>
+  <data name="Home_CreditText" xml:space="preserve">
+    <value>ဂိမ်း ရယူရန် သင့်တွင် လက်ကျန်ငွေ {0} ရှိပါသည်။</value>
+  </data>
+  <data name="Home_ForKids" xml:space="preserve">
+    <value>ကလေးများအတွက်</value>
+  </data>
+  <data name="Home_GameCategories" xml:space="preserve">
+    <value>ဂိမ်းအမျိုးအစားများ</value>
+  </data>
+  <data name="Home_GameForHandset" xml:space="preserve">
+    <value>သင့် &lt;b&gt; {1} &lt;/b&gt; ဟန်းဆက်အတွက် &lt;b&gt; {0} &lt;/b&gt; ဂိမ်းများ ရွေးချယ်နိုင်ပါသည်။</value>
+  </data>
+  <data name="Home_GameForHandsetNonSub" xml:space="preserve">
+    <value>သင့် &lt;b&gt; {1} &lt;/b&gt; ဟန်းဆက်အတွက် &lt;b&gt; {0} &lt;/b&gt; ဂိမ်းများ ရရှိနိုင်ပါသည်။</value>
+  </data>
+  <data name="Home_Highlight" xml:space="preserve">
+    <value>ယခု အပတ်၏ အကောင်းဆုံး ဂိမ်း</value>
+  </data>
+  <data name="Home_JoinNow" xml:space="preserve">
+    <value>အဖွဲ့သို့ ယခုပဲ ပါဝင်လိုက်ပါ!</value>
+  </data>
+  <data name="Home_JoinNowBottom" xml:space="preserve">
+    <value>{0} ဖြင့် အခုပဲ ပါဝင်လိုက်ပါ!</value>
+  </data>
+  <data name="Home_JoinNowTop" xml:space="preserve">
+    <value>{0} ဖြင့် ဂိမ်း ၂ ခု ရယူလိုက်ပါ!</value>
+  </data>
+  <data name="Home_JoinText" xml:space="preserve">
+    <value>{0} အဖွဲ့ : အဖွဲ့ဝင်တစ်ယောက် ဖြစ်ရန် နှင့် အခမဲ့ ဂိမ်းများ ရယူရန်  &lt;a href="/Subscribe" style="color:Blue;"&gt; ပိုမိုလေ့လာလိုက်ပါ &lt;/a&gt;</value>
+  </data>
+  <data name="Home_More" xml:space="preserve">
+    <value>နောက်ထပ်..</value>
+  </data>
+  <data name="Home_MoreBestSellers" xml:space="preserve">
+    <value>နောက်ထပ် တစ်ပတ်တာ အကောင်းဆုံး ဂိမ်းများ</value>
+  </data>
+  <data name="Home_MoreGameBundles" xml:space="preserve">
+    <value>နောက်ထပ် ဂိမ်းအစုများ</value>
+  </data>
+  <data name="Home_MoreNewGames" xml:space="preserve">
+    <value>နောက်ထပ် ဂိမ်းအသစ်များ</value>
+  </data>
+  <data name="Home_MoreTopGames" xml:space="preserve">
+    <value>နောက်ထပ် ထိပ်တန်းဂိမ်းများ</value>
+  </data>
+  <data name="Home_NewGames" xml:space="preserve">
+    <value>ဂိမ်းအသစ်များ</value>
+  </data>
+  <data name="Home_PuzzleGames" xml:space="preserve">
+    <value>ပဟေဠိ ဂိမ်းများ</value>
+  </data>
+  <data name="Home_Search" xml:space="preserve">
+    <value>ရှာဖွေရန်</value>
+  </data>
+  <data name="Home_ShowAll" xml:space="preserve">
+    <value>ဂိမ်းအားလုံး ကြည့်ရန် &gt;</value>
+  </data>
+  <data name="Home_Subscribe" xml:space="preserve">
+    <value>Subscribe လုပ်ရန်</value>
+  </data>
+  <data name="Home_SuspendedWarning" xml:space="preserve">
+    <value>ကျေးဖူးပြုပြီး ငွေဖြည့်သွင်း၍ အဖွဲ့ဝင်ဖြစ် အကျိုးအမြတ်များကို ဆက်လက်ရယူလိုက်ပါ။</value>
+  </data>
+  <data name="Home_TopGames" xml:space="preserve">
+    <value>ထိပ်တန်းဂိမ်းများ</value>
+  </data>
+  <data name="Home_WelcomeText" xml:space="preserve">
+    <value>အကောင်းဆုံးသော ဂိမ်းအဖွဲ့များသို့ ယနေ့ပဲ ချိတ်ဆက်လိုက်ပါ !</value>
+  </data>
+  <data name="Home_WelcomeTitle" xml:space="preserve">
+    <value>သတ်မှတ်ကာလအတွင်းသာ : ပထမ တစ်ပတ်စာ အခမဲ့ အဖွဲ့ဝင်ရန် &lt;a href="/subscribe/subscribe" style="color:Red;text-decoration:underline"&gt; အခုပဲ ပါဝင်လိုက်ပါ &lt;/a&gt; &lt;br/&gt;</value>
+  </data>
+  <data name="Layout_Back" xml:space="preserve">
+    <value>နောက်သို့</value>
+  </data>
+  <data name="Layout_Bigpond" xml:space="preserve">
+    <value>Bigpond ဂိမ်းများဆီ သို့</value>
+  </data>
+  <data name="Layout_Footer" xml:space="preserve">
+    <value>ကမ္ဘာ့ အကောင်းဆုံး ဂိမ်းများကို အခုပဲ ကစားလိုက်ပါ !</value>
+  </data>
+  <data name="Layout_GameCategories" xml:space="preserve">
+    <value>ဂိမ်းအမျိုးအစားအလိုက် ဂိမ်းအားလုံး</value>
+  </data>
+  <data name="Layout_HandsetNotDetected" xml:space="preserve">
+    <value>&lt;a href="/Handset" style="color:white; text-decoration:none;"&gt; သတိပြုရန်! သင့် ဟန်းဆက်ကို မတွေ့ရှိပါ! ကျွန်ုပ်တို့၏ ဂိမ်းများ ပျော်ရွှင်စွာ ဆော့ကစားရင် သင့်ဟန်းဆက်ကို ဤနေရာမှ ရွေးချယ်ပါ။ &lt;/a&gt;</value>
+  </data>
+  <data name="Layout_Help" xml:space="preserve">
+    <value>အကူအညီ</value>
+  </data>
+  <data name="Layout_Home" xml:space="preserve">
+    <value>မူလနေရာ</value>
+  </data>
+  <data name="Layout_JoinNow" xml:space="preserve">
+    <value>အခုပဲ ချိတ်ဆက်လိုက်ပါ !</value>
+  </data>
+  <data name="Layout_JoinText" xml:space="preserve">
+    <value>ဂိမ်း အဖွဲ့များသို့ ချိတ်ဆက်ပါ !</value>
+  </data>
+  <data name="Layout_MyAccount" xml:space="preserve">
+    <value>ကျွန်ုပ်၏ ရယူထားမှုများ/ ကျွန်ုပ်၏ အကောင့်</value>
+  </data>
+  <data name="Layout_PlayTheWorldBestGame" xml:space="preserve">
+    <value>ကမ္ဘာ့ အကောင်းဆုံး ဂိမ်းများကို အခုပဲ ကစားလိုက်ပါ !</value>
+  </data>
+  <data name="Layout_SetSubscribButtons" xml:space="preserve">
+    <value>ဂိမ်း အဖွဲ့များသို့ ချိတ်ဆက်ပါ !</value>
+  </data>
+  <data name="Layout_SetSubscribButtons2" xml:space="preserve">
+    <value>အခုပဲ ချိတ်ဆက်လိုက်ပါ !</value>
+  </data>
+  <data name="Layout_Term" xml:space="preserve">
+    <value>စည်းကမ်းချက်များ</value>
+  </data>
+  <data name="Layout_Terms" xml:space="preserve">
+    <value>လိုက်နာရန် စည်းကမ်းချက်များ</value>
+  </data>
+  <data name="List_AllGames" xml:space="preserve">
+    <value>ဂိမ်းအားလုံး</value>
+  </data>
+  <data name="List_GetFree" xml:space="preserve">
+    <value>အခမဲ့ ရယူပါ</value>
+  </data>
+  <data name="List_NewGame" xml:space="preserve">
+    <value>ဂိမ်းအသစ်</value>
+  </data>
+  <data name="List_NewGames" xml:space="preserve">
+    <value>ဂိမ်းအသစ်များ</value>
+  </data>
+  <data name="List_ShowMore" xml:space="preserve">
+    <value>နောက်ထပ်...</value>
+  </data>
+  <data name="List_TopGame" xml:space="preserve">
+    <value>ထိပ်တန်းဂိမ်း</value>
+  </data>
+  <data name="List_TopGames" xml:space="preserve">
+    <value>ထိပ်တန်းဂိမ်းများ</value>
+  </data>
+  <data name="MessageTitleError" xml:space="preserve">
+    <value>ပြဿနာ ဖြစ်နေသည်</value>
+  </data>
+  <data name="MessageTitleSuccess" xml:space="preserve">
+    <value>အောင်မြင်ပါသည်</value>
+  </data>
+  <data name="Msisdn_Authenticate" xml:space="preserve">
+    <value>တရားဝင်ပြုလုပ်သည်</value>
+  </data>
+  <data name="Msisdn_Confirm" xml:space="preserve">
+    <value>အတည်ပြုသည်</value>
+  </data>
+  <data name="Msisdn_EnterCode" xml:space="preserve">
+    <value>သင့် ဆီသို့ ပို့လိုက်သည့် SMS မှ ကုဒ်နံပါတ်ကို ရိုက်ထည့်ပါ။</value>
+  </data>
+  <data name="Msisdn_EnterMsisdn" xml:space="preserve">
+    <value>သင့်ဖုန်းနံပါတ်ကို မသိနိုင်ပါ။ ကျေးဇူးပြုပြီး သင့်ဖုန်းနံပါတ်ကို ရိုက်ထည့်ပေးပါ၊ အဆိုပါ ဖုန်းနံပါတ်ကို SMS ပေးပို့ပါမည်။</value>
+  </data>
+  <data name="Msisdn_Send" xml:space="preserve">
+    <value>ပေးပို့ရန်</value>
+  </data>
+  <data name="MyAccount_AreYouSure" xml:space="preserve">
+    <value>သေချာပြီလား?</value>
+  </data>
+  <data name="MyAccount_Benefit" xml:space="preserve">
+    <value>သင့်ဂိမ်းအဖွဲ့၏ အကျိုးအမြတ်များ</value>
+  </data>
+  <data name="MyAccount_ChangeHandset" xml:space="preserve">
+    <value>ဟန်းဆက်ပြောင်းလဲရန်</value>
+  </data>
+  <data name="MyAccount_Confirm" xml:space="preserve">
+    <value>ပယ်ဖျက်ခြင်းကို အတည်ပြုရန်</value>
+  </data>
+  <data name="MyAccount_Credit" xml:space="preserve">
+    <value>သင့်မှာ ဂိမ်း credits {0} ရှိသည်။</value>
+  </data>
+  <data name="MyAccount_Credits" xml:space="preserve">
+    <value>သင့်မှာ ဂိမ်း credits {0} ရှိသည်။</value>
+  </data>
+  <data name="MyAccount_Device" xml:space="preserve">
+    <value>သင့်ဖုန်း (သို့) ဂိမ်းစက်</value>
+  </data>
+  <data name="MyAccount_GeneralError" xml:space="preserve">
+    <value>နောက်တစ်ကြိမ် ထပ်မံကြိုးစားကြည့်ပါ</value>
+  </data>
+  <data name="MyAccount_GeneralMessage" xml:space="preserve">
+    <value>စိတ်မကောင်းပါဘူး။ သင့်၏ ပယ်ဖျက်ခြင်း လုပ်ဆောင်မှု မအောင်မြင်ပါ။</value>
+  </data>
+  <data name="MyAccount_Handset" xml:space="preserve">
+    <value>သင့်ဖုန်း : &lt;span&gt; {0} &lt;/span&gt;</value>
+  </data>
+  <data name="MyAccount_IntroducedByText" xml:space="preserve">
+    <value>ဤဂိမ်းအဖွဲ့ကို မိတ်ဆက်သူ</value>
+  </data>
+  <data name="MyAccount_Loading" xml:space="preserve">
+    <value>ဆောင်ရွက်နေသည်...</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>ဝင်ရောက်ရန်</value>
+  </data>
+  <data name="MyAccount_Msisdn" xml:space="preserve">
+    <value>Your phone number</value>
+  </data>
+  <data name="MyAccount_MyAccount" xml:space="preserve">
+    <value>ကျွန်ုပ်၏ အကောင့်</value>
+  </data>
+  <data name="MyAccount_MyDownloads" xml:space="preserve">
+    <value>ကျွန်ုပ်၏ ရယူထားမှုများ</value>
+  </data>
+  <data name="MyAccount_MyGames" xml:space="preserve">
+    <value>ကျွန်ုပ်၏ ဂိမ်းများ</value>
+  </data>
+  <data name="MyAccount_MyPhone" xml:space="preserve">
+    <value>ကျွန်ုပ်၏ ဖုန်း</value>
+  </data>
+  <data name="MyAccount_No" xml:space="preserve">
+    <value>မလုပ်ပါ</value>
+  </data>
+  <data name="MyAccount_NotSubscribed" xml:space="preserve">
+    <value>သင်က ဤဂိမ်းအဖွဲ့ရဲ့ အဖွဲ့ဝင်တစ်ယောက် မဖြစ်သေးပါဘူး။ အခုပဲ ပါဝင်လိုက်ပါ !</value>
+  </data>
+  <data name="MyAccount_OnUnsubscribe" xml:space="preserve">
+    <value>ကျေးဇူးပြု၍ ခေတ္တစောင့်ဆိုင်းပါ..</value>
+  </data>
+  <data name="MyAccount_OnUnsubscribeSuccess" xml:space="preserve">
+    <value>အောင်မြင်စွာ ပယ်ဖျက်ပြီးပါပြီ။</value>
+  </data>
+  <data name="MyAccount_PurchaseDate" xml:space="preserve">
+    <value>ဝယ်ယူခဲ့သည့် ရက်စွဲ</value>
+  </data>
+  <data name="MyAccount_QuestionConfirm" xml:space="preserve">
+    <value>ပယ်ဖျက်ရန် သေချာပြီလား?</value>
+  </data>
+  <data name="MyAccount_RedirectHomePage" xml:space="preserve">
+    <value>မူလနေရာသို့ ပြန်သွားရန် ဤနေရာကို နှိပ်ပါ</value>
+  </data>
+  <data name="MyAccount_RenewalDate" xml:space="preserve">
+    <value>အသစ်ပြန်လည် ပြုလုပ်သည့် ရက်စွဲ :</value>
+  </data>
+  <data name="MyAccount_Resubscribe" xml:space="preserve">
+    <value>ပြန်လည် လျောက်ထားရန်</value>
+  </data>
+  <data name="MyAccount_SetUserInfo" xml:space="preserve">
+    <value>အသိအမှတ်မပြုနိုင်ပါ</value>
+  </data>
+  <data name="MyAccount_Status" xml:space="preserve">
+    <value>အခြေအနေ :</value>
+  </data>
+  <data name="MyAccount_Subscription" xml:space="preserve">
+    <value>ကျွန်ုပ်၏ လျောက်ထားခြင်း</value>
+  </data>
+  <data name="MyAccount_SubscriptionCancel" xml:space="preserve">
+    <value>သင်၏ လျောက်ထားခြင်းကို ပယ်ဖျက်ပြီးပါပြီ။ ဂိမ်းများကို အခမဲ့ ရယူရန် အချိန်မရွေးပြန်လာနိုင်ပါသည်။</value>
+  </data>
+  <data name="MyAccount_SubscriptionNotFound" xml:space="preserve">
+    <value>သင်က ဤဂိမ်းအဖွဲ့ရဲ့ အဖွဲ့ဝင်တစ်ယောက် မဖြစ်သေးပါဘူး။ ဒါပေမယ့် အကျိုးကျေးဇူးတွေကို ကျွန်တော်တို့ ပေးပါမည်။</value>
+  </data>
+  <data name="MyAccount_Suspended" xml:space="preserve">
+    <value>ရပ်ဆိုင်းရန်</value>
+  </data>
+  <data name="MyAccount_ThankYou" xml:space="preserve">
+    <value>ကျေးဇူးတင်ပါသည်။</value>
+  </data>
+  <data name="MyAccount_Unsubscribe" xml:space="preserve">
+    <value>လျောက်ထားခြင်းကို ပယ်ဖျက်ရန်</value>
+  </data>
+  <data name="MyAccount_Yes" xml:space="preserve">
+    <value>လုပ်မည်</value>
+  </data>
+  <data name="Notification" xml:space="preserve">
+    <value>အသိပေးချက်</value>
+  </data>
+  <data name="Notification_LoginMessageSent" xml:space="preserve">
+    <value>သင့်ရဲ့ ဖုန်းထံသို့ စာသား ပို့ပြီးပါပြီ။ စာသားတွင်ပါရှိသည့် link ကို ဖွင့်၍ အကောင့်ဝင်နိုင်ပါပြီ။</value>
+  </data>
+  <data name="Notification_MsisdnBanned" xml:space="preserve">
+    <value>ကံမကောင်းစွာဖြင့် သင့်ရဲ့ ဖုန်းနံပါတ်ဟာ ပိတ်ခံထားရပါတယ်။ ကျေးဇူးပြုပြီး {0} သို့ ဆက်သွယ်ပေးပါ။</value>
+  </data>
+  <data name="Notification_ProcessingTransaction" xml:space="preserve">
+    <value>ကျေးဇူးတင်ပါသည်။ သင့်ရဲ့ လုပ်ဆောင်မှုကို ဆောင်ရွက်နေပါပြီ။ ဆောင်ရွက်မှုပြီးသည်နှင့် တစ်ပြိုင်နက် သင်၏ ဖုန်းသို့ ရယူရန် လင့်ခ် ပါဝင်သည့် စာသားတစ်ခုကို ပေးပို့ပါမည်။</value>
+  </data>
+  <data name="Notification_RegistrationCompleted" xml:space="preserve">
+    <value>မှတ်ပုံတင်သည့်အတွက် ကျေးဇူးအထူးတင်ပါသည်။ ဆုကြေးအနေဖြင့် {0} ဂိမ်း credit ရရှိပါလိမ့်မည်။</value>
+  </data>
+  <data name="Notification_Subscribe" xml:space="preserve">
+    <value>သင့်၏ လျောက်လွှာကို ဆောင်ရွက်လျက်ရှိပါသည်။ ကျေးဇူးပြု၍ မိနစ်အနည်းငယ် စောင့်ဆိုင်းပါ။</value>
+  </data>
+  <data name="Notification_WaitingUserConfirmation" xml:space="preserve">
+    <value>သင်၏ အတည်ပြုချက်ရယူရန်အတွက် စာသားတို တစ်ခုကို သင့်ဖုန်းသို့ ပေးပို့မည်ဖြစ်ပါသည်။ လျောက်ထားခြင်း အောင်မြင်ရန်အတွက် "Yes" ဟု ပြန်လည်ပေးပို့ပေးပါ။</value>
+  </data>
+  <data name="Point_BalanceText" xml:space="preserve">
+    <value>သင့်မှာ &lt;span style="color:green"&gt;&lt;strong&gt;{0} LP&lt;/strong&gt;&lt;/span&gt; ရှိသည်။</value>
+  </data>
+  <data name="Point_GetPointInfo" xml:space="preserve">
+    <value>LP ကို မည်သို့ ရယူရမည်နည်း?</value>
+  </data>
+  <data name="Point_InfoText" xml:space="preserve">
+    <value>{0} Club ၏ အောက်ရှိ မေတ္တာလက်ဆောင် များကို ရွေးချယ်ပါ</value>
+  </data>
+  <data name="Point_JoinAndGetPoint" xml:space="preserve">
+    <value>အခမဲ့ ဂိမ်းများနှင့် LP များ ရယူရန် အခုဆက်သွယ်လိုက်ပါ</value>
+  </data>
+  <data name="Point_PageTitle" xml:space="preserve">
+    <value>LP အသုံးပြုရန်</value>
+  </data>
+  <data name="Point_PurchaseBundleNotEnoughPoint" xml:space="preserve">
+    <value>ဂိမ်းအစု ၁ စု အခမဲ့ ရယူရန်အတွက် သင့်တွက် 400 LPs ရှိရန်လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="Point_PurchaseBundleSuccess" xml:space="preserve">
+    <value>ဂိမ်းပေါင်း 20 {0} ပါဝင်သည့် ဂိမ်းအစု တစ်ခုရယူဖို့အတွက် 400 LPs နှင့် အောင်မြင်စွာ လဲလှယ်လိုက်ပါပြီ။</value>
+  </data>
+  <data name="Point_PurchaseCredit" xml:space="preserve">
+    <value>ဂိမ်းတစ်ခု ကို {0} LP ဖြင့် အခမဲ့ ရယူလိုက်ပါ။</value>
+  </data>
+  <data name="Point_PurchaseCreditNotEnoughPoint" xml:space="preserve">
+    <value>အခမဲ့ ဂိမ်းတစ်ခုအတွက် 1 credit ရယူရန်အတွက် သင့်မှာ 50 LP ရှိရန် လိုအပ်ပါတယ်။</value>
+  </data>
+  <data name="Point_PurchaseCreditSuccess" xml:space="preserve">
+    <value>သင့်မှာ ဂိမ်းတစ်ခုရယူဖို့ 1 credit ရရှိပါပြီ၊ ဂိမ်းရွေးချယ်ရန်အတွက် &lt;a href="/"&gt; ဤနေရာ &lt;/a&gt; ကို နှိပ်ပါ။</value>
+  </data>
+  <data name="Point_PurchaseGameBundle" xml:space="preserve">
+    <value>ဂိမ်းပေါင်း 20 ပါဝင်သည့် ဂိမ်းအစုအပေါင်း တစ်ခုကို {0} LP နဲ့ ရယူလိုက်ပါ</value>
+  </data>
+  <data name="Point_PurchaseSubscription" xml:space="preserve">
+    <value>တစ်ပတ်စာ အဖွဲ့ဝင်ဖြစ်ခွင့်ကို {0} LP နဲ့ ရယူလိုက်ပါ</value>
+  </data>
+  <data name="Point_PurchaseSubscriptionNotEnoughPoint" xml:space="preserve">
+    <value>တစ််ပတ်စာ အဖွဲ့ဝင်ဖြစ်ခွင့်အတွက် သင့်မှာ 150 LP ရှိရန်လိုအပ်ပါတယ်။</value>
+  </data>
+  <data name="Point_PurchaseSubscriptionSuccess" xml:space="preserve">
+    <value>တစ်ပတ်စာ အဖွဲ့ဝင်ဖြစ်ခွင့်ကို 150 LP နဲ့ လဲလှယ် ရယူလိုက်ပါပြီ။</value>
+  </data>
+  <data name="Point_RedeemFail" xml:space="preserve">
+    <value>ကံမကောင်းစွာနဲ့ပဲ သင့်မှာ LP အလုံအလောက်မရှိပါဘူး။</value>
+  </data>
+  <data name="Point_RedeemSuccess" xml:space="preserve">
+    <value>ဂုဏ်ယူပါတယ် ! သင့်ရဲ့ LP ကို အောင်မြင်စွာ အသုံးပြုပြီးပါပြီ။</value>
+  </data>
+  <data name="Point_SelectGift" xml:space="preserve">
+    <value>သင်ကြိုက်နှစ်သက်ရာ ဂိမ်းအဖွဲ့များမှ မေတ္တာလက်ဆောင် အခမဲ့ ဂိမ်းများကို ရွေးချယ်ပါ !</value>
+  </data>
+  <data name="Point_UserGetPoint" xml:space="preserve">
+    <value>{0} LP လက်ခံရရှိပါပြီ</value>
+  </data>
+  <data name="PortalPage_Close" xml:space="preserve">
+    <value>ပိတ်ရန်</value>
+  </data>
+  <data name="PurchaseConfirmation" xml:space="preserve">
+    <value>ဤဂိမ်းကို ဝယ်ယူချင်တာ သေချာပြီလား?</value>
+  </data>
+  <data name="Purchase_ClickHereToDownload" xml:space="preserve">
+    <value>ရယူရန် ဤနေရာကို နှိပ်ပါ</value>
+  </data>
+  <data name="Purchase_Download" xml:space="preserve">
+    <value>ပြန်လည်ရယူရန်</value>
+  </data>
+  <data name="Purchase_Loading" xml:space="preserve">
+    <value>လုပ်ဆောင်နေသည်...</value>
+  </data>
+  <data name="Purchase_MyDownload" xml:space="preserve">
+    <value>ကျွန်ုပ်၏ ရယူမှုများ</value>
+  </data>
+  <data name="Purchase_NoPurchase" xml:space="preserve">
+    <value>မည်သည့်ဝယ်ယူမှုမျှ မလုပ်ဆောင်ရသေးပါ။</value>
+  </data>
+  <data name="Purchase_NoPurchases" xml:space="preserve">
+    <value>မည််သည့်ဝယ်ယူမှုများကိုမျှ မလုပ်ဆောင်ရသေးပါ။</value>
+  </data>
+  <data name="Purchase_Notification" xml:space="preserve">
+    <value>သင့်ရဲ့ဝယ်ယူမှုကို ဆက်လက် ဆောင်ရွက်ပေးနေပါသည်။ ကျေးဇူးပြု၍ သင့်ဖုန်းထံသို့ ပို့မည့် စာသား လင့်ခ် ကို စောင့်ဆိုင်းပေးပါ။ ကျေးဇူးတင်ပါတယ်။</value>
+  </data>
+  <data name="Purchase_SubscribeButton" xml:space="preserve">
+    <value>အခုပဲ ချိတ်ဆက်လိုက်ပါ ! အဖွဲ့သို့ ချိတ်ဆက်လျှင် ဈေးသက်သာပါမည်။</value>
+  </data>
+  <data name="Purchase_Thankyou" xml:space="preserve">
+    <value>ဤဂိမ်းကို ဝယ်ယူအားပေးမှုအတွက် ကျေးဇူးတင်ပါသည်။</value>
+  </data>
+  <data name="ReCallBack" xml:space="preserve">
+    <value>ပြန်ထွက်ရန်</value>
+  </data>
+  <data name="ReCallJoin" xml:space="preserve">
+    <value>အခုပဲချိတ်ဆက်လိုက်ပါ !</value>
+  </data>
+  <data name="ReCallText" xml:space="preserve">
+    <value>အခမဲ့ ဂိမ်းများ ရယူဖို့အတွက် ကျွန်တော်တို့နဲ့ ချိတ်ဆက်လိုက်ပါ။ အထူးလျှော့ဈေးများနဲ့ လက်ဆောင်များ ပါဝင်တဲ့ ဂိမ်းတွေနဲ့ ပျော်ရွှင်ရမယ့် အခွင့်အရေးကြီးကို လက်မလွှတ်လိုက်ပါနဲ့။</value>
+  </data>
+  <data name="Resubscribe_NoSubscriptionOrActiveSubscription" xml:space="preserve">
+    <value>ပြန်လည်လျောက်ထား၍ မရနိုင်ပါ။ အဘယ်ကြောင့် ဆိုသော် သင်သည် ဘယ်အခါကမှ လျောက်ထားခြင်း မပြုခဲ့ခြင်းကြောင့်ဖြစ်ပါသည်။ ထို့ကြောင့် အခုပဲ ချိတ်ဆက်လိုက်ပါ။</value>
+  </data>
+  <data name="Search_Free" xml:space="preserve">
+    <value>အခမဲ့</value>
+  </data>
+  <data name="Search_NoGames" xml:space="preserve">
+    <value>ဂိမ်းများ မတွေ့ရှိပါ</value>
+  </data>
+  <data name="Search_Result" xml:space="preserve">
+    <value>ရှာဖွေမှု ရလာဒ်များ</value>
+  </data>
+  <data name="Search_ShowMore" xml:space="preserve">
+    <value>ပိုမို ပြန်သရန်...</value>
+  </data>
+  <data name="SubscribeSuccess_RedirectHome" xml:space="preserve">
+    <value>သင့်အတွက် အခမဲ့ ဂိမ်းကို အခုပဲ ရယူပါ !</value>
+  </data>
+  <data name="SubscribeSuccess_Title" xml:space="preserve">
+    <value>အဖွဲ့ဝင်ခြင်း အတည်ပြုပြီးပါပြီ။</value>
+  </data>
+  <data name="Subscribe_AlreadyNotSubscribed" xml:space="preserve">
+    <value>စိတ်မကောင်းပါဘူး။ ကျွန်ုပ်တို့ ဂိမ်းအဖွဲ့သို့ သင်ချိတ်ဆက်ထားမှုမရှိသေးပါ။ အခုပဲ ချိတ်ဆက်လိုက်ပါ !</value>
+  </data>
+  <data name="Subscribe_BalanceNotEnough" xml:space="preserve">
+    <value>သင့် အကောင့်လက်ကျန်ငွေ မလုံလောက်တော့ပါ ! ကျေးဇူးပြုပြီး ဆက်လက် လုပ်ဆောင်ရန်အတွက် ငွေဖြည့်ပေးပါ။</value>
+  </data>
+  <data name="Subscribe_BalanceNotEnoughSubNotCreated" xml:space="preserve">
+    <value>သင့် အကောင့်လက်ကျန်ငွေ မလုံလောက်တော့ပါ ! ကျေးဇူးပြုပြီး ဆက်လက် လုပ်ဆောင်ရန်အတွက် ငွေဖြည့်ပြီး ထပ်မံ ကြိုးစားကြည့်ပါ။</value>
+  </data>
+  <data name="Subscribe_Benefits" xml:space="preserve">
+    <value>ဤဂိမ်းအဖွဲ့၏ အဖွဲ့ဝင် တစ်ယောက်အနေဖြင့် {0} ဤ အကျိုးကျေးဇူးများကို ခံစားခွင့်ရှိသည် :</value>
+  </data>
+  <data name="Subscribe_CanNotSubscribeWithWifiConnection" xml:space="preserve">
+    <value>WIFI ချိတ်ဆက်မှု ပြုလုပ်ထားလျင် လုပ်ဆောင်မှု မပြီးမြောက်နိုင်ပါ။ ကျေးဇူးပြုပြီး 3G/4G သို့ ပြောင်းလဲပေးပါ။</value>
+  </data>
+  <data name="Subscribe_ChargingError" xml:space="preserve">
+    <value>စိတ်မကောင်းပါဘူး၊ ကျွန်ုပ်တို့ ဂိမ်းအဖွဲ့သို့ သင့်၏လျောက်ထားမှုကို မဆောင်ရွက်နိုင်သေးပါ။ စီစစ်ဆဲဖြစ်ပါသည်။</value>
+  </data>
+  <data name="Subscribe_EnterConfirmationCode" xml:space="preserve">
+    <value>လက်ခံ ရရှိသည့် အတည်ပြုကုဒ်နံပါတ် ကို ရိုက်ထည့်ပေးပါ။</value>
+  </data>
+  <data name="Subscribe_EnterMsisdn" xml:space="preserve">
+    <value>သင့်ဖုန်းနံပါတ်ကို ရိုက်ထည့်ပေးပါ :</value>
+  </data>
+  <data name="Subscribe_FirstWeekFree" xml:space="preserve">
+    <value>ပထမဆုံး တစ်ပတ်အတွက် အခမဲ့ပါ။ တစ်ပြားမျှမကုန်ကျစေရပါ။ &lt;a href="Subscribe/Subscribe" class="subscribe-button" style="color:Blue; text-decoration:underline"&gt; ချိတ်ဆက်ရန် ! &lt;/a&gt;&lt;br/&gt;</value>
+  </data>
+  <data name="Subscribe_FreeDaily" xml:space="preserve">
+    <value>နေ့တိုင်း အတွက် {0} အခမဲ့ ဂိမ်းတစ်ခု ရယူပါ။</value>
+  </data>
+  <data name="Subscribe_FreeWeekly" xml:space="preserve">
+    <value>အပတ်တိုင်းအတွက် {0} အခမဲ့ ဂိမ်းများ ရယူပါ။</value>
+  </data>
+  <data name="Subscribe_GeneralError" xml:space="preserve">
+    <value>ပြဿနာ တစ်ခုဖြစ်နေပါသည်။</value>
+  </data>
+  <data name="Subscribe_GeneralMessage" xml:space="preserve">
+    <value>စိတ်မကောင်းပါဘူး၊ ကျွန်ုပ်တို့ ဂိမ်းအဖွဲ့သို့ သင့်လျောက်ထားမှုကို ဆောင်ရွက်နိုင်ခြင်း မရှိသေးပါ။</value>
+  </data>
+  <data name="Subscribe_GetCode" xml:space="preserve">
+    <value>ကုဒ်နံပါတ် ပို့ရန်</value>
+  </data>
+  <data name="Subscribe_JoinText" xml:space="preserve">
+    <value>အကောင်းဆုံး ဂိမ်းအဖွဲ့ကို အခုပဲ ချိတ်ဆက်လိုက်ပါ !</value>
+  </data>
+  <data name="Subscribe_LimitedTime" xml:space="preserve">
+    <value>ကန့်သတ်ချိန်အတွင်းသာ : ပထမဆုံး တစ်ပတ်စာအတွက် အဖွဲ့ဝင်ကြေး အခမဲ့ပါ !</value>
+  </data>
+  <data name="Subscribe_OnSubscribeSuccess" xml:space="preserve">
+    <value>ကြိုဆိုပါတယ် ! အကောင်းဆုံး သော ဂိမ်းအဖွဲ့ကို လျောက်ထားမှု အောင်မြင်ပါပြီ ! သင့်ရဲ့ credits များကို အသုံးပြုပြီး အခမဲ ဂိမ်းများ ရယူလိုက်ပါ !</value>
+  </data>
+  <data name="Subscribe_PleaseWait" xml:space="preserve">
+    <value>ခေတ္တစောင့်ပါ...</value>
+  </data>
+  <data name="Subscribe_PriceText" xml:space="preserve">
+    <value>Select from hundreds of top games {0} and pay $2.50/week only!</value>
+  </data>
+  <data name="Subscribe_ResubscribeWith15Days" xml:space="preserve">
+    <value>စိတ်မကောင်းပါ။ ၁၅ ရက်အတွင်း သင့်အနေဖြင့် ပြန်လည် လျောက်ထားခြင်း မပြုနိုင်ပါ။ နောက်မှ ထပ်မံ ကြိုးစားကြည့်ပါ</value>
+  </data>
+  <data name="Subscribe_ResubscribeWithAWeek" xml:space="preserve">
+    <value>စိတ်မကောင်းပါ။ တစ်ပတ်အတွင်း သင့်အနေဖြင့် ပြန်လည် လျောက်ထားခြင်း မပြုနိုင်ပါ။ နောက်မှ ထပ်မံ ကြိုးစားကြည့်ပါ</value>
+  </data>
+  <data name="Subscribe_Save" xml:space="preserve">
+    <value>ချိတ်ဆက်ပြီး သင့်အတွက် အခမဲ့ ဂိမ်းကို အခုပဲ ရယူလိုက်ပါ !</value>
+  </data>
+  <data name="Subscribe_SendSMS" xml:space="preserve">
+    <value>SMS ပို့ရန်</value>
+  </data>
+  <data name="Subscribe_SubNotCreatedBalanceNotEnough" xml:space="preserve">
+    <value>အကောင့်လက်ကျန်ငွေ မလုံလောက်ပါ ! ကျေးဇူးပြုပြီး ငွေဖြည့်သွင်းပြီးနောက် ထပ်မံ ကြိုးစားကြည့်ပါ။</value>
+  </data>
+  <data name="Subscribe_SubscribedForLessThanAWeek" xml:space="preserve">
+    <value>ဤအပတ်အတွင်း သင်လျောက်ထားပြီး ဖြစ်ပါသည်။ ထပ်မံ လျောက်ထားခြင်း မပြုနိုင်ပါ။</value>
+  </data>
+  <data name="Subscribe_SubscribeTemporarilyBlocked" xml:space="preserve">
+    <value>ကျွန်ုပ်တို့၏ ဆာဗာများ ကို ပြုပြင်ထိန်းသိမ်းမှု ပြုလုပ်နေပါသည်။</value>
+  </data>
+  <data name="Subscribe_SubscriptionAlreadyExists" xml:space="preserve">
+    <value>လျောက်ထားခြင်း ပြုလုပ်ပြီး ဖြစ်ပါသည်။ ကျွန်ုပ်၏ အကောင့် နေရာသို့ သွား၍ အသေးစိတ် ကြည့်ရှုနိုင်ပါသည်။</value>
+  </data>
+  <data name="Subscribe_TryAgain" xml:space="preserve">
+    <value>ကျေးဇူးပြုပြီး ထပ်မံ ကြိုးစားကြည့်ပါ။</value>
+  </data>
+  <data name="Subscribe_WifiClickToMO" xml:space="preserve">
+    <value>သင့်အတွက် အဆင်ပြေစေရန်၊ ကျွန်ုပ်တို့မှ SMS (စာတို) တစ်ခု ပြင်ဆင်ထားပြီး ဖြစ်ပါသည်။ &lt;a href="{0}" style="color:Blue;"&gt; ဤနေရာ &lt;/a&gt; ကိုသာ နှိပ်လိုက်ပါ။</value>
+  </data>
+  <data name="Subscribe_WifiConnectTo3G" xml:space="preserve">
+    <value>သို့မဟုတ် ဝက်ဘ်ဆိုဒ်မှ တစ်ဆင့် မှတ်ပုံတင်ရန်အတွက် 3G/4G သို့ချိတ်ဆက်ပေးပါ။</value>
+  </data>
+  <data name="Subscribe_WifiConnectTo3G_Telstra" xml:space="preserve">
+    <value>ဝက်ဘ်ဆိုဒ်မှ တစ်ဆင့် မှတ်ပုံတင်ရန်အတွက် 3G/4G သို့ချိတ်ဆက်ပေးပါ။</value>
+  </data>
+  <data name="Subscribe_WifiInstruction" xml:space="preserve">
+    <value>&lt;strong&gt; {1} &lt;/strong&gt; သို့ &lt;/strong&gt; {0} &lt;/strong&gt; ဟု ပေးပို့ခြင်းဖြင့် ချိတ်ဆက်လိုက်ပါ။</value>
+  </data>
+  <data name="Subscribe_YesJoin" xml:space="preserve">
+    <value>ဟုတ်ပြီ၊ {0} အဖွဲ့ကို ချိတ်ဆက်မယ် !</value>
+  </data>
+  <data name="Term_OfUse" xml:space="preserve">
+    <value>သုံးစွဲရန် စည်းမျဉ်းစည်းကမ်းများ</value>
+  </data>
+  <data name="UserNoCoin" xml:space="preserve">
+    <value>အဖွဲ့ဝင်များအတွက် ဂိမ်းများဝယ်ယူရန် လျော့ဈေးများ သင့်တွင် ရရှိပြီး ဖြစ်ပါသည်။ ယခုထွက်မည် ဆိုပါက ထိုအကျိုးကျေးဇူးများ ဆုံးရှုံးမည်ဖြစ်သည်။</value>
+  </data>
+  <data name="UserRegistration_InvalidBirthday" xml:space="preserve">
+    <value>သင့်မွေးနေ့ကို ရက်/လ/နှစ် ပုံစံဖြင့် ဖြည့်ပေးပါ။ ဥပမာ : 15/01/1990</value>
+  </data>
+  <data name="UserRegistration_InvalidConfirmPassword" xml:space="preserve">
+    <value>လျှို့ဝှက်နံပါတ် နှင့် အတည်ပြုလျှို့ဝှက်နံပါတ် မတူညီပါ။</value>
+  </data>
+  <data name="UserRegistration_InvalidEmail" xml:space="preserve">
+    <value>အီးမေးလ် လိပ်စာ မှားယွင်းနေပါသည်။</value>
+  </data>
+  <data name="UserRegistration_InvalidFirstname" xml:space="preserve">
+    <value>နာမည် ဖြည့်ပေးပါ။</value>
+  </data>
+  <data name="UserRegistration_InvalidPassword" xml:space="preserve">
+    <value>လျှို့ဝှက်နံပါတ် သည် အနည်းဆုံး စာလုံးရေ ၆ လုံး ရှိရန်လိုအပ်သည်။</value>
+  </data>
+  <data name="UserRegistration_InvalidUsername" xml:space="preserve">
+    <value>အသုံးပြုသူ အမည်သည် အနည်းဆုံး စာလုံးရေ ၆ လုံး ရှိရန် လိုအပ်ပါသည်။</value>
+  </data>
+  <data name="UserRegistration_Message" xml:space="preserve">
+    <value>အခု မှတ်ပုံတင်လိုက်ပါ၊ မေတ္တာလက်ဆောင်အနေဖြင့် သင့်ဂိမ်း credit ရရှိမည်ဖြစ်ပါသည် !</value>
+  </data>
+  <data name="UserRegistration_Register" xml:space="preserve">
+    <value>မှတ်ပုံတင်ရန်</value>
+  </data>
+  <data name="UserStillHaveeCoins" xml:space="preserve">
+    <value>အခမဲ့ ဂိမ်းများ ရယူရန်အတွက် သင့်မှာ {0} credit(s) ကျန်ရှိပါသေးတယ်။ အခုအချိန် ထွက်ခွာမည် ဆိုလျှင် အဆိုပါ credits များ ဆုံးရှံးမည် ဖြစ်ပါသည်။ လျောက်ထားမှု ပယ်ဖျက်ရန် သေချာပြီလား?</value>
+  </data>
+  <data name="Unsubscribe_AdditionalInfo" xml:space="preserve">
+    <value>ဤပယ်ဖျက်မှု ပြီးပါက သင့်အကောင့်အတွက် ကျသင့်ငွေ ကောက်ခံခြင်းမပြုတော့ပါ။</value>
+  </data>
+  <data name="Unsubscribe_PageTitle" xml:space="preserve">
+    <value>လျောက်ထားမှုကို ပယ်ဖျက်ရန်</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>အိုကေ</value>
+  </data>
+  <data name="LoginConfirmation_Description" xml:space="preserve">
+    <value>သင့် စိတ်ကြိုက် ဂိမ်းများ ရယူနိုင်ရန်အတွက် အကောင့်ဝင်ရန် လိုအပ်ပါသည်။
+ဆက်လက် လုပ်ဆောင်ရန်အတွက် “OK” ကို နှိပ်ပါ။</value>
+  </data>
+  <data name="LoginConfirmation_Title" xml:space="preserve">
+    <value>အကောင့်ဝင်ရန် လိုအပ်ပါသည်</value>
+  </data>
+</root>

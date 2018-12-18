@@ -1,0 +1,106 @@
+﻿@using EightElements.Data
+@{
+    int portalId = (int)ViewBag.PortalID;
+}
+
+<div id="top">
+    @Html.PortalText("SubscribeJoinText")
+</div>
+<div id="container" class="">
+    @{if ((bool)ViewData["CanStillUseFirstWeekFree"])
+      {
+        <div class="first-week-free" style="padding: 3% 10px; color: #C9AC14; font-weight: bold; font-size: larger">
+            @Html.PortalText("SubscribeFirstWeekFree")
+        </div>
+      }
+      else
+      {
+        <div class="text-about-price" align="center">
+           @{if ((bool)ViewData["UseWeeklySubscriptionText"])
+            {
+                @Html.PortalText("SubscribePriceText")
+            }
+            else
+            {
+                @Html.PortalText("SubscribePriceTextDaily")
+            }}
+        </div>
+      }
+    }
+    <div id="btn-join" class="btn-curved gradient-green-dark subscribe-button">
+        <a href="#" onclick="subscribeAction(@ViewData["DetailContentId"]);">
+            @if (portalId == DAPortal.TelstraPortalId ||
+                 portalId == DAPortal.DigitalTurbinPortalId ||
+                 portalId == DAPortal.GamerHeavenOxygen8PortalId)
+            {
+                @Resources.GamerHeaven.Subscribe_Save
+            }
+            else
+            {
+                @Resources.Strings.Subscribe_Save    
+            }
+        </a>
+    </div>
+    <div id="pictures" class="element" align="center">
+        @{Html.RenderAction("GetTopFeatures", "Common");}
+    </div>
+    <div id="benefits" class="element">
+        <div class="intro" align="center">
+            @Html.Raw(String.Format(Resources.Strings.Subscribe_Benefits, "<br/>"))
+        </div>
+        @{if ((bool)ViewData["CanStillUseFirstWeekFree"])
+          {
+              <div style="padding: 3% 10px; font-weight: bold">
+                  @if (portalId == DAPortal.SmartPortalId)
+                  {
+                    @Resources.Smart8e.Subscribe_LimitedTime
+                  }
+                  else
+                  {
+                    @Resources.Strings.Subscribe_LimitedTime
+                  }
+              </div>
+          }} 
+
+          @{if ((bool)ViewData["UseWeeklySubscriptionText"])
+           {
+               @Html.PortalText("SubscribeBenefit")
+           }
+           else
+           {
+               @Html.PortalText("SubscribeBenefitDaily")
+           }}
+    </div>
+    <div class="element">
+        <div id="btn-join" class="btn-curved gradient-green-dark subscribe-button">
+            <a href="#" onclick=" subscribeAction(@ViewData["DetailContentId"]); ">
+                @{
+                    if (portalId == DAPortal.TelstraPortalId ||
+                        portalId == DAPortal.DigitalTurbinPortalId)
+                    {
+                        @Html.Raw(Resources.GamerHeaven.Subscribe_YesJoin)
+                    }
+                    else
+                    {
+                        @Html.Raw(string.Format(Resources.Strings.Subscribe_Save, "<br/>"))
+                    }
+                }
+                
+            </a>
+        </div>
+    </div>
+    <div id="get-a-free-game">
+        @{if ((bool)ViewData["UseWeeklySubscriptionText"])
+          {
+            @(String.IsNullOrWhiteSpace(Html.PortalText("SubscribeFreeWeekly").ToHtmlString())
+            ? Html.Raw(string.Format(Resources.Strings.Subscribe_FreeWeekly, "<br/>"))
+            : Html.PortalText("SubscribeFreeWeekly"))
+          }
+          else
+          {
+            @Html.Raw(string.Format(Resources.Strings.Subscribe_FreeDaily, "<br/>"))
+          }}
+    </div>
+    @Html.PortalText("InmobiLandingPage")
+</div>
+

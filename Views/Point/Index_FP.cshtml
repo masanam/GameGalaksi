@@ -1,0 +1,108 @@
+﻿@{
+    bool hasSubscription = ViewBag.HasSubscription;
+    int points = ViewBag.Points;
+    var gamesId = ViewBag.RandomGames as List<int> ?? new List<int> {0, 0, 0};
+    var prices = ViewBag.Prices as List<int> ?? new List<int> {0, 0, 0};
+}
+    
+
+<div class="gradient-pale padding">
+    
+    <div class="page-title"><h3>@Resources.Strings.Point_PageTitle</h3></div>
+
+    <div class="content">
+        
+        @Html.Partial("Notification_FP")
+        
+        @if (hasSubscription)
+        {
+            @Html.Raw(String.Format(Resources.Strings.Point_BalanceText, points))
+
+            <div class="section-header">
+                @string.Format(Resources.Strings.Point_SelectGift, ViewData["PortalTitle"])
+            </div>
+
+            <table>
+                <tr>
+                    <td>
+                        @{
+                            string imageSource = "/rest/gameimage/" + gamesId[0] + "?key=Square0";
+
+                            <a href="@Url.Action("BuyCoin", "Point")">
+                                <img src="@imageSource" class="gameSquareImageTop" />
+                            </a>
+                        }
+                    </td>
+                    <td>
+                        <a href="@Url.Action("BuyCoin", "Point")" class="buy-button">
+                            @Html.Raw(String.Format(Resources.Strings.Point_PurchaseCredit, prices[0]))
+                        </a>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        @{
+                            string imageSource2 = "/rest/gameimage/" + gamesId[1] + "?key=Square0";
+
+                            <a href="@Url.Action("Index", "GameBundle")">
+                                <img src="@imageSource2" class="gameSquareImageTop" />
+                            </a>
+                        }
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Index", "GameBundle")" class="buy-button">
+                            @Html.Raw(String.Format(Resources.Strings.Point_PurchaseGameBundle, prices[1]))
+                        </a>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        @{
+                            string imageSource3 = "/rest/gameimage/" + gamesId[2] + "?key=Square0";
+
+                            <a href="@Url.Action("BuySubscription", "Point")">
+                                <img src="@imageSource3" class="gameSquareImageTop" />
+                            </a>
+                        }
+                    </td>
+                    <td>
+                        <a href="@Url.Action("BuySubscription", "Point")" class="buy-button">
+                            @Html.Raw(String.Format(Resources.Strings.Point_PurchaseSubscription, prices[2]))
+                        </a>
+                    </td>
+                </tr>
+                
+            </table>
+            
+            <br/>
+        }
+       @* else
+        {
+            @Html.Raw("You are not subscribed to the service")
+        }*@
+        
+        
+        <div class="point-info-text">
+            <h4>@Resources.Strings.Point_GetPointInfo</h4>
+            <ol>
+                @Html.PortalText("PointInfo")
+            </ol>
+        </div>
+        
+        
+        @*        if user is not a member, show subscribe button*@
+        @if (!hasSubscription)
+        {
+            <div class="button-bar">
+                <div class="join-button">
+                    <a href="@Url.Action("Subscribe", "Subscribe")">
+                        @Resources.Strings.Point_JoinAndGetPoint
+                    </a>    
+                </div>    
+            </div>
+        }
+        
+    </div>
+</div>

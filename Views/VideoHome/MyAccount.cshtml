@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "MyAccount";
+}
+
+<div class="info-text">
+    <div>MSISDN: @ViewBag.Msisdn</div>
+    <div>Credit: @ViewData["credits"]</div><br/>
+    @if ((bool) ViewData["NonSub"])
+    {
+        <div>
+            @Html.PortalText("MyAccount_NonSubscriberMessage")
+        </div>
+    }
+    else
+    {
+        <div>
+            @Html.PortalText("MyAccount_SubscriberMessage")
+        </div>
+        
+    }
+
+@*    <p>Jika kamu sudah menjadi member silahkan masuk lagi dengan mengakses dari URL yang telah dikirimkan melalui SMS ke Hpmu untuk bisa melihat lagi video yang sudah kamu beli.</p>*@
+@*    <p>Jika kamu belum tergabung menjadi member silahkan <a href="/videohome/confirmsubscribe">bergabung dulu di sini</a></p>*@
+</div>
+
+
+<div class="default-items">
+    @{
+        Html.RenderPartial("ContentPartial");
+    }
+</div>

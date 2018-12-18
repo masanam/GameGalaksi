@@ -1,0 +1,329 @@
+﻿.video-project * {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.video-project {
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+
+.video-project a {
+    text-decoration: none;
+}
+
+.section-header {
+    
+}
+
+.section-header__title {
+    color: #5511C5;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 8px;
+}
+
+/* Main menu */
+
+.menu-bar {
+    background-color: #EAAAFF;
+    color: #fff;
+    overflow: auto;
+}
+
+.video-menu {
+    list-style: none;
+    float: left;
+    margin: 0;
+    -webkit-padding-start: 8px;
+}
+
+.menu__item {
+    float: left;
+    padding: 8px 8px;
+}
+
+.menu__item-link {
+    color: #fff;
+    font-weight: bold;
+}
+
+
+
+.navbar-test {
+    background-color: #eaabfe;
+    border-radius: 4px;
+    border-color: #e7e7e7;
+}
+
+.navbar-default {
+    background-image: -webkit-linear-gradient(top, #fff 0%, #f8f8f8 100%);
+    background-image: -o-linear-gradient(top, #fff 0%, #f8f8f8 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f8f8f8));
+    background-image: linear-gradient(to bottom, #fff 0%, #f8f8f8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff8f8f8', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    background-repeat: repeat-x;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+}
+.navbar-default {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+}
+
+.video-project .gradient
+{
+    background: #eaeaea; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f8e4fe 0%, #fff 45%, #fff 55%, #f8e4fe 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8e4fe), color-stop(45%,#fff), color-stop(55%,#fff), color-stop(100%,#f8e4fe)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #f8e4fe 0%,#fff 45%,#fff 55%,#f8e4fe 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #f8e4fe 0%,#fff 45%,#fff 55%,#f8e4fe 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #f8e4fe 0%,#fff 45%,#fff 55%,#f8e4fe 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #f8e4fe 0%,#fff 45%,#fff 55%,#f8e4fe 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8e4fe', endColorstr='#f8e4fe',GradientType=0 ); /* IE6-9 */
+}
+
+
+
+
+.video-project div.section-title {
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 8px;
+}
+
+
+a.video-title:hover {
+    color: #ffffff;
+}
+
+
+.video {
+    margin-top: 4px;
+    overflow: auto;
+    padding: 8px;
+    position: relative;
+}
+
+.video__image-container {
+    float: left;
+    position: relative;
+    width: 128px;
+}
+
+.video__image--banner {
+    width: 100%;
+}
+
+.video__image-container--banner {
+    position: relative;
+    margin: auto;
+    max-width: 640px;
+}
+
+.video__play-button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.video__info {
+    margin-left: 136px;
+    margin-top: 8px;
+}
+
+.video__info--banner {
+    
+    margin-top: 8px;
+    margin-right: 120px;
+}
+
+.video__title-link {
+    color: #5511C5;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.video__description {
+    font-family: 'Century Gothic';
+    font-size: 0.8em;
+    color: #666;
+}
+
+
+.video__button {
+    text-align: center;
+    margin: 8px auto;  
+}
+
+.video__button--banner {
+    float: right;
+    margin-top: 12px;
+    text-align: center;
+}
+
+.video__button-link {
+    background-color: #cc16fe;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 0 1px #333, 0 0 2px #333;
+    border-radius: 8px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+    display: inline-block;
+    padding: 4px 12px;
+    min-width: 120px;
+}
+
+
+div.watch-button a:hover {
+    background-color: #5c1ac9;
+}
+
+
+div.confirm-dialog div.button-container {
+    margin: 0 auto; 
+    text-align: center
+}
+
+
+div.confirm-dialog div.button-container a 
+{
+    text-decoration: none;
+    border-radius: 5px;
+    border-color: #bebebe;
+    border-size: 2px;
+    border-style: solid;
+    font-size: 1em;
+    color: #ffffff; 
+    display: inline-block; 
+    padding: 5px 8px;
+    text-align: center;
+    margin: 8px;
+    min-width: 100px;
+    background-color: #a80c0b;
+}
+
+
+div.confirm-dialog 
+{
+    font-size: medium;
+    color: #d9d9d9;
+    text-align: center;
+    padding: 16px 8px 8px;
+}
+
+
+.video-project div.button-container {
+    text-align: center;
+    margin: 12px auto;
+}
+
+
+.video-project div.button-container a {
+    border-radius: 5px;
+    border-style: solid;
+    background-color: #eee;
+    padding: 4px 24px;
+    border-width: 1px;
+    border-color: #ccc;
+    color: #333;
+    font-size: small;
+    font-weight: bold;
+}
+
+
+.video-project div.horizontal-menu {
+    overflow: auto;
+}
+
+
+.video-project div.horizontal-menu ul 
+{
+    float: left;
+    list-style: none;
+    margin: 0;
+}
+
+.video-project div.horizontal-menu li {
+    float: left;
+    padding: 8px;
+    font-size: small;
+}
+.video-project div.horizontal-menu li a {
+    color: #177CE1;
+}
+
+
+/* Footer menu */
+    .footer-menu {
+        padding: 4px 8px 8px;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-bottom-color: #999;
+    }
+
+    .footer-menu__link 
+    {
+        color: #333;
+        display: block;
+    }
+
+
+    .footer-menu__link:hover {
+        color: white;
+        font-weight: bold;
+    }
+
+/*********/
+
+
+.page-footer {
+    color: #f3f3f3;
+    background-color: #FE8DC5;
+    padding: 8px;
+    text-align: center;
+    font-size: 0.8em;   
+}
+
+.page-footer__link {
+    color: #fff;
+}
+
+/*********/
+
+div.align-center {
+    text-align: center;
+    margin: 8px 0;
+}
+
+.account {
+    padding-bottom: 8px;
+}
+
+.account__info
+{
+	margin: 12px 8px;
+}
+
+
+.account__info-label {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+
+.account__info-text {
+	color: #000;
+    margin-left: 8px;
+}

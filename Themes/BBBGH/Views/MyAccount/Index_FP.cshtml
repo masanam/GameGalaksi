@@ -1,0 +1,188 @@
+﻿@using EightElements.Data
+@using EightElements.Data.Rest.Models
+
+@{
+    int portalId = ViewBag.PortalID ?? -1;
+    var userDetail = (UserDetail)ViewData["UserDetail"];
+}
+
+
+<div class="article-container">
+    <div class="title">
+        <h3>
+            @Resources.Strings.MyAccount_MyAcount
+        </h3>
+    </div>
+    <div class="my-subscription">
+        @if (Request.Cookies["UserTemp"] == null)
+        {
+            <div id="accountLogin" class="info">
+                Silahkan masukkan email kamu yang sudah dipakai untuk mendaftar, lalu tekan LOGIN.<br />
+                @using (Html.BeginForm("Login", "User", FormMethod.Post))
+                {
+                    @Html.ValidationSummary()
+                    <input type="text" id="txtLogin" name="txtLogin" placeholder="Email" /><br />
+                    <button type="submit" class="subscribe-join-btn">Login</button>
+                }
+            </div>
+        }
+        else
+        {
+            <div id="accountLogin" class="info">
+                Akun Pengguna: @Request.Cookies["UserTemp"].Value <input type="button" value="Logout" onclick="location.href='@Url.Action("Logout", "User")'" /> <br /><br />
+            </div>
+        }
+
+        <div id="myphone" class="info" style="margin-bottom: 10px;">
+            @Html.Raw(String.Format("{0}: {1}", Resources.Strings.MyAccount_MyPhone, userDetail.Msisdn))
+            @*@if (userDetail.Msisdn == Resources.Strings.Guest)
+            {   
+                <a href="@Url.Action("Index", "Msisdn")" style="color: #fff; background-color: Blue; text-decoration: none; padding: 3px; margin-left: 10px;">
+                    @Resources.Strings.Msisdn_Authenticate
+                </a>
+            }*@
+        </div>
+
+        <div id="device" class="info">
+            @Html.Raw(String.Format(Resources.Strings.MyAccount_Handset, userDetail.HandsetModel))
+            @if (ViewBag.HandsetSelectionEnabled)
+            {
+                <a href="@Url.Action("Index", "Handset")" class="change-handset"> 
+                    @Resources.Strings.MyAccount_ChangeHandset
+                </a>
+            }
+            <br />
+        </div>
+    </div>
+    <div class="my-subscription">
+        <h4>
+            @Resources.Strings.MyAccount_Subscription</h4>
+        <div id="credits" class="info">
+
+            <span>@ViewData["CreditText"] </span> 
+        
+            @{
+                if (userDetail.HasSubscription)
+                {
+                    <img src="/Images/General/MyDownloads/ico-coin.png" alt="" style="width: 14px;" />
+                    <br/>
+
+
+                    if (ViewBag.PointSystemVisible)
+                    {
+                        <div style="margin: 5px 0">
+                            @Html.Raw(String.Format(Resources.Strings.Point_BalanceText, userDetail.Points))
+                            <a href="@Url.Action("Index", "Point")" class="blue-link" style="margin: 5px 0">Redeem Now</a>
+                        </div>
+                    }
+
+                    <span>Status: @userDetail.SubscriptionStatus</span>
+                    <br/><br/>
+                
+                    <div>
+                        @if (ViewBag.PointSystemVisible && (bool)ViewBag.ShowReferral)
+                        {
+                            using (Html.BeginForm("AddReferrer", "MyAccount", FormMethod.Post))
+                            {
+                                <span>@Resources.Strings.MyAccount_IntroducedByText</span>
+                                <br/>
+                                <input type="text" name="msisdn" class="textbox" style="width: 125px"/>
+                                <input type="submit" value="Submit" class="submit-button"/>
+                            }
+                        }
+                    </div>
+
+                    @Html.Partial("Notification_FP")
+
+                    <br/>
+
+                    if(portalId == EightElements.Data.DAPortal.GameGalaksiPortalId)
+                    {
+                        <div>@Html.Raw(Resources.Strings.MyAccount_Unsubscribe)</div>
+                    } else if (portalId == DAPortal.NextNationPortalId)
+                    {
+                        <div>
+                            <a href="/myAccount/ConfirmToUnsubscribe">
+                                @Html.PortalText("UnsubscribeText")
+                            </a>
+                        </div>
+                    }
+                    else if (portalId != EightElements.Data.DAPortal.ViettelPortalId
+                           && portalId != EightElements.Data.DAPortal.VinaphonePortalId
+                           && portalId != EightElements.Data.DAPortal.MobifonePortalId
+                           && portalId != EightElements.Data.DAPortal.PolynetPortalId
+                           && portalId != EightElements.Data.DAPortal.XhttVinaphoneId)
+                    {
+                        <div>
+                            <a href="/myAccount/ConfirmToUnsubscribe">
+                                @Html.Raw(Resources.Strings.MyAccount_Unsubscribe)
+                            </a>
+                        </div>
+                    }
+                }
+            }
+        </div>
+
+    </div>
+    <br />
+    <div align="center" style="padding: 10px;">
+        @{
+            if (!userDetail.HasActiveSubscription)
+            {
+                <div>
+                    
+                 @if (portalId == EightElements.Data.DAPortal.PolynetPortalId || 
+                    portalId == EightElements.Data.DAPortal.ViettelPortalId ||
+                    portalId == EightElements.Data.DAPortal.XhttVinaphoneId ||
+                    portalId == EightElements.Data.DAPortal.MobifonePortalId ||
+                    portalId == EightElements.Data.DAPortal.VinaphonePortalId ||
+                    portalId == EightElements.Data.DAPortal.VNMPortalId)
+                {
+                    <a href="@Url.Action("SubscribeButton", "Subscribe")"  
+                    style="color: #fff; background-color: Green; text-decoration: none; padding: 3px;">
+                                @Html.PortalText("MyAccountSubscribe")</a>
+                }  
+                else
+                {   
+                    <a href="/Subscribe" 
+                       style="color: #fff; background-color: Green; text-decoration: none; padding: 3px;">
+                        @Resources.Strings.MyAccount_Benefit
+                    </a> 
+                }
+                </div>
+            }
+        }
+        @{
+            if (userDetail.IsHandsetSupported)
+            {
+                if (ViewBag.PointSystemVisible)
+                {
+                    <br/>
+                    <div class="my-bundle-button">
+                        <a href="@Url.Action("Purchased", "GameBundle")">
+                            @Resources.Strings.GameBundle_PurchasedPageTitle
+                        </a>
+                    </div>
+                    <br/>
+                }
+                <div class="btn-my-downloads btn-curved gradient-blue-bright btn-text-1line" 
+                     style="padding: 10px;">
+                    @Html.ActionLink(
+                        Resources.Strings.MyAccount_MyDownloads, "History", "Purchase", new { handsetId = @userDetail.HandsetId },
+                        new { style = "color:#fff;background-color:Blue;text-decoration:none;padding:3px;" }) 
+                </div>
+            }
+        }
+    </div>
+</div>
+
+
+
+@if (portalId == EightElements.Data.DAPortal.ViettelPortalId && userDetail.HasSubscription)
+{
+    @section Unsubscribe {
+        <a href="/MyAccount/ConfirmToUnsubscribe" style="color: #08c; font-size: small">
+            >> @Resources.Strings.MyAccount_Unsubscribe
+        </a><br />
+    }
+}

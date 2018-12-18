@@ -1,0 +1,60 @@
+﻿h3
+{
+	color: rgb(3, 95, 233);
+}
+
+.sub-title 
+{
+	margin: 40px 0 10px;
+    padding: 0;
+	color: rgb(0, 153, 255);
+}
+
+.info
+{
+	margin: 10px 0px 10px 0px;
+	color: Gray;
+	font-weight: bolder;
+}
+
+.info span
+{
+	color: #000;
+	font-weight: bolder;
+}
+
+.btn-my-downloads
+{
+	margin-top: 10px;
+	width: 120px;
+}
+
+.unsubscribe
+{
+	margin: 10px 0px 10px 0px;
+}
+
+#btn-subscription
+{
+	width: 225px;
+	margin: 15px auto;
+	padding: 8px;
+}
+
+a.redeem 
+{
+    text-decoration: underline;
+}
+
+
+div.my-subscription {
+    padding: 5px;
+}
+
+a.change-handset {
+    text-transform: uppercase ; 
+    font-size: 11px; 
+    text-decoration: underline;
+    font-weight: normal;
+    vertical-align: 6%;
+}

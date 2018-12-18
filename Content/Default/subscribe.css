@@ -1,0 +1,161 @@
+﻿.subscribe-content #container
+{
+	text-align: center;
+}
+
+.subscribe-content div.element
+{
+	margin: 10px 0;
+	display: block;
+	clear: both;
+}
+
+.subscribe-content hr
+{
+	margin: 6px 0;
+}
+
+.subscribe-content #top
+{
+	text-align: center;
+	font-weight: bolder;
+	padding: 10px;
+	font-size: 12px;
+	color: rgb(0, 0, 255);
+	background-color: rgb(0,204,255);
+}
+
+.subscribe-content div.text-about-price
+{
+	color: rgb(243, 115, 153);
+	font-size: 14px;
+	font-weight: bolder;
+	padding: 5px;
+	line-height: 1.4;
+}
+
+.subscribe-content div.text-about-price.no-msisdn
+{
+	font-size: 11px;
+}
+
+.subscribe-content #btn-subscribe-and-save {
+	margin: 6px auto 6px auto; 
+	text-align: center;
+	-moz-min-width: 60px;
+	-ms-min-width: 60px;
+	-o-min-width: 60px;
+	-webkit-min-width: 60px;
+	min-width: 60px;   
+}
+
+.subscribe-content #btn-subscribe-and-save-no-msisdn {
+	margin: 6px auto 15px auto;
+	text-align: center;
+	color: Black;
+	font-weight: bolder;
+	text-decoration: underline;
+	max-width: 260px;
+	-moz-min-width: 60px;
+	-ms-min-width: 60px;
+	-o-min-width: 60px;
+	-webkit-min-width: 60px;
+	min-width: 60px;
+	background: #FFC11B; /* colour of the button */
+	padding: 6px 15px 8px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.subscribe-content #btn-subscribe-and-save:active
+{
+	background: #F7FE43; /* colour of the button */
+}
+
+.subscribe-content img.img-rounded
+{
+	margin: 1px;
+}
+
+.subscribe-content .text-blue
+{
+	color: rgb(50, 142, 255);
+	padding: 15px 10px 10px;
+}
+
+.subscribe-content #benefits .intro
+{
+	line-height: 18px;
+	font-size: 16px;
+	font-weight: bolder;
+	color: rgb(12, 66, 238);
+	padding: 5px 10px 5px 0;
+}
+
+.subscribe-content ul
+{
+	max-width: 250px;
+	text-align: left;
+	margin: 10px auto;
+	padding: 0 0 0 10px;
+}
+
+.subscribe-content img.bullet
+{
+	width: 12px;
+	height: 12px;
+}
+
+.subscribe-content ul li
+{
+	list-style-type: none;
+	clear: left;
+	margin-bottom: 6px;
+	font-size: 11px;
+	font-weight: bolder;
+	line-height: 19px;
+}
+
+.subscribe-content li div:nth-child(1)
+{
+	float: left; /*width: 20px;*/
+	margin: 2px;
+	padding: 0 5px;
+}
+
+.subscribe-content #btn-join
+{
+	font-size: 15px;
+	width: 200px;
+    margin-top: 0;
+	margin-left: auto;
+	margin-right: auto;
+    margin-bottom: 12px;
+	padding: 8px;
+	line-height: 1.4;
+}
+
+.subscribe-content #get-a-free-game
+{
+	padding-bottom: 20px;
+	color: rgb(0, 124, 219);
+	text-align: center;
+	font-size: 20px;
+	line-height: 22px;
+	font-weight: bold;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#subscribe-upper-text 
+{
+    padding-top: 6px;
+  
+}
+
+#subscribe-lower-text {
+    padding-bottom: 6px
+}
+

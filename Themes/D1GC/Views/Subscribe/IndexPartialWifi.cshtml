@@ -1,0 +1,111 @@
+﻿@using System.Web.UI.WebControls
+@using EightElements.Data
+@using EightElements.Data.Enums
+@{
+    int portalId = (int)ViewBag.PortalID;
+    var wifitype = DAPortal.GetPortalWifiFlowType(portalId);
+}
+
+<div id="container" class="gradient-pale">
+    @{if ((bool)ViewData["CanStillUseFirstWeekFree"])
+      {
+        <div class="first-week-free" style="padding: 3% 10px; color: #FFFF45; font-weight: bold">
+            @Html.PortalText("SubscribeFirstWeekFree")
+        </div>
+      }}
+    <div class="text-about-price no-msisdn" align="center">
+        @{if ((bool)ViewData["UseWeeklySubscriptionText"])
+          {
+            @Html.PortalText("SubscribePromoText")
+          }
+          else
+          {
+            @Html.PortalText("SubscribePromoTextDaily")
+          }}
+    </div>
+    
+    
+    @{
+        // Hide the subscription intruction and button for Telstra
+        if (ViewBag.PortalId != 375)
+        {
+            switch (wifitype)
+            {
+                case WifiFlowType.MT:
+                    @Resources.Strings.Subscribe_EnterMsisdn
+                    <input id="msisdn" type="text" />
+                    <button id="send-code">Send Code</button>
+                    @Resources.Strings.Subscribe_EnterConfirmationCode
+                    <input id="code" type="text"/>
+                    break;
+                    
+                case WifiFlowType.PretextMO:
+                    <div id="subscribe-upper-text">
+                        @Html.Raw(String.Format(Resources.Strings.Subscribe_WifiInstruction, ViewBag.SubscribeCommand, ViewBag.ShortCode))
+                    </div>
+
+                    if ((bool)@ViewData["IsAndroidPhone"])
+                    {
+                        <div id="btn-subscribe-and-save" class="btn-curved gradient-green-bright btn-text-1line">
+                            <a href="@ViewData["PredefinedMOText"]">
+                                @Resources.Strings.Subscribe_SendSMS
+                            </a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div id="btn-subscribe-and-save-no-msisdn">
+                            @Html.PortalText("SubscribeShortCodeText", true)
+                        </div>
+                    }
+                    <div id="subscribe-lower-text">@Resources.Strings.Subscribe_WifiConnectTo3G</div>
+                    break;
+                    
+                case WifiFlowType.Switch3GText:
+                    <div id="subscribe-lower-text">@Resources.Strings.Subscribe_WifiConnectTo3G_Telstra</div>
+                    break;
+            }
+        }
+        else
+        {
+            // Temporary fix for Telstra until the shortcode is available
+            <div id="subscribe-lower-text">@Resources.Strings.Subscribe_WifiConnectTo3G_Telstra</div>
+        }
+    
+    }
+
+
+    <div id="pictures" class="element" align="center">
+        @{Html.RenderAction("GetTopFeatures", "Common");}
+    </div>
+    <div id="benefits" class="element">
+        <div class="intro" align="center">
+            @Html.Raw(String.Format(Resources.Strings.Subscribe_Benefits, "<br/>"))
+        </div>
+        @{if ((bool)ViewData["CanStillUseFirstWeekFree"])
+          { 
+            <div class="first-week-free" style="padding: 3% 10px;font-weight:bold">
+                @if (portalId == DAPortal.SmartPortalId)
+                {
+                    @Resources.Smart8e.Subscribe_LimitedTime
+                }
+                else
+                {
+                    @Resources.Strings.Subscribe_LimitedTime
+                }
+            </div>
+          }} 
+
+        @{if ((bool)ViewData["UseWeeklySubscriptionText"])
+          {
+             @Html.PortalText("SubscribeBenefit")
+          }
+          else
+          {
+             @Html.PortalText("SubscribeBenefitDaily")
+          }}
+    </div>
+    <div id="get-a-free-game">
+    </div>
+    @Html.PortalText("InmobiLandingPage")
+</div>

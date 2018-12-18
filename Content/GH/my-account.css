@@ -1,0 +1,34 @@
+﻿
+
+.account__header {
+    border-bottom: 2px solid #515152;
+    font-size: 20px;
+    margin-bottom: 8px;
+    padding: 8px;
+    text-align: center;
+}
+
+.account__content {
+    text-align: center;
+}
+
+.account__label {
+    font-size: 12px;
+    text-transform: uppercase;
+    padding-top: 8px;
+}
+
+.account__info {
+    font-size: 15px;
+    font-weight: bold;
+    padding-bottom: 8px;
+}
+
+
+a.change-handset {
+    text-transform: uppercase ; 
+    font-size: 11px; 
+    text-decoration: underline;
+    font-weight: normal;
+    vertical-align: 6%;
+}

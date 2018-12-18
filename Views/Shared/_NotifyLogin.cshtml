@@ -1,0 +1,21 @@
+﻿@{
+    bool isAccountKit = Convert.ToBoolean(ViewBag.FakEnabled);
+    if (isAccountKit)
+    {
+        <div class="notify-login">
+            <div class="notify-login__message">Please login to enjoy this games club</div>
+
+            <form method="get" action="@ViewBag.FakSmsLoginEndpoint">
+                <input type="hidden" name="app_id" value="@ViewBag.FakAppID"/>
+                <input type="hidden" name="redirect" value="@ViewBag.FakCallback"/>
+                <input type="hidden" name="state" value="@ViewBag.FakRandom"/>
+                <input type="hidden" name="fbAppEventsEnabled" value="true"/>
+                <input type="hidden" name="debug" value="true"/>
+                <div class="notify-login__button-bar">
+                    <button class="notify-login__login-button" type="submit">@Resources.Strings.Login</button>
+                </div>
+            </form>
+        </div>
+
+    }
+}

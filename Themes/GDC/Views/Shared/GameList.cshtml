@@ -1,0 +1,80 @@
+﻿@using EightElements.Data.Rest.Models
+@{
+    string theme = ViewBag.ThemeColor == "blue" ? "game-list--blue" : "";    
+}
+<div class="game-list @theme">
+    <div class="game-list__header">@ViewData["GameListTitle"]</div>
+    <table class="game-list__table">
+        @{
+            string position = "left";
+            foreach (var entry in (Dictionary<int, Game>) ViewData["DictGame" + ViewData["SectionType"]])
+            {
+                string gamePriceT = ((Dictionary<int, string>) ViewData["DictGamePrice" + ViewData["SectionType"]])[entry.Key];
+                bool usePpd = ((bool) ViewData["IsSubscribed"]) == false;
+                string AmountPriceT = ((Dictionary<int, string>) ViewData["DictAmountPrice" + ViewData["SectionType"]])[entry.Key];
+                string imgLink = Url.Content("~/rest/gameimage/" + @entry.Key + "?key=" + @ViewData["ImageSize"]);
+                
+                if (position == "left")
+                {
+                    @Html.Raw("<tr>")
+                }
+                <td>
+                    <div class="game">
+                        <a href="@Url.Action("Buy", "Purchase", new {contentid = entry.Key, ppd = usePpd})">
+                            <img src="@imgLink" alt="@entry.Value.Name" class="game__image"/>
+                        </a>
+                    </div>
+                </td>
+
+                if (position == "right")
+                {
+                    @Html.Raw("</tr>")
+                    position = "left";
+                }
+                else
+                {
+                    position = "right";
+                }
+@*        <tr><td>*@
+                    
+@*                    <div class="right-column">*@
+@*                        <div class="right-column-header"><a href="/Detail/@entry.Key">@entry.Value.Name</a>*@
+@*                        </div>*@
+@*                        <div class="right-column-button">*@
+@*                            @if ((bool)ViewData["isMsisdnNotDetected"])*@
+@*                            {*@
+@*                                <a href="@Url.Action("Index", "Subscribe")" class="button-free">*@
+@*                                    @Resources.Strings.CommonBuy_Free</a>*@
+@*                            }*@
+@*                            else*@
+@*                            {*@
+@*                                if ((bool) ViewData["NonSub"])*@
+@*                                {*@
+@*                                    <a href="@Url.Action("SubscribeButton", "Subscribe")" class="button-free">*@
+@*                                        @Html.PortalText("CommonBuyDirectSubscribe")</a>*@
+@*                                        <br/>*@
+@*                                }*@
+@*                                if ((int) ViewData["credits"] > 0 && !(AmountPriceT == "0" || AmountPriceT == "0.0000"))*@
+@*                                {*@
+@*                                    <a href=@Url.Content("~/purchase/buy?contentid=" + @entry.Key + "&ppd=false") class="button-buy">@Resources.Strings.CommonBuy_UseCredit</a>*@
+@*                                    <br/>*@
+@*                                }*@
+@*                                if (!ppdDisabled)*@
+@*                                {*@
+@*                                    <a href=@Url.Content("~/purchase/buy?contentid=" + @entry.Key + "&ppd=true") class="button-buy">@gamePriceT</a>*@
+@*                                }*@
+@*                            }*@
+@*                        </div>*@
+@*                    </div>*@
+@*                </td></tr>*@
+            }
+        }
+    </table>
+    @{
+        string moreLink = "/List/" + ViewData["SectionType"];
+        <div class="game-list__footer">
+            <a href="@moreLink" class="game-list__more-button">@ViewData["MoreTitle"]</a>
+        </div>
+    }
+</div>
+

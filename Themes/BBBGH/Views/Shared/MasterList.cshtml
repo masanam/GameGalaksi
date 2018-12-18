@@ -1,0 +1,75 @@
+﻿@{
+    bool ppdDisabled = ViewBag.PpdDisabled ?? false;
+}
+
+
+<div class="game-list">
+    <div class="game-list-container">
+        <div class="game-list-title">@ViewData["GameListTitle"]</div>
+            @{
+                int counter = 0;
+                foreach (KeyValuePair<int, EightElements.Data.Rest.Models.Game> entry in
+                    (Dictionary<int, EightElements.Data.Rest.Models.Game>)ViewData["DictGame" + ViewData["SectionType"]])
+                {
+                    string gamePriceT = ((Dictionary<int, string>)ViewData["DictGamePrice" + ViewData["SectionType"]])[entry.Key];
+                    bool hasSubscription = (bool)ViewData["IsSubscribed"];
+                    string AmountPriceT = ((Dictionary<int, string>)ViewData["DictAmountPrice" + ViewData["SectionType"]])[entry.Key];
+                    string imgLink = Url.Content("~/rest/gameimage/" + @entry.Key + "?key=" + @ViewData["ImageSize"]);
+                    <div style="display: table; width: 100%; margin: 20px auto;">
+                        <div style="display: table-cell; width: 49%;">
+                            <a href="/Detail/@entry.Key">
+                                <img src="@imgLink" alt="@entry.Value.Name" class="gameBannerImageTop" style="width: 90%;" />
+                            </a>
+                        </div>
+                        <div style="display: table-cell; width: 50%; vertical-align: middle; text-align: center;">
+                            <a href=@Url.Content("~/purchase/buy?contentid=" + @entry.Key + "&ppd=false") class="button-buy" style="text-decoration: none;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    width: 30%;
+    cursor: pointer;
+    border-radius: 12px;">
+                                @Resources.Strings.CommonBuy_Free
+                            </a>
+                            
+                            @if (!(bool)ViewData["IsSubsByEWallet"])
+                            {
+                            <br /><br />
+                            <a href=@Url.Content("~/purchase/buy?contentid=" + @entry.Key + "&ppd=true") class="button-buy" style="text-decoration: none;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    width: 30%;
+    cursor: pointer;
+    border-radius: 12px;">
+                                @gamePriceT
+                            </a>
+                            }
+                        </div>
+                    </div>
+                    counter++;
+                    if (counter > 1) { break; }
+                }
+            }
+                    
+        @{
+            string moreLink = "/List/" + ViewData["SectionType"];
+            <div class="btn-more-ftphone" style="text-align: right; margin-top: 20px;">
+                <a href="@moreLink" style="text-decoration: underline dotted;">@ViewData["MoreTitle"]</a>
+            </div>
+        }
+    </div>
+</div>
+

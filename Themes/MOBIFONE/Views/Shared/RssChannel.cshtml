@@ -1,0 +1,15 @@
+﻿@model EightElements.Web.Rest.Helpers.Rss.Channel
+<div style="padding: 1%; text-align: center; background-color: White; font-weight: bold;
+            font-size: 1em;">@Model.Title</div>
+<div style="text-align: center;">
+    <ul style="padding: 4%; margin: 0;">
+
+@{foreach( EightElements.Web.Rest.Helpers.Rss.Item item in Model.Items)
+      {
+        <li class="leaf"><a href="@item.Link" style="text-decoration: none;">
+                <u>@item.Title</u></a></li><br />
+      }
+}
+        
+    </ul>
+</div>

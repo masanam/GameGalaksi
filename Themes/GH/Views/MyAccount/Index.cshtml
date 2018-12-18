@@ -1,0 +1,84 @@
+﻿@using EightElements.Data.Rest.Models
+@{
+    var userDetail = ViewData["UserDetail"] as UserDetail;
+    bool msisdnUnknown = (bool)ViewData["isMsisdnNotDetected"];
+    bool notSubscriber = !userDetail.HasSubscription;
+    bool isSubscriber = userDetail.HasSubscription;
+}
+
+<div class="section">
+    <div class="account__header">
+        @Resources.Strings.MyAccount_MyAccount
+    </div>
+
+    <div class="account__content">
+        <div class="account__label">@Resources.Strings.MyAccount_MyPhone</div>
+        <div class="account__info">@userDetail.Msisdn</div>
+        <div class="account__label">@Resources.Strings.MyAccount_Device</div>
+        <div class="account__info">@userDetail.HandsetModel</div>
+        @if (msisdnUnknown)
+        {
+    		<div class="button">
+        		<a class="button__link" href="/User/AccountKitLogin?returnUrl=/myaccount">@Resources.Strings.Login</a>
+    		</div>
+        }
+    </div>
+</div>
+      
+@if (!isSubscriber)
+{
+    <div class="button">
+        <a class="button__link" href="@Url.Action("Subscribe", "Subscribe")">@Resources.Strings.Home_JoinNow</a>
+    </div>
+}
+
+
+@if (isSubscriber)
+{
+    <div class="section">
+        <div class="account__header">
+            @Resources.GamerHeaven.MyAccount_MyGameClub
+        </div>
+
+        <div class="account__content">
+            @{
+                string gameCreditText =
+                    userDetail.Credits <= 1 ?
+                        Resources.Strings.MyAccount_Credit :
+                        Resources.Strings.MyAccount_Credits;
+            }
+            <div class="account__label">@Resources.GamerHeaven.MyAccount_Credit</div>
+            <div class="account__info">@string.Format(gameCreditText, userDetail.Credits)</div>
+            <div class="account__label">@Resources.GamerHeaven.MyAccount_MySubscription</div>
+            <div class="account__info">GamerHeaven</div>
+            <div class="account__label">@Resources.GamerHeaven.MyAccount_SubscriptionInfo</div>
+            <div class="account__info">@Resources.GamerHeaven.MyAccount_SubscriptionInfoText</div>
+            <div class="account__label">@Resources.GamerHeaven.MyAccount_SubscriptionStatus</div>
+            <div class="account__info">@ViewData["SubscriptionStatusText"]</div>
+            @if (userDetail.SubscriptionStatus == "Suspended" || userDetail.SubscriptionStatus == "Pending")
+            {
+                <div class="account__info">
+                    <a href="/Subscribe/Resubscribe">@Resources.Strings.MyAccount_Resubscribe</a>
+                </div>
+            }
+            <div class="account__label">
+                <a href="/MyAccount/ConfirmToUnsubscribe" onclick="ga('send', 'event', 'my_account', 'click', 'unsubscribe')">
+                    @Resources.Strings.MyAccount_Unsubscribe
+                </a>
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="button">
+        <a class="button__link" href="@Url.Content("~/Purchase/History?handsetId=" + ViewData["handsetid"])">@Resources.Strings.MyAccount_MyDownloads</a>
+    </div>
+}
+
+
+@if (notSubscriber)
+{
+    <div class="button">
+        <a class="button__link" href="@Url.Action("Index", "Subscribe")">@Resources.Strings.MyAccount_Benefit</a>
+    </div>
+}

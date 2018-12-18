@@ -1,0 +1,63 @@
+﻿@using EightElements.Data.Models
+@{
+    var contents = ViewBag.Contents as List<VideoInfo>;
+}
+
+
+@foreach (var content in contents)
+{
+    <div class="list-item default-list-item">
+        <div class="image-container">
+            <a href="/videohome/detail/@content.Id">
+                <img src="http://qtgirls4u.com/videohome/getimage?cid=@content.Id"/>
+            </a>
+        </div>
+        <div class="text-container">
+            <a class="video-title" href="@Url.Action("Watch", new { contentId = content.Id })">@content.Title</a>
+            <br/>
+            <div class="video-description">@content.ShortDescription</div>
+            
+            @if (content.IsPurchased)
+            {
+                <div class="watch-button">
+                    <a href="@Url.Action("Watch", new {contentId = content.Id})">Watch Again</a>
+                </div>
+            }
+            else
+            {
+                <div class="watch-button">
+                    <a href="@Url.Action("Watch", new { contentId = content.Id })">Watch Now</a>
+                </div>    
+                <div class="watch-button">
+                    <a href="@Url.Action("Purchase", new { contentId = content.Id, ppd = true })">Beli</a>
+                </div>    
+            }
+            
+        </div>
+
+    </div>
+}
+
+
+@*@foreach (var content in contents)*@
+@*{*@
+@*    <div class="item-row">*@
+@*        <div style="position: absolute; width: 128px">*@
+@*            <a href="/videohome/detail/@content.Id">*@
+@*                <img src="http://svcvideo.dob.vn/upload_files/@content.Id/@content.Image"/>*@
+@*            </a>*@
+@*        </div>*@
+@*        <div style="margin-left: 136px; margin-right: 8px;">*@
+@*            <a class="video-title" href="/videohome/detail/@content.Id">@content.Title</a>*@
+@*            <br/>*@
+@*            <div class="video-description">@content.ShortDescription</div>*@
+@*            <div style="height: 48px; width: 108px; margin: 16px auto">*@
+@*                <a href="/subscribe/subscribe" class="watch-button">Watch Now</a>*@
+@*            </div>*@
+@*        </div>*@
+@**@
+@*    </div>*@
+@*    <hr/>*@
+@*}*@
+
+@*style="border-radius: 3px; background-color: #32CDFD; color: #ffffff; display: inline-block; width: 100%; padding: 8px; text-align: center"*@

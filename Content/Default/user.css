@@ -1,0 +1,85 @@
+﻿
+.register {
+    margin: 48px 8px;
+    
+}
+
+.register__description {
+    margin: 8px 0 16px;
+}
+
+.register__label {
+    display: block;
+    margin: 8px 0 0;
+}
+
+.register__input {
+    margin: 0 0 8px;
+}
+.register__submit-button {
+    border-radius: 3px;
+    border: 1px solid #3399FF;
+    color: #333;
+    font-weight: bold;
+    padding: 4px 12px;
+    text-transform: uppercase;
+}
+
+.register__warning {
+    color: #dd4b39;
+    margin: 8px 0 16px;
+}
+
+
+.notify-registration {
+    color: #fff;
+    background-color: #2196F3;
+    padding: 8px;
+}
+
+.notify-registration__message {
+    font-size: 15px;
+}
+
+.notify-register__button-bar {
+    display: block;
+    padding: 16px 8px 8px;
+    text-align: center;
+}
+.notify-registration__register-button {
+    border: #FF5722 2px solid;
+    border-radius: 3px;
+    background-color: #FBE9E7;
+    color: #DD2C00;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px 16px;
+    text-transform: uppercase;
+}
+
+
+.notify-login {
+    padding: 12px;
+}
+
+.notify-login__message {
+    color: #DD2C00;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.notify-login__button-bar {
+    padding: 12px 8px 8px;
+    text-align: center;
+}
+.notify-login__login-button {
+    border: #FF5722 2px solid;
+    border-radius: 3px;
+    background-color: #FBE9E7;
+    color: #DD2C00;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px 16px;
+    text-transform: uppercase;
+    width: 160px;
+}

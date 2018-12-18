@@ -1,0 +1,30 @@
+﻿<div class='home-content'>
+    
+    @Html.PortalImage("homeBanner", true, "portalimage", "", "width:100%")
+
+    @Html.Partial("HeaderText")
+    
+    @Html.Partial("CustomFWF")
+
+	<div id='displayed-in-home-categories'></div>
+    
+    <div class="show-all-games">
+        <a class="show-all-games__link" href="/list/m">
+            @Resources.Strings.Home_ShowAll
+        </a>
+    </div>
+
+    @{
+        if (!(bool) ViewData["IsSubscribed"])
+        {
+            <div class="subscribe-button">
+                <a class="subscribe-button__link" href="@Url.Action("Subscribe", "Subscribe")">
+                    <img class="subscribe-button__link-image" src="/Images/General/D1GC/get-button.png" alt="Join Now"/>
+                </a>
+                <div class="subscribe-button__info-text">
+                    JOIN NOW to get free games only $1 per week    
+                </div>
+            </div>
+        }
+    }
+</div>

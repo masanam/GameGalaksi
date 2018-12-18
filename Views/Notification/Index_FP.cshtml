@@ -1,0 +1,21 @@
+﻿<div class="gradient-pale padding">
+    <div class="title">
+        <h3>@Resources.Strings.Notification</h3>
+    </div>
+    <br/>
+    <div class="content">
+       @{  
+           if (!string.IsNullOrWhiteSpace(ViewBag.NotificationMessage))
+            {    
+                <div class="error-message">
+                @Html.Raw(HttpUtility.HtmlDecode(ViewBag.NotificationMessage))
+                </div>
+            }
+        }
+        <br />
+        <div class="content" style="font-size:small">
+        @Html.PortalText("LayoutMiniHelp")
+        </div>
+        <br/><br/>
+    </div> 
+</div>

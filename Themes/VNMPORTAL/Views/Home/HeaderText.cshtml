@@ -1,0 +1,51 @@
+﻿<div class="home-content-text">
+@{
+    @*if ((bool)ViewData["CanStillUseFirstWeekFree"])
+    { 
+        <div class="first-week-free category row-fluid" style="padding: 3% 1px; color: #3AF500; font-weight: bold; margin-top: 3px">
+            @Html.Raw(Resources.VNM.Home_WelcomeTitle)
+        </div>
+    }*@
+
+    bool isSubscribed = (bool)ViewData["IsSubscribed"];
+    string headerText = string.Empty;
+    string msisdn = (string)ViewData["uid"];
+    if (!String.IsNullOrEmpty(msisdn))
+    {
+        msisdn = msisdn.Replace("84", "0");
+    }
+
+    if (!isSubscribed)
+    {
+        @Html.Raw(String.Format(Resources.VNM.HeaderText,
+            msisdn, ViewData["TotalGamesAvailable"], ViewData["UserHandset"]))
+    }
+    else
+    {
+        if ((int)ViewData["Credits"] <= 1)
+        {
+            @Html.Raw(String.Format(Resources.VNM.HeaderTextSubscribed,
+                        msisdn,
+                        ViewData["TotalGamesAvailable"],
+                        ViewData["UserHandset"],
+                        ViewData["Credits"]))
+        }
+        else
+        {
+            @Html.Raw(String.Format(Resources.VNM.HeaderTextSubscribedWCredits,
+                        msisdn,
+                        ViewData["TotalGamesAvailable"],
+                        ViewData["UserHandset"],
+                        ViewData["Credits"]))
+        }
+    }
+}
+</div>
+
+@* status = 2 || 3 = pending || suspended *@
+@if ((int)ViewData["status"] == 2 || (int)ViewData["status"] == 3)
+{
+    <div class="warning-msg">
+        @Html.PortalText("TopupMessage")
+    </div>
+}

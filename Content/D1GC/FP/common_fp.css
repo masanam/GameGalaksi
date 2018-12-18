@@ -1,0 +1,522 @@
+﻿body
+{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+form
+{
+    margin: 0;
+}
+
+img
+{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    border: none;
+}
+
+.title
+{
+    text-align: center;
+}
+
+.warning-msg
+{
+    padding:5px;
+    background-color:red;
+    color:white;
+    font-size:10px;
+}
+
+
+.message
+{
+    margin: 15px 10px;
+}
+
+.titleCenter
+{
+    padding: 1%;
+    text-align: center;
+    background-color: #32CCFE;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.subscribe-login-button
+{
+    margin: 10px auto;
+    padding: 15px 20px;
+    width: 200px;
+    color: #FFFFFF; 
+    background-color: #46AFE3;
+    font-weight: normal;
+    font-size: 1.2em;
+    text-align: center;
+    webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+
+.footer {
+    color: #03285a;
+    font-size: small;
+    font-weight: bold;
+    margin: 0 auto 16px;
+    text-align: center;
+}
+
+.footer__menu {
+    background-color: #F36523;
+    color: #fff;
+    font-size: medium;
+    line-height: 18px;
+    padding: 8px; 
+}
+
+.footer__main-menu {
+    float: left;
+}
+
+.footer__menu-item {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer__side-menu {
+    text-align: right;
+}
+
+.footer__side-menu-link {
+    color: #FDF701;
+    text-decoration: none;
+}
+
+.footer__image {
+    margin: 8px;
+}
+
+.footer_link {
+    color: #00B0FA;
+    text-decoration: none;
+}
+
+.bar
+{
+    max-width: 180px;
+    background-color: #03285a;
+    padding: 2px 0px 2px 0px;
+    margin: 6px auto 6px auto;
+}
+
+li.leaf
+{
+    list-style-type: none;
+    display: inline;
+    background: url('../../../Images/General/Subscription/rss_small_icon.png') no-repeat top left;
+    padding-left: 20px;
+    height: 25px;
+}
+
+.game {
+    padding: 8px 0;
+}
+
+.game--alternate {
+    background-color: #F2E1D1;
+}
+
+.game-list__header {
+    margin-top: 8px;
+}
+
+.game-list__title {
+    background-color: #00A650;
+    color: #fff;
+    float: left;
+    font-weight: bold;
+    height: 18px;
+    margin: 0;
+    padding: 8px;
+    text-align: left;
+    width: 50%
+}
+
+.game-list__show-more {
+    background-color: #3AB54B;
+    color: #C2E097;
+    height: 18px;
+    padding: 8px;
+    margin-left: 50%;
+    min-width: 160px;
+    text-align: right;
+}
+
+.game-list__show-more-link {
+    background-color: #3AB54B;
+    color: #C2E097;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+
+.game-list > table
+{
+    width: 100%;
+    min-width: 128px;
+    font-weight: bold;
+    font-size: small;
+}
+
+
+.game__image-container {
+    text-align: center;
+    vertical-align: middle;
+    min-width: 80px;
+    background-color: White;
+    padding-left: 8px;
+}
+
+.game__image-link {
+    height: auto;
+    width: auto;
+}
+
+/*div.left-column > a > img .gameSquareImageTop,*/ .gameSquareImageTop
+{
+    min-width: 65px;
+    position: relative; 
+	margin: 0px 0px 0px 0px;
+	padding: 0px 5px;
+	float: left; 
+	width: 65px;
+	height: 65px;
+}
+
+.game__image {
+    min-width: 65px;
+    position: relative; 
+	margin: 0;
+	float: left; 
+	width: 80px;
+	height: 80px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px #666;
+    -webkit-box-shadow: 2px 2px 4px #666;
+    -moz-box-shadow: 2px 2px 4px #666;
+}
+
+.game__buy-button {
+    margin: 8px 0;
+}
+
+.game__buy-button-link {
+    
+}
+
+.game__buy-button-image {
+    width: 136px;
+}
+
+.gameBannnerImageTop
+{
+    min-width: 65px;
+    position: relative; 
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px;
+	float: left;
+	width: 100%;
+}
+
+.game__info {
+    margin-left: 100px;
+}
+
+.game__title {
+    
+}
+.game__title-link {
+    color: #6F0000;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+
+.game__category {
+    color: #999;
+    font-size: 12px;
+}
+
+
+div.right-column-button
+{
+    width: 100%;
+    min-width: 70px;
+    text-align: left;
+    font-size: medium;
+}
+
+div.right-column-button a
+{
+    margin: 5px 0px 1px 0px;
+	font-weight: bold;
+	text-decoration: none;
+	display: inline-block;
+	padding: 2px;
+	text-align: center;
+	width: 100%;
+	max-width: 120px;
+}
+
+div.right-column-button a.button-free
+{
+	background-color: #32CDFD;
+	color: White;
+}
+
+div.right-column-button a.button-free p
+{
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+div.right-column-button a.button-buy
+{
+	background-color: #FFCC00;
+	color: White;
+}
+
+div.right-column-button div
+{
+    width: auto;
+    margin: 3%;
+    padding: 2%;
+}
+
+div.right-column-button div a
+{
+    color: White;
+    text-decoration: none;
+}
+
+div.content
+{
+    margin:10px;
+}
+
+.more-game-list
+{
+    padding: 10px;
+    font-weight: bold;
+    font-size: .8em;
+    text-align: center;
+}
+
+div.btn-more-ftphone
+{
+    background-color: White;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+div.btn-more-ftphone a
+{
+    color: Blue;
+}
+
+
+
+
+
+a.change-handset {
+    text-transform: uppercase ; 
+    font-size: 12px; 
+    text-decoration: underline;
+    font-weight: normal;
+    vertical-align: 15%;
+}
+
+.searchBox
+{
+    background-color: #4E5C6D;
+    padding: 0px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0px;
+    color: white;
+}
+
+.language-flags
+{
+    width: 100%;
+    float: right;
+    text-align: right;
+    padding-top: 5px;
+    padding-right: 5px;
+    height: 24px;
+}
+.language-flags .vn
+{
+    background: url('../images/vn.png') no-repeat;
+    display: block;
+    float: right;
+    height: 24px;
+    width: 24px;
+}
+.language-flags .en
+{
+    background: url('../images/uk.png') no-repeat;
+    float: right;
+    display: block;
+    height: 24px;
+    width: 24px;
+}
+/* End footer */
+
+.section-header {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 8px 0 8px;
+    min-width: 280px;
+    overflow: auto;
+}
+
+.section-header__title {
+    background-color: #00A650;
+    color: #fff;
+    float: left;
+    padding: 8px;
+    text-align: left;
+    width: 65%
+}
+
+
+.section-header__action {
+    background-color: #3AB54B;
+    color: #C2E097;
+    padding: 8px;
+    margin-left: 65%;
+    text-align: right;
+}
+
+.section-header__action-link {
+    background-color: #3AB54B;
+    color: #C2E097;
+    text-decoration: none;
+}
+
+
+.my-account {
+    
+}
+
+.my-account__info {
+	margin: 12px 8px;
+}
+
+.my-account__info-label {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.my-account__info-text {
+	color: #000;
+    margin-left: 8px;
+}
+
+.account__unsubscribe {
+    margin: 12px 8px;
+}
+
+.account__download {
+    text-decoration: none;
+}
+
+
+.list__show-next {
+    background-color: #EDF0F0;
+    padding: 12px;
+    text-align: center;
+}
+
+.list__show-next-link {
+    color: #03285a;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+.show-all-games {
+    background-color: #00A650;
+    font-weight: bold;
+    padding: 8px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.show-all-games__link {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+.subscribe-button {
+    background-color: #F2E1D1;
+    padding: 16px 0 8px;
+    text-align: center;
+}
+.subscribe-button--plain {
+    background-color: #fff;
+    padding: 8px 0;
+}
+
+.subscribe-button_link {
+    
+}
+
+.subscribe-button__link-image {
+    width: 148px;
+}
+
+.subscribe-button__info-text {
+    font-size: 15px;
+    margin: 8px auto;
+}
+
+.game-detail__image-container {
+    margin: 16px 0 8px;
+    text-align:center;
+    width: 100%;
+}
+
+.game-detail__image {
+    width: 32%;
+    min-width: 30px;
+    max-width: 176px;
+}
+
+.game-detail__banner {
+    max-width: 560px;
+    width: 100%;
+}
+
+.game-detail__description-text {
+    font-size: small;
+    margin: 16px 8px;
+}
+
+.notification {
+    background-color: #FA9221;
+    color: #fff;
+    margin: 4px 0;
+    padding: 4px 8px;
+}

@@ -1,0 +1,66 @@
+﻿@using EightElements.Data
+
+
+@{
+    bool hasActiveSubscription = ViewBag.HasActiveSubscription;
+    var bundles = ViewBag.Bundles as List<SPDataAccess.GameBundle>;
+}
+    
+      
+<table>
+    @foreach (var bundle in bundles)
+    {
+        <tr>
+            <td>
+                @{
+                    string imageSource = "/rest/gameimage/" + bundle.Image + "?key=Square0";
+                    <span class="content-image">
+                        <a href="@Url.Action("Index", "BundleDetail", new {id = bundle.Id})">
+                            <img src="@imageSource" class="img-rounded" />
+                        </a>
+                    </span>
+                }
+            </td>
+            <td>
+                <div class="content-name">
+                    <a href="@Url.Action("Index", "BundleDetail", new {id = bundle.Id})">
+                        @bundle.Description
+                    </a>
+                </div>
+                <div align="center" class="btns">
+                    @if (!hasActiveSubscription)
+                    {
+                        <div class="btn-curved gradient-blue-bright btn-text-1line">
+                            <a href="@Url.Action("Index", "Subscribe")">
+                                @Resources.Strings.CommonBuy_BuyText
+                            </a>
+                        </div>
+                    }
+                    else
+                    {
+                        if (bundle.Purchased)
+                        {
+                            <div class="btn-curved gradient-blue-bright btn-text-1line">
+                                <a href="@Url.Action("Index", "BundleDetail", new {bundle.Id})">
+                                    @Resources.Strings.GameBundle_Download
+                                </a>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="btn-curved gradient-blue-bright btn-text-1line">
+                                <a href="@Url.Action("Buy", "BundleDetail", new {id = bundle.Id})">
+                                    @String.Format(Resources.Strings.GameBundle_Buy, 
+                                        RequiredPoint.ToPurchaseGameBundle)
+                                </a>
+                            </div>
+                        }
+                    }
+                </div>
+                    
+            </td>
+        </tr>
+    }
+</table>
+    
+ 

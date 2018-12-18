@@ -1,0 +1,95 @@
+﻿@{List<EightElements.Data.Rest.Models.GameCategory> categories = (List<EightElements.Data.Rest.Models.GameCategory>)ViewData["GameCategories"];}
+
+@{ if (!(bool)ViewData["IsSubscribed"])
+   {
+    <div class="bgcategory">
+        @Html.PortalText("SubscribeJoinText")</div>
+    <div style="padding: 10px; font-weight: bold; font-size: 1em;">
+        @Html.PortalText("SubscribeJoinTextLong")
+    </div>
+       if ((bool)ViewData["CanStillUseFirstWeekFree"])
+       { 
+    <div class="first-week-free category row-fluid" style="padding: 3% 10px; color: #3AF500; font-weight: bold; margin-top: 3px">
+        @Html.Raw(Resources.Strings.Home_WelcomeTitle)
+    </div>
+       }
+   }
+   else
+   {
+    <div  class="bgcategory">
+        @if ((int)ViewData["Credits"] <= 1)
+        {
+            @Html.Raw(String.Format(Resources.Strings.Home_CreditText, ViewData["Credits"]))
+        }
+        else
+        {
+            @Html.Raw(String.Format(Resources.Strings.Home_CreditsText, ViewData["Credits"]))
+        }
+    </div>
+   }
+}
+@{ if (ViewData["TotalGamesAvailable"] != null && ViewData["UserHandset"] != null)
+   {
+    <div style="padding: 10px; font-size: 1em;">
+        @Html.Raw(String.Format(Resources.Strings.Home_GameForHandset, ViewData["TotalGamesAvailable"], ViewData["UserHandset"]))
+    </div> 
+   }
+}
+<div>
+    @Html.PortalImage("midbanner", true, "portalimage", "", "width:100%")
+</div>
+
+@{Html.RenderAction("GetChannel", "Common");}
+@{ViewData["SectionType"] = "F";
+  ViewData["GameListTitle"] = @Resources.Strings.Home_Highlight;
+  ViewData["MoreTitle"] = @Resources.Strings.Home_MoreBestSellers;
+  ViewData["ImageSize"] = "Banner0";}
+@Html.Partial("GameListBanner")
+@*@{ViewData["SectionType"] = "T";
+  ViewData["GameListTitle"] = @Resources.Strings.Home_TopGames;
+  ViewData["MoreTitle"] = @Resources.Strings.Home_MoreTopGames;
+  ViewData["ImageSize"] = "Square0";}
+@Html.Partial("GameList")*@
+@{ViewData["SectionType"] = "N";
+  ViewData["GameListTitle"] = @Resources.Strings.Home_NewGames;
+  ViewData["MoreTitle"] = @Resources.Strings.Home_MoreNewGames;
+  ViewData["ImageSize"] = "Square0";}
+@Html.Partial("GameList")
+
+@{if (!(bool)ViewData["IsSubscribed"])
+  {
+    <div class="JoinClub">
+        <a href="Subscribe" style="text-decoration: none;">@Resources.Strings.Home_JoinNow</a>
+    </div>
+  }
+}
+<div>
+    <div class="game-list">
+        <div>@Resources.Strings.Home_GameCategories</div>
+    </div>
+    @{foreach (EightElements.Data.Rest.Models.GameCategory category in categories)
+      {
+        <div style="padding: 1%;">
+            <a href="/GameCategory?CategoryId=@category.GameCategoryId" style="color:Blue;font-size:small; font-weight:bold;">>> @category.Name</a></div>
+      }
+    }
+</div>
+
+@{if (!(bool)ViewData["IsSubscribed"])
+  {
+    <div class="JoinClub">
+        <a href="Subscribe" style="text-decoration: none;">@Resources.Strings.Home_JoinNow</a>
+    </div>
+  }
+}
+
+<div>
+    @using (Html.BeginForm("Index", "Search", FormMethod.Get))
+    {
+        <div class="bgSearch">
+            <input id="search-keyword" name="keyword" type="text" style="width: 97%; border: 2px inset;" />
+            <input type="submit" value="@Resources.Strings.Home_Search" />
+        </div>
+    }
+</div>
+

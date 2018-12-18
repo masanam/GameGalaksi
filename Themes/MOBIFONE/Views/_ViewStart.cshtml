@@ -1,0 +1,6 @@
+﻿@{
+    EightElements.Web.Rest.Controllers.ControllerBase c =
+        ViewContext.Controller as EightElements.Web.Rest.Controllers.ControllerBase;
+    Layout = c.IsSmartPhone ? "~/Themes/MOBIFONE/Views/Shared/_Layout.cshtml" 
+                            : "~/Themes/MOBIFONE/Views/Shared/_Layout_FP.cshtml";
+}

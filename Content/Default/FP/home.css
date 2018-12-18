@@ -1,0 +1,73 @@
+﻿.home-header-join
+{
+    padding: 5px;
+    text-align: center;
+    background-color: #32CCFE;
+}
+
+.home-header-fwf
+{
+    padding: 3% 10px;
+    color: #3AF500;
+    margin-top: 3px;
+}
+
+.home-header
+{
+    font-weight: bold;
+    font-size: .8em;
+}
+
+.home-padding-default
+{
+    padding: 10px;
+}
+
+.home-padding-top
+{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+
+.home-padding-middle
+{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.subscribe-join-button
+{
+    margin: 32px 48px 16px;    
+    padding: 8px 4px;
+    color: #CC0000;
+    background-color: Yellow;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+a.category-text
+{
+    color:Blue;
+    font-size:small;
+    font-weight:bold;
+}
+
+.game-list-container a .button-buy
+{
+    text-decoration: none;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}

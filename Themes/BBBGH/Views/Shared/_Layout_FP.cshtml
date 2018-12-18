@@ -1,0 +1,52 @@
+﻿<html>
+<head>
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/bundles/cssFP")
+    @if (ViewBag.PortalID != EightElements.Data.DAPortal.CelcomPortalId)
+    {
+        Html.RenderPartial("GoogleAnalyticsTrackingCode", new EightElements.Data.Rest.Models.Tracking(ViewBag.GoogleAnalyticsAccount)); 
+    }
+</head>
+@RenderSection("style", required: false)
+<body vlink="black">    
+    @Html.Partial("_Layout_FP_Top")
+    @RenderBody()
+    @*<div style="background-color: #90A9C8;">
+        <div style="padding: 1%;">
+            @{if ((bool)ViewData["ShowBack"])
+              { <a href="javascript:history.go(-1)" style="color: White; font-size: small">>> @Resources.Strings.Layout_Back</a><br /> }
+            }
+            @{if ((bool)ViewData["ShowHome"])
+              { <a href=@Url.Content("~/") style="color: White; font-size: small">>> @Resources.Strings.Layout_Home</a><br />}
+            }
+            <a href=@Url.Content("~/MyAccount") style="color: White; font-size: small">>> @Resources.Strings.Layout_MyAccount</a><br />
+            @Html.PortalImageLink("OperatorHome", "color: White; font-size: small")
+        </div>
+    </div>*@
+    @*<div style="background-color: #D5DDE6; padding: 3px 0px; text-align: center; color: #03285a;
+        font-weight: bold; font-size: small;">
+        <div class="upperLogo">
+            <img src=@Url.Content("~/Images/320/logo.gif") width="60" height="43" class="headerImage" alt="8elements" /></div>
+        @Resources.Strings.Layout_PlayTheWorldBestGame
+        <br />
+        <a class="terms" href=@Url.Content("~/Terms")>@Resources.Strings.Layout_Terms</a>&nbsp;|&nbsp;
+        <a class="terms" href=@Url.Content("~/Help")>
+            @Resources.Strings.Layout_Help</a><br />
+        &copy;&nbsp;@DateTime.Today.Year
+    </div>*@
+    <img src="/Content/BBBGH/images/u-banner.jpg" style="width: 100%; margin: 10px 0;" />
+    <div class="line-footer"></div>
+    <div class="footer">
+        <div class="" style="display: table; margin: 0 10px; width: 100%; font-size: 1.1em;">
+            <div style="display: table-cell;">
+                <a href="@Url.Content("~/MyAccount")" style="color: white; text-decoration: none;">@Html.Raw(Resources.BBBGH.Home_MyAccount)</a>
+            </div>
+            <div style="display: table-cell;">@Html.Raw(Resources.BBBGH.Home_Copyright)</div>
+            <div style="display: table-cell;">
+                <a href="@Url.Content("~/Terms")" style="color: white; text-decoration: none;">@Html.Raw(Resources.BBBGH.Home_ToC)</a>
+            </div>
+        </div>
+    </div>
+</body>
+@RenderSection("scripts", required: false)
+</html>

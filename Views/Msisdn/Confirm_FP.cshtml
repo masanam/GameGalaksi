@@ -1,0 +1,10 @@
+﻿<div style="padding: 1%;">
+    @using (Html.BeginForm("Validate", "Msisdn", FormMethod.Post))
+    {
+        <p>@Resources.Strings.Msisdn_EnterCode</p>
+        <br/>
+        <input type="hidden" name="url" value="@ViewBag.urlCallBack"/>
+        <input type="text" name="code" class="textbox" style="width: 125px; margin-bottom: 0;"/>
+        <input type="submit" value="@Resources.Strings.Msisdn_Confirm" class="submit-button"/>
+    }
+</div>

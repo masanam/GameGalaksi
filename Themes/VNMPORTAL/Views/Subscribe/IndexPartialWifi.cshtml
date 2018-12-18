@@ -1,0 +1,47 @@
+﻿<div id="top">
+    @Html.PortalText("SubscribePromoText", true)
+</div>
+<div id="container" class="gradient-pale">
+    @{if ((bool)ViewData["CanStillUseFirstWeekFree"])
+    {
+        @*<div class="first-week-free" style="padding: 3% 10px; color: #FFFF45; font-weight: bold">
+            @Html.Raw(Resources.Strings.Subscribe_FirstWeekFree)
+        </div>*@
+    }}
+    
+    <div id="subscribe-upper-text">
+        @Html.Raw(String.Format(Resources.Strings.Subscribe_WifiInstruction, ViewBag.SubscribeCommand, ViewBag.ShortCode))
+    </div>
+
+    @{if ((bool)ViewData["IsAndroidPhone"])
+    {
+        <div id="btn-subscribe-and-save" class="btn-curved gradient-green-bright btn-text-1line">
+            <a href="@ViewData["PredefinedMOText"]">
+                @Resources.Strings.Subscribe_SendSMS
+            </a>
+        </div>
+    }
+    else
+    {
+        <div id="btn-subscribe-and-save-no-msisdn">
+            @Html.PortalText("SubscribeShortCodeText", true)
+        </div>
+    }}
+
+    <div id="subscribe-lower-text">@Resources.Strings.Subscribe_WifiConnectTo3G</div>
+
+    <div>
+        @{Html.RenderAction("GetTopFeatures", "Common");}
+    </div>
+    <div id="benefits" class="element">
+        @{if ((bool)ViewData["CanStillUseFirstWeekFree"])
+          { 
+            @*<div class="first-week-free" style="padding: 3% 10px; font-weight: bold">
+                @Resources.Strings.Subscribe_LimitedTime
+            </div>*@
+          }}
+        @Html.PortalText("Text")
+        <div class="items">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,131 @@
+﻿.detail-content .row-fluid
+{
+	margin-bottom: 3px;
+}
+
+.detail-content h3
+{
+	font-weight: bolder;
+	font-size: 20px;
+}
+
+.detail-content .content-description
+{
+	padding: 5px 12px;
+}
+
+.detail-content #similar-content, #other-content
+{
+	padding: 15px 0px;
+}
+
+.detail-content hr
+{
+	-webkit-margin-before: 0.5em;
+	-webkit-margin-after: 0.5em;
+	-webkit-margin-start: auto;
+	-webkit-margin-end: auto;
+}
+
+.detail-content .sum-up
+{
+	height: 140px;
+	display: block;
+}
+
+.detail-content .category-container
+{
+	height: 60px;
+	line-height: 60px;
+	display: inline;
+}
+
+.detail-content .content-text
+{
+	margin-left: 16px;
+}
+	
+.detail-content .btn-curved
+{
+	display: block;
+}
+
+.detail-content .content-price
+{
+	margin-top: 30px;
+}
+
+.detail-content .content-description .title
+{
+	font-family: cursive;
+}
+
+.detail-content .sub-title
+{
+	font-size:13px;
+	font-weight: bolder;
+	color: Black;
+	display: inline;
+}
+
+.detail-content .title
+{
+	margin-bottom: 5px;
+	text-align: left;
+}
+
+.detail-content .content-image
+{
+	display: block;
+	float: left;
+	margin: 8px 12px 2px 5px;
+}
+
+.detail-content .content-provider
+{
+	color: rgb(134, 133, 136);
+	font-weight: bolder;
+}
+
+.detail-content #content-category
+{
+	color: rgb(37, 142, 255);
+	font-weight: bolder;
+	font-size: 12px;
+	margin-top: 6px;
+}
+
+.detail-content .small-pic
+{
+	display: block;
+	float: left;
+	min-height: 30px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.detail-content .small-pic img
+{
+	height: 70px;
+	width: 70px;
+	margin-bottom: 5px;
+}
+
+.detail-content .carousel-inner>.active, .detail-content .carousel-inner>.next.left, .detail-content .carousel-inner>.prev.right {
+    margin-left:-125px;
+    left:50%;
+    right:50%;
+}
+
+.detail-content #similar-content .content-name, .detail-content #other-content .content-name
+{
+	font-size: 12px;
+	font-weight: bolder;
+	color: black;
+}
+
+.detail-content .items
+{
+	position: relative;
+	text-align: center;
+}

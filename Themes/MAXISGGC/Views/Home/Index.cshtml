@@ -1,0 +1,20 @@
+﻿@{List<EightElements.Data.Rest.Models.GameGroup> groupportals = (List<EightElements.Data.Rest.Models.GameGroup>)ViewData["GameCategoriesPortal"];}
+@{foreach(EightElements.Data.Rest.Models.GameGroup iGame in groupportals) 
+  { <input type="hidden" id='groupgame' value='@iGame.ContentGroupId' name='@iGame.Name' /> } 
+}
+@section Scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var gamegroupitem = $('input[id^=groupgame]')
+            for (var i = 0; i < gamegroupitem.length; i++) {
+                if (gamegroupitem[i].value == 'T') {
+                    continue;
+                }
+                loadCategory('' + gamegroupitem[i].value + '', '' + gamegroupitem[i].value + '', '' + gamegroupitem[i].name + '', 'More game');
+            }
+        });
+    </script>
+}
+
+@Html.Partial("Content")

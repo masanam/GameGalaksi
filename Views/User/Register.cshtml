@@ -1,0 +1,44 @@
+﻿@model EightElements.Web.Rest.ViewModel.RegisterViewModel
+
+<div class="register">
+	<div class="register__description">@Resources.ViettelPort.Layout_MsisdnNotDetected</div>
+    <form action="@Url.Action("Register", "User")" method="post">
+        
+        @Html.LabelFor(m => m.Username, new { @class = "register__label" })
+        @Html.TextBoxFor(m => m.Username, new { @class = "register__input" })
+        
+        @Html.LabelFor(m => m.Email, new { @class = "register__label" })
+        @Html.TextBoxFor(m => m.Email, new { @class = "register__input" })
+        
+        @Html.LabelFor(m => m.Firstname, new { @class = "register__label" })
+        @Html.TextBoxFor(m => m.Firstname, new { @class = "register__input" })
+        
+        @Html.LabelFor(m => m.Lastname, new { @class = "register__label" })
+        @Html.TextBoxFor(m => m.Lastname, new { @class = "register__input" })
+        
+        @{
+            var genders = new List<SelectListItem>
+            {
+                new SelectListItem{Value = "0", Text = "Male", Selected = true},
+                new SelectListItem{Value = "1", Text = "Female"}
+            };
+        }
+        @Html.LabelFor(m => m.Gender, new { @class = "register__label" })
+        @Html.DropDownListFor(m => m.Gender, genders, new { @class = "control-label" })
+
+        @Html.LabelFor(m => m.Birthday, new { @class = "register__label" })
+        @Html.TextBoxFor(m => m.Birthday, new { @class = "register__input" })
+        
+        @Html.LabelFor(m => m.Password, new { @class = "register__label" })
+        @Html.PasswordFor(m => m.Password, new { @class = "register__input" })
+        
+        
+        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "register__label" })
+        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "register__input" })
+        
+        <div class="register__warning">@Html.Raw(ViewBag.ErrorMessage)</div>
+        <div>
+            <button class="register__submit-button" type="submit">@Resources.Strings.UserRegistration_Register</button>
+        </div>
+    </form>
+</div>

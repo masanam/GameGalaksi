@@ -1,0 +1,39 @@
+﻿@using EightElements.Data.Rest.Models
+
+
+<div class="section">
+    
+    <div class="section__header">@ViewData["GameListTitle"]</div>
+    
+    <div class="section__content">
+        @{
+            string section = (string) ViewData["SectionType"];
+            var games = (Dictionary<int, Game>) ViewData["DictGame" + section];
+            var gameCategories = (Dictionary<int, string>) ViewData["DictGameCategory" + section];
+            var gamePrices = (Dictionary<int, string>) ViewData["DictGamePrice" + section];
+            bool hasSubscription = (bool) ViewData["IsSubscribed"];
+
+            var game = games.ElementAt(0);
+            int contentId = game.Key;
+            string gameTitle = game.Value.Name;
+
+            string gamePriceT = gamePrices[contentId];
+            string AmountPriceT = ((Dictionary<int, string>)ViewData["DictAmountPrice" + section])[contentId];
+            string gameImage = Url.Content("~/rest/gameimage/" + contentId + "?key=" + ViewData["ImageSize"]);
+        }
+        
+        <div class="game game--banner">
+            <div class="game__banner-container">
+                <a href="/detail/@contentId">
+                    <img class="game__image--banner" src="@gameImage" alt="@gameTitle"/>
+                </a>
+            </div>
+                
+        </div>
+        
+    </div>
+
+    <div class="section__footer">
+        <a class="section__footer-link" href="/list/@ViewData["SectionType"]">@ViewData["MoreTitle"]</a>
+    </div>
+</div>

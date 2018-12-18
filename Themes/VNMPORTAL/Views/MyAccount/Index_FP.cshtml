@@ -1,0 +1,50 @@
+﻿@{EightElements.Data.Rest.Models.UserDetail userDetail = (EightElements.Data.Rest.Models.UserDetail)ViewData["UserDetail"];}
+<div class="gradient-pale padding">
+    <div class="title">
+        <h3>
+            @Resources.Strings.MyAccount_MyAcount
+        </h3>
+    </div>
+    <div class="my-subscription">
+        <div class="info">@Html.Raw(String.Format("{0}: {1}",Resources.Strings.MyAccount_MyPhone, userDetail.Msisdn))</div>
+        <div id="device" class="info">
+            @Html.Raw(String.Format(Resources.Strings.MyAccount_Handset, userDetail.HandsetModel))
+            <br />
+        </div>
+    </div>
+    <div class="my-subscription">
+        <h4>
+            @Resources.Strings.MyAccount_Subscription</h4>
+        <div id="credits" class="info">
+
+                  <span>@ViewData["CreditText"] </span> 
+        
+            @{if (userDetail.HasSubscription)
+              {
+                  <img src="/Images/General/MyDownloads/ico-coin.png" alt="" style="width: 14px;" /><br />
+                  <span>Status: @ViewData["SubscriptionStatusText"]</span><br /><br />
+                  <div>
+                    <a href="/myAccount/ConfirmToUnsubscribe" ><u>@Resources.Strings.MyAccount_Unsubscribe</u></a>
+                  </div>
+              }}
+        </div>
+
+    </div>
+    <br />
+    <div align="center" style="padding: 10px;">
+        @{if (!userDetail.HasActiveSubscription)
+          {
+            <div>
+                <a href="/Subscribe" style="color: #fff; background-color: Green;
+                   text-decoration: none; padding: 3px;">@Resources.Strings.MyAccount_Benefit</a></div>
+          }}
+        @{if (userDetail.IsHandsetSupported)
+          {
+            <div class="btn-my-downloads btn-curved gradient-blue-bright btn-text-1line" 
+            style="padding: 10px;">
+                @Html.ActionLink(Resources.Strings.MyAccount_MyDownloads, "History", "Purchase", new { handsetId = @ViewData["handsetid"] }
+                , new { style = "color: #fff; background-color: Blue; text-decoration: none; padding: 3px;" }) 
+            </div>
+          }}
+    </div>
+</div>

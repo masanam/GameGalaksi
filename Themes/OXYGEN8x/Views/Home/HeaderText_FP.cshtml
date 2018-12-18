@@ -1,0 +1,70 @@
+﻿@{if ((bool)ViewData["NonSub"])
+{
+    <div class="home-header home-header-join">
+        @Html.PortalText("SubscribeJoinText", true)
+    </div>
+    <div class="home-header home-padding-top">
+        @Html.PortalText("SubscribeJoinTextLong", true)
+    </div>
+    if ((bool)ViewData["CanStillUseFirstWeekFree"])
+    { 
+        <div class="first-week-free category row-fluid home-header home-header-fwf">
+            @Html.Raw(Resources.Strings.Home_WelcomeTitle)
+        </div>
+    }
+    <div class="home-header home-padding-middle">
+    @if (ViewData["TotalGamesAvailable"] != null && ViewData["UserHandset"] != null)
+    {
+        Html.Raw(String.Format(Resources.GamerHeaven.Home_GameForHandsetNonSub, ViewData["TotalGamesAvailable"], ViewData["UserHandset"]));
+    }
+    @if ((bool)ViewData["isMsisdnNotDetected"])
+    {
+        if (ViewBag.PortalID == EightElements.Data.DAPortal.GamerHeavenOxygen8PortalId ||
+            ViewBag.PortalID == EightElements.Data.DAPortal.DigitalTurbinPortalId)
+        {
+            <div class="not-authenticated">
+                For only $ 2.50  per week you will get 1 free game now + 1 game credit every week to redeem additional games
+                <div class="subscribe-login-button">
+                    <a href="@ViewBag.SubscribeUrl" style="text-decoration: none; color: white;">Subscribe / Login</a>
+                </div>
+            </div>
+        }
+        else //if (ViewBag.PortalID == EightElements.Data.DAPortal.GameGalaksiPortalId)
+        {
+            <p>@Resources.Strings.HeaderText_Wifi</p>
+        }
+    }
+    </div>
+}
+  else
+  {
+    <div class="home-header home-padding-default">
+    @Html.PortalText("SubscribeThanksJoin", true)
+    <br/>
+    @if ((bool)ViewData["IsPending"])
+    {
+        @Html.PortalText("SubscribePendingWarning", true)
+    }
+    else
+    {
+        if ((int)ViewData["Credits"] <= 1)
+        {
+            @Html.Raw(String.Format(Resources.Strings.Home_CreditText, ViewData["Credits"]))
+        }
+        else
+        {
+            @Html.Raw(String.Format(Resources.Strings.Home_CreditsText, ViewData["Credits"]))
+        }
+    }
+    @if (ViewData["TotalGamesAvailable"] != null && ViewData["UserHandset"] != null)
+    {
+        <br/>
+        @Html.Raw(String.Format(Resources.GamerHeaven.Home_GameForHandset, ViewData["TotalGamesAvailable"], ViewData["UserHandset"]))
+    }
+    @if ((bool)ViewData["IsSuspended"])
+    {
+        <br/>
+        @Resources.Strings.Home_SuspendedWarning
+    }
+    </div>
+}}

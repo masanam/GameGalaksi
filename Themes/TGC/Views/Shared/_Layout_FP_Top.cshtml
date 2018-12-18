@@ -1,0 +1,16 @@
+﻿@{
+    if ((bool)ViewData["displayTopMessage"])
+    {
+        <div class="warning-msg" >
+            @Html.PortalText("TopupMessage")
+        </div>
+    } 
+}
+<div class="header">
+    @Html.PortalImage((string)ViewData["banner"], true, "portalimage", "", "width:100%")
+</div>
+
+<div>
+    <input type="hidden" id='uid' value='@ViewData["uid"]' />
+    <input type="hidden" id='handsetid' value='@ViewData["handsetid"]' />
+</div>

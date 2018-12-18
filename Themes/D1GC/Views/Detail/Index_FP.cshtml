@@ -1,0 +1,84 @@
+﻿@using EightElements.Data.Rest.Models
+
+
+<input type="hidden" id='ContentIdHidden' value='@ViewData["ContentId"]' />
+
+@{
+    int contentId = (int)ViewData["ContentId"];
+    Game game = (Game) ViewData["Game"];
+    GameCategory gameCategory = (GameCategory) ViewData["GameCategory"];
+    GameProvider gameProvider = (GameProvider) ViewData["GameProvider"];
+    
+}
+    
+<div class="section-header">
+    <div class="section-header__title">
+        @game.Name
+    </div>
+    <div class="section-header__action">
+        @if ((bool) ViewData["NonSub"])
+        {
+            <a class="section-header__action-link" href="@Url.Action("Index", "Subscribe")">@Resources.Strings.CommonBuy_BuyText</a>
+        }
+        else
+        {
+            <a class="section-header__action-link" href="@Url.Action("Buy", "Purchase", new { contentId = contentId, ppd = false })">@Resources.D1GC.Common_Download</a>
+        }
+    </div>
+</div>   
+
+<div class="game-detail__image-container">
+    <img src='/rest/gameimage/@contentId?key=Tall0' class="game-detail__image" alt="@game.Name picture1" />
+    <img src='/rest/gameimage/@contentId?key=Tall1' class="game-detail__image" alt="@game.Name picture2" />
+    <img src='/rest/gameimage/@contentId?key=Tall2' class="game-detail__image" alt="@game.Name picture3" />
+</div>
+
+<div class="game-detail__description-text">
+    @game.ShortDescription
+</div>
+
+<div>
+    <img src="/rest/gameimage/@contentId?key=Banner0" alt="@game.Name" class="game-detail__banner" />
+</div>
+
+<div class="game-detail__description-text">
+    @game.LongDescription
+</div>
+
+
+@if ((bool)ViewData["NonSub"])
+{
+    <div class="subscribe-button subscribe-button--plain">
+        <a class="subscribe-button__link" href="@Url.Action("Subscribe", "Subscribe")">
+            <img class="subscribe-button__link-image" src="/Images/General/D1GC/get-button.png" alt="Join Now"/>
+        </a>
+        <div class="subscribe-button__info-text"></div>
+    </div>
+}
+else
+{
+    <div class="subscribe-button subscribe-button--plain">
+        <a class="subscribe-button__link" href="@Url.Action("Buy", "Purchase", new { contentId = contentId, ppd = false })">
+            <img class="subscribe-button__link-image" src="/Images/General/D1GC/download-button.png" alt="Join Now"/>
+        </a>
+        <div class="subscribe-button__info-text"></div>
+    </div>
+}
+
+@{
+    ViewData["SectionType"] = "F";
+    ViewData["GameListTitle"] = Resources.D1GC.GameList_TopGames;
+    ViewData["MoreTitle"] = Resources.D1GC.GameList_ViewMore;
+    ViewData["ImageSize"] = "Square0";
+}
+@Html.Partial("GameList")
+  
+@section footerMenu
+{
+    <div class="footer__main-menu">
+        <a class="footer__menu-item" href="@Url.Action("Index", "MyAccount")">@Resources.Strings.Layout_MyAccount</a>
+    </div>
+    <div class="footer__side-menu">
+        <a class="footer__side-menu-link" href="/">@Resources.Strings.Layout_Home</a>
+    </div>
+}

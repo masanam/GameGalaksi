@@ -1,0 +1,68 @@
+﻿.home-header-join
+{
+    padding: 5px;
+    text-align: center;
+    background-color: #32CCFE;
+}
+
+.home-header-fwf
+{
+    padding: 3% 10px;
+    color: #3AF500;
+    margin-top: 3px;
+}
+
+.header-text {
+    padding: 8px;
+    
+}
+
+
+.home-padding-default
+{
+    padding: 10px;
+}
+
+.home-padding-top
+{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+
+.home-padding-middle
+{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.subscribe-join-button
+{
+    margin: 32px 48px 16px;    
+    padding: 8px 4px;
+    color: #CC0000;
+    background-color: Yellow;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+a.category-text
+{
+    color:Blue;
+    font-size:small;
+    font-weight:bold;
+}
+
+
+
+
+.page-title--gdc {
+    background-color: #0e76bd;
+    color: white;
+    font-size: 24px;    
+    text-transform: uppercase;
+    padding: 8px;
+}

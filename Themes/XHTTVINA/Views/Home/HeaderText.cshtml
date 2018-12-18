@@ -1,0 +1,39 @@
+﻿<div style="margin: 10px; width: 100%; text-align: left;">
+@{
+    bool isSubscribed = (bool)ViewData["IsSubscribed"];
+    string headerText = string.Empty;
+    string msisdn = ViewData["uid"].ToString();
+    if (!String.IsNullOrWhiteSpace(msisdn) && Session["msisdn"] != null)
+    {
+        msisdn = Session["msisdn"].ToString();
+        msisdn = msisdn.Replace("84", "0");
+    }
+	
+
+    if (!isSubscribed)
+    {
+        @Html.Raw(String.Format(Resources.Vinaphone.HeaderText,
+            msisdn, ViewData["TotalGamesAvailable"], ViewData["UserHandset"]))
+    }
+    else
+    {
+        if ((int)ViewData["Credits"] <= 1)
+        {
+            @Html.Raw(String.Format(Resources.Vinaphone.HeaderTextSubscribed,
+                        msisdn,
+                        ViewData["TotalGamesAvailable"],
+                        ViewData["UserHandset"],
+                        ViewData["Credits"]))
+        }
+        else
+        {
+            @Html.Raw(String.Format(Resources.Vinaphone.HeaderTextSubscribedWCredits,
+                        msisdn,
+                        ViewData["TotalGamesAvailable"],
+                        ViewData["UserHandset"],
+                        ViewData["Credits"]))
+        }
+    }
+}
+</div>
+

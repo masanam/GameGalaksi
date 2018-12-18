@@ -1,0 +1,47 @@
+﻿
+
+.subscribe__description {
+    font-weight: bold;
+    padding: 8px;
+}
+
+.subscribe__benefits-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.subscribe__benefits-list li {
+    background: url(/Images/General/D1GC/coin.png) no-repeat 8px 6px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+    padding: 8px 8px 8px 40px;
+}
+
+.subscribe__benefits-list li:nth-child(odd) {
+     background-color: #F2E1D1;
+}
+
+
+.subscribe-button {
+    background-color: #F2E1D1;
+    padding: 16px 0 8px;
+    text-align: center;
+}
+.subscribe-button--plain {
+    background-color: #fff;
+    padding: 8px 0;
+}
+
+.subscribe-button_link {
+    
+}
+
+.subscribe-button__link-image {
+    width: 148px;
+}
+
+.subscribe-button__info-text {
+    margin: 8px auto;
+}

@@ -1,0 +1,149 @@
+﻿@using EightElements.Data.Rest.Models
+@{
+    bool ppdDisabled = ViewBag.PpdDisabled ?? false;
+}
+
+<input type="hidden" id='ContentIdHidden' value='@ViewData["ContentId"]' />
+@{Game game = (Game)ViewData["Game"];
+  GameCategory gameCategory = (GameCategory)ViewData["GameCategory"];
+  GameProvider gameProvider = (GameProvider)ViewData["GameProvider"];
+  List<Game> otherGames = (List<Game>)ViewData["OtherGames"];
+  List<Game> similarGames = (List<Game>)ViewData["SimilarGames"];}
+<div class="title">
+    <table style="width: 100%; min-width: 128px; font-weight: bold; font-size: small;">
+        <tr><td>
+            <div class="left-column">
+                <img src="/rest/gameimage/@ViewData["ContentId"]?key=Square0" alt="@game.Name" class="gameSquareImageTop" />
+            </div>
+            <div class="right-column">
+                <div class="right-column-header">@game.Name</div>
+                <div class="right-column-button">
+                @if ((bool)ViewData["isMsisdnNotDetected"])
+                {
+                    <a href="@Url.Action("Index", "Subscribe")" class="button-free">
+                                @Resources.Strings.CommonBuy_Free</a>
+                }
+                else
+                {
+                    if ((bool)ViewData["NonSub"])
+                    { 
+                        <a href="@Url.Action("SubscribeButton", "Subscribe", new { ContentId = ViewData["ContentId"] })" class="button-free">@Html.PortalText("CommonBuyDirectSubscribe")</a>
+                        <br />
+                    }
+                    if ((int)ViewData["credits"] > 0 && !(ViewData["AmountPrice"].ToString() == "0" || ViewData["AmountPrice"].ToString() == "0.0000"))
+                    {
+                        <a href="/purchase/buy?contentid=@ViewData["ContentId"]&ppd=false" class="button-buy">@Resources.Strings.CommonBuy_UseCredit</a> <br />
+                    }
+                    if (!ppdDisabled)
+                    {
+                        <a href="/purchase/buy?contentid=@ViewData["ContentId"]&ppd=true" class="button-buy">@ViewData["GamePrice"]</a>        
+                    }
+                }
+                </div>
+            </div>
+        </td></tr>
+    </table>
+</div>
+<hr />
+
+<div class="item">
+    <img src='/rest/gameimage/@ViewData["ContentId"]?key=Tall0'
+                class="img-polaroid" alt="game-picture1" />
+            
+    <img src='/rest/gameimage/@ViewData["ContentId"]?key=Tall1' 
+                class="img-polaroid" alt="game-picture2" />
+            
+    <img src='/rest/gameimage/@ViewData["ContentId"]?key=Tall2'
+                class="img-polaroid" alt="game-picture3" />
+</div>
+@*<div class="item">
+    <img src='/rest/gameimage/@ViewData["ContentId"]?key=Tall3'
+                class="img-polaroid" alt="game-picture4" />
+</div>*@
+
+<div class="content">
+<div class="row-fluid" style="padding-bottom: 5px;">
+    <div class="content-description">
+        <div class="title">
+            <h5>@Resources.Strings.Detail_Description</h5>
+        </div>
+        <small>@game.LongDescription</small>
+    </div>
+</div>
+</div>
+
+<div class="right-column-button" style="text-align: center;font-size: small;">
+@if ((bool)ViewData["isMsisdnNotDetected"])
+{
+    <a href="@Url.Action("Index", "Subscribe")" class="button-free">
+                @Resources.Strings.CommonBuy_Free</a>
+}
+else if ((bool)ViewData["NonSub"])
+{
+    // slight different then others button behaviour. not showing any button when user subscribed 
+    <a href="@Url.Action("SubscribeButton", "Subscribe", new { ContentId = ViewData["ContentId"] })" class="button-free">@Html.PortalText("CommonBuyDirectSubscribe")</a>
+    @*<br />
+    <a href="/purchase/buy?contentid=@ViewData["ContentId"]&ppd=true" class="button-buy">@ViewData["GamePrice"]</a>*@
+}
+</div>
+
+<hr />
+
+@if (similarGames.Count > 0)
+{
+<div id="similar-content" class="row-fluid">
+    <div class="title">
+
+        <h5>@Resources.Strings.Detail_PeopleDownloaded</h5>
+      
+    </div>
+    <div class="items">
+        @foreach (Game similargame in similarGames)
+        {
+                
+            <div style="text-align: center;">
+                <a href="/Detail/@similargame.ContentId" style="text-decoration:none;">
+                    <img src="/rest/gameimage/@similargame.ContentId?key=Square0" style="width:30%;min-width:80px;max-width:120px;"/>
+                </a>
+                <br />
+                <a href="/Detail/@similargame.ContentId" style="text-decoration:none;">
+                    @similargame.Name
+                </a>
+            </div>
+            
+        }
+    </div>
+</div>
+<hr />
+}
+  
+@if (otherGames.Count > 0)
+{
+    <div id="other-content" class="row-fluid">
+        <div class="title">
+
+            <h5>@Resources.Strings.Detail_OtherTitles</h5>
+       
+        </div>
+        <div class="items">
+            @foreach (Game othergame in otherGames)
+            {
+                <div style="text-align: center;">
+                    <a href="/Detail/@othergame.ContentId" style="text-decoration:none;">
+                        <img src="/rest/gameimage/@othergame.ContentId?key=Square0" style="width:30%;min-width:80px;max-width:120px;"/>
+                    </a>
+                    <br />
+                    <a href="/Detail/@othergame.ContentId" style="text-decoration:none;">
+                        @othergame.Name
+                    </a>
+                </div>
+            }
+        </div>
+    </div>     
+    <hr /> 
+}
+    <div class="content" style="font-size:small">
+        @Html.PortalText("LayoutMiniHelp")
+    </div>
+   
+</div>

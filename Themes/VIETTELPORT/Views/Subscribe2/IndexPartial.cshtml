@@ -1,0 +1,25 @@
+﻿<div id="top">
+    @Html.PortalText("SubscribeJoinText")
+</div>
+<div id="container" class="gradient-pale">
+    <div class="text-about-price" align="center">
+        @Html.PortalText("SubscribePriceText")
+    </div>
+    <div id="benefits" class="element" style="padding: 0 2%; font-size: 12px;">
+        @Html.PortalText("SubscribeBenefit")
+    </div>
+    <div id="btn-subscribe-and-save" class="subscribe-button">
+        <a href="@Url.Action("Index", "Home")" style="width:45%;float:left;display:block;" >
+            @Html.PortalText("NoButton")
+        </a>
+        <a class="buttons yesButton" href="#" onclick="subscribeAction();" style="display: inline;">
+            @Html.PortalText("YesButton")
+        </a>
+    </div>
+    <div style="clear: both;">
+    </div>
+    <div id="pictures" class="element" align="center">
+        @{ Html.RenderAction("GetTopFeatures", "Common"); }
+    </div>
+    @Html.PortalText("InmobiLandingPage")
+</div>

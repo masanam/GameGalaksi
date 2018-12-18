@@ -1,0 +1,44 @@
+﻿@section Scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var languageCode = $('html').attr('lang');
+
+            //var loading = true;
+            //setLoading('#category-list'); // TODO
+
+            $.ajax({
+                type: 'GET',
+                url: '/rest/categories?languageCode=' + languageCode,
+                data: {},
+                success: function (data, textStatus, jqXHR) {
+
+                    //removeLoading(); // TODO
+                    $.each(data, function (key, val) {
+
+                        AddCategory(val, languageCode);
+
+                    });
+                },
+
+                error: function (jqXHR, textStatus, errorThrown) {
+                    removeLoading(); // TODO
+                    $('#category-list').append("@Resources.Strings.GameCategories_CategoriesNotFound");
+                }
+            });
+        });
+
+    </script>
+}
+<div class="game-categories-content">
+<div class="page-title">
+    <h3>        
+        @Resources.Strings.GameCategories_AllGames
+    </h3>
+</div>
+<table id="category-list" class="gradient-categories">
+<tbody>
+</tbody>
+</table>
+</div>

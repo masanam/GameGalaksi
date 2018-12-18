@@ -1,0 +1,25 @@
+﻿
+@{List<EightElements.Data.Rest.Models.GameCategory> categories = (List<EightElements.Data.Rest.Models.GameCategory>)ViewData["GameCategories"];}
+<div class="title">
+    <h3>        
+        @Resources.Strings.GameCategories_AllGames
+    </h3>
+</div>
+<div>
+    @foreach (EightElements.Data.Rest.Models.GameCategory category in categories)
+    {
+        <div style="text-align: center; padding-bottom: 3px;">
+            <div style="vertical-align: middle; display: inline-block; width: 25%;">
+                <a href="/GameCategory?categoryId=@category.GameCategoryId" style="text-decoration:none;">
+                    <img src="rest/GameCategoryImage?gameCategoryId=@category.GameCategoryId"  style="width:100%;min-width:60px;max-width:120px;"/>
+                </a>
+            </div>
+            <div style="vertical-align: middle; text-align: center; display: inline-block; min-width: 65%">
+                <a href="/GameCategory?categoryId=@category.GameCategoryId" style="text-decoration:none;">
+                    @category.Name
+                </a>
+            </div>
+        </div>
+    }
+</div>
+</div> 

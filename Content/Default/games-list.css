@@ -1,0 +1,154 @@
+﻿.game-entry
+{
+	position: relative;
+	margin: 0px 0px 2px;
+}
+
+.content-image
+{
+	text-align:center;
+	margin: 5px 0px;
+}
+
+.content-price
+{
+	margin-top:30px;
+}
+
+.show-more-entry
+{
+	width: 160px;
+	color: White;
+}
+
+.message
+{
+	margin: 20px 0px;
+	text-align: center;
+}
+
+.img-rounded
+{
+/*	width: 80px;
+	height: 80px;*/
+}
+.text-container
+{
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+}
+@media (max-width:767px)
+{
+	.text-container
+	{
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+	}
+}
+
+.btns-container
+{
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+}
+
+.btns, .btns-firstEntry, .content-text
+{
+	vertical-align: middle;
+	display: inline-block;
+	line-height: 1.2;
+}
+
+h4
+{
+    padding: 0px 5px;
+	font-size: 14px;
+}
+
+h4 a
+{
+	color: rgb(26, 145, 214);
+}
+h4 a:over
+{
+	color: inherit;
+}
+
+.content-category
+{
+	font-size: 12px;
+}
+
+/*----------- LOADING ANIM ---------------------------------------*/
+
+/* set up the three ball spinners */
+#loading-anim {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 25px;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  float: left;
+  -moz-transform: scale(0.5);
+  -webkit-transform: scale(0.5);
+
+  -webkit-animation-name: rotateThis;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+#loading-anim div {
+  width: 20px;
+  height: 20px;
+  background: rgb(20, 151, 202);
+  -moz-border-radius: 40px;
+  -webkit-border-radius: 40px;
+  position: absolute;
+  left: 40px;
+  top: 40px;
+}
+
+/* add a shadow to the first */
+#loading-anim div {
+  -moz-box-shadow: black 0 0 2px;
+  -webkit-box-shadow: black 0 0 2px;
+}
+
+/* position the bars and balls correctly (rotate them and translate them outward)*/
+.bar1 {
+  -moz-transform: rotate(0deg) translate(0, -30px);
+  -webkit-transform: rotate(0deg) translate(0, -30px);opacity:0.12;
+}
+.bar2 {
+  -moz-transform: rotate(45deg) translate(0, -30px);
+  -webkit-transform: rotate(45deg) translate(0, -30px);opacity:0.25;
+}
+.bar3 {
+  -moz-transform: rotate(90deg) translate(0, -30px);
+  -webkit-transform: rotate(90deg) translate(0, -30px);opacity:0.37;
+}
+.bar4 {
+  -moz-transform: rotate(135deg) translate(0, -30px);
+  -webkit-transform: rotate(135deg) translate(0, -30px);opacity:0.50;
+}
+.bar5 {
+  -moz-transform: rotate(180deg) translate(0, -30px);
+  -webkit-transform: rotate(180deg) translate(0, -30px);opacity:0.62;
+}
+.bar6 {
+  -moz-transform: rotate(225deg) translate(0, -30px);
+  -webkit-transform: rotate(225deg) translate(0, -30px);opacity:0.75;
+}
+.bar7 {
+  -moz-transform: rotate(270deg) translate(0, -30px);
+  -webkit-transform: rotate(270deg) translate(0, -30px);opacity:0.87;
+}
+.bar8 {
+  -moz-transform: rotate(315deg) translate(0, -30px);
+  -webkit-transform: rotate(315deg) translate(0, -30px);opacity:1;
+}
+/*----------- END OF LOADING ANIM ---------------------------------------*/

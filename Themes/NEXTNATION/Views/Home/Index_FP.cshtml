@@ -1,0 +1,14 @@
+﻿@{
+    var price = Html.PortalText("SubscribePrice", true).ToString();
+    bool showPrice = !System.String.IsNullOrEmpty(price);
+    ViewBag.JoinTop = showPrice ?
+        String.Format(Resources.Strings.Home_JoinNowTop, price) :
+        Resources.Strings.Home_JoinNow;
+    ViewBag.JoinBottom = showPrice ?
+        String.Format(Resources.Strings.Home_JoinNowBottom, price) :
+        Resources.Strings.Home_JoinNow;
+    ViewBag.GameList = "GameListBanner";
+    ViewBag.SubscribeUrl = "Subscribe";
+}
+
+@Html.Partial("Content_FP")

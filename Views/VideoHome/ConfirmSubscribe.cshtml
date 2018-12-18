@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Subscribe";
+}
+
+<div class="confirm-dialog">
+    @Html.PortalText("SubscribeConfirmation")
+    <div class="button-container">
+        <a href="@Url.Action("Subscribe")">Yes</a>
+        <a href="@Url.Action("Index")">Cancel</a>
+    </div>
+</div>
+
+
+<div class="default-items">
+    @{
+        Html.RenderPartial("ContentPartial");
+    }
+</div>

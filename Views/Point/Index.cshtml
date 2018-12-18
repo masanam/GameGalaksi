@@ -1,0 +1,126 @@
+﻿@{
+    bool hasSubscription = ViewBag.HasSubscription;
+    int points = ViewBag.Points;
+    var gamesId = ViewBag.RandomGames as List<int> ?? new List<int> {0, 0, 0};
+    var prices = ViewBag.Prices as List<int> ?? new List<int> {0, 0, 0};
+}
+    
+
+<div class="home-content">
+    
+    <div class="page-title"><h3>@Resources.Strings.Point_PageTitle</h3></div>
+
+    <div class="content">
+        
+        @Html.Partial("Notification_FP")
+        
+        @if (hasSubscription)
+        {
+            <div style="text-align: left; margin: 10px 5px 15px">
+                @Html.Raw(String.Format(Resources.Strings.Point_BalanceText, points))
+            </div>
+
+            <div class="title row-fluid gradient-home-categories">
+                <h4>@string.Format(Resources.Strings.Point_SelectGift, ViewData["PortalTitle"])</h4>
+            </div>
+
+            <table>
+                <tr>
+                    <td>
+                        @{
+                            string imageSource = "/rest/gameimage/" + gamesId[0] + "?key=Square0";
+                            <span class="content-image">
+                                <a href="@Url.Action("BuyCoin", "Point")">
+                                    <img src="@imageSource" class="img-rounded" />
+                                </a>
+                            </span>
+                        }
+                    </td>
+                    <td>
+                        <div class="content-name">
+                            <a href="@Url.Action("BuyCoin", "Point")">
+                                @Html.Raw(String.Format(Resources.Strings.Point_PurchaseCredit, prices[0]))
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        @{
+                            string imageSource2 = "/rest/gameimage/" + gamesId[1] + "?key=Square0";
+                            <span class="content-image">
+                                <a href="@Url.Action("Index", "GameBundle")">
+                                    <img src="@imageSource2" class="img-rounded" />
+                                </a>
+                            </span>
+                        }
+                    </td>
+                    <td>
+                        <div class="content-name">
+                            <a href="@Url.Action("Index", "GameBundle")">
+                                @Html.Raw(String.Format(Resources.Strings.Point_PurchaseGameBundle, prices[1]))
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        @{
+                            string imageSource3 = "/rest/gameimage/" + gamesId[2] + "?key=Square0";
+                            <span class="content-image">
+                                <a href="@Url.Action("BuySubscription", "Point")">
+                                    <img src="@imageSource3" class="img-rounded" />
+                                </a>
+                            </span>
+                        }
+                    </td>
+                    <td>
+                        <div class="content-name">
+                            <a href="@Url.Action("BuySubscription", "Point")">
+                                @Html.Raw(String.Format(Resources.Strings.Point_PurchaseSubscription, prices[2]))
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+
+            </table>
+            
+            <br/>
+            <br/>
+        }
+        @*else
+        {
+            @Html.Raw("You are not subscribed to the service")
+            <br />
+        }*@
+        
+        
+        @*            <div style="background: #f9edbe !important; border: 1px solid #f0c36d; text-align: center; padding: 4px; margin-top: 8px; margin-bottom: 8px">Notification text goes here</div>    *@
+        
+        
+        <div class="point-info-text">
+            <div class="title row-fluid gradient-home-categories">
+                <h4>@Resources.Strings.Point_GetPointInfo</h4>
+            </div>
+            <ol style="text-align: left;">
+                @Html.PortalText("PointInfo")
+            </ol>
+        </div>
+        
+    </div>
+    
+     
+</div>
+
+@if (!hasSubscription)
+{
+    <div class="button-bar">
+        <div class="btn-curved gradient-green-bright btn-text-1line" style="margin: 15px auto; width: 200px;">
+            <a href="@Url.Action("Subscribe", "Subscribe")">
+                @Resources.Strings.Point_JoinAndGetPoint
+            </a>    
+        </div>
+    </div>
+}

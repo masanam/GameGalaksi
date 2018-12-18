@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+@{
+    string culture = ConfigHelper.GetLanguageCode();
+    string font = "";
+    switch (culture)
+    {
+        case "mk":
+            font = "myanmar3";
+            break;
+        case "ml":
+            font = "zawgyi";
+            break;
+    }
+}
+
+
+<html lang="@culture">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jquery.blockUI")
+    @Scripts.Render("~/bundles/bootbox")
+    @Html.Partial("_Localization")
+    @Scripts.Render("~/bundles/home")
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript" src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    @Styles.Render("~/bundles/css")
+    @Html.Partial("_GoogleAnalytics") 
+    @RenderSection("style", required: false)
+</head>
+<body class="@font">
+<header>
+    <input type="hidden" id='uid' value='@ViewData["uid"]' />
+    <input type="hidden" id='handsetid' value='@ViewData["handsetid"]' />
+    @Html.Hidden("isSubscribed", ViewData["isSubscribed"])
+    @Html.Hidden("credits", ViewData["credits"])
+    @Html.Hidden("deactivateOneClickSubscribe", ViewData["deactivateOneClickSubscribe"])
+    @Html.Hidden("isMsisdnNotDetected", ViewData["isMsisdnNotDetected"])
+    @Html.Hidden("NonSub", ViewData["NonSub"])
+    @Html.Hidden("PortalId", ViewData["PortalId"])
+    @{
+        if ((bool)ViewData["displayTopMessage"])
+        {
+            <div class="warning-msg" >
+                @Html.PortalText("TopupMessage")
+            </div>
+        } 
+    }
+    <div>
+        @Html.PortalImage((string)ViewData["banner"], true, "portalimage", "", "width:100%")
+    </div>
+</header>
+<h1 class="header">
+    <a class="header__link" href="/"><strong>GAMER</strong> HEAVEN</a>
+</h1>
+@RenderSection("SearchBar", required: false)
+
+@RenderBody()
+    
+<footer>
+    <div class="footer__left-menu">
+        <a class="footer__menu-link" href="@Url.Action("Index", "MyAccount")" onclick="ga('send', 'event', 'layout', 'click', 'my-account')">@Resources.Strings.MyAccount_MyAccount</a>
+    </div>
+    <div class="footer__copyright-info">
+        ©@DateTime.Now.Year 8elements. All rights reserved.
+    </div>
+    <div class="footer__right-menu">
+        <a class="footer__menu-link" href="@Url.Action("Index", "Terms")">@Resources.Strings.Layout_Terms</a>
+        &nbsp;|&nbsp;
+        <a class="footer__menu-link" href="@Url.Action("Index", "Help")">@Resources.Strings.Layout_Help</a>
+        &nbsp;|&nbsp;
+        <a class="footer__menu-link" href="@Url.Action("FAQ", "Help")">@Resources.Strings.FAQ</a>
+    </div>
+</footer>
+
+</body>
+
+</html>

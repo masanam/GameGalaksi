@@ -1,0 +1,19 @@
+﻿@section Scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            GetDownloadedGamesAndGenerateList();
+        });
+    </script>
+}
+
+<div class="section">
+    <div class="section__header">@Resources.Strings.Purchase_MyDownload</div>
+    
+    <div class="section__content">
+        <div id='download-list'>
+            <span>@Resources.Strings.Purchase_Loading</span>
+        </div>
+    </div>
+</div>
+

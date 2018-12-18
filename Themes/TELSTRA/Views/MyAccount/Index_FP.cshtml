@@ -1,0 +1,80 @@
+﻿@{EightElements.Data.Rest.Models.UserDetail userDetail = (EightElements.Data.Rest.Models.UserDetail)ViewData["UserDetail"];}
+<div class="gradient-pale padding content">
+    <div class="title">
+        <h3>
+            @Resources.Strings.MyAccount_MyAcount
+        </h3>
+    </div>
+    <div class="my-subscription">
+        <div class="info">@Html.Raw(String.Format("{0}: {1}",Resources.Strings.MyAccount_MyPhone, userDetail.Msisdn))</div>
+        <div id="device" class="info">
+            @Html.Raw(String.Format(Resources.Strings.MyAccount_Handset, userDetail.HandsetModel))
+            @if (ViewBag.HandsetSelectionEnabled)
+            {
+                <a href="@Url.Action("Index", "Handset")" class="change-handset"> 
+                    @Resources.Strings.MyAccount_ChangeHandset
+                </a>
+            }
+            <br />
+            @if ((bool)ViewData["isMsisdnNotDetected"] &&
+             (ViewBag.PortalID == EightElements.Data.DAPortal.GamerHeavenOxygen8PortalId))
+            {
+            <div class="subscribe-login-button">
+                <a href="@ViewBag.SubscribeUrl" style="text-decoration: none;color: white;">Subscribe / Login</a>
+            </div>
+            <br />
+            }
+        
+        </div>
+    </div>
+    <div class="my-subscription">
+        <h4>
+            @Resources.Strings.MyAccount_Subscription</h4>
+        <div id="credits" class="info">
+
+                  <span>@ViewData["CreditText"] </span> 
+        
+            @{if (userDetail.HasSubscription)
+              {
+                <img src="/Images/General/MyDownloads/ico-coin.png" alt="" style="width: 14px;" /><br /><br />
+                <span>Name of the product/subscription:<br />Gamer Heaven</span><br /><br />
+                <span>Details of the subscription:<br />Best game club with over 300 games, get 1 game for free for each renewal</span><br /><br />
+                <span>Status: @ViewData["SubscriptionStatusText"]</span>
+                  if ((ViewBag.PortalID == EightElements.Data.DAPortal.GamerHeavenOxygen8PortalId) &&
+                      (userDetail.SubscriptionStatus == "Suspended" ||
+                       userDetail.SubscriptionStatus == "Pending"))
+                  {
+                    <div>
+                    <a href="/Subscribe/Resubscribe" >@Resources.Strings.MyAccount_Resubscribe</a>
+                    </div>
+                  }
+                <br /><br />
+                <span>Purchase Date: @userDetail.SubscriptionCreateDateStr</span><br /><br />
+                <span>Renewal Date: @userDetail.SubscriptionExpiryDateStr</span><br /><br />
+                <div>
+                    <a href=@Url.Content("~/myAccount/ConfirmToUnsubscribe") >@Resources.Strings.MyAccount_Unsubscribe</a>
+                </div>
+                
+
+              }}
+        </div>
+
+    </div>
+    <br />
+    <div align="center" style="padding: 10px;">
+        @{if (!userDetail.HasActiveSubscription)
+          {
+            <div>
+                <a href=@Url.Content("~/Subscribe") style="color: #fff; background-color: Green;
+                   text-decoration: none; padding: 3px;">@Resources.Strings.MyAccount_Benefit</a></div>
+          }}
+        @{if (userDetail.IsHandsetSupported)
+          {
+            <div class="btn-my-downloads btn-curved gradient-blue-bright btn-text-1line" 
+            style="padding: 10px;">
+                @Html.ActionLink(Resources.Strings.MyAccount_MyDownloads, "History", "Purchase", new { handsetId = @ViewData["handsetid"] }
+                , new { style = "color: #fff; background-color: Blue; text-decoration: none; padding: 3px;" }) 
+            </div>
+          }}
+    </div>
+</div>

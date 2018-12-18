@@ -1,0 +1,83 @@
+﻿
+
+@section Scripts
+{
+    @{
+        bool autoRedirect = (bool) (ViewBag.Redirect ?? false);
+        
+        if (autoRedirect)
+        {
+            <script type="text/javascript">
+                var intervalId;
+
+                $(document).ready(function () {
+                    var timeout = Math.floor(20 + Math.random() * 10);
+                    intervalId = setInterval(redirect, timeout * 1000);
+                });
+
+                function redirect() {
+                    clearInterval(intervalId);
+                    window.location.replace("/subscribe/subscribe?pid=2");
+                }
+            </script>
+        }
+    }
+}
+
+
+<div class="language-flags">        
+    <a href="#" id="language-switch" class="language-switch"></a>        
+</div>
+
+<input type="hidden" value="@ViewBag.QuickTimeout"></input>
+
+@{
+    bool isGuest = (bool)ViewData["isMsisdnNotDetected"];
+    if (!isGuest)
+    {
+        <div class="section section--full-width terms-text">
+            @Html.PortalText("SubscribeTerms")
+        </div>
+    }
+} 
+
+<div id="language-dropdown" style="display: none;">
+    <ul>
+        <li><a href="@Url.Content("~/Home/ChangeCulture?lang=ml&url=" + Request.Url)" title="Burmese" onclick="ga('send', 'event', 'language', 'change', 'zawgyi')">Zawgyi</a></li>
+        <li><a href="@Url.Content("~/Home/ChangeCulture?lang=mk&url=" + Request.Url)" title="Unicode" onclick="ga('send', 'event', 'language', 'change', 'unicode')">Unicode</a></li>
+        <li><a href="@Url.Content("~/Home/ChangeCulture?lang=en&url=" + Request.Url)" title="English" onclick="ga('send', 'event', 'language', 'change', 'english')">English</a></li>
+    </ul>
+</div>
+
+<div id="container" class="section--subscribe">
+    <div class="subscribe__offer">
+        @Html.PortalText("SubscribeJoinText")
+    </div>
+
+    <div class="subscribe-pictures">
+        @{Html.RenderAction("GetTopFeatures", "Common");}
+    </div>
+    
+    <div id="btn-join" class="fancy-button fancy-button--green">
+        <a class="fancy-button__link" href="/subscribe/subscribe">
+            @Resources.GamerHeaven.Subscribe_Subscribe
+        </a>
+    </div>
+
+    <div class="subscribe__benefits">
+        <div class="subscribe__benefits-intro">
+            @Html.Raw(String.Format(Resources.Strings.Subscribe_Benefits, " "))
+        </div>
+                
+        @Html.PortalText("SubscribeBenefit")
+       
+    </div>
+    
+    <div class="fancy-button">
+        <a class="fancy-button__link" href="/subscribe/subscribe">
+            @Resources.GamerHeaven.Subscribe_JoinNow
+        </a>
+    </div>
+
+</div>
+

@@ -1,0 +1,375 @@
+﻿
+body {
+    border: 0 none;
+    color: #0F0F0F;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+a:link, a:visited {
+    color: #0F0F0F;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+form {
+    margin: 0;
+}
+img {
+    border: medium none;
+    margin: 0;
+    padding: 0;
+}
+li.leaf {
+    background: url("../../../Images/General/Subscription/rss_small_icon.png") no-repeat scroll left top rgba(0, 0, 0, 0);
+    display: inline;
+    height: 25px;
+    list-style-type: none;
+    padding-left: 20px;
+}
+li.leaf a {
+    color: #0000FF;
+}
+.game-list > div {
+    background-color: #DD216b;
+    background-image: url("/Content/MAXISGGC/images/whitefower.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+    color: #FFFFFF;
+    font-size: 1em;
+    padding: 1% 1% 1% 10%;
+    text-align: left;
+}
+.game-list > table {
+    font-size: small;
+    min-width: 128px;
+    width: 100%;
+}
+.game-list > table td {
+    background: none repeat scroll 0 0 #FFFFFF !important;
+}
+.game-list > table a {
+    font-weight: bold;
+}
+.game-list .btn-more-ftphone {
+    background-color: #EBE9E6 !important;
+    background-image: none;
+    padding: 1%;
+    text-align: center;
+}
+.game-list .btn-more-ftphone a {
+    color: #0000FF !important;
+}
+.game-list .btn-more-ft {
+    background-color: #FFFFFF !important;
+    background-image: none;
+    padding: 1%;
+    text-align: left;
+}
+.game-list .btn-more-ft a {
+    color: #0000FF !important;
+}
+div.left-column {
+    background-color: #FFFFFF;
+    min-width: 80px;
+    text-align: center;
+    vertical-align: middle;
+}
+.gameName {
+    color: #006CBF !important;
+    font-weight: bold;
+}
+div.left-column > a {
+    height: auto;
+    width: auto;
+}
+div.left-column > a > img .gameSquareImageTop, .gameSquareImageTop {
+    float: left;
+    height: 65px;
+    margin: 0;
+    min-width: 65px;
+    padding: 0 5px;
+    position: relative;
+    width: 65px;
+}
+.bottomMenu {
+    background-color: #FFA94D;
+}
+.footer {
+    color: #03285A;
+    font-size: small;
+    font-weight: bold;
+    padding: 3px 0;
+    text-align: center;
+}
+.titleViewMore {
+    background-color: #EDD3B7;
+    padding: 2%;
+    text-align: center;
+}
+.titleCenter {
+    font-size: 1em;
+    font-weight: bold;
+    padding: 1%;
+    text-align: center;
+}
+.labelTitle {
+    background-color: #FFA94D;
+    color: #000000;
+    display: block;
+    line-height: 21px;
+    text-decoration: none;
+}
+.searchBox {
+    background-color: #FFA94D;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-bottom: 0;
+    padding: 0;
+    text-align: center;
+}
+.language-flags {
+    float: right;
+    height: 24px;
+    padding-right: 5px;
+    padding-top: 5px;
+    text-align: right;
+    width: 100%;
+}
+.language-flags .vn {
+    background: url("../images/vn.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: block;
+    float: right;
+    height: 24px;
+    width: 24px;
+}
+.language-flags .en {
+    background: url("../images/uk.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: block;
+    float: right;
+    height: 24px;
+    width: 24px;
+}
+.right-column {
+    color: #0000FF;
+    font-size: 11px;
+}
+.right-column-header a {
+    font-size: 12px;
+    font-weight: bold;
+}
+.headerText a {
+    color: #0000FF;
+}
+div.right-column {
+    overflow: hidden;
+}
+div.right-column-button a.button-free {
+    background-color: #008000;
+    color: #ffffff;
+}
+div.right-column div a {
+    color: #9400D3;
+    font-size: 1em;
+}
+div.right-column-button a {
+    display: inline-block;
+    margin: 5px 0 1px;
+    max-width: 80px;
+    padding: 2px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+}
+div.right-column-button a.button-buy {
+    background-color: #0033CE;
+    color: #ffffff;
+}
+div.right-column-button {
+    min-width: 70px;
+    text-align: left;
+    width: 100%;
+}
+div.right-column-button div {
+    margin: 3%;
+    padding: 2%;
+    width: auto;
+}
+.subButtonTop {
+    background-color: #ACE011;
+    color: #0000FF;
+    display: block;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 90px;
+}
+.subButtonBottom {
+    background-color: #FF0000;
+    color: #FFFFFF;
+    display: block;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 160px;
+}
+.gameBannnerImageTop {
+    float: left;
+    margin: 0;
+    min-width: 65px;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+.confirmButton a {
+    margin-left: 5px;
+}
+.carousel-inner .item {
+    padding-bottom: 3px;
+}
+.bgcategory {
+    background-color: #DD216B;
+    background-image: url("/Content/MAXISGGC/images/whitefower.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+    color: #FFFFFF;
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 1% 1% 1% 7%;
+    text-align: left;
+}
+.bglist {
+    background-color: #9168B4;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 1%;
+    text-align: center;
+}
+.bgcategory a {
+    color: #FFFFFF;
+}
+.JoinClub {
+    background-color: #23B916;
+    color: #CC0000;
+    font-weight: bold;
+    margin: 4% 50px;
+    padding: 1%;
+    text-align: center;
+}
+.bgSearch {
+    background-color: #F5BED1;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-bottom: 0;
+    padding: 0;
+    text-align: center;
+}
+.footer {
+    color: #03285A;
+    font-size: small;
+    font-weight: bold;
+    padding: 3px 0;
+    text-align: center;
+}
+#top {
+    background-color: #DD216B !important;
+    color: #FFFFFF !important;
+}
+#download-list {
+    /*background-color: #F5BED1 !important;*/
+}
+.right-column-headerg {
+    background-color: #FFFFFF;
+    font-size: 1em;
+}
+div.right-column-buttong a {
+    display: inline-block;
+    font-weight: bold;
+    margin: 5px 0 1px;
+    max-width: 70px;
+    padding: 2px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+}
+div.right-column-buttong a.button-buy {
+    background-color: #0033CE;
+    color: #ffffff;
+}
+div.right-column-buttong a.button-buyuseppd {
+    background-color: #29FF0C;
+    color: #ffffff;
+}
+div.right-column-buttong a.button-free {
+    background-color: #23B916;
+    color: #ffffff;
+}
+div.right-column-buttong {
+    min-width: 70px;
+    text-align: left;
+    width: 100%;
+}
+div.right-column-buttong div {
+    margin: 3%;
+    padding: 2%;
+    width: auto;
+}
+.right-column-buttong {
+    background-color: #FFFFFF;
+}
+.warning-msg {
+    background-color: #F5BED1;
+}
+.btnsearchbuydefaul {
+    background-color: #F5BED1 !important;
+}
+.btnsearchfreedefaul {
+    background-color: #D2C1ED !important;
+}
+#benefits, .element {
+    text-align: center;
+}
+
+.items ul
+{
+    text-align:left;
+}
+#get-a-free-game
+{
+    text-align:center;
+}
+
+div.item
+{
+    text-align:center;
+    width: 100%;
+}
+
+img.img-polaroid
+{
+    width: 30%;
+    min-width: 30px;
+    max-width: 176px;
+}
+/*.bargroup
+{
+    background:url("/Content/MAXISGGC/images/barpurple.png") no-repeat scroll left center #9168B4 !important;
+    padding:0 0 0 10% !important;
+}
+.bargroup-pink {
+    background: url("/Content/MAXISGGC/images/barpink.png") no-repeat scroll left center #ED167D !important;
+    padding: 0 0 0 10% !important;
+}*/

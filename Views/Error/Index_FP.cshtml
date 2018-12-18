@@ -1,0 +1,30 @@
+﻿<div class="gradient-pale padding">
+    <div class="title">
+        <h3>@Resources.Strings.Error_Error</h3>
+    </div>
+    <br/>
+    <div class="content">
+       @{  
+           if (!string.IsNullOrWhiteSpace(ViewBag.ErrorMessage))
+            {    
+                <div class="error-message">
+                @Html.Raw(HttpUtility.HtmlDecode(ViewBag.ErrorMessage))
+                </div>
+                <div class="error-message">
+                @Resources.Strings.Error_Code@ViewBag.ErrorCode
+                </div>
+            }
+           else
+           {
+                <div class="error-message">
+                @Resources.Strings.Error_Description
+                </div>
+            }
+        }
+        <br />
+        <div class="content" style="font-size:small">
+        @Html.PortalText("LayoutMiniHelp")
+        </div>
+        <br/><br/>
+    </div> 
+</div>

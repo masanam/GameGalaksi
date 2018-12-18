@@ -1,0 +1,40 @@
+﻿@section style
+{
+    <style>
+        li:nth-child(1)
+        {
+        list-style-image:url(Images/General/Subscription/Bullets/bubblepink.png);
+        }
+        li:nth-child(2)
+        {
+        list-style-image:url(Images/General/Subscription/Bullets/bubblegreen.png);
+        }
+        li:nth-child(3)
+        {
+        list-style-image:url(Images/General/Subscription/Bullets/bubbleblue.png);
+        }
+        li:nth-child(4)
+        {
+        list-style-image:url(Images/General/Subscription/Bullets/bubblepurple.png);
+        }
+        li:nth-child(5)
+        {
+        list-style-image:url(Images/General/Subscription/Bullets/bubbleyellow.png);
+        }
+        li:nth-child(6)
+        {
+        list-style-image:url(Images/General/Subscription/Bullets/bubblered.png);
+        }
+    </style>
+}
+
+<div class="subscribe-content">
+    @{if ((bool)ViewData["isMsisdnNotDetected"] == false)
+    {
+        @Html.Partial("IndexPartial")
+    }
+    else
+    {
+        @Html.Partial("IndexPartialWifi")
+    }}
+</div>

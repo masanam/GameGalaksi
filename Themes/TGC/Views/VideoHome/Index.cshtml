@@ -1,0 +1,46 @@
+﻿
+@{
+    int availableVideo = Convert.ToInt32(ViewBag.AvailableVideo);
+    string category = ViewBag.Category;
+    int count = Convert.ToInt32(ViewBag.Count + 4);
+    string url = String.Format("/videohome/index?category={0}&count={1}", category, count);
+
+    string credit = ViewData["credits"].ToString();
+    string a = PortalMvcHelper.PortalText("SubscriberMessage");
+    string displayText = String.Format(a, credit);
+}
+
+
+
+<div>
+
+    <div class="info-text">
+        @Html.Raw(displayText)
+    </div>
+
+    <div class="section-header__title">
+        @Resources.TGC.Home_Hightlight
+    </div>
+
+    @{
+        Html.RenderPartial("BannerContent");
+    }
+
+    <div class="align-center">
+        <a href="/videohome/confirmsubscribe">
+            <img src="~/Images/General/VideoPortal/static_banner_1.jpg" width="90%"/>
+        </a>    
+    </div>
+    
+@*    @{*@
+@*        Html.RenderPartial("ContentPartial");*@
+@*    }*@
+    
+    @if (count < availableVideo)
+    {
+        <div class="button-container">
+            <a href="@url">@Resources.TGC.Home_MoreContent</a>
+        </div>
+    }
+
+</div>

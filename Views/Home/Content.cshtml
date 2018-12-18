@@ -1,0 +1,55 @@
+﻿<div class='home-content'>
+    
+    @Html.Partial("HeaderText")
+    
+    @{Html.RenderAction("GetChannel", "Common");}
+
+    @Html.Partial("CustomFWF")
+
+	<div id='displayed-in-home-categories'></div>
+
+    @if (ViewBag.PointSystemVisible)
+    {
+        <div class="title row-fluid gradient-home-categories">
+            <h4>» @Resources.Strings.GameBundle_PageTitle</h4>
+        </div>
+        @Html.Partial("GameBundleListPartial")
+        <div class="btn-more btn-curved gradient-blue-bright btn-text-1line">
+            <a href="@Url.Action("Index", "GameBundle")">
+                @Resources.Strings.Home_MoreGameBundles
+            </a>
+        </div>
+    }
+
+    @{if ((bool)ViewData["IsAndroidPhone"])
+    {
+        <div>
+            @Html.PortalImage("midbannerAndroid", true, "portalimage", "", "width:100%")
+        </div>
+    }}
+
+    @if (!(bool)ViewData["IsSubscribed"] && 
+        ViewBag.PortalID == EightElements.Data.DAPortal.ViettelPortalId)
+    {
+        <div>
+            @Html.PortalText("Text")
+        </div>
+    }
+    
+    <!-- search bar -->
+	<div id="search-container" class="gradient-pale row-fluid">
+    @using (Html.BeginForm("", "Search", FormMethod.Get))
+    {  
+        <div class="search-bar">
+            <div id="multilayers">
+                <i class="icon-search"></i>
+                <input id="search" type="text"  placeholder="@Resources.Strings.Home_Search" data-provide="typeahead"
+					    data-items="8" name="keyword" />
+            </div>
+        </div>
+    }
+    </div>
+
+</div>
+
+@Html.Action("SubscribeAd", "PortalPage")

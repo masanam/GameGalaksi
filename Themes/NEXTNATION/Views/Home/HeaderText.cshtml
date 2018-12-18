@@ -1,0 +1,28 @@
+﻿<div id="welcome-text" class="category row-fluid gradient-pale welcome-text"
+     style="padding: 15px 0px 10px 3px;color: rgb(3,95,233);font-weight:bold;margin-top: 3px;text-align:left; width:inherit"> 
+    
+    @if ((bool)ViewData["NonSub"])
+    {
+        @Html.PortalText("SubscribeJoinTextLong")<br/>
+    }
+    else
+    {
+        @Html.PortalText("SubscribeThanksJoin", true)<br/>
+        
+        if ((bool)ViewData["IsPending"])
+        {
+@*            @Html.PortalText("SubscribePendingWarning", true)*@
+        }
+        else
+        {
+@*            @Html.Raw(String.Format(Resources.Strings.Home_CreditText, ViewData["Credits"]))*@
+        }
+        
+        if ((bool)ViewData["IsSuspended"])
+        {
+@*            <br/>*@
+@*            @Resources.Strings.Home_SuspendedWarning*@
+        }
+    }
+
+</div>

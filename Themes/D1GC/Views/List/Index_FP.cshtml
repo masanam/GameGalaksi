@@ -1,0 +1,102 @@
+﻿@using EightElements.Data.Rest.Models;
+@{
+    bool hasSubscription = (bool) ViewData["IsSubscribed"];
+    string listType = (string)ViewData["ListType"];
+    
+}
+
+<input type="hidden" id='ListType' value='@ViewData["ListType"]' />
+<input type="hidden" id='PageSize' value='@ViewData["PageSize"]' />
+<input type="hidden" id='PageNumber' value='0' />
+<input type="hidden" id='ListSource' value='listTypeList' />
+
+<div class="section-header">
+    <div class="section-header__title">
+        @ViewData["PageTitle"]
+    </div>
+    <div class="section-header__action">
+        <a class="section-header__action-link" href="@Url.Action("Index", "Home")">@Resources.Strings.Layout_Back</a>
+    </div>
+</div>
+
+<div id='games-list'>
+    
+    @{
+        string section = (string) ViewData["SectionType"];
+        var games = (Dictionary<int, Game>) ViewData["DictGame"];
+        var gameCategories = (Dictionary<int, GameCategory>) ViewData["DictGameCategory" + section];
+        bool altRow = false;
+        
+        foreach (var game in games)
+        {
+            int contentId = game.Key;
+            string gameCategory = gameCategories[game.Key].Name;
+            string imgLink = "/rest/gameimage/" + game.Key + "?key=" + ViewData["ImageSize"];
+            string altClass = altRow ? "game--alternate" : "";
+            altRow = !altRow;
+            
+            <div class="game @altClass">
+                <div class="game__image-container">
+                    <a class="game__image-link" href="/Detail/@game.Key">
+                        <img class="game__image" src="@imgLink" alt="@game.Value.Name"/>
+                    </a>
+                </div>
+                <div class="game__info">
+                    <div class="game__title">
+                        <a class="game__title-link" href="/Detail/@game.Key">@game.Value.Name</a>
+                    </div>
+                    <div class="game__category">@gameCategory</div>
+
+                    <div class="game__buy-button">
+                        @if (hasSubscription)
+                        {
+                            <a class="game__buy-button-link" href="@Url.Action("Buy", "Purchase", new {contentId = contentId, ppd = false})">
+                                <img class="game__buy-button-image" src="~/Images/General/D1GC/download-button.png" alt="Join Now!"/>
+                            </a>
+                        }
+                        else
+                        {
+                            <a class="game__buy-button-link" href="@Url.Action("Subscribe", "Subscribe")">
+                                <img class="game__buy-button-image" src="~/Images/General/D1GC/get-button.png" alt="Join Now!"/>
+                            </a>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    
+    @{ if ((bool)ViewData["HasNextPage"])
+       {
+           <div class="list__show-next">
+               <a class="list__show-next-link" href="/List?type=@(listType)&pageNumber=@((int)ViewData["PageNumber"] + 1)">
+                   @Resources.Strings.List_ShowMore
+               </a>
+           </div>
+       }
+    }
+    
+    @if ((bool) ViewData["NonSub"])
+    {
+        <div class="subscribe-button">
+            <a class="subscribe-button__link" href="@Url.Action("Index", "Subscribe")">
+                <img class="subscribe-button__link-image" src="/Images/General/D1GC/get-button.png" alt="Join Now"/>
+            </a>
+            <div class="subscribe-button__info-text">
+                @Html.PortalText("SubscribeJoinText", true)
+            </div>
+        </div>
+    }
+
+</div>
+
+
+@section footerMenu
+{
+    <div class="footer__main-menu">
+        <a class="footer__menu-item" href="@Url.Action("Index", "MyAccount")">@Resources.Strings.Layout_MyAccount</a>
+    </div>
+    <div class="footer__side-menu">
+        <a class="footer__side-menu-link" href="/">@Resources.Strings.Layout_Home</a>
+    </div>
+}

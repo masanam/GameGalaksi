@@ -1,0 +1,47 @@
+﻿
+@Html.PortalImage("homeBanner", true, "portalimage", "", "width:100%")
+
+<div class="section">
+    
+    @if ((bool)ViewData["NonSub"])
+    {
+        @Html.PortalText("SubscribeJoinTextLong", true)
+    }
+    else
+    {
+        @Html.PortalText("SubscriberMessage", true)
+    }
+    
+</div>
+   
+
+@if (!(bool)ViewData["IsSubscribed"])
+{
+    <div class="button">
+        <a class="button__link" href="@Url.Action("Subscribe", "Subscribe")">@Resources.Strings.Home_JoinNow</a>
+    </div>
+}
+
+@Html.Partial("Content_FP")
+
+@if (!(bool)ViewData["IsSubscribed"])
+{
+    <div class="button">
+        <a class="button__link" href="@Url.Action("Subscribe", "Subscribe")">@Resources.Strings.Home_JoinNow</a>
+    </div>
+}
+
+<div class="section">
+    <div class="section__header">@Resources.Strings.Home_GameCategories</div>
+    @{
+        var categories = ViewData["GameCategories"] as List<EightElements.Data.Rest.Models.GameCategory>;
+        foreach (var category in categories)
+        {
+            <div>
+                <a href="@Url.Content("~/GameCategory?CategoryId=" + category.GameCategoryId)">
+                    >> @category.Name
+                </a>
+            </div>
+        }
+    }
+</div>

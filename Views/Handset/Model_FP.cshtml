@@ -1,0 +1,19 @@
+﻿@using EightElements.Data.Models
+
+@{
+    var handsetModels = ViewBag.modelList as List<HandsetModel>;
+}
+
+<div style="padding: 1%;">
+    <p>@Resources.Strings.Handset_ChooseModel</p>
+</div>
+
+@{foreach (var handsetModel in handsetModels)
+  {
+        <div style="padding: 1%;">
+            <a href="@Url.Action("Confirm", "Handset", new {id = handsetModel.ID})">
+                @handsetModel.Name
+            </a>
+        </div>
+  }
+}

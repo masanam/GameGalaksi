@@ -1,0 +1,123 @@
+﻿.logo {
+    background-color: #e6e6e7;
+    display: table;
+    width: 100%;
+}
+
+.logo img {
+    margin: 15px auto;
+    display: table-cell;
+    width: 40%;
+}
+
+.home-header-join
+{
+    padding: 5px;
+    text-align: center;
+    background-color: #32CCFE;
+}
+
+.home-padding-default
+{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    text-align: center;
+    background-color: white;
+}
+
+.home-padding-top
+{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    text-align: center;
+    background-color: white;
+}
+
+.home-padding-middle
+{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    text-align: center;
+    background-color: white;
+}
+
+.home-padding-middle input[type=text] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.subscribe-join-btn
+{
+    margin: 12px auto;
+    padding: 10px;
+    min-width: 200px;
+    color: #FFFFFF; 
+    background-color: #0473ff;
+    font-weight: bold;
+    font-size: 2.2em;
+    text-align: center;
+    webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.subscribe-join-button
+{
+    margin: 32px 48px 16px;    
+    padding: 8px 4px;
+    color: #CC0000;
+    background-color: Yellow;
+    font-weight: bold;
+    text-align: center;
+}
+
+.game-list {
+    background-color: #e7eceb;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.game-list-container {
+    background-color: white;
+    padding: 2%;
+    margin: 2%;
+}
+
+.game-list-title {
+    background-color: none;
+    text-align: left;
+    font-family: Arial;
+    margin-bottom: 10px;
+}
+
+.game-list-item {
+    text-align: center;
+}
+
+.line-footer {
+    width: 100%;
+    background-color: #f8931d;
+    height: 10px;
+}
+
+.footer {
+    background-color: #666666;
+    text-align: center;
+    color: white;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+    padding: 15px;
+    font-size: 80%;
+}

@@ -1,0 +1,29 @@
+﻿@{
+    if ((bool) ViewData["NonSub"])
+    {
+        <div class="home-header home-padding-top">
+            @Html.PortalText("SubscribeJoinTextLong", true)
+        </div>
+    }
+    else
+    {
+        <div class="home-header home-padding-default">
+            @Html.PortalText("SubscribeThanksJoin", true)
+            <br/>
+            @if ((bool) ViewData["IsPending"])
+            {
+@*        @Html.PortalText("SubscribePendingWarning", true)*@
+            }
+            else
+            {
+@*        @Html.Raw(String.Format(Resources.Strings.Home_CreditsText, ViewData["Credits"]))*@
+            }
+
+            @if ((bool) ViewData["IsSuspended"])
+            {
+@*        <br/>*@
+@*        @Resources.Strings.Home_SuspendedWarning*@
+            }
+        </div>
+    }
+}

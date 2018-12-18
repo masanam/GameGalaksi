@@ -1,0 +1,24 @@
+﻿@section Scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setCategoryTitle();
+            loadMoreEntries();
+        });
+        var moreGames = true;
+        var loading = true;
+
+        $(window).scroll(loadMoreGamesOnScroll);
+    </script>
+}
+
+<input type="hidden" id='PageSize' value='@ViewData["PageSize"]' />
+<input type="hidden" id='PageNumber' value='0' />
+<input type="hidden" id='ListSource' value='category' />
+<input type="hidden" id='CategoryId' value='@ViewData["CategoryId"]' />
+
+<div class="page-title">
+</div>
+
+<div id='games-list'>
+</div>

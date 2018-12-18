@@ -1,0 +1,131 @@
+﻿#top
+{
+    background: url("/Content/MAXISGGC/images/barpurle.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 10px 0 29px 37px;
+    text-align:center;
+}
+.subscribe-button
+{
+    text-align:center;
+}
+.element
+{
+    text-align:center;
+}
+#btn-join
+{
+margin: 0 auto 1%;
+padding: 10px;
+}
+#join-big-btn, btn-my-downloads
+{
+    margin:2% 0;
+}
+.items 
+{
+    margin:0 auto;
+}
+.items ul
+{
+    text-align:left;
+}
+#get-a-free-game
+{
+    padding-bottom: 20px;
+    text-align:center;
+}
+#btn-subscribe-and-save
+{
+    margin-top: 10px; 
+    padding: 8px;
+}
+#xbtn-subscribe-and-save a /* not used */
+{
+    text-shadow: -1px 0 rgb(15, 41, 233), 0 1px rgb(15, 41, 233), 1px 0 rgb(15, 41, 233), 0 -1px rgb(15, 41, 233), black 0.1em 0.1em 0.1em;
+    background: rgb(87,255,40); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(87,255,40,1) 0%, rgba(5,20,3,1) 1%, rgba(76,158,0,1) 7%, rgba(41,255,12,1) 10%, rgba(3,221,0,1) 26%, rgba(0,216,0,1) 68%, rgba(59,255,0,1) 84%, rgba(76,158,0,1) 90%, rgba(0,10,0,1) 99%, rgba(61,206,0,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(87,255,40,1)), color-stop(1%,rgba(5,20,3,1)), color-stop(7%,rgba(76,158,0,1)), color-stop(10%,rgba(41,255,12,1)), color-stop(26%,rgba(3,221,0,1)), color-stop(68%,rgba(0,216,0,1)), color-stop(84%,rgba(59,255,0,1)), color-stop(90%,rgba(76,158,0,1)), color-stop(99%,rgba(0,10,0,1)), color-stop(100%,rgba(61,206,0,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(87,255,40,1) 0%,rgba(5,20,3,1) 1%,rgba(76,158,0,1) 7%,rgba(41,255,12,1) 10%,rgba(3,221,0,1) 26%,rgba(0,216,0,1) 68%,rgba(59,255,0,1) 84%,rgba(76,158,0,1) 90%,rgba(0,10,0,1) 99%,rgba(61,206,0,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(87,255,40,1) 0%,rgba(5,20,3,1) 1%,rgba(76,158,0,1) 7%,rgba(41,255,12,1) 10%,rgba(3,221,0,1) 26%,rgba(0,216,0,1) 68%,rgba(59,255,0,1) 84%,rgba(76,158,0,1) 90%,rgba(0,10,0,1) 99%,rgba(61,206,0,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(87,255,40,1) 0%,rgba(5,20,3,1) 1%,rgba(76,158,0,1) 7%,rgba(41,255,12,1) 10%,rgba(3,221,0,1) 26%,rgba(0,216,0,1) 68%,rgba(59,255,0,1) 84%,rgba(76,158,0,1) 90%,rgba(0,10,0,1) 99%,rgba(61,206,0,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(87,255,40,1) 0%,rgba(5,20,3,1) 1%,rgba(76,158,0,1) 7%,rgba(41,255,12,1) 10%,rgba(3,221,0,1) 26%,rgba(0,216,0,1) 68%,rgba(59,255,0,1) 84%,rgba(76,158,0,1) 90%,rgba(0,10,0,1) 99%,rgba(61,206,0,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#57ff28', endColorstr='#3dce00',GradientType=0 ); /* IE6-9 */
+    padding:6px 10px;
+    border-radius:10px;
+    color:#ffffff;
+}
+.subscribe-content #btn-subscribe-and-save {
+	margin: 6px auto 6px auto; 
+	text-align: center;
+	-moz-min-width: 60px;
+	-ms-min-width: 60px;
+	-o-min-width: 60px;
+	-webkit-min-width: 60px;
+	min-width: 60px;
+}
+
+#btn-subscribe-and-save-no-msisdn
+{
+    margin: 6px auto 15px auto;
+	text-align: center;
+	color: Black;
+	font-weight: bolder;
+	text-decoration: underline;
+	max-width: 260px;
+	min-width:60px;
+	background: rgb(87,255,40); /* colour of the button */
+	padding: 6px 15px 8px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius:    10px;
+		border-radius:     10px;
+}
+.subscribe-content ul li {
+    clear: left;
+    font-size: 11px;
+    font-weight: bolder;
+    line-height: 16px;
+    list-style-type: none;
+    margin-bottom: 6px;
+}
+.subscribe-content ul {
+    margin: 10px auto;
+    max-width: 250px;
+    padding: 0 10px;
+    text-align: left;
+}
+.subscribe-content div.element {
+    clear: both;
+    display: block;
+    margin: 10px 0;
+}
+
+.subscribe-content .gradient-pale {
+    background-image: linear-gradient(#DD216B 0%, #FFFFFF 14%, #F9FDFF 86%, #DD216B 100%);
+    border-bottom-left-radius: 19px;
+    border-top-left-radius: 19px;
+}
+
+.subscribe-content div.text-about-price
+{
+	color: #851581;
+	font-size: 16px;
+	font-weight: bolder;
+	padding: 10px;
+	line-height: 1.4;
+}
+
+.subscribe-content div.text-about-price.no-msisdn
+{
+	font-size: 11px;
+}
+
+.subscribe-content #benefits .intro
+{
+	line-height: 18px;
+	font-size: 16px;
+	font-weight:bolder;
+	color: rgb(12, 66, 238);
+	padding: 5px 10px 5px 0px;
+}

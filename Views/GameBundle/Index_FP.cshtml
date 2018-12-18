@@ -1,0 +1,24 @@
+﻿@{
+    int points = ViewBag.Points;
+    bool hasActiveSubscription = ViewBag.HasActiveSubscription;
+}
+
+
+<div class="title">
+    <div class="page-title"><h3>@Resources.Strings.GameBundle_PageTitle</h3></div>
+</div>
+
+<div class="content">
+
+    @if (hasActiveSubscription)
+    {
+        @Html.Raw(String.Format(Resources.Strings.Point_BalanceText, points))
+    }
+
+    <div class="section-header">
+        @Resources.Strings.GameBundle_Instruction
+    </div>
+
+    @Html.Partial("GameBundleListPartial_FP")
+
+</div>

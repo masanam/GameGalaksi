@@ -1,0 +1,103 @@
+﻿@using EightElements.Data
+@using EightElements.Data.Rest.Models
+
+
+@{
+    bool isActiveSubscriber = ViewBag.IsActiveSubscriber;
+    bool bundlePurchased = ViewBag.IsPurchased;
+    var games = ViewBag.Games as List<SPDataAccess.GameInBundle>;
+}
+
+
+<div class="title">
+    <div class="page-title"><h3>@ViewBag.BundleName</h3></div>
+</div>
+
+@Html.Partial("Notification_FP")
+
+@if (!isActiveSubscriber)
+{
+    <div class="button-bar">
+        <div class="download-button">
+            <a href="@Url.Action("Index", "Subscribe")">
+                @Resources.Strings.CommonBuy_BuyText
+            </a>
+        </div>
+    </div>
+}
+else
+{
+    if (!bundlePurchased)
+    {
+        <div class="button-bar">
+            <div class="download-button">
+                <a href="@Url.Action("Buy", "BundleDetail", new {id = ViewBag.BundleId})">
+                    @String.Format(Resources.Strings.GameBundle_Buy,
+                        RequiredPoint.ToPurchaseGameBundle)
+                </a>
+            </div>    
+        </div>
+    }
+}
+
+<div id='games-list'>
+        
+    <table>
+        @foreach (var game in games)
+        {
+            <tr>
+                <td>
+                    @{
+                        string imageSource = "/rest/gameimage/" + game.Id + "?key=Square0";
+                        <a href="@Url.Content("~/Detail/" + game.Id)">
+                            <img src="@imageSource" class="gameSquareImageTop" />
+                        </a>
+                    }
+                </td>
+                <td>
+                    <div class="game-title">
+                        <a href="@Url.Content("~/Detail/" + game.Id)">
+                            @game.Name
+                        </a>
+                    </div>
+                            
+                    @if (bundlePurchased)
+                    {
+                        <div class="download-button">
+                            <a href="@game.DownloadUrl">
+                                @Resources.Strings.GameBundle_Download
+                            </a>
+                        </div>
+                    }
+                        
+                </td>
+            </tr>
+        }
+    </table>
+    
+    @if (!isActiveSubscriber)
+    {
+        <div class="button-bar">
+            <div class="download-button">
+                <a href="@Url.Action("Index", "Subscribe")">
+                    @Resources.Strings.CommonBuy_BuyText
+                </a>
+            </div>
+        </div>
+    }
+    else
+    {
+        if (!bundlePurchased)
+        {
+            <div class="button-bar">
+                <div class="download-button">
+                    <a href="@Url.Action("Buy", "BundleDetail", new { id = ViewBag.BundleId })">
+                        @String.Format(Resources.Strings.GameBundle_Buy,
+                            RequiredPoint.ToPurchaseGameBundle)
+                    </a>
+                </div>    
+            </div>
+        }
+    }
+    
+</div>

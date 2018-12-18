@@ -1,0 +1,107 @@
+﻿
+@section scripts
+{ 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"
+  type="text/javascript"></script>
+<script type="text/javascript">    $.ajaxSetup({ cache: false }); var isProd = true;</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('ul').append('<li>abc test</li>');
+        //var aa = document.getElementById('myIframe').contentWindow.document.body.innerHTML;
+
+        $('ul').append(@ViewBag.Content);  
+    });
+</script>
+<script type="text/javascript">
+    // jquery.xdomainajax.js  ------ from padolsey
+    var your_url = 'http://upro.vn/gateway.php/confirm?cpCode=099&value=ed19cf5ed84a9af0573044db1299bcf1eac9c0efd6ff14e9fbf627dd54fe7cd51ffa48979e7a303a244ffd4f5ed779bbee0352f65437097144c61fba7a8e17e1ece96854d6a030576ef97ad3ead87c1a65a1b2e943b56743fab1efa8b6eda5f298c7c830f0eeb30ea5b2688edc8653b8b8b6e88fecccccf9f7866df34cd70ac6b48b5d5384d9a364f4618e5214801c20&signature=cHbtfK8XFADpU8kSPModE2ByLv5hCA56huV2YhE6gR6CMttAkiaqCZDSPiuuSYZ%2BlqJS5jW%2Bqn9P7u0RlQL%2BYIsUqw%2BhX%2FSukXc%2Bx%2F8GqNw7gS%2BRFS80Iit97GRWqQmcPjRaUCDSj782rVNKwzBIU5U4onAdCGf2O5HD6z1UXo8%3D';
+    jQuery.ajax = (function (_ajax) {
+
+        var protocol = location.protocol,
+        hostname = location.hostname,
+        exRegex = RegExp(protocol + '//' + hostname),
+        YQL = 'http' + (/^https/.test(protocol) ? 's' : '') + '://query.yahooapis.com/v1/public/yql?callback=?',
+        query = 'select * from html where url="{URL}" and xpath="*"';
+
+        function isExternal(url) {
+            return !exRegex.test(url) && /:\/\//.test(url);
+        }
+
+        return function (o) {
+
+            var url = o.url;
+
+            if (/get/i.test(o.type) && !/json/i.test(o.dataType) && isExternal(url)) {
+
+                // Manipulate options so that JSONP-x request is made to YQL
+
+                o.url = YQL;
+                o.dataType = 'json';
+
+                o.data = {
+                    q: query.replace(
+                    '{URL}',
+                    url + (o.data ?
+                        (/\?/.test(url) ? '&' : '?') + jQuery.param(o.data)
+                    : '')
+                ),
+                    format: 'xml'
+                };
+
+                // Since it's a JSONP request
+                // complete === success
+                if (!o.success && o.complete) {
+                    o.success = o.complete;
+                    delete o.complete;
+                }
+
+                o.success = (function (_success) {
+                    return function (data) {
+
+                        if (_success) {
+                            // Fake XHR callback.
+                            _success.call(this, {
+                                responseText: data.results[0]
+                                // YQL screws with <script>s
+                                // Get rid of them
+                                .replace(/<script[^>]+?\/>|<script(.|\s)*?\/script>/gi, '')
+                            }, 'success');
+                        }
+
+                    };
+                })(o.success);
+
+            }
+
+            return _ajax.apply(this, arguments);
+
+        };
+
+    })(jQuery.ajax);
+
+
+
+    $.ajax({
+        url: your_url,
+        type: 'GET',
+        success: function (res) {
+            var text = res.responseText;
+            // then you can manipulate your text as you wish
+            //var show = linkify(text);
+            alert(text);
+        }
+    });
+    function linkify(text) {
+        var urlRegex = /(((https?:\/\/)|(www\.))[^\s]+)/g;
+        return text.replace(urlRegex, function (url) {
+            return '<a href="' + url + '">' + url + '</a>';
+        });
+    }
+</script>
+}
+<iframe src="@ViewBag.TelcoConfirmPage" id="myIframe" style=""> 
+</iframe>
+<ul>
+	<li>Test</li>
+	<!-- Here we'll put data later -->
+</ul>

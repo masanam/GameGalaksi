@@ -1,0 +1,58 @@
+﻿<div id="top" align="center" style="padding: 1%; text-align: center; background-color: #32CCFE;
+    font-weight: bold; font-size: 1em;">@Html.PortalText("SubscribeJoinText")
+</div>
+@{if ((bool)ViewData["CanStillUseFirstWeekFree"])
+  { 
+    <div class="first-week-free" style="padding: 3% 10px; color: #3AF500; font-weight: bold">
+        <!--        The first week is free. No charges. <a href="#" class="subscribe-button" style="color: Blue;text-decoration:underline">Join Gamer Heaven now!</a><br/>
+    The first week is free. No charges. <a href="@Url.Action("Subscribe", "Subscribe")" style="color: Blue;text-decoration:underline;">Join Gamer Heaven now!</a> <br/>
+    -->
+        @Html.PortalText("SubscribeFirstWeekFree")
+    </div>
+  }}
+<div class="text-about-price element" style="padding: 2%; font-weight: bold; color: rgb(243, 115, 153);">
+    @Html.PortalText("SubscribePriceText")
+</div>
+<div id="subscribe-and-save" class="element" align="center">
+    <div id="btn-subscribe-and-save" style="font-size: x-large; font-weight: bold; padding: 2%;
+        margin-bottom: 3%;">
+        <a href="@Url.Action("Subscribe", "Subscribe")" >
+            @Resources.Strings.Subscribe_Save
+        </a>
+    </div>
+</div>
+<div id="pictures" class="element" align="center">
+    @{
+        
+            @Html.PortalImage("HotGame1", true, "portalimage", "", "width:28%")
+            @Html.PortalImage("HotGame2", true, "portalimage", "", "width:28%")
+            @Html.PortalImage("HotGame3", true, "portalimage", "", "width:28%")
+        
+           @* @{ Html.RenderAction("GetTopFeatures", "Common"); }*@ 
+    }
+</div>
+<div id="benefits" class="element">
+    <div class="intro text-blue" style="padding: 3% 10px">
+        @Html.Raw(String.Format(Resources.Strings.Subscribe_Benefits, " "))
+    </div>
+    <!--
+    @{if ((bool)ViewData["CanStillUseFirstWeekFree"])
+      { 
+        <div class="first-week-free" style="padding: 3% 10px;font-weight:bold">
+            @Resources.Strings.Subscribe_LimitedTime
+        </div>
+      }}  -->
+    @Html.PortalText("SubscribeBenefit")
+</div>
+<div class="element" align="center">
+    <div id="btn-join" class="btn-curved gradient-green-dark" style="font-size: x-large;
+        font-weight: bold; padding: 2%; padding-bottom: 10px;">
+        <a href="@Url.Action("Subscribe", "Subscribe")">
+            @Html.Raw(string.Format(Resources.Strings.Subscribe_YesJoin, " "))
+        </a>
+    </div>
+</div>
+<div id="get-a-free-game" style="padding: 3% 10px">
+    @Html.Raw(string.Format(Resources.Strings.Subscribe_FreeWeekly, " "))
+</div>
+@Html.PortalText("InmobiLandingPage")

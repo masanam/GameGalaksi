@@ -1,0 +1,33 @@
+﻿@using EightElements.Data
+
+
+@{
+    var bundles = ViewBag.Bundles as List<SPDataAccess.GameBundle>;
+    bool hasActiveSubscription = ViewBag.HasActiveSubscription;
+}
+
+
+<div class="home-content">
+    
+    <div class="title">
+        <div class="page-title"><h3>@Resources.Strings.GameBundle_PurchasedPageTitle</h3></div>
+    </div>
+
+    @if (hasActiveSubscription)
+    {
+        if (bundles.Count > 0)
+        {
+            @Html.Partial("GameBundleListPartial")
+        }
+        else
+        {
+            @Html.Raw(Resources.Strings.GameBundle_NoPurchase)
+        }
+    }
+    else
+    {
+        @Html.Raw(Resources.Strings.MyAccount_NotSubscribed)
+    }
+    <br/>
+
+</div>

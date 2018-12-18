@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="HeaderText" xml:space="preserve">
+    <value>Miễn phí hai game mỗi tuần chỉ với 10000VNĐ. &lt;br /&gt;&lt;a href='Subscribe?cf=true'&gt;&lt;u&gt;Xem thêm thông tin tại đây&lt;/u&gt;&lt;/a&gt;&lt;br /&gt;Xin chào &lt;b&gt;{0}&lt;/b&gt;. Có &lt;span style="color:red"&gt;&lt;b&gt;{1}&lt;/b&gt;&lt;/span&gt; game cho điện thoại &lt;b&gt;{2}&lt;/b&gt; của bạn. &lt;br /&gt;
+&lt;a href='Subscribe/Subscribe?cf=true'&gt;&lt;u&gt;Tham gia ngay để tải game miễn phí&lt;/u&gt;&lt;/a&gt;
+</value>
+  </data>
+  <data name="HeaderTextSubscribed" xml:space="preserve">
+    <value>Xin chào &lt;b&gt;{0}&lt;/b&gt;.Bạn có thể chọn &lt;span style="color:red"&gt;{1}&lt;/span&gt; games cho {2} của bạn. &lt;br/&gt;
+Bạn có &lt;span style="color:red"&gt;{3}&lt;/span&gt; eCoin để mua game.</value>
+  </data>
+  <data name="HeaderTextSubscribedWCredits" xml:space="preserve">
+    <value>Xin chào &lt;b&gt;{0}&lt;/b&gt;.Bạn có thể chọn &lt;span style="color:red"&gt;{1}&lt;/span&gt; games cho {2} của bạn. &lt;br/&gt;
+Bạn có &lt;span style="color:red"&gt;{3}&lt;/span&gt; eCoins để mua game.</value>
+  </data>
+  <data name="PromotionText" xml:space="preserve">
+    <value>Khuyến mại!</value>
+  </data>
+  <data name="Res_BalanceNotEnough" xml:space="preserve">
+    <value>Tài khoản không đủ thanh toán</value>
+    <comment>401</comment>
+  </data>
+  <data name="Res_CantDebit" xml:space="preserve">
+    <value>Can't debit</value>
+    <comment>202</comment>
+  </data>
+  <data name="Res_CantGetMsisdn" xml:space="preserve">
+    <value>Lấy số điện thoại bị lỗi</value>
+    <comment>100</comment>
+  </data>
+  <data name="Res_CantSubcribeWithin15Days" xml:space="preserve">
+    <value>Quý khách đã hủy đăng ký dịch vụ 8e Sieugame trước đó, để đăng ký sử dụng lại dịch vụ. Quý khách vui lòng thực hiện đăng ký dịch vụ sau 15 ngày kể từ thời điểm hủy dịch vụ trước đó. Xin cảm ơn !</value>
+    <comment>400</comment>
+  </data>
+  <data name="Res_GameDoesntExistOnMgame" xml:space="preserve">
+    <value>Game này chưa được bán trên mGame</value>
+  </data>
+  <data name="Res_GeneralErrorCode" xml:space="preserve">
+    <value>Lỗi hệ thống</value>
+    <comment>440</comment>
+  </data>
+  <data name="Res_MsisdnNotAvailable" xml:space="preserve">
+    <value>Số điện thoại không hợp lệ</value>
+    <comment>404</comment>
+  </data>
+  <data name="Res_MsisdnNotExist" xml:space="preserve">
+    <value>Thuê bao không tồn tại</value>
+    <comment>403</comment>
+  </data>
+  <data name="Res_MsisdnNotRegistered" xml:space="preserve">
+    <value>Số điện thoại chưa đăng ký</value>
+    <comment>501</comment>
+  </data>
+  <data name="Res_MsisdnNotRegisteredForDebit" xml:space="preserve">
+    <value>Thuê bao chưa đăng ký thanh toán</value>
+    <comment>402</comment>
+  </data>
+  <data name="Res_MsisdnOwnerChanged" xml:space="preserve">
+    <value>Số điện thoại đã đổi chủ</value>
+    <comment>405</comment>
+  </data>
+  <data name="Res_NotFoundMsisdn" xml:space="preserve">
+    <value>Giao dịch thất bại ! (Xin vui lòng kiểm tra lại tài khoản quý khách)</value>
+    <comment>1</comment>
+  </data>
+  <data name="Res_NotFoundPackageRequest" xml:space="preserve">
+    <value>Giao dịch không thành công !(Game chưa được bán trên mGame, Tài khoản không đủ thanh toán, Không thấy gói cước yêu cầu)</value>
+    <comment>2</comment>
+  </data>
+  <data name="Res_SubscribeFailBCofMsisdnHasSubscribed" xml:space="preserve">
+    <value>Đăng ký không thành công do thuê bao đang là thành viên</value>
+    <comment>3</comment>
+  </data>
+  <data name="Res_SubscriptionTwoWayBlocked" xml:space="preserve">
+    <value>Thuê bao bị khóa 2 chiều</value>
+    <comment>409</comment>
+  </data>
+  <data name="Res_SuccessCode" xml:space="preserve">
+    <value>Giao dịch thành công !</value>
+    <comment>0</comment>
+  </data>
+  <data name="Res_UnsubscribeFailBCofMsisdnWasntExist" xml:space="preserve">
+    <value>Hủy không thành công do thuê bao đã tồn tại</value>
+    <comment>4</comment>
+  </data>
+</root>

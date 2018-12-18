@@ -1,0 +1,35 @@
+﻿@using EightElements.Data.Models
+@{
+    var contents = ViewBag.Contents as List<VideoInfo>;
+}
+
+
+@foreach (var content in contents)
+{
+    <div class="video gradient">
+        <div class="video__image-container">
+            <a href="/videohome/detail/@content.Id">
+                <img src="http://qtgirls4u.com/videohome/getimage?cid=@content.Id"/>
+            </a>
+            <img class="video__play-button" src="~/Images/General/VideoPortal/play-button2.png" alt="watch now"/>
+        </div>
+        <div class="video__info">
+            <a class="video__title" href="@Url.Action("Watch", new { contentId = content.Id })">@content.Title</a>
+            <br/>
+            <div class="video__description">@content.ShortDescription</div>
+            
+            @if (content.IsPurchased)
+            {
+                <div class="video__button">
+                    <a class="video__button-link" href="@Url.Action("Watch", new {contentId = content.Id})">Watch Again</a>
+                </div>
+            }
+            else
+            {
+                <div class="video__button">
+                    <a class="video__button-link" href="@Url.Action("Watch", new { contentId = content.Id })">Watch Now</a>
+                </div>
+            }
+        </div>
+    </div>
+}

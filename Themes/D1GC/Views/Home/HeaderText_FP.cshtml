@@ -1,0 +1,25 @@
+﻿
+<div class="home__welcome-text">
+    
+    @if ((bool) ViewData["NonSub"])
+    {
+        @Html.PortalText("SubscribeJoinTextLong", true)
+    }
+    else
+    {
+        @Html.PortalText("SubscriberMessage", true)
+    }
+    
+</div>
+    
+   
+@{
+    if ((bool) ViewData["NonSub"])
+    {
+        <div class="subscribe-button subscribe-button--plain">
+            <a class="subscribe-button__link" href="@Url.Action("Subscribe", "Subscribe")">
+                <img class="subscribe-button__link-image" src="/Images/General/D1GC/join-button.png" alt="Join Now"/>
+            </a>
+        </div>
+    }
+}

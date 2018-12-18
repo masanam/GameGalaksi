@@ -1,0 +1,23 @@
+﻿@using EightElements.Web.Rest.Controllers
+@{
+    ViewBag.Title = "Hot Offer";
+}
+
+<h4>
+    @ViewBag.NotificationText
+</h4>
+
+    
+<div style="text-align: center">
+    @{
+        var games = ViewBag.Games as List<OfferingController.Game>;
+        foreach (var game in games)
+        {
+            <div style="display: inline-block; margin: 24px">
+                <a href="@game.DownloadUrl">
+                    <img src="@game.ImageUrl" class="img-rounded"/>
+                </a>
+            </div>
+        }
+    }
+</div>    

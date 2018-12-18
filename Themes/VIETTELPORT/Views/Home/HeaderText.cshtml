@@ -1,0 +1,7 @@
+﻿<div style="margin: 10px; width: 100%; text-align: left;">
+    @Html.Raw(ViewData["HeaderText"])
+    @if ((bool)ViewData["isMsisdnNotDetected"])
+    {
+        <br/>@Resources.Strings.HeaderText_Wifi
+    }
+</div>

@@ -1,0 +1,12 @@
+﻿@{
+    EightElements.Web.Rest.Controllers.ControllerBase c =
+        this.ViewContext.Controller as EightElements.Web.Rest.Controllers.ControllerBase;
+    if (c.IsSmartPhone)
+    {
+        Layout = "~/Themes/VINAPHONE/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Themes/VINAPHONE/Views/Shared/_Layout_FP.cshtml";
+    }
+}

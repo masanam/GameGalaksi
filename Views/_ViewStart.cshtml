@@ -1,0 +1,32 @@
+﻿@{
+    EightElements.Web.Rest.Controllers.ControllerBase c =
+        this.ViewContext.Controller as EightElements.Web.Rest.Controllers.ControllerBase;
+        
+    string layout = string.Empty;    
+    string themeName= HttpContext.Current.Items["themeName"] as string ?? string.Empty;
+    if (string.IsNullOrWhiteSpace(themeName))
+    {
+        layout = "~/Views/Shared/";            
+    }
+    else
+    {
+        layout = String.Format("~/Themes/{0}/Views/Shared/",themeName);
+    }
+    if (c != null && c.IsSmartPhone)
+    {        
+        layout += "_Layout.cshtml";
+        if (!File.Exists(Server.MapPath(layout)))
+        {
+            layout = "~/Views/Shared/_Layout.cshtml";
+        }
+    }
+    else
+    {
+        layout += "_Layout_FP.cshtml";
+        if (!File.Exists(Server.MapPath(layout)))
+        {
+            layout = "~/Views/Shared/_Layout_FP.cshtml";
+        }
+    }        
+    Layout = layout;       
+}

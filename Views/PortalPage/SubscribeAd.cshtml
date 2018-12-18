@@ -1,0 +1,141 @@
+﻿@if ((bool)@ViewData["subscribe_popup"])
+{
+    <style>
+        .vertical-offset
+        {
+            /* Fixed position to provide the vertical offset */
+            position: fixed;
+            top: 20%;
+            width: 100%;
+            z-index: 2; /* ensures box appears above overlay */
+        }
+        #dumbBox
+        {
+            background: rgba(0,0,0,0.2);
+            border-radius: 14px;
+            padding: 2%;
+            z-index: 2;
+            margin: 3%;
+        }
+        
+        #overlay
+        {
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 130%;
+            background: #000;
+            opacity: 0.5;
+            filter: alpha(opacity=50);
+        }
+        
+        #opacity_container
+        {
+            position: fixed;
+            z-index: 1;
+            top: 8%;
+            left: 0;
+            width: 100%;
+            height: 130%;
+        }
+        
+        #content
+        {
+            border-radius: 8px;
+            background: #fff;
+            padding: 1%;
+        }
+        
+        #close
+        {
+            position: absolute;
+            background: url("/Images/General/Home/close.png");
+            width: 24px;
+            height: 27px;
+            display: inline-block;
+            text-indent: -9999px;
+            top: 0;
+            right: 0;
+        }
+        
+        .outer-center
+        {
+            float: right;
+            right: 50%;
+            position: relative;
+        }
+        .inner-center
+        {
+            float: right;
+            right: -50%;
+            position: relative;
+        }
+        .clear
+        {
+            clear: both;
+        }
+        
+        #close
+        {
+            background: url("/Images/General/Home/close.png");
+            width: 24px;
+            height: 27px;
+            text-indent: -9999px;
+            margin-top: 2%;
+            margin-right: 2%;
+        }
+    </style>
+    <script src="../../Scripts/jquery.cookie.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var Cookie;
+        $(document).ready(function () {
+            //Hide modal box
+            var Cookie = $.cookie('popup_init');
+
+
+            $('#opacity_container').hide(); //Hide it
+
+            if (Cookie == null || Cookie == '') {
+                $.cookie('popup_init', 'showed');
+                $('#subscribe_img')
+                .one('load', function () { //Set something to run when it finishes loading
+                    $('#opacity_container').show(); //Fade it in when loaded
+
+                })
+            } else {
+                $('#overlay').hide();
+            }
+
+            $('#close').click(
+            function () { $('#opacity_container').hide(); $('#overlay').hide(); }
+        );
+        });
+    </script>
+    <div id="overlay">
+    </div>
+    <div id="opacity_container">
+        <div class="product_container">
+            <div class="outer-center">
+                <div class="product inner-center" style="z-index: 3;">
+                    <div id="dumbBox">
+                        <div id="content">
+                            @Html.PortalImage(
+                                "Subscribe Advertisement",
+                                true,
+                                "portalimage",
+                                "subscribe_img",
+                                "")
+                            <div id="close">@Resources.Strings.PortalPage_Close</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+    </div>
+
+
+}

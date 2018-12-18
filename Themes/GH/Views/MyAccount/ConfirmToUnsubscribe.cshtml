@@ -1,0 +1,54 @@
+﻿@using EightElements.Data.Rest.Models
+@{
+    var userDetail = ViewData["UserDetail"] as UserDetail;
+}
+
+
+<div class="section">
+    <h2 class="section__header">@Resources.Strings.Unsubscribe_PageTitle</h2>
+    
+    <div class="section__content">
+        
+        <div>@Html.Raw(String.Format("{0}: {1}", Resources.Strings.MyAccount_MyPhone, userDetail.Msisdn))</div>
+        <div>
+            @Html.Raw(String.Format(Resources.Strings.MyAccount_Handset, userDetail.HandsetModel))
+        </div>
+        
+        
+        @if (userDetail.HasSubscription)
+        {
+            if (userDetail.Credits > 0)
+            {
+                <h4>@Html.Raw(String.Format(Resources.Strings.UserStillHaveeCoins, userDetail.Credits))</h4>
+            }
+            else
+            {
+                <h4>@Resources.Strings.UserNoCoin</h4>
+            }
+            
+            <div class="button-container">
+                <div class="button inline-button" >
+                    <a class="button__link" href="/subscribe/unsubscribe">@Resources.Strings.MyAccount_Yes</a>
+                </div>
+                <div class="button inline-button">
+                    <a class="button__link" href="/">@Resources.Strings.MyAccount_No</a>
+                </div>
+            </div>
+                
+            
+            <p>
+                @Resources.Strings.Unsubscribe_AdditionalInfo
+            </p>
+        }
+        else
+        {
+            <h4>@Resources.Strings.MyAccount_NotSubscribed</h4>
+        }
+        
+    </div>
+
+</div>
+
+
+
+    

@@ -1,0 +1,9 @@
+﻿@if (ViewData["href"] != null)
+{ 
+    <a href='@ViewData["href"]'>
+    <img id='@ViewData["elementId"]' src='@ViewData["src"]' alt='@ViewData["alt"]' style="width:100%;" />
+    </a>
+}
+else { 
+    <img id='@ViewData["elementId"]' src='@ViewData["src"]' alt='@ViewData["alt"]' style="width:100%;" />
+}

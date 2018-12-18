@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="@ConfigHelper.GetLanguageCode()">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jquery.blockUI")
+    @Scripts.Render("~/bundles/bootbox")
+    @Html.Partial("~/Themes/D1GC/Views/Shared/_Localization.cshtml")
+    @Scripts.Render("~/bundles/home")
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript" src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" />
+    @Styles.Render("~/bundles/css")
+    @RenderSection("style", required: false)
+   
+   @if (ViewBag.PortalID != EightElements.Data.DAPortal.CelcomPortalId)
+   {
+        Html.RenderPartial("GoogleAnalyticsTrackingCode", new EightElements.Data.Rest.Models.Tracking(ViewBag.GoogleAnalyticsAccount)); 
+   }
+</head>
+<body>
+    <header>
+        <input type="hidden" id='uid' value='@ViewData["uid"]' />
+        <input type="hidden" id='handsetid' value='@ViewData["handsetid"]' />
+        @Html.Hidden("isSubscribed", ViewData["isSubscribed"])
+        @Html.Hidden("credits", ViewData["credits"])
+        @Html.Hidden("isMsisdnNotDetected", ViewData["isMsisdnNotDetected"])
+        @Html.Hidden("NonSub", ViewData["NonSub"])
+        @Html.Hidden("deactivateOneClickSubscribe", ViewData["deactivateOneClickSubscribe"])
+        @{ bool ppdDisabled = ViewBag.PpdDisabled ?? false; }
+        @Html.Hidden("PpdDisabled", ppdDisabled)
+        @Html.Hidden("PortalId", ViewData["PortalId"])
+		@{
+            if ((bool)ViewData["displayTopMessage"])
+            {
+                <div class="warning-msg" >
+                    @Html.PortalText("TopupMessage")
+                </div>
+            } 
+	    }
+        <div>
+            @Html.PortalImage((string)ViewData["banner"], true, "portalimage", "", "width:100%")
+        </div>
+        
+        @if ((bool) ViewData["isMsisdnNotDetected"])
+        {
+            <div class="notification">
+                @Resources.Strings.HeaderText_Wifi
+            </div>
+        }
+
+    </header>
+
+    @RenderBody()
+    
+    <footer>
+        <div class="footer__menu">
+            @RenderSection("footerMenu", false)
+        </div>
+        <div class="footer__image">
+            <img src=@Url.Content("~/Images/360/8eLogo_360x280.gif") alt="8elements"/>
+        </div>
+        @Resources.Strings.Layout_PlayTheWorldBestGame
+        <br/>
+        <a class="footer_link" href=@Url.Content("~/Terms")>@Resources.Strings.Layout_Terms</a>&nbsp;|&nbsp;
+        <a class="footer_link" href=@Url.Content("~/Help")>@Resources.Strings.Layout_Help</a><br/>
+        &copy;&nbsp;@DateTime.Today.Year
+	</footer>
+
+</body>
+</html>

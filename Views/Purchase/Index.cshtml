@@ -1,0 +1,83 @@
+﻿@section style
+{
+    <style>
+        ul {
+            list-style: none;
+        }
+         li:nth-child(1)
+         {
+             background: url(../Images/General/Subscription/Bullets/bubblepink.png) no-repeat left top;
+             padding: 0px 0px 0px 28px;
+         }
+        li:nth-child(2)
+        {
+            background: url(../Images/General/Subscription/Bullets/bubblegreen.png) no-repeat left top;
+            padding: 0px 0px 0px 28px;
+        }
+        li:nth-child(3)
+        {
+            background: url(../Images/General/Subscription/Bullets/bubbleblue.png) no-repeat left top;
+            padding: 0px 0px 0px 28px;
+        }
+        li:nth-child(4)
+        {
+          background: url(../Images/General/Subscription/Bullets/bubblepurple.png) no-repeat left top;
+          padding: 0px 0px 0px 28px;
+        }
+        li:nth-child(5)
+        {
+          background: url(../Images/General/Subscription/Bullets/bubbleyellow.png) no-repeat left top;
+          padding: 0px 0px 0px 28px;
+        }
+        li:nth-child(6)
+        {
+          background: url(../Images/General/Subscription/Bullets/bubblered.png) no-repeat left top;
+          padding: 0px 0px 0px 28px;
+        }
+    </style>
+}
+
+@{
+    //todo: (simon) create new viewmodel
+    int contentId = (int) ViewBag.ContentId;
+    string contentTitle = ViewBag.ContentTitle;
+    string contentSize = "50";
+    string imageUrl = Url.Content("~/rest/gameimage/" + contentId + "?key=Square0");
+    decimal price = (decimal) ViewBag.Price;
+    string currency = ViewBag.Currency;
+    string displayedPrice = currency + " $" + price.ToString("0.00");
+}
+
+
+<div id="container" class="gradient-pale">
+    <br/>
+    <br/>
+    <div style="text-align: center; overflow: auto">
+        <img src="@imageUrl" alt="@contentTitle" class="img-rounded"/>
+    </div>
+    <br/>
+    <br/>
+
+    <div id="benefits" class="element">
+        <ul>
+            <li><strong>@contentTitle</strong> is a great game!</li>
+            <li>Max file size @contentSize MB</li>
+            <li>Data charges may apply</li>
+            <li>For help, call TOLL-FREE at 1300 781 440</li>            
+            <li>This is a one off purchase. By clicking on "Buy Now" you agree to have your mobile phone account charged @displayedPrice</li>
+        </ul>
+    </div>
+
+    <div class="element" style="padding: 12px 8px 20px">
+        <div class="btn-curved gradient-blue-bright btn-text-1line" style="margin: 0 auto">
+            <a href="@Url.Content("~/purchase/buy?contentid=" + @contentId + "&ppd=true")">Buy Now</a>
+        </div>
+    </div>
+
+</div>
+
+<div class="btn-container" align="center">
+    <div class="btn-curved gradient-green-bright btn-text-1line btn-wide">
+        <a href="/Subscribe">@Resources.Strings.Purchase_SubscribeButton</a>
+    </div>
+</div>

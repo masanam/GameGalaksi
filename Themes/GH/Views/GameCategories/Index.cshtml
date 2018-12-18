@@ -1,0 +1,30 @@
+﻿@using EightElements.Data.Rest.Models;
+@{
+    var categories = ViewData["GameCategories"] as List<GameCategory>;
+}
+
+<div class="section">
+    <div class="section__header">@Resources.Strings.GameCategories_AllGames</div>
+    
+    <div class="section__content">
+        @foreach (var category in categories)
+        {
+            <div class="game">
+                
+                <div class="game__image-container">
+                    <a href="/GameCategory?categoryId=@category.GameCategoryId">
+                        <img class="game__image img-rounded" src="rest/GameCategoryImage?gameCategoryId=@category.GameCategoryId" alt="@category.Name"/>
+                    </a>
+                </div>
+                
+                <div class="game__title">
+                    <a class="game__title-link" href="/GameCategory?categoryId=@category.GameCategoryId">
+                        @category.Name
+                    </a>
+                </div>
+
+            </div>
+        }
+    </div>
+</div>
+

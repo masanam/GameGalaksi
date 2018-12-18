@@ -1,0 +1,81 @@
+﻿@section style
+{ 
+<style type="text/css"> 
+	body {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 11px;
+		margin: 0px;
+		padding: 0px;
+		width: 100%;/*240px;*/
+		/*height: 320px;*/
+	}
+	div.HeaderBanner {
+		position: relative;
+		width: 100%;
+		height: 30px;
+		background-color: #5f95c9;
+		border-top: 1px solid #46719c;
+		border-bottom: 1px solid #46719c;
+		color: white;
+	}
+	div.CatchPhrase {
+		position: relative;
+		width: 90%;
+		height: 25px;
+		margin:0 auto;
+	}
+	div.SubscriptionButton {
+		position: relative;
+		width: 100%;
+		height: 44px;
+		text-align: center;
+	}
+	div.SubscriptionButton .Button {
+		display: block;
+		width: 146px;
+		height: 41px;
+		background: url('Images/General/Subscription/bgButton.png') no-repeat 0 0;
+		color: white;
+		text-decoration: none;
+		margin: 0 auto;
+		padding: 6px 10px 0px 10px; 
+	}
+	div.FeatureGames {
+		position: relative;
+		width: 90%;
+		height: 52px;
+		margin:0 auto;
+		text-align:center;
+	}
+	div.Content {
+		position: relative;
+		width: 90%;
+		height: 92px; 
+		margin: 0px auto 15px auto;
+		list-style-position: outside;
+		list-style-type: circle; 
+	}
+	div.Content ul {
+		margin: 0px auto; 
+	}
+	div.Footer {
+		position: relative;
+		width: 100%;
+		height: 19px;
+		background-color: #5f95c9;
+		border-top: 1px solid #46719c;
+		border-bottom: 1px solid #46719c;
+		color: white;
+	} 
+</style> 
+} 
+@{
+	if ((bool) ViewData["isMsisdnNotDetected"] == false)
+	{
+		@Html.Partial("IndexPartial_FP")
+	}
+	else
+	{
+		@Html.Partial("IndexPartialWifi_FP")
+	}
+}

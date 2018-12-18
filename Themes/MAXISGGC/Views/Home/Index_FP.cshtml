@@ -1,0 +1,52 @@
+﻿@{List<EightElements.Data.Rest.Models.GameCategory> categories = (List<EightElements.Data.Rest.Models.GameCategory>)ViewData["GameCategories"];}
+@{List<EightElements.Data.Rest.Models.GameGroup> groupportals = (List<EightElements.Data.Rest.Models.GameGroup>)ViewData["GameCategoriesPortal"];}
+@Html.Partial("HeaderText_FP")
+
+<div>
+    @Html.PortalImage("midbanner", true, "portalimage", "", "width:100%")
+</div>
+
+<div>
+@{foreach (EightElements.Data.Rest.Models.GameGroup groupportal in groupportals)
+  {
+      if (groupportal.ContentGroupId == "T")
+      {
+          continue;
+      }
+      ViewData["SectionType"] = groupportal.ContentGroupId;
+      ViewData["GameListTitle"] = groupportal.Name;
+      ViewData["MoreTitle"] = Resources.Strings.Home_MoreTopGames;
+      @Html.Partial("GamesByGroup");
+  }
+}
+</div>
+
+@{if (!(bool)ViewData["IsSubscribed"])
+  {
+    <div class="JoinClub">
+        <a href="Subscribe" style="text-decoration: none;">@Resources.Strings.Home_JoinNow</a>
+    </div>
+  }
+}
+
+<div>
+    <div class="game-list">
+        <div>@Resources.Strings.Home_GameCategories</div>
+    </div>
+    @{foreach (EightElements.Data.Rest.Models.GameCategory category in categories)
+      {
+        <div style="padding: 1%;">
+            <a href="/GameCategory?CategoryId=@category.GameCategoryId" style="color:Blue;font-size:small; font-weight:bold;">>> @category.Name</a></div>
+      }
+    }
+</div>
+<div>
+    @using (Html.BeginForm("Index", "Search", FormMethod.Get))
+    {
+        <div class="bgSearch">
+            <input id="search-keyword" name="keyword" type="text" style="width: 97%; border: 2px inset;" />
+            <input type="submit" value="@Resources.Strings.Home_Search" />
+        </div>
+    }
+</div>
+

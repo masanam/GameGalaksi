@@ -1,0 +1,79 @@
+﻿@section Scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.unsubscribe').click(function () {
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+                $('#unsubscribe_confirmation').modal("show");
+                $('.confirm_unsubscribe_the_item').live('click', function (e) {
+                    $('#unsubscribe_confirmation').modal("hide");
+                    onUnsubscribe();
+                });
+                return false;
+
+            });
+            setUserInfo($('#SubscriptionStatusText').val());
+        });
+    </script>
+}
+@{EightElements.Data.Rest.Models.UserDetail userDetail = (EightElements.Data.Rest.Models.UserDetail)ViewData["UserDetail"];}
+<div class="">
+    <div class="page-title">
+        <h3>@Resources.Strings.MyAccount_MyAcount</h3>
+    </div>
+    <div class="my-phone info">
+       @Html.Raw(String.Format("{0}: <span>{1}</span>",Resources.Strings.MyAccount_MyPhone, userDetail.Msisdn))
+    </div>
+    <div id="device" class="info">
+        @Resources.Strings.MyAccount_Device: <span>@Resources.Strings.MyAccount_Loading</span>
+    </div>
+</div>
+<div class="my-subscription">
+    <h4 class="sub-title">@Resources.Strings.MyAccount_Subscription</h4>
+    <div id="credits" class="info">
+        <span class='loading'>@Resources.Strings.MyAccount_Loading</span>
+        <div style="display: none;" class="subscribed-section">
+            @Resources.Strings.MyAccount_Credit <span id='credit-text'></span>
+            <img src="/Images/General/MyDownloads/ico-coin.png"><br/>
+            @Resources.Strings.MyAccount_Status <span id='status-text'></span>
+            <div class='unsubscribe'>@Resources.Strings.MyAccount_Unsubscribe</div>
+        </div>
+        <div style="display: none;" class="unsubscribed-section">
+            <span>@Resources.Strings.MyAccount_NotSubscribed</span>
+        </div>
+        <div id='join-big-btn' style="display: none;">
+            <div id='btn-subscription' class='btn-curved gradient-green-bright'>
+                <a href='Subscribe'>@Resources.Strings.MyAccount_Benefit</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="btn-my-downloads btn-curved gradient-blue-bright btn-text-1line">
+    <a href="Purchase/History?handsetId=@ViewData["handsetid"]">@Resources.Strings.MyAccount_MyDownloads</a>
+</div>
+<div id="unsubscribe_confirmation" class="modal hide fade" style="display: none;">
+    <div class="modal-header">
+        <a href="#" class="close" data-dismiss="modal">x</a>
+        <h3>@Resources.Strings.MyAccount_AreYouSure</h3>
+    </div>
+    <div class="modal-body">
+        <div class="paddingT15 paddingB15" id="modal_text"> 
+            @if (userDetail != null && userDetail.Credits > 0)
+            {
+                @Html.Raw(String.Format(Resources.Strings.UserStillHaveeCoins, userDetail.Credits))
+            }
+            else
+            {
+                @Resources.Strings.MyAccount_QuestionConfirm
+            }
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn confirm_unsubscribe_the_item no_return">@Resources.Strings.MyAccount_Yes</a>
+        <a href="#" class="btn btn-secondary " data-dismiss="modal">@Resources.Strings.MyAccount_No</a>
+    </div>
+</div>
+
+<div id="resource">
+    @Html.Hidden("SubscriptionStatusText", @ViewData["SubscriptionStatusText"])
+</div>

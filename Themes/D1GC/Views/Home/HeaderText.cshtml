@@ -1,0 +1,34 @@
+﻿<div id="welcome-text" class="home__welcome-text"> 
+    
+    @if ((bool) ViewData["NonSub"])
+    {
+        @Html.PortalText("SubscribeJoinTextLong", true)
+    }
+    else
+    {
+        @Html.PortalText("SubscriberMessage", true)
+    }
+    
+@*    @if ((bool) ViewData["isMsisdnNotDetected"])*@
+@*    {*@
+@*        <div class="home__welcome-text">*@
+@*            <div class="not-authenticated">*@
+@*                <div class="subscribe-login-button">*@
+@*                    <a href="@ViewBag.SubscribeUrl" style="text-decoration: none; color: white;">@Html.PortalText("CommonBuyDirectSubscribe", true)</a>*@
+@*                </div>*@
+@*            </div>    *@
+@*        </div>*@
+@*    }*@
+    
+</div>
+
+@{
+    if ((bool) ViewData["NonSub"])
+    {
+        <div class="subscribe-button subscribe-button--plain">
+            <a class="subscribe-button__link" href="@Url.Action("Subscribe", "Subscribe")">
+                <img class="subscribe-button__link-image" src="/Images/General/D1GC/join-button.png" alt="Join Now"/>
+            </a>
+        </div>
+    }
+}

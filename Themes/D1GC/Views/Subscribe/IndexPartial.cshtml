@@ -1,0 +1,28 @@
+﻿
+<div class="section-header">
+    <div class="section-header__title">
+        @Resources.D1GC.Subscribe_PageTitle
+    </div>
+    <div class="section-header__action">
+        <a class="section-header__action-link" href="@Url.Action("Index", "Home")">@Resources.D1GC.Layout_Back</a>
+    </div>
+</div>
+
+<div class="subscribe">
+    <div class="subscribe__description">
+        @Html.Raw(String.Format(Resources.Strings.Subscribe_Benefits, " "))
+    </div>
+    <ul class="subscribe__benefits-list">
+        @Html.PortalText("SubscribeBenefit")
+    </ul>
+
+    <div class="subscribe-button subscribe-button--plain">
+        <a class="subscribe-button__link" href="@Url.Action("Subscribe", "Subscribe")">
+            <img class="subscribe-button__link-image" src="/Images/General/D1GC/join-button.png" alt="I want to join"/>
+        </a>
+        <div class="subscribe-button__info-text"></div>
+    </div>
+
+</div>
+
+

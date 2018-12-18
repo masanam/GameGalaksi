@@ -1,0 +1,76 @@
+﻿<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/bundles/cssFP")
+    @{ Html.RenderPartial("GoogleAnalyticsTrackingCode", new EightElements.Data.Rest.Models.Tracking(ViewBag.GoogleAnalyticsAccount)); }
+    @RenderSection("style", required: false)
+</head>
+<body vlink="black">
+    @Html.Partial("_Layout_FP_Top")
+<div class="language-flags">
+    <a href="@Url.Content("~/Home/ChangeCulture?lang=en&url=" + Request.Url.ToString())" class="en" title="English"></a>
+    <a href="@Url.Content("~/Home/ChangeCulture?lang=vi&url=" + Request.Url.ToString())" class="vn" title="Vietnamese"></a>
+</div>
+    @{
+        bool isMsisdnNotDetected = Convert.ToBoolean(ViewData["isMsisdnNotDetected"]);
+		if (isMsisdnNotDetected)
+		{
+		    <div class="login">
+		        <div class="login__message">@Resources.ViettelPort.Layout_MsisdnNotDetected</div>
+		        <form action="@Url.Action("Login", "Home")" method="post">
+		            <input class="login__msisdn" name="msisdn"/>
+		            <button class="login__submit-button" type="submit">@Resources.ViettelPort.Layout_Login</button>
+		        </form>
+		    </div>
+        }
+    }
+    @{
+        Html.RenderPartial("_NotifyRegistration");
+    }
+
+    @RenderBody()
+    <div style="background-color: #FFF;">
+        <div style="padding: 1%;">            
+            @{if ((bool)ViewData["ShowBack"])
+              { 
+                  <a href="javascript:history.go(-1)" style="color: #08c; font-size: small">>> @Resources.Strings.Layout_Back</a><br /> 
+              }
+              else
+              {
+                  <a href="#" style="color: #08c; font-size: small">>> @Resources.ViettelPort.Home_BackToTop</a><br /> 
+              }
+            }
+
+            @{if ((bool)ViewData["ShowHome"])
+              { <a href="/" style="color: #08c; font-size: small">>> @Resources.Strings.Layout_Home</a><br />}
+            }
+            <a href="/MyAccount" style="color: #08c; font-size: small">>> @Resources.Strings.Layout_MyAccount</a><br />            
+            @RenderSection("Unsubscribe", required: false)
+            <a href="http://upro.vn" style="color: #08c; font-size: small">>> @Resources.ViettelPort.Home_ViettelHomePage</a>
+    </div>
+    <div  class="footer">
+        <div class="upperLogo">
+            <img src="/Images/320/logo.gif" width="60" height="43" class="headerImage" alt="8elements" />
+            <img src="/Images/320/TL_logo.png" width="60" height="43" class="headerImage" alt="8elements" />
+        </div>
+            @Resources.ViettelPort.Layout_Footer
+        <br />
+        <a class="terms" href="/Terms">@Resources.Strings.Layout_Terms</a>&nbsp;|&nbsp; <a class="terms" href="/Help">
+            @Resources.Strings.Layout_Help</a><br />
+        &copy;&nbsp;@DateTime.Today.Year
+    </div>        
+    @{                
+        string param = "";
+        string siteID = "8elgame";
+        string query = HttpUtility.UrlEncode(Request.Url.PathAndQuery == null ? "" : Request.Url.PathAndQuery);
+        string referer = HttpUtility.UrlEncode(Request.UrlReferrer == null ? "" : Request.UrlReferrer.ToString());
+        string domainName = HttpUtility.UrlEncode(Request.Url.Host == null ? "" : Request.Url.Host);
+        string path = HttpUtility.UrlEncode(Request.Url.AbsoluteUri == null ? "" : Request.Url.AbsoluteUri);
+        param = "?domainName=" + domainName + "&siteId=" + siteID + "&refer=" + referer + "&query=" + query + "&path=" + path;
+        string urlTracking = "http://125.235.4.232/tracking/index.jsp" + param;
+}
+<img src="@urlTracking" style="display: none;"/>
+</body>
+@RenderSection("scripts", required: false)
+</html>

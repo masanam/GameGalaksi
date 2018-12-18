@@ -1,0 +1,68 @@
+﻿<input type="hidden" id='ListType' value='@ViewData["ListType"]' />
+<input type="hidden" id='PageSize' value='@ViewData["PageSize"]' />
+<input type="hidden" id='PageNumber' value='0' />
+<input type="hidden" id='Keyword' value='@ViewData["Keyword"]' />
+<input type="hidden" id='ListSource' value='search' />
+@{Dictionary<int, EightElements.Data.Rest.Models.Game> games =
+      (Dictionary<int, EightElements.Data.Rest.Models.Game>)ViewData["DictGame"];
+ }
+
+<div class="title">
+    <div class="titleCenter">
+        @Resources.Strings.Search_Result</div>
+</div>
+
+@{ if (games == null || games.Count() == 0)
+   {
+    <div class="message">
+        @Resources.Strings.Search_NoGames        
+    </div>
+   }
+   else
+   {
+    <div id='games-list'>
+    <table style="width: 100%; min-width: 128px; font-weight: bold; font-size: small;">
+        @{   
+       foreach (KeyValuePair<int, EightElements.Data.Rest.Models.Game> entry in games)
+       {
+           string gameCategory =
+               ((Dictionary<int, EightElements.Data.Rest.Models.GameCategory>)
+                   ViewData["DictGameCategory"])[entry.Key].Name;
+           string gamePrice = ((Dictionary<int, string>)ViewData["DictGamePrice"])[entry.Key];
+           bool hasSubscription = (bool)ViewData["IsSubscribed"];
+                     
+            <tr>
+                <td style="width: 40%; text-align: center; vertical-align: middle; min-width: 80px;">
+                    <a href="/Detail/@entry.Key">
+                        <img src="/rest/gameimage/@entry.Key?key=Square0" style="width:100%;min-width:70px;" alt="Game pic"/>
+                    </a>
+                </td>
+                <td style="width: 60%; text-align: center; text-align: center; vertical-align: top;
+                    padding: 2%;">
+                    <div>
+                        <a href="/Detail/@entry.Key" style="font-size:medium;color:Blue;">@entry.Value.Name</a></div>
+                    <div style="width: 100%; min-width: 70px; text-align: center; font-size: medium;">
+                        <div style="background-color: #32CDFD; width: auto; margin: 3%; padding: 2%;">
+                            <a href="@Url.Action("Buy", "Purchase", new { contentId = entry.Key,ppd=true})" style="color: White; text-decoration: none;">@gamePrice</a></div>
+                        @if (!hasSubscription)
+                        {  
+                            <div style="background-color: #FFCC00; width: auto; margin: 3%; padding: 2%">
+                                <a href="/Subscribe" style="color: White; text-decoration: none;">@Resources.Strings.Search_Free</a></div>
+                        }
+                    </div>
+                </td>
+            </tr>
+       }
+        }
+    </table>
+    @{if ((bool)ViewData["HasNextPage"])
+      {
+        <div style="text-align: center; padding: 2%; background-color: #EDF0F0;">
+            <a href="/Search?keyword=@((string)ViewData["Keyword"])&handsetid=@((int)ViewData["HandsetId"])&pageNumber=@((int)ViewData["PageNumber"] + 1)" style="text-decoration: none;">
+                @Resources.Strings.Search_ShowMore</a>
+        </div>} }
+    </div>   
+   
+   }
+}
+

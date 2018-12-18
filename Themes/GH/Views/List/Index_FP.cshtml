@@ -1,0 +1,63 @@
+﻿@using EightElements.Data.Rest.Models;
+@{
+    bool hasSubscription = (bool)ViewData["IsSubscribed"];
+    string listType = (string)ViewData["ListType"];
+    
+}
+
+<input type="hidden" id='ListType' value='@ViewData["ListType"]' />
+<input type="hidden" id='PageSize' value='@ViewData["PageSize"]' />
+<input type="hidden" id='PageNumber' value='0' />
+<input type="hidden" id='ListSource' value='listTypeList' />
+
+<div class="section">
+    <div class="section__header">@ViewData["PageTitle"]</div>
+
+    <div id='games-list'>
+    
+    @{
+        string section = (string)ViewData["SectionType"];
+        var games = (Dictionary<int, Game>)ViewData["DictGame"];
+        
+
+        foreach (var game in games)
+        {
+            int contentId = game.Key;
+            string gameTitle = game.Value.Name;
+            
+            string gameImage = Url.Content("~/rest/gameimage/" + contentId + "?key=" + ViewData["ImageSize"]);
+            
+            <div class="game">
+                <div class="game__image-container">
+                    <a href="/detail/@game.Key">
+                        <img class="game__image" src="@gameImage" alt="@gameTitle"/>
+                    </a>
+                </div>
+                <div class="game__title">
+                    <a class="game__title-link" href="/detail/@contentId">@gameTitle</a>
+                </div>
+
+                <div class="game__action-button">
+                    <a class="game__action-button-link" href="/purchase/buy?contentId=@contentId&ppd=true">$2.99</a>
+                </div>
+                <div class="game__action-button">
+                    <a class="game__action-button-link" href="/subscribe/subscribe">Subscribe for $2.50/week</a>
+                </div>
+            </div>
+            
+        }
+    }
+    
+    @{ if ((bool)ViewData["HasNextPage"])
+       {
+           <div class="list__show-next">
+               <a class="list__show-next-link" href="/List?type=@(listType)&pageNumber=@((int)ViewData["PageNumber"] + 1)">
+                   @Resources.Strings.List_ShowMore
+               </a>
+           </div>
+       }
+    }
+    
+    </div>
+</div>
+

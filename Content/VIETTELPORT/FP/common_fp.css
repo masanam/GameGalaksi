@@ -1,0 +1,547 @@
+﻿body
+{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+form
+{
+    margin: 0;
+}
+
+img
+{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    border: none;
+}
+a:hover
+{
+    color: #005580;
+    text-decoration: underline;
+}
+a:hover, a:active
+{
+    outline: 0;
+}
+a
+{
+    color: #08c;
+    text-decoration: none;
+}
+
+.title
+{
+    text-align: center;
+    font-weight:bold;
+}
+
+.first-header
+{
+    display: table;
+    width: 100%;
+    padding: 2% 0;
+}
+
+.first-header > div
+{
+    display: table-cell;
+    width: 33%;
+    text-align: center;
+    min-width: 70px;
+    padding: 0 1px;
+}
+
+.first-header > div > div
+{
+    width: 100%;
+}
+
+.first-header img
+{
+    width: 100%;
+}
+
+.first-header a div
+{
+    padding-top: 3%;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    width: auto;
+}
+
+.message
+{
+    margin: 15px 10px;
+}
+
+/* start footer */
+.footer
+{
+    margin: 8px;
+    padding: 8px;
+    background-color: #FFF;
+    color: #03285a;
+    text-align: center;
+}
+
+.bar
+{
+    max-width: 180px;
+    background-color: #03285a;
+    padding: 2px 0px 2px 0px;
+    margin: 6px auto 6px auto;
+}
+
+li.leaf
+{
+    list-style-type: none;
+    display: inline;
+    background: url('../../../Images/General/Subscription/rss_small_icon.png') no-repeat top left;
+    padding-left: 20px;
+    height: 25px;
+}
+
+.game-list > div
+{
+    padding: 1%;
+    text-align: center;
+    background-color: #D9D9D9;
+    font-weight: bold;
+    font-size: 1em;
+    color: rgb(0, 153, 255);
+}
+
+.game-list > table
+{
+    width: 100%;
+    min-width: 128px;
+    /*font-weight: bold;*/
+    font-size: small;
+}
+.game-list > table a
+{
+    font-weight:bold;
+}
+
+div.left-column
+{
+    text-align: center;
+    vertical-align: middle;
+    min-width: 80px;
+    background-color: White;
+}
+
+div.left-column > a
+{
+    height: auto;
+    width: auto;
+}
+
+div.left-column > a > img .gameSquareImageTop, .gameSquareImageTop
+{
+    min-width: 65px;
+    position: relative;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 5px;
+    float: left;
+    width: 65px;
+    height: 65px;
+}
+
+.gameBannnerImageTop
+{
+    min-width: 65px;
+    position: relative;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px;
+    float: left;
+    width: 100%;
+}
+
+div.right-column
+{
+    background-color: White;
+    overflow: hidden;
+}
+
+div.right-column > div:first-child
+{
+    text-align: left;
+    vertical-align: top;
+    margin: 0px;
+}
+
+div.right-column div a
+{
+    font-size: medium;
+    color: Blue;
+    font-size: 12px;
+}
+
+div.right-column-button
+{
+    width: 100%;
+    min-width: 70px;
+    text-align: left;
+    font-size: medium;
+}
+
+div.right-column-button a
+{
+    margin: 5px 0px 1px 0px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    padding: 2px;
+    text-align: center;
+    width: 100%;
+    max-width: 120px;
+}
+
+div.right-column-button a.button-free
+{
+    background-color: #32CDFD;
+    color: White;
+}
+
+div.right-column-button a.button-free p
+{
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+div.right-column-button a.button-buy
+{
+    background-color: #FFCC00;
+    color: White;
+}
+
+div.right-column-button div
+{
+    width: auto;
+    margin: 3%;
+    padding: 2%;
+}
+
+div.right-column-button div a
+{
+    color: White;
+    text-decoration: none;
+}
+
+div.content
+{
+    margin: 10px;
+}
+
+.more-game-list
+{
+    padding: 10px;
+    font-weight: bold;
+    font-size: .8em;
+    text-align: center;
+}
+
+div.btn-more-ftphone
+{
+    background-color: White;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+div.btn-more-ftphone a
+{
+    color: Blue;
+}
+
+
+/* End footer */
+
+.language-flags
+{
+    width: 100%;
+    float: right;
+    text-align: right;
+    padding-top: 5px;
+    padding-right: 5px;
+    height: 24px;
+}
+.language-flags .vn
+{
+    background: url('../images/vn.png') no-repeat;
+    display: block;
+    float: right;
+    height: 24px;
+    width: 24px;
+}
+.language-flags .en
+{
+    background: url('../images/uk.png') no-repeat;
+    float: right;
+    display: block;
+    height: 24px;
+    width: 24px;
+}
+
+.subButtonTop
+{
+    display: block;
+    position: relative;
+    background-color: #ace011;
+    color: #0000ff;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+    width: 120px;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.subButtonBottom
+{
+    display: block;
+    position: relative;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+    width: 120px;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.confirmButton a
+{
+    margin-right:20px;
+}
+
+.warning-msg
+{
+    padding:10px;
+    background-color:red;
+    color:white;
+    font-size:10px;
+}
+
+.login {
+    color: #fff;
+    background-color: #f00;
+    font-size: 15px;
+    padding: 10px;
+    margin-top: 32px;
+}
+
+.login__message {
+    margin-bottom: 8px;
+}
+.login__msisdn {
+    border: #FFE0B2 2px solid;
+    border-radius: 3px;
+    padding: 4px;
+}
+
+.login__submit-button {
+    border: #FFE0B2 2px solid;
+    border-radius: 3px;
+    background-color: #fff;
+    color: #333;
+    font-weight: bold;
+    padding: 4px 12px;
+    text-transform: uppercase;
+}
+
+
+div.item
+{
+    text-align:center;
+    width: 100%;
+}
+
+img.img-polaroid
+{
+    width: 30%;
+    min-width: 30px;
+    max-width: 176px;
+}
+
+
+
+
+
+
+.button-bar 
+{
+    padding: 15px 0 0;
+    text-align: center;
+}
+
+div.my-bundle-button {
+    background-color: #32CDFD;
+    padding: 5px 15px;
+    margin: 3px 0;
+    display: inline-block;
+    text-decoration: none
+}
+
+div.my-download-button {
+    background-color: blue;
+    padding: 5px 15px;
+    margin: 3px 0;
+    display: inline-block;
+    text-decoration: none
+}
+
+div.download-button 
+{
+    background-color: blue;
+    padding: 5px 15px;
+    margin: 3px 0;
+    display: inline-block;
+    text-decoration: none
+}
+
+div.join-button {
+    background-color: #1e90ff;
+    padding: 5px 15px;
+    margin: 3px 0;
+    display: inline-block;
+    text-decoration: none
+}
+
+div.download-button a, div.dark-green-button a, div.my-download-button a, div.join-button a
+{
+    font-size: 11px;
+    color: #fff;
+}
+
+div.my-bundle-button a {
+    color: #fff;
+}
+
+
+div.disabled-button 
+{
+    color: white;
+    background-color: #708090;
+    font-size: 11px;
+    padding: 5px 15px;
+    margin: 3px 0;
+    display: inline-block;
+    text-decoration: none
+}
+
+div.dark-green-button {
+    background-color: green;
+	color: #fff;
+    padding: 5px 15px;
+    margin: 3px 0;
+    display: inline-block;
+    text-decoration: none
+}
+
+
+
+
+.submit-button {
+    background-color: #32CDFD;
+    border-style: none;
+    font-size: 12px;
+    color: #fff;
+    padding: 5px 12px;
+}
+
+a.blue-link {
+    color: #4682b4;
+    text-decoration: underline;
+}
+
+a.blue-link:hover {
+    text-decoration: underline;
+}
+
+div.yellow-notification-bar {
+    background: #f9edbe !important; 
+    border: 1px solid #f0c36d; 
+    text-align: center; 
+    padding: 4px; 
+    margin: 16px 3px; 
+}
+
+div.red-notification-bar {
+    background: #FFC0CB !important; 
+    border: 1px solid #DC143C; 
+    text-align: center; 
+    padding: 4px; 
+    margin: 16px 3px; 
+}
+
+
+div.page-title {
+    text-align: center;
+}
+
+
+div.game-title a {
+    color: blue;
+    font-size: 12px;
+    font-weight: normal
+}
+
+
+div.section-header 
+{
+    margin: 10px 0 2px;
+    padding: 5px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1em;
+    background-color: #D9D9D9;
+    color: #0099FF;
+}
+
+
+div.section-footer {
+    padding: 5px 0 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1em;
+    
+}
+
+div.section-footer a {
+    color: blue !important;
+}
+
+
+div.my-subscription {
+    padding: 5px;
+}
+
+a.change-handset {
+    text-transform: uppercase ; 
+    font-size: 11px; 
+    text-decoration: underline;
+    font-weight: normal;
+    vertical-align: 6%;
+}
+
+.searchBox
+{
+    background-color: #D9D9D9;
+    padding: 0px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0px;
+    color: white;
+}

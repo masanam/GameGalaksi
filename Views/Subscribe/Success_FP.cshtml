@@ -1,0 +1,51 @@
+﻿@using EightElements.Data
+<div class="subscribe-content">
+<div id="top">
+    @Html.PortalText("SucessSubscribedWelcomeText")
+</div>
+<div id="container" class="gradient-pale">
+    <div style="padding:5px">
+        @Html.PortalText("SucessSubscribedText")
+    </div>
+    <div style="text-align: center;padding:10px">
+        @{
+            string linkText;
+            string renewalNotification;
+            int portalId = (int) ViewBag.PortalID;
+            if (portalId == DAPortal.TelstraPortalId ||
+                portalId == DAPortal.DigitalTurbinPortalId ||
+                portalId == DAPortal.GamerHeavenOxygen8PortalId)
+            {
+                linkText = Resources.GamerHeaven.SubscribeSuccess_RedirectHome;
+                var expiryDate = ViewBag.ExpiryDate as DateTime?;
+                renewalNotification =
+                    expiryDate.HasValue ?
+                        "Renewal date: " + expiryDate.Value.ToShortDateString() :
+                        "Renewal date: -";
+            }
+            else
+            {
+                linkText = Resources.Strings.SubscribeSuccess_RedirectHome;
+                renewalNotification = "";
+            }
+            <div>
+                @renewalNotification
+            </div>
+            
+            if ((int)ViewData["DetailContentId"] != -1)
+            {
+                @Html.ActionLink(linkText, "Index", "Detail", new { contentId = ViewData["DetailContentId"] }, new { id = "redirectUrl" })
+            }
+            else
+            {
+                @Html.ActionLink(linkText, "Index", "Home", new { }, new { id = "redirectUrl" })
+            }
+            
+        }
+    </div>
+</div>
+
+
+</div>
+
+

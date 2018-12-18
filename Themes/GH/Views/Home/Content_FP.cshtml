@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["SectionType"] = "F";
+    ViewData["GameListTitle"] = Resources.GamerHeaven.GameList_Featured;
+    ViewData["MoreTitle"] = Resources.GamerHeaven.GameList_More;
+    ViewData["ImageSize"] = "Banner2";
+}
+@Html.Partial("GameListBanner")
+
+<div class="home__banner">@Html.PortalImage("midbanner1", true, "portalimage", "", "width:100%")</div>
+
+@{
+    ViewData["SectionType"] = "T";
+    ViewData["GameListTitle"] = Resources.Strings.List_TopGames;
+    ViewData["MoreTitle"] = Resources.GamerHeaven.GameList_More;
+    ViewData["ImageSize"] = "Square0";
+}
+@Html.Partial("GameList")
+
+<div class="home__banner">@Html.PortalImage("midbanner2", true, "portalimage", "", "width:100%")</div>
+
+@{
+    ViewData["SectionType"] = "N";
+    ViewData["GameListTitle"] = Resources.Strings.List_NewGames;
+    ViewData["MoreTitle"] = Resources.GamerHeaven.GameList_More;
+    ViewData["ImageSize"] = "Square0";
+}
+@Html.Partial("GameList")

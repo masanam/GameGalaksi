@@ -1,0 +1,28 @@
+﻿@using EightElements.Data
+@{List<EightElements.Data.Rest.Models.GameCategory> categories = (List<EightElements.Data.Rest.Models.GameCategory>)ViewData["GameCategories"];}
+
+@Html.Partial("HeaderText_FP")
+
+@{Html.RenderAction("GetChannel", "Common");}
+
+@{ViewData["SectionType"] = "F";
+  ViewData["GameListTitle"] = @Resources.Strings.Home_Highlight;
+  ViewData["MoreTitle"] = @Resources.Strings.Home_MoreBestSellers;
+  ViewData["ImageSize"] = "Square0";}
+@Html.Partial("GameList")
+
+@{if (!(bool)ViewData["IsSubscribed"])
+  {   
+    <div class="subscribe-join-button">
+        <a href="@ViewBag.SubscribeUrl" style="text-decoration: none;">@ViewBag.JoinTop</a>
+    </div>
+  }}
+  
+
+@if (!(bool)ViewData["IsSubscribed"] && ViewBag.PortalID == EightElements.Data.DAPortal.ViettelPortalId)
+{
+    <div style="margin: 0 10px">
+        @Html.PortalText("Text")
+    </div>
+}
+

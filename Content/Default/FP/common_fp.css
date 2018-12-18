@@ -1,0 +1,334 @@
+﻿body
+{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+form
+{
+    margin: 0;
+}
+
+img
+{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    border: none;
+}
+
+.title
+{
+    text-align: center;
+}
+
+.warning-msg
+{
+    padding:5px;
+    background-color:red;
+    color:white;
+    font-size:10px;
+}
+
+.first-header
+{
+    display: table;
+    width: 100%;
+    padding: 2% 0;
+}
+
+.first-header > div
+{
+    display: table-cell;
+    width: 33%;
+    text-align: center;
+    min-width: 70px;
+    padding: 0 1px;
+}
+
+.first-header > div > div
+{
+    width: 100%;
+}
+
+.first-header img
+{
+    width: 100%;
+}
+
+.first-header a div
+{
+    padding-top: 3%;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    width: auto;
+}
+
+.message
+{
+    margin: 15px 10px;
+}
+
+.titleCenter
+{
+    padding: 1%;
+    text-align: center;
+    background-color: #32CCFE;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.subscribe-login-button
+{
+    margin: 10px auto;
+    padding: 15px 20px;
+    width: 200px;
+    color: #FFFFFF; 
+    background-color: #46AFE3;
+    font-weight: normal;
+    font-size: 1.2em;
+    text-align: center;
+    webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+/* start footer */
+.footer
+{
+    margin: 8px;
+    padding: 8px;
+    border: 2px solid #03285a;
+    outline: 2px solid #666;
+    background-color: #D5DDE6;
+    color: #03285a;
+    text-align: center;
+}
+
+.bar
+{
+    max-width: 180px;
+    background-color: #03285a;
+    padding: 2px 0px 2px 0px;
+    margin: 6px auto 6px auto;
+}
+
+li.leaf
+{
+    list-style-type: none;
+    display: inline;
+    background: url('../../../Images/General/Subscription/rss_small_icon.png') no-repeat top left;
+    padding-left: 20px;
+    height: 25px;
+}
+
+.game-list > div
+{
+    padding: 1%;
+    text-align: center;
+    background-color: #32CCFE;
+    
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.game-list > table
+{
+    width: 100%;
+    min-width: 128px;
+    font-weight: bold;
+    font-size: small;
+}
+
+div.left-column
+{
+    text-align: center;
+    vertical-align: middle;
+    min-width: 80px;
+    background-color: White;
+}
+
+div.left-column > a
+{
+    height: auto;
+    width: auto;
+}
+
+div.left-column > a > img .gameSquareImageTop, .gameSquareImageTop
+{
+    min-width: 65px;
+    position: relative; 
+	margin: 0px 0px 0px 0px;
+	padding: 0px 5px;
+	float: left; 
+	width: 65px;
+	height: 65px;
+}
+
+.gameBannnerImageTop
+{
+    min-width: 65px;
+    position: relative; 
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px;
+	float: left;
+	width: 100%;
+}
+
+div.right-column
+{
+    background-color: White;
+    overflow: hidden;
+}
+
+div.right-column > div:first-child
+{
+    text-align: left;
+    vertical-align: top;
+    margin: 0px;
+}
+
+div.right-column div a
+{
+    font-size: medium;
+    color: Blue;
+    font-size: 12px;
+}
+
+div.right-column-button
+{
+    width: 100%;
+    min-width: 70px;
+    text-align: left;
+    font-size: medium;
+}
+
+div.right-column-button a
+{
+    margin: 5px 0px 1px 0px;
+	font-weight: bold;
+	text-decoration: none;
+	display: inline-block;
+	padding: 2px;
+	text-align: center;
+	width: 100%;
+	max-width: 120px;
+}
+
+div.right-column-button a.button-free
+{
+	background-color: #32CDFD;
+	color: White;
+}
+
+div.right-column-button a.button-free p
+{
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+div.right-column-button a.button-buy
+{
+	background-color: #FFCC00;
+	color: White;
+}
+
+div.right-column-button div
+{
+    width: auto;
+    margin: 3%;
+    padding: 2%;
+}
+
+div.right-column-button div a
+{
+    color: White;
+    text-decoration: none;
+}
+
+div.content
+{
+    margin:10px;
+}
+
+.more-game-list
+{
+    padding: 10px;
+    font-weight: bold;
+    font-size: .8em;
+    text-align: center;
+}
+
+div.btn-more-ftphone
+{
+    background-color: White;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+div.btn-more-ftphone a
+{
+    color: Blue;
+}
+
+div.item
+{
+    text-align:center;
+    width: 100%;
+}
+
+img.img-polaroid
+{
+    width: 30%;
+    min-width: 30px;
+    max-width: 176px;
+}
+
+a.change-handset {
+    text-transform: uppercase ; 
+    font-size: 12px; 
+    text-decoration: underline;
+    font-weight: normal;
+    vertical-align: 15%;
+}
+
+.searchBox
+{
+    background-color: #4E5C6D;
+    padding: 0px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0px;
+    color: white;
+}
+
+.language-flags
+{
+    width: 100%;
+    float: right;
+    text-align: right;
+    padding-top: 5px;
+    padding-right: 5px;
+    height: 24px;
+}
+.language-flags .vn
+{
+    background: url('../images/vn.png') no-repeat;
+    display: block;
+    float: right;
+    height: 24px;
+    width: 24px;
+}
+.language-flags .en
+{
+    background: url('../images/uk.png') no-repeat;
+    float: right;
+    display: block;
+    height: 24px;
+    width: 24px;
+}
+/* End footer */

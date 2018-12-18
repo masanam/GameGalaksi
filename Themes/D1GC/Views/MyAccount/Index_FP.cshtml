@@ -1,0 +1,87 @@
+﻿@using EightElements.Data
+@using EightElements.Data.Rest.Models
+
+@{
+    int portalId = ViewBag.PortalID ?? -1;
+    var userDetail = (UserDetail)ViewData["UserDetail"];
+}
+
+<div class="section-header">
+    <div class="section-header__title">
+        @Resources.Strings.MyAccount_MyAcount
+    </div>
+    <div class="section-header__action">
+        <a class="section-header__action-link" href="@Url.Action("Index", "Home")">@Resources.D1GC.Layout_Back</a>
+    </div>
+</div>
+
+   
+    
+<div class="my-account">
+    
+    <div class="my-account__info">
+        <div class="my-account__info-label">@Resources.Strings.MyAccount_MyPhone</div>
+        <div class="my-account__info-text">@userDetail.Msisdn</div>
+    </div>
+
+    <div class="my-account__info">
+        <div class="my-account__info-label">@Resources.Strings.MyAccount_Device</div>
+        <div class="my-account__info-text">
+            @userDetail.HandsetModel
+            @if (ViewBag.HandsetSelectionEnabled)
+            {
+                <a href="@Url.Action("Index", "Handset")" class="change-handset">
+                    @Resources.Strings.MyAccount_ChangeHandset
+                </a>
+            }
+        </div>
+    </div>
+
+    <div class="my-account__info">
+        <div class="my-account__info-label">@Resources.D1GC.MyAccount_Subscription</div>
+        <div class="my-account__info-text">
+            @if (userDetail.HasActiveSubscription)
+            {
+                <span>@Resources.D1GC.MyAccount_Active</span>
+            }
+            else
+            {
+                <span>
+                    @Resources.D1GC.MyAccount_Inactive 
+                    <a href="@Url.Action("Subscribe", "Subscribe")">
+                        @Resources.Strings.Layout_JoinNow
+                    </a>
+                </span>
+            }
+        </div>
+    </div>
+
+    @if (!userDetail.HasSubscription)
+    {
+        <a href="/subscribe">
+        <div class="subscribe-button">
+            <a class="subscribe-button__link" href="@Url.Action("Index", "Subscribe")">
+                <img class="subscribe-button__link-image" src="/Images/General/D1GC/get-button.png" alt="Join Now"/>
+            </a>
+            <div class="subscribe-button__info-text">
+                @Resources.D1GC.MyAccount_MoreInfo
+            </div>
+        </div>    
+        </a>
+    }
+
+</div>
+
+
+@section footerMenu
+{
+    @if (userDetail.HasSubscription && userDetail.IsHandsetSupported)
+    {
+        <div class="footer__main-menu">
+            <a class="footer__menu-item" href="@Url.Action("History", "Purchase", new { handsetId = userDetail.HandsetId })">My Games</a>
+        </div>
+    }
+    <div class="footer__side-menu">
+        <a class="footer__side-menu-link" href="/">@Resources.Strings.Layout_Home</a>
+    </div>
+}

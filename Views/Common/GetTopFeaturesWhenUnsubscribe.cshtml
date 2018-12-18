@@ -1,0 +1,84 @@
+﻿@model EightElements.Web.Rest.ViewModel.ViewModelSubscribeTopFeatures
+@if (Model.GameImageUrls.Count() == 6)
+{
+    <div>
+    <a href="@Model.GameDetailUrls.ToArray()[0]">
+        <img src="@Model.GameImageUrls.ToArray()[0]" alt=""
+            class="img-rounded" style="min-width: 30px; width: 28%; max-width: 120px;" /></a>
+    <a href="@Model.GameDetailUrls.ToArray()[1]">
+        <img src="@Model.GameImageUrls.ToArray()[1]" alt=""
+            class="img-rounded" style="min-width: 30px; width: 28%; max-width: 120px;" /></a>
+    <a href="@Model.GameDetailUrls.ToArray()[2]">
+        <img src="@Model.GameImageUrls.ToArray()[2]" alt=""
+            class="img-rounded" style="min-width: 30px; width: 28%; max-width: 120px;" /></a>
+    </div>
+    <div>
+    <a href="@Model.GameDetailUrls.ToArray()[3]">
+        <img src="@Model.GameImageUrls.ToArray()[3]" alt=""
+            class="img-rounded" style="min-width: 30px; width: 28%; max-width: 120px;" /></a>
+    <a href="@Model.GameDetailUrls.ToArray()[4]">
+        <img src="@Model.GameImageUrls.ToArray()[4]" alt=""
+            class="img-rounded" style="min-width: 30px; width: 28%; max-width: 120px;" /></a>
+    <a href="@Model.GameDetailUrls.ToArray()[5]">
+        <img src="@Model.GameImageUrls.ToArray()[5]" alt=""
+            class="img-rounded" style="min-width: 30px; width: 28%; max-width: 120px;" /></a>
+    </div>
+}
+else if (Model.GameImageUrls.Count() == 3)
+{
+    <div>
+    <a href="@Model.GameDetailUrls.ToArray()[0]">
+        <img src="@Model.GameImageUrls.ToArray()[0]" alt=""
+            class="img-rounded" style="min-width: 30px; width: 28%; max-width: 120px;" /></a>
+    <a href="@Model.GameDetailUrls.ToArray()[1]">
+        <img src="@Model.GameImageUrls.ToArray()[1]" alt=""
+            class="img-rounded" style="min-width: 30px; width: 28%; max-width: 120px;" /></a>
+    <a href="@Model.GameDetailUrls.ToArray()[2]">
+        <img src="@Model.GameImageUrls.ToArray()[2]" alt=""
+            class="img-rounded" style="min-width: 30px; width: 28%; max-width: 120px;" /></a>
+    </div>
+}
+else if (ViewBag.PortalID.ToString() == "354")
+{
+    <div>
+        <img src="/Images/General/Subscription/JewelPicker_128x128.jpg" alt="Jewel Picker"
+            class="img-rounded" style="min-width: 30px; width: 28%; max-width: 120px;" />
+        <img src="/Images/General/Subscription/FootballzMania_128x128_0.jpg" alt="Footballz Mania"
+            class="img-rounded" style="min-width: 30px; width: 28%; max-width: 120px;" />
+        <img src="/Images/General/Subscription/Ben10AlienHunter_128x128.jpg" alt="Ben10 Alien Hunter"
+            class="img-rounded" style="min-width: 30px; width: 28%; max-width: 120px;" />
+    </div>
+}
+else if (ViewBag.PortalID.ToString() == "375")
+{
+    <div>
+        <img src="/Images/General/Subscription/PizzaNinja2_128x1280.jpg" alt="Pizza Ninja 2"
+            class="img-rounded" style="min-width: 30px; width: 28%; max-width: 120px;" />
+        <img src="/Images/General/Subscription/PileUpCandymania_128x128.jpg" alt="Pile Up Candymania"
+            class="img-rounded" style="min-width: 30px; width: 28%; max-width: 120px;" />
+        <img src="/Images/General/Subscription/FootballzMania_128x128_0.jpg" alt="Footballz Mania"
+            class="img-rounded" style="min-width: 30px; width: 28%; max-width: 120px;" />
+    </div>
+}
+else if (ViewBag.PortalID.ToString() == "335")
+{
+    <div>
+        <img src="/Images/General/Subscription/CrunchTimeBasketball_128x128.jpg" alt="Crunch Time Basketball"
+            class="img-rounded" style="min-width: 30px; width: 28%; max-width: 120px;" />
+        <img src="/Images/General/Subscription/BoBoiBoyAduduAttacks_128x128.jpg" alt="BoBoi Boy Adudu Attacks"
+            class="img-rounded" style="min-width: 30px; width: 28%; max-width: 120px;" />
+        <img src="/Images/General/Subscription/SoccerRun2014_128x128_0.jpg" alt="Soccer Run 2014"
+            class="img-rounded" style="min-width: 30px; width: 28%; max-width: 120px;" />
+    </div>
+}
+else
+{
+    <div>
+        <img src="/Images/General/Subscription/FootballzMania_128x128_0.jpg" alt="Footballz Mania" class="img-rounded" 
+        style="min-width: 30px; width: 28%; max-width: 120px;"/>
+        <img src="/Images/General/Subscription/cakemania.png" alt="Cake mania" class="img-rounded" 
+        style="min-width: 30px; width: 28%; max-width: 120px;"/>
+        <img src="/Images/General/Subscription/infinitesky.png" alt="Flight game" class="img-rounded" 
+        style="min-width: 30px; width: 28%; max-width: 120px;"/>
+    </div>
+}

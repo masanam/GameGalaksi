@@ -1,0 +1,25 @@
+﻿@section Scripts
+{    <script type="text/javascript">
+         var theLink = document.getElementById("downloadUrl");
+         window.location = theLink.href;
+    </script>
+}
+
+@model EightElements.Web.Rest.ViewModel.ViewModelBuyDownload
+
+<p>@Resources.Strings.Purchase_Thankyou</p>
+<p>
+    @Resources.VNM.Purchase_DownloadText 
+    <u>
+    @Html.ActionLink(Resources.VNM.Purchase_ClickHereToDownload, "Index", "Download", 
+    new {
+        contentId = Model.ContentID,
+        transactionId = Model.ID,
+        uid = Model.Msisdn,
+        handsetid = Model.HandsetID
+        },
+    new {
+        id = "downloadUrl"
+    })
+    </u>
+</p>

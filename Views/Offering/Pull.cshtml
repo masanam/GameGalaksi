@@ -1,0 +1,32 @@
+﻿@using EightElements.Web.Rest.Controllers
+@{
+    ViewBag.Title = "Hot Offer";
+}
+
+<h4>
+    @ViewBag.NotificationText
+</h4>
+
+<div style="text-align: center">
+    @{
+        var games = ViewBag.Games as List<OfferingController.Game>;
+        foreach (var game in games)
+        {
+            <div style="display: inline-block; margin: 24px;">
+                <div style="display: inline-block" class="right-column">
+                    <a href="@game.DownloadUrl">
+                        <img src="@game.ImageUrl" class="img-rounded"/>
+                    </a>
+                    <br/>
+                    <div class="right-column-button"style="margin: 12px;">
+                        <a href="@game.DownloadUrl" class="button-buy">Rp @game.Price</a> <br/>
+                        <a href="http://202.152.162.239/mcp/plasma/direct/?sdc=93477&kc=REG%20GALAKSICLUB&cb=http://www.gamegalaksi.com/offering/push/1&desc=Game%20Gratis&img=http://202.146.34.247/game_isat/image/GameGratis_100x100.jpg&price=2000&servicename=GAME" class="button-free">
+                            GRATIS
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        }
+    }
+</div> 

@@ -1,0 +1,80 @@
+﻿<div id="welcome-text" class="category row-fluid gradient-pale welcome-text"
+    style="padding: 15px 0px 10px 3px;color: rgb(3,95,233);font-weight:bold;margin-top: 3px;text-align:left; width:inherit"> 
+    
+    @if ((bool)ViewData["NonSub"])
+    {
+        @Html.PortalText("SubscribeJoinTextLong")<br />
+            
+        if ((bool)ViewData["CanStillUseFirstWeekFree"])
+        {
+            <div class="first-week-free category row-fluid" style="padding: 3% 0px; color: rgb(3, 95, 233); font-weight: bold; margin-top: 3px">
+                @(ViewBag.PortalID == EightElements.Data.DAPortal.SmartPortalId ? Html.Raw(Resources.Smart8e.Home_WelcomeTitle) : Html.Raw(Resources.Strings.Home_WelcomeTitle))
+            </div>
+        }
+        if (ViewData["TotalGamesAvailable"] != null && ViewData["UserHandset"] != null)
+        {
+            if (ViewBag.PortalID == EightElements.Data.DAPortal.GamerHeavenOxygen8PortalId ||
+                ViewBag.PortalID == EightElements.Data.DAPortal.DigitalTurbinPortalId)
+            {
+                <p>
+                    Here you find @ViewData["TotalGamesAvailable"] games available for your @ViewData["UserHandset"]
+                </p>
+            }
+            else
+            {
+                <p>
+                    @Html.Raw(String.Format(Resources.Strings.Home_GameForHandsetNonSub, ViewData["TotalGamesAvailable"], ViewData["UserHandset"]))
+                </p>
+            }
+
+        }
+        if ((bool)ViewData["isMsisdnNotDetected"])
+        {
+            if (ViewBag.PortalID == EightElements.Data.DAPortal.GamerHeavenOxygen8PortalId ||
+                ViewBag.PortalID == EightElements.Data.DAPortal.DigitalTurbinPortalId)
+            {
+                <div class="not-authenticated">
+                    For only $ 2.50  per week you will get 1 free game now + 1 game credit every week to redeem additional games
+                    <div class="subscribe-login-button">
+                        <a href="@ViewBag.SubscribeUrl" style="text-decoration: none; color: white;">Subscribe / Login</a>
+                    </div>
+                </div>
+            }
+            else
+            {
+            <p>@Resources.Strings.HeaderText_Wifi</p>
+            }
+        }
+    }
+    else
+    {
+        @Html.PortalText("SubscribeThanksJoin", true)
+        <br/>
+        if ((bool)ViewData["IsPending"])
+        {
+            @Html.PortalText("SubscribePendingWarning", true)
+        }
+        else
+        {
+            if ((int)ViewData["Credits"] <= 1)
+            {
+                @Html.Raw(String.Format(Resources.Strings.Home_CreditText, ViewData["Credits"]))
+            }
+            else
+            {
+                @Html.Raw(String.Format(Resources.Strings.Home_CreditsText, ViewData["Credits"]))
+            }
+        }
+        if (ViewData["TotalGamesAvailable"] != null && ViewData["UserHandset"] != null)
+        {
+            <br/>
+            @Html.Raw(String.Format(Resources.Strings.Home_GameForHandset, ViewData["TotalGamesAvailable"], ViewData["UserHandset"]))
+        }
+        if ((bool)ViewData["IsSuspended"])
+        {
+            <br/>
+            @Resources.Strings.Home_SuspendedWarning
+        }
+    }
+
+</div>

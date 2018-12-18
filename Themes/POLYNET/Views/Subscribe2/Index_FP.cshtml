@@ -1,0 +1,66 @@
+﻿@section style
+{
+    <style type="text/css">
+        a.yesButton
+        {
+            float: left;
+            width: 45%;
+            color: white;
+            display: none;
+            margin-bottom: 10px;
+        }
+        a.buttons
+        {
+            line-height: 16px;
+            padding: 0 10px;
+            font-size: 14px;
+            font-weight: bold;
+            background-color: #00A5F0;
+            color: white;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-transition: background-color .2s linear;
+            -moz-transition: background-color .2s linear;
+            border: 1px solid rgba(0, 0, 0, .2);
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, .4) inset, 0 1px white;
+            -moz-box-shadow: 0 0 0 1px rgba(255, 255, 255, .4) inset, 0 1px #fff;
+            -webkit-box-shadow: 0 0 0 1px rgba(255, 255, 255, .4) inset, 0 1px white;
+            text-shadow: 0 -1px rgba(0, 0, 0, .2);
+            text-align: center;
+            min-width: 45px;
+            cursor: pointer;
+        }
+        a.buttons:hover
+        {
+            background-color: #24BBFF;
+        }
+        a.buttons:active
+        {
+            background-color: #0082bd;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .2) inset;
+            -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2) inset;
+            -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2) inset;
+        }
+        a.buttons::selection
+        {
+            background: #00A5F0;
+            color: #fff;
+            text-shadow: 0 1px rgba(0, 0, 0, .2);
+        }
+    </style>
+}
+@section Scripts
+{
+    <script type="text/javascript" src="~/Scripts/POLYNET/Subscribe2_DirectSublink.js"></script>
+}
+@{
+    if ((bool)ViewData["isMsisdnNotDetected"] == false)
+    {
+    @Html.Partial("IndexPartial_FP")
+    }
+    else
+    {
+    @Html.Partial("IndexPartialWifi_FP")
+    }
+}

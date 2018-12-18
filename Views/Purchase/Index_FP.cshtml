@@ -1,0 +1,69 @@
+﻿@using EightElements.Workflow.Vinaphone
+@section style
+{
+    <style>
+        li:nth-child(1)
+        {
+        list-style-image:url(../Images/General/Subscription/Bullets/bubblepink.png);
+        }
+        li:nth-child(2)
+        {
+        list-style-image:url(../Images/General/Subscription/Bullets/bubblegreen.png);
+        }
+        li:nth-child(3)
+        {
+        list-style-image:url(../Images/General/Subscription/Bullets/bubbleblue.png);
+        }
+        li:nth-child(4)
+        {
+        list-style-image:url(../Images/General/Subscription/Bullets/bubblepurple.png);
+        }
+        li:nth-child(5)
+        {
+        list-style-image:url(../Images/General/Subscription/Bullets/bubbleyellow.png);
+        }
+        li:nth-child(6)
+        {
+        list-style-image:url(../Images/General/Subscription/Bullets/bubblered.png);
+        }
+    </style>
+}
+<br/>
+
+@{
+    //todo: (simon) create new viewmodel
+    int contentId = (int) ViewBag.ContentId;
+    string contentTitle = ViewBag.ContentTitle;
+    string contentSize = "50";
+    string imageUrl = Url.Content("~/rest/gameimage/" + contentId + "?key=Square0");
+    decimal price = (decimal) ViewBag.Price;
+    string currency = ViewBag.Currency;
+    string displayedPrice = currency + " $" + price.ToString("0.00");
+}
+
+<div style="text-align: center; overflow: auto">
+    <img src="@imageUrl" alt="@contentTitle" class="img-rounded"/>
+</div>
+
+<ul>
+    <li><strong>@contentTitle</strong> is a great game!</li>
+    <li>Max file size @contentSize MB</li>
+    <li>Data charges may apply</li>
+    <li>For help, call TOLL-FREE at 1300 781 440</li> 
+    <li>This is a one off purchase. By clicking on "Buy Now" you agree to have your mobile phone account charged @displayedPrice</li>
+</ul>
+
+
+<div class="element" align="center">
+    <div class="right-column-button" style="text-align: center; padding: 0 0 12px;">
+        <a href="@Url.Content("~/purchase/buy?contentid=" + @contentId + "&ppd=true")" class="button-buy" style="max-width: 160px; padding: 8px;">Buy Now</a>
+    </div>
+</div>
+
+
+@if (!(bool)ViewData["IsSubscribed"])
+{
+    <div class="subscribe-join-button">
+        <a href="subscribe" style="text-decoration: none;">@Resources.Strings.Purchase_SubscribeButton</a>
+    </div>
+}

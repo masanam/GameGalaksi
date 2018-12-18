@@ -1,0 +1,69 @@
+﻿@{if ((bool)ViewData["NonSub"])
+{
+    <div class="home-header home-header-join">
+        @Html.PortalText("SubscribeJoinText", true)
+    </div>
+    <div class="home-header home-padding-top">
+        @Html.PortalText("SubscribeJoinTextLong", true)
+    </div>
+    if ((bool)ViewData["CanStillUseFirstWeekFree"])
+    { 
+        <div class="first-week-free category row-fluid home-header home-header-fwf">
+            @(ViewBag.PortalID == EightElements.Data.DAPortal.SmartPortalId ? Html.Raw(Resources.Smart8e.Home_WelcomeTitle) : Html.Raw(Resources.Strings.Home_WelcomeTitle))
+        </div>
+    }
+    <div class="home-header home-padding-middle">
+    @if (ViewData["TotalGamesAvailable"] != null && ViewData["UserHandset"] != null)
+    {
+        if (ViewBag.PortalID == EightElements.Data.DAPortal.GamerHeavenOxygen8PortalId ||
+            ViewBag.PortalID == EightElements.Data.DAPortal.DigitalTurbinPortalId)
+        {
+            <p>
+                Here you find @ViewData["TotalGamesAvailable"] games available for your @ViewData["UserHandset"]
+            </p>
+        }
+        else
+        {
+            Html.Raw(String.Format(Resources.Strings.Home_GameForHandsetNonSub, ViewData["TotalGamesAvailable"], ViewData["UserHandset"]));
+        }
+    }
+    @if ((bool)ViewData["isMsisdnNotDetected"])
+    {   
+        {
+            <p>@Resources.Strings.HeaderText_Wifi</p>
+        }
+    }
+    </div>
+}
+  else
+  {
+    <div class="home-header home-padding-default">
+    @Html.PortalText("SubscribeThanksJoin", true)
+    <br/>
+    @if ((bool)ViewData["IsPending"])
+    {
+        @Html.PortalText("SubscribePendingWarning", true)
+    }
+    else
+    {
+        if ((int)ViewData["Credits"] <= 1)
+        {
+            @Html.Raw(String.Format(Resources.Strings.Home_CreditText, ViewData["Credits"]))
+        }
+        else
+        {
+            @Html.Raw(String.Format(Resources.Strings.Home_CreditsText, ViewData["Credits"]))
+        }
+    }
+    @if (ViewData["TotalGamesAvailable"] != null && ViewData["UserHandset"] != null)
+    {
+        <br/>
+        @Html.Raw(String.Format(Resources.Strings.Home_GameForHandset, ViewData["TotalGamesAvailable"], ViewData["UserHandset"]))
+    }
+    @if ((bool)ViewData["IsSuspended"])
+    {
+        <br/>
+        @Resources.Strings.Home_SuspendedWarning
+    }
+    </div>
+}}

@@ -1,0 +1,114 @@
+﻿@section Scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setSearchAutoCompletion(); //TODO put back
+            loadCategory('today', 'F', "@Resources.Strings.Home_Highlight",
+                                        "@Resources.Strings.Home_MoreBestSellers");
+            loadCategory('new', 'N', '@Resources.Strings.Home_NewGames',
+                                      '@Resources.Strings.Home_MoreNewGames');
+            //    resizeSearchBar(); //TODO put back 
+        });
+    </script>
+}
+@{
+    bool isSubscribed = (bool)ViewData["IsSubscribed"];
+    string headerText = string.Empty;
+    string msisdn = ViewData["uid"].ToString();
+    if (!String.IsNullOrWhiteSpace(msisdn) && Session["msisdn"] != null)
+    {
+        msisdn = Session["msisdn"].ToString();
+        msisdn = msisdn.Replace("84", "0");
+    }
+    if (!isSubscribed)
+    {
+        headerText = String.Format(Resources.Strings.Vinaphone_HeaderText, msisdn, ViewData["TotalGamesAvailable"], ViewData["UserHandset"]);
+    }
+    else
+    {
+        if ((int)(ViewData["Credits"]) <= 1)
+        {
+            headerText = String.Format(Resources.Vinaphone.HeaderTextSubscribed,
+                        msisdn,
+                        ViewData["TotalGamesAvailable"],
+                        ViewData["UserHandset"],
+                        ViewData["Credits"]);
+        }
+        else
+        {
+            headerText = String.Format(Resources.Vinaphone.HeaderTextSubscribedWCredits,
+                        msisdn,
+                        ViewData["TotalGamesAvailable"],
+                        ViewData["UserHandset"],
+                        ViewData["Credits"]);
+        }
+            
+        
+        
+
+
+    }}
+    <div class="labelTitle">
+    @if (!(bool)ViewData["IsSubscribed"])
+    {
+        @Resources.Strings.Home_WelcomeText
+    }
+    </div>
+<div style="margin: 10px; width: 100%">
+    @Html.Raw(headerText)
+</div>
+
+<div class='home-content'>
+    @{Html.RenderAction("GetChannel", "Common");}
+    @{if ((bool)ViewData["CanStillUseFirstWeekFree"])
+      { 
+        <div class="first-week-free category row-fluid" style="padding: 3% 1px; color: #3AF500; font-weight: bold; margin-top: 3px">
+            @Html.Raw(Resources.Strings.Home_WelcomeTitle)
+        </div>
+      }}
+    <div id="first-categories" class="category row-fluid gradient-pale">
+        <div class="category span6">
+            <div>
+                @Html.PortalImage("allgame", true, "portalimage", "", "")
+            </div>
+            <div>
+                @Html.PortalImageLink("allgame")
+            </div>
+        </div>
+        <div class="category span6">
+            <div>
+                @Html.PortalImage("promotion", true, "portalimage", "", "")
+            </div>
+            <div>
+                @Html.PortalImageLink("promotion")
+            </div>
+        </div>
+        @if (!isSubscribed)
+        {
+            <div id="home-subscribe-btn" class="category span6" style="display: none;">
+                <div>
+                    @Html.PortalImage("subscribe", true, "portalimage", "", "")
+                </div>
+                <div>
+                    @Html.PortalImageLink("subscribe")
+                </div>
+            </div>
+        }
+    </div>
+    <div id='displayed-in-home-categories'>
+    </div>
+    <!-- search bar-->
+    <div id="search-container" class="gradient-pale row-fluid">
+        @using (Html.BeginForm("", "Search", FormMethod.Get))
+        {  
+            <div class="search-bar">
+                <div id="multilayers">
+                    <i class="icon-search"></i>
+                    <input id="search" type="text"  placeholder="@Resources.Strings.Home_Search" data-provide="typeahead"
+					     data-items="8" name="keyword" autocomplete="off" />
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@Html.Action("SubscribeAd", "PortalPage")

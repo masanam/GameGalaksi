@@ -1,0 +1,44 @@
+﻿<div id="top" align="center" style="padding: 1%; text-align: center; background-color: #32CCFE;
+    font-weight: bold; font-size: 1em;">@Html.PortalText("SubscribeJoinText2")
+</div>
+<div class="text-about-price element" style="padding: 0 2%; font-weight: bold; color: rgb(243, 115, 153);">
+    @Html.PortalText("SubscribePriceText2")
+</div>
+<div id="benefits" class="element" style="padding: 0 2%; font-size: 12px;">
+    @Html.PortalText("SubscribeBenefit2")
+</div>
+<div id="subscribe-and-save" class="element" align="center">
+    <div id="btn-subscribe-and-save" style="font-size: 14px; font-weight: bold; padding: 2%;
+        margin-bottom: 3%;">
+        <a href="@Url.Action("Index", "Home")" style="width:45%;float:left;display:block;line-height: 30px; height:30px;">
+            @Html.PortalText("NoButton")
+        </a>
+        <a class="buttons yesButton" href="@Url.Action("Subscribe", "Subscribe")" style="display: inline;line-height: 30px;height:30px;line-height: 16px;
+            padding: 0 10px;
+            font-size: 14px;
+            font-weight: bold;
+            background-color: #00A5F0;
+            color: white;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-transition: background-color .2s linear;
+            -moz-transition: background-color .2s linear;
+            border: 1px solid rgba(0, 0, 0, .2);
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, .4) inset, 0 1px white;
+            -moz-box-shadow: 0 0 0 1px rgba(255, 255, 255, .4) inset, 0 1px #fff;
+            -webkit-box-shadow: 0 0 0 1px rgba(255, 255, 255, .4) inset, 0 1px white;
+            text-shadow: 0 -1px rgba(0, 0, 0, .2);
+            text-align: center;
+            min-width: 45px;
+            cursor: pointer;">
+            @Html.PortalText("YesButton")
+        </a>
+    </div>
+</div>
+<div style="clear: both;">
+</div>
+<div id="pictures" class="element" align="center">
+    @{ Html.RenderAction("GetTopFeatures", "Common"); }
+</div>
+@Html.PortalText("InmobiLandingPage")

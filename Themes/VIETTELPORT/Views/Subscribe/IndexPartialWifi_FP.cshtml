@@ -1,0 +1,17 @@
+﻿<div id="subscribe-and-save" class="element" align="center">
+    <div id="btn-subscribe-and-save-no-msisdn" style="font-size: large; font-weight: bold; padding: 1%;
+        margin-bottom: 1%;">
+            @Html.PortalText("SubscribeShortCodeText", true)
+    </div>
+</div>
+<div style="padding: 1% 10px">
+    @Html.Raw(String.Format(Resources.Strings.Subscribe_WifiClickToMO, ViewData["PredefinedMOText"]))
+    <br/>
+    @Resources.Strings.Subscribe_WifiConnectTo3G
+</div>
+<div id="pictures" class="element" align="center">
+    @{Html.RenderAction("GetTopFeatures", "Common");}
+</div>
+<div style="margin: 10px;">
+@Html.PortalText("Text")    
+</div>

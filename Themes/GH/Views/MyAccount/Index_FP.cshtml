@@ -1,0 +1,77 @@
+﻿
+@{
+    var userDetail = (EightElements.Data.Rest.Models.UserDetail) ViewData["UserDetail"];
+}
+
+<div class="section">
+    <div class="account__header">
+        @Resources.Strings.MyAccount_MyAccount
+    </div>
+
+    <div class="account__content">
+        <div class="account__label">@Resources.GamerHeaven.MyAccount_PhoneNumber</div>
+        <div class="account__info">@userDetail.Msisdn</div>
+        <div class="account__label">@Resources.Strings.MyAccount_Device</div>
+        <div class="account__info">@userDetail.HandsetModel</div>
+
+        @if ((bool) ViewData["isMsisdnNotDetected"])
+        {
+            <div class="button">
+                <a href="@ViewBag.SubscribeUrl" class="button__link">@Resources.Strings.MyAccount_Login</a>
+            </div>
+        }
+    </div>
+</div>
+
+@if (!userDetail.HasSubscription)
+{
+    <div class="button">
+        <a class="button__link" href="@Url.Action("Subscribe", "Subscribe")">@Resources.Strings.Home_JoinNow</a>
+    </div>
+}
+
+<div class="section">
+    <div class="account__header">
+        @Resources.GamerHeaven.MyAccount_MyGameClub
+    </div>
+
+    <div class="account__content">
+        <div class="account__label">@Resources.GamerHeaven.MyAccount_Credit</div>
+        <div class="account__info">@userDetail.Credits game credit(s)</div>
+        <div class="account__label">@Resources.GamerHeaven.MyAccount_MySubscription</div>
+        <div class="account__info">GamerHeaven</div>
+        <div class="account__label">@Resources.GamerHeaven.MyAccount_SubscriptionInfo</div>
+        <div class="account__info">@Resources.GamerHeaven.MyAccount_SubscriptionInfoText</div>
+        <div class="account__label">@Resources.GamerHeaven.MyAccount_SubscriptionStatus</div>
+        <div class="account__info">@ViewData["SubscriptionStatusText"]</div>
+        @if (userDetail.SubscriptionStatus == "Suspended" || userDetail.SubscriptionStatus == "Pending")
+        {<div class="account__info">
+                <a href="/Subscribe/Resubscribe">@Resources.Strings.MyAccount_Resubscribe</a>
+            </div>
+        }
+        <div class="account__label">@Resources.Strings.MyAccount_PurchaseDate</div>
+        <div class="account__info">@userDetail.SubscriptionCreateDateStr</div>
+        <div class="account__label">@Resources.Strings.MyAccount_RenewalDate</div>
+        <div class="account__info">@userDetail.SubscriptionExpiryDateStr</div>
+        <div class="account__label">
+            @if (userDetail.HasSubscription)
+            {
+                <a href="/MyAccount/ConfirmToUnsubscribe">
+                    @Resources.Strings.MyAccount_Unsubscribe
+                </a>
+            }
+        </div>
+    </div>
+</div>
+
+@*@if (userDetail.IsHandsetSupported)*@
+<div class="button">
+    <a class="button__link" href="@Url.Content("~/Purchase/History?handsetId=" + ViewData["handsetid"])">@Resources.Strings.MyAccount_MyDownloads</a>
+</div>
+
+@if (!userDetail.HasSubscription)
+{
+    <div class="button">
+        <a class="button__link" href="@Url.Action("Index", "Subscribe")">@Resources.Strings.MyAccount_Benefit</a>
+    </div>
+}

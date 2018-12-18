@@ -1,0 +1,75 @@
+﻿@using EightElements.Data
+@{
+    int portalId = (int)ViewBag.PortalID;
+}
+
+@{if ((bool)ViewData["CanStillUseFirstWeekFree"])
+{ 
+    <div class="first-week-free" style="padding: 3% 10px; color: #3AF500; font-weight: bold">
+        <!--        The first week is free. No charges. <a href="#" class="subscribe-button" style="color: Blue;text-decoration:underline">Join Gamer Heaven now!</a><br/>
+    The first week is free. No charges. <a href="@Url.Action("Subscribe", "Subscribe")" style="color: Blue;text-decoration:underline;">Join Gamer Heaven now!</a> <br/>
+    -->
+        @Html.PortalText("SubscribeFirstWeekFree")
+    </div>
+}}
+<div class="text-about-price no-msisdn element" style="padding: 2%; font-weight: bold; color: rgb(243, 115, 153);">
+    @{if ((bool)ViewData["UseWeeklySubscriptionText"])
+    {
+        @Html.PortalText("SubscribePromoText", true)
+    }
+    else
+    {
+        @Html.PortalText("SubscribePromoTextDaily", true)
+    }}
+</div>
+<div id="subscribe-and-save" class="element" align="center">
+    <div id="btn-subscribe-and-save-no-msisdn" style="font-size: x-large; font-weight: bold; padding: 1%;
+        margin-bottom: 1%;">
+    @{if ((bool)ViewData["UseWeeklySubscriptionText"])
+      {
+          @Html.PortalText("SubscribeShortCodeText", true)
+      }
+      else
+      {
+        @Html.PortalText("SubscribeShortCodeTextDaily", true)
+      }}
+            
+    </div>
+</div>
+<div style="padding: 1% 10px">
+    @Html.Raw(String.Format(Resources.Strings.Subscribe_WifiClickToMO, ViewData["PredefinedMOText"]))
+    <br/>
+    @Resources.Strings.Subscribe_WifiConnectTo3G
+</div>
+<div id="pictures" class="element" align="center">
+    @{Html.RenderAction("GetTopFeatures", "Common");}
+</div>
+<div id="benefits" class="element">
+    <div class="intro text-blue" style="padding: 3% 10px">
+        @Html.Raw(String.Format(Resources.Strings.Subscribe_Benefits, " "))
+    </div>
+    @{if ((bool)ViewData["CanStillUseFirstWeekFree"])
+      { 
+        <div class="first-week-free" style="padding: 3% 10px;font-weight:bold">
+            @if (portalId == DAPortal.SmartPortalId)
+            {
+                @Resources.Smart8e.Subscribe_LimitedTime
+            }
+            else
+            {
+                @Resources.Strings.Subscribe_LimitedTime
+            }
+        </div>
+      }}
+    @{if ((bool)ViewData["UseWeeklySubscriptionText"])
+      {
+         @Html.PortalText("SubscribeBenefit")
+      }
+      else
+      {
+         @Html.PortalText("SubscribeBenefitDaily")
+      }}
+</div>
+<div id="get-a-free-game" style="padding: 3% 10px">
+</div>
+@Html.PortalText("InmobiLandingPage")

@@ -1,0 +1,27 @@
+﻿@using EightElements.Data.Models
+
+@{
+    ViewBag.Title = "LandingPull";
+    var contents = ViewBag.Contents as List<VideoInfo>;
+}
+
+
+@foreach (var content in contents)
+{
+    <div class="list-item default-list-item gradient">
+        <div class="image-container">
+            <a href="@Url.Action("Purchase", new {contentId = content.Id, ppd = true})">
+                <img src="http://svcvideo.dob.vn/upload_files/@content.Id/@content.Image"/>
+            </a>
+        </div>
+        <div class="text-container">
+            <a class="video-title" href="@Url.Action("Purchase", new {contentId = content.Id, ppd = true})">@content.Title</a>
+            <br/>
+            <div class="video-description">@content.ShortDescription</div>
+            <div class="watch-button">
+                <a href="@Url.Action("Purchase", new {contentId = content.Id, ppd = true})">Watch Now</a>
+            </div>
+        </div>
+
+    </div>
+}

@@ -1,0 +1,42 @@
+﻿<html>
+<head>
+    <title>@ViewBag.Title</title>    
+    @Styles.Render("~/bundles/cssFP")
+    @{ Html.RenderPartial("GoogleAnalyticsTrackingCode", new EightElements.Data.Rest.Models.Tracking(ViewBag.GoogleAnalyticsAccount)); }
+    @RenderSection("style", required: false)
+</head>
+<body vlink="black">
+    @Html.Partial("_Layout_FP_Top")
+    <div class="language-flags">
+        <a href="@Url.Content("~/Home/ChangeCulture?lang=en&url=" + Request.Url.ToString())" class="en" title="English"></a><a href="@Url.Content("~/Home/ChangeCulture?lang=vi&url=" + Request.Url.ToString())" class="vn" title="Vietnamese">
+        </a>
+    </div>
+    @RenderBody()
+    <div class="bottomMenu">
+        <div style="padding: 1%;">
+            @{if ((bool)ViewData["ShowBack"])
+              { 
+                <a href="javascript:history.go(-1)" style="color: White; font-size: small">>> @Resources.Strings.Layout_Back</a><br /> 
+              }
+              else
+              {
+                <a href="#" style="color: White; font-size: small">>> @Resources.ViettelPort.Home_BackToTop</a><br /> 
+              }
+            }
+            @{if ((bool)ViewData["ShowHome"])
+              { <a href="/" style="color: White; font-size: small">>> @Resources.Strings.Layout_Home</a><br />}
+            }
+            <a href="/MyAccount" style="color: White; font-size: small">>> @Resources.Strings.Layout_MyAccount</a><br />
+        </div>
+        <div class="footer">
+            <div class="upperLogo">
+                <img src="/Images/320/logo.gif" width="60" height="43" class="headerImage" alt="8elements" /></div>
+            @Resources.VNM.Layout_Footer
+            <br />
+            <a class="terms" href="/Terms">@Resources.Strings.Layout_Terms</a>&nbsp;|&nbsp; <a class="terms" href="/Help">
+                @Resources.Strings.Layout_Help</a><br />
+            &copy;&nbsp;2014
+        </div>
+</body>
+@RenderSection("scripts", required: false)
+</html>

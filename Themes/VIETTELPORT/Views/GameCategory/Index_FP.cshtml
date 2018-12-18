@@ -1,0 +1,81 @@
+﻿@using EightElements.Data.Rest.Models;
+<div>
+    <div class="title">
+        <div style="text-align: center; font-weight: bold; font-size: 1em; padding: 1%;">
+            @ViewData["CategoryName"]</div>
+    </div>
+    <table style="width: 100%; min-width: 128px; font-weight: bold; font-size: small;">
+        @{   
+            foreach (KeyValuePair<int, EightElements.Data.Rest.Models.Game> entry in (Dictionary<int, EightElements.Data.Rest.Models.Game>)ViewData["DictGame"])
+            {
+                string gamePriceT = ((Dictionary<int, string>)ViewData["DictGamePrice" + ViewData["SectionType"]])[entry.Key];
+                string AmountPriceT = ((Dictionary<int, string>)ViewData["DictAmountPrice" + ViewData["SectionType"]])[entry.Key];
+                bool hasSubscription = (bool)ViewData["IsSubscribed"];
+                string imgLink = Url.Content("~/rest/gameimage/" + @entry.Key + "?key=Square0");
+                <tr>
+                    <td>
+                        <div class="left-column">
+                            <a href=@Url.Content("~/Detail/" + @entry.Key)>
+                                <img src="@imgLink" alt="@entry.Value.Name" class="gameSquareImageTop" />
+                            </a>
+                        </div>
+                        <div class="right-column">
+                            <div class="right-column-header">
+                                <a href=@Url.Content("~/Detail/" + @entry.Key)>@entry.Value.Name</a></div>
+                            <div class="right-column-button">
+                                @if ((bool)ViewData["isMsisdnNotDetected"])
+                                {
+                                    <a href="@Url.Action("Index", "Subscribe")" class="button-free">
+                                        @Resources.ViettelPort.CommonBuy_Free</a>
+                                }
+                                else
+                                {
+                                    if ((bool)ViewData["NonSub"])
+                                    { 
+                                        <a href="@Url.Action("Subscribe", "Subscribe", new { ContentId = @entry.Key })" class="button-free" >
+                                            @Resources.ViettelPort.CommonBuy_Free</a>
+                                        <br />
+                                    }
+                                    if ((int)ViewData["credits"] > 0 && !(AmountPriceT == "0" || AmountPriceT == "0.0000"))
+                                    {
+                                        <a href=@Url.Content("~/purchase/buy?contentid=" + @entry.Key + "&ppd=false") class="button-buy" >@Resources.Strings.CommonBuy_UseCredit</a> <br />
+                                    }
+                                    <a href=@Url.Content("~/purchase/buy?contentid=" + @entry.Key + "&ppd=true") class="button-buy" >@gamePriceT</a>
+                            
+                                }
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+    <div style="text-align: center; padding: 2%; background-color: #EDF0F0;">
+        @{if ((int)ViewData["PageNumber"] > 0)
+          {
+              <!--<a href="/GameCategory?categoryId=@((int)ViewData["CategoryId"])&pageNumber=@((int)ViewData["PageNumber"] - 1)" style=" text-decoration: none;">
+                      Back</a><span>&nbsp; &nbsp; &nbsp;</span>-->
+          }
+        }
+        @{if ((int)ViewData["NextPageCount"] > 0)
+          {
+              string categoryId = ViewData["CategoryId"].ToString();
+              string pageNumber = ((int)ViewData["PageNumber"] + 1).ToString();
+              string showMoreLink = string.Format("~/GameCategory?categoryId={0}&pageNumber={1}", categoryId, pageNumber);
+              <a href=@Url.Content(showMoreLink)
+                 style=" text-decoration: none;">
+                  @Resources.Strings.GameCategory_ShowMore</a>
+          }
+        }
+    </div>
+</div>
+@if (!(bool) ViewData["IsSubscribed"])
+{
+    <!-- benefit -->
+    <div id="top" style="padding-left: 1%;">
+        @Html.Raw(Resources.ViettelPort.Subscribe_Benefits)
+    </div>
+    <div>
+        @Html.PortalText("Text")
+    </div>
+}

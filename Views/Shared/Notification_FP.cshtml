@@ -1,0 +1,20 @@
+﻿@{
+    bool visible = ViewBag.ShowNotification;
+    
+    if (visible)
+    {
+        string message = ViewBag.NotificationText;
+        string color = ViewBag.NotificationColor;
+        
+        switch (color)
+        {
+            case "yellow":
+                <div class="yellow-notification-bar">@Html.Raw(message)</div>
+                break;
+            case "red":
+                <div class="red-notification-bar">@message</div>
+                break;
+        }
+    }
+}
+

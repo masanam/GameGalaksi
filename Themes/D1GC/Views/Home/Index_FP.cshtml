@@ -1,0 +1,25 @@
+﻿@{
+    var price = Html.PortalText("SubscribePrice", true).ToString();
+    bool showPrice = !System.String.IsNullOrEmpty(price);
+    ViewBag.JoinTop = showPrice ?
+        String.Format(Resources.Strings.Home_JoinNowTop, price) :
+        Resources.Strings.Home_JoinNow;
+    ViewBag.JoinBottom = showPrice ?
+        String.Format(Resources.Strings.Home_JoinNowBottom, price) :
+        Resources.Strings.Home_JoinNow;
+    ViewBag.GameList = "GameListBanner";
+    ViewBag.SubscribeUrl = "Subscribe";
+}
+
+@Html.Partial("Content_FP")
+
+
+@section footerMenu
+{
+    <div class="footer__main-menu">
+        <a class="footer__menu-item" href="@Url.Action("Index", "MyAccount")">@Resources.Strings.Layout_MyAccount</a>
+    </div>
+    <div class="footer__side-menu">
+        <a class="footer__side-menu-link" href="/">@Resources.D1GC.Menu_Home</a>
+    </div>
+}

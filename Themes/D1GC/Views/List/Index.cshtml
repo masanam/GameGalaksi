@@ -1,0 +1,38 @@
+﻿@section Scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            loadMoreEntries();
+        });
+        var moreGames = true;
+        var loading = true;
+        $(window).scroll(loadMoreGamesOnScroll);
+    </script>
+}
+
+<input type="hidden" id='ListType' value='@ViewData["ListType"]' />
+<input type="hidden" id='PageSize' value='@ViewData["PageSize"]' />
+<input type="hidden" id='PageNumber' value='0' />
+<input type="hidden" id='ListSource' value='listTypeList' />
+
+<div class="section-header">
+    <div class="section-header__title">
+        @ViewData["PageTitle"]
+    </div>
+    <div class="section-header__action">
+        <a class="section-header__action-link" href="@Url.Action("Index", "Home")">@Resources.Strings.Layout_Back</a>
+    </div>
+</div>
+
+<div id='games-list'></div>
+
+
+@section footerMenu
+{
+    <div class="footer__main-menu">
+        <a class="footer__menu-item" href="@Url.Action("Index", "MyAccount")">@Resources.Strings.Layout_MyAccount</a>
+    </div>
+    <div class="footer__side-menu">
+        <a class="footer__side-menu-link" href="/">@Resources.Strings.Layout_Home</a>
+    </div>
+}

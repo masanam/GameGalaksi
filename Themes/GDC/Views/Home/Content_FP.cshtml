@@ -1,0 +1,45 @@
+﻿@using EightElements.Data
+@{List<EightElements.Data.Rest.Models.GameCategory> categories = (List<EightElements.Data.Rest.Models.GameCategory>)ViewData["GameCategories"];}
+
+@Html.Partial("HeaderText_FP")
+
+@{Html.RenderAction("GetChannel", "Common");}
+
+@{
+    ViewData["SectionType"] = "F";
+    ViewData["GameListTitle"] = @Resources.Strings.Home_Highlight;
+    ViewData["MoreTitle"] = @Resources.Strings.Home_MoreBestSellers;
+    ViewData["ImageSize"] = "Square0";
+    ViewBag.ThemeColor = "blue";
+}
+@Html.Partial("GameList")
+  
+@{
+    ViewData["SectionType"] = "N";
+    ViewData["GameListTitle"] = @Resources.Strings.Home_NewGames;
+    ViewData["MoreTitle"] = @Resources.Strings.Home_MoreNewGames;
+    ViewData["ImageSize"] = "Square0";
+    ViewBag.ThemeColor = "white";
+}
+@Html.Partial("GameList")
+
+@if (ViewBag.PointSystemVisible)
+{
+    <div class="section-header">
+        @Resources.Strings.GameBundle_PageTitle
+    </div>
+    @Html.Partial("GameBundleListPartial_FP")
+    <div class="section-footer">
+        <a href="@Url.Action("Index", "GameBundle")">
+            @Resources.Strings.Home_MoreGameBundles
+        </a>
+    </div>
+}
+
+@if (!(bool)ViewData["IsSubscribed"] && ViewBag.PortalID == EightElements.Data.DAPortal.ViettelPortalId)
+{
+    <div style="margin: 0 10px">
+        @Html.PortalText("Text")
+    </div>
+}
+
